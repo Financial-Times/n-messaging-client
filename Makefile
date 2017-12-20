@@ -12,12 +12,10 @@ demo: demo-build
 	@DEMO_MODE=true node demos/app
 
 a11y: demo-build
-	@node .pa11yci.js
 	@PA11Y=true DEMO_MODE=true node demos/app
 	@$(DONE)
 
 test: verify
-	make smoke
 
 smoke:
 	export TEST_URL=http://localhost:5005; \
