@@ -16,6 +16,7 @@ a11y: demo-build
 	@$(DONE)
 
 test: verify
+	make smoke
 
 smoke:
 	export TEST_URL=http://localhost:5005; \

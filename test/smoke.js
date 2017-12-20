@@ -8,7 +8,7 @@ const messageSlotBottomTests = messageSlotBottomVariants.map(v => {
 			'FT-Flags': `messageSlotBottom:${v}`
 		},
 		urls: {
-			[`/${v}`]: 200 // url is irrelevant mainly to help debug
+			[`/messageSlotBottom-${v}`]: 200 // url is irrelevant mainly to help debug
 		}
 	}
 });
