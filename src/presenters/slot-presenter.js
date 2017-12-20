@@ -1,5 +1,5 @@
 'use strict';
-const MANIFEST = require('../../manifest.json');
+const MANIFEST = require('../../manifest');
 
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
 const CLIENT_SIDE_VARIANT_REGEXP = /Client$/;
@@ -16,7 +16,11 @@ const relevantFlag = (type) => {
 	}[type];
 };
 const getVariantConfig = (variant) => (MANIFEST && MANIFEST[variant]) || {};
-const resolvePartialPath = (path) => path && `n-messaging-client/templates/partials/${path}`;
+const resolvePartialPath = (path) => {
+	return process.env.DEMO_MODE
+		? path && `templates/partials/${path}`
+		: path && `n-messaging-client/templates/partials/${path}`;
+};
 
 const getConfig = (position, flags) => {
 	const variant = flags(relevantFlag(position));

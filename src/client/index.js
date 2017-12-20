@@ -20,12 +20,10 @@ module.exports = {
 	},
 	initialiseMessage (config) {
 		const render = this.renderHandler(config.position);
-		let getData;
-		if (config.lazy) {
-			getData = fetchAsyncConfig(config);
-		} else {
-			getData = Promise.resolve(config);
-		}
+		const getData = config.lazy
+			? fetchAsyncConfig(config)
+			: Promise.resolve(config);
+
 		return getData.then(render);
 	},
 	renderHandler (position) {

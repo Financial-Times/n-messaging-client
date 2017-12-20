@@ -15,5 +15,9 @@
   ],
   "dependencies": {
     "o-banner": "^1.4.0"
+  },
+  "devDependencies": {
+    "n-ui-foundations": "^3.0.0",
+    "o-tracking": "^1.3.3"
   }
 }
