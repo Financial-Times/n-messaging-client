@@ -16,11 +16,7 @@ const relevantFlag = (type) => {
 	}[type];
 };
 const getVariantConfig = (variant) => (MANIFEST && MANIFEST[variant]) || {};
-const resolvePartialPath = (path) => {
-	return process.env.DEMO_MODE
-		? path && `templates/partials/${path}`
-		: path && `n-messaging-client/templates/partials/${path}`;
-};
+const resolvePartialPath = (path) => `n-messaging-client/templates/partials/${path}`;
 
 const getConfig = (position, flags) => {
 	const variant = flags(relevantFlag(position));

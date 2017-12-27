@@ -1,6 +1,7 @@
 /* eslint no-console:0 */
 'use strict';
 
+const { resolve } = require('path');
 const chalk = require('chalk');
 const express = require('@financial-times/n-internal-tool');
 
@@ -13,7 +14,7 @@ const app = module.exports = express({
 	withAnonMiddleware: false,
 	hasHeadCss: false,
 	viewsDirectory: '/demos/templates',
-	partialsDirectory: process.cwd(),
+	partialsDirectory: resolve(__dirname, '../public'),
 	directory: process.cwd(),
 	helpers: {
 		nMessagingPresenter: require('../main').presenter

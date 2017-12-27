@@ -4,7 +4,12 @@ node_modules/@financial-times/n-gage/index.mk:
 
 -include node_modules/@financial-times/n-gage/index.mk
 
-demo-build:
+link-templates:
+	echo "Creating symlink to mimic bower_component setup /templates -> public/n-messaging-client"
+	mkdir -p "$(CURDIR)/public/n-messaging-client"
+	ln -sf "$(CURDIR)/templates" "$(CURDIR)/public/n-messaging-client/"
+
+demo-build: link-templates
 	webpack --config demos/webpack.config.js
 	@$(DONE)
 
