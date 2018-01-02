@@ -4,6 +4,8 @@
 /node_modules/
 /demos/
 /test/
+/pa11y_screenCapture/
+/public/
 
 .babelrc
 .DS_Store
