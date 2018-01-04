@@ -1,9 +1,45 @@
-{{> n-messaging-client/templates/components/n-messaging-banner
-	contentLong='Try the new compact homepage. A list view of today\'s homepage with fewer images.'
-	contentShort='Try the new compact homepage.'
-	buttonLabel='Try it now'
-	buttonUrl='https://www.ft.com'
-	linkLabel='Give feedback'
-	linkUrl='https://www.ft.com/help'
-	small='true'
-}}
+<div class="invite-colleagues-banner__wrapper">
+	{{#> n-messaging-client/templates/components/n-messaging-banner
+		themeMarketing='true'
+	}}
+	<div class="n-messaging-banner__inner invite-colleagues-banner" data-o-banner-inner="" data-n-messaging-banner-inner="">
+			<div class="n-messaging-banner__content invite-colleagues-banner__intro">
+				<span class="invite-colleagues__inner--strong">Share the FT</span> - Invite your colleagues to try FT.com by sharing a free group trial
+			</div>
+			<div class="n-messaging-banner__content invite-colleagues-banner__copy">
+				<div class="invite-colleagues__copy-outer">
+					<div class="invite-colleagues__copy-input">
+						<input type="text" class="invite-colleagues__copy-link" aria-label="copy-sharing-link-field" value="https://try.ft.com/30DAYSFREE" readonly="">
+					</div>
+					<span class="invite-colleagues__copy-text">Copy link and share</span>
+					<button class="invite-colleagues__copy-link-button" data-trackable="copy-link" aria-label="Copy link and share" data-n-messaging-banner-action=""></button>
+				</div>
+			</div>
+			<div class="n-messaging-banner__content invite-colleagues-banner__share">
+				<div class="invite-colleagues__share">
+						<div data-o-component="o-share" class="invite-colleagues">
+							<ul>
+								<li class="invite-colleagues__action invite-colleagues__action--linkedin">
+									<a target="_blank" rel="noopener" href="https://www.linkedin.com/shareArticle?mini=true&url=try.ft.com/30DAYSFREE&AMP;source=Financial+Times&amp;title=Join%20your%20colleagues%20in%20a%20free%20FT%20trial&amp;text=Get%20full%20Premium%20Digital%20access%20to%20the%20FT%E2%80%99s%20expert%20analysis%20and%20commentary.%20Stay%20as%20informed%20as%20your%20colleagues%20and%20join%20the%20trial%20today.&amp;via=FT"
+									data-trackable="linkedin" data-n-messaging-banner-action="">
+										<i>Share on LinkedIn (opens new window)</i>
+									</a>
+								</li>
+								<li class="invite-colleagues__action invite-colleagues__action--facebook">
+									<a target="_blank" rel="noopener" href="https://www.facebook.com/sharer.php?u=try.ft.com/30DAYSFREE"
+									data-trackable="facebook" data-n-messaging-banner-action="">
+										<i>Share on Facebook (opens new window)</i>
+									</a>
+								</li>
+								<li class="invite-colleagues__action invite-colleagues__action--mail">
+									<a data-trackable="email" href="mailto:?subject=Join%20your%20colleagues%20in%20a%20free%20FT%20trial&amp;body=Join%20your%20colleagues%20in%20a%20free%20FT%20trial.%0D%0A%0D%0AStay%20as%20informed%20as%20your%20colleagues%20and%20join%20the%20trial%20today.%0D%0A%0D%0Ahttp%3A%2F%2Ftry.ft.com%2F30DAYSFREE%0D%0A%0D%0AYou%20can%20share%20this%20link%20with%20anyone%20in%20your%20company%2C%20so%20they%20can%20get%20access%20too.%0D%0A%0D%0AYou%20must%20have%20an%20organisation%20email%20address%20to%20take%20part." data-n-messaging-banner-action="">
+										<i>Email</i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+			</div>
+	</div>
+	{{/n-messaging-client/templates/components/n-messaging-banner}}
+</div>

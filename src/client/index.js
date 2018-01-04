@@ -1,5 +1,6 @@
 const fetchAsyncConfig = require('./next-messaging-guru-client');
 const bottomSlot = require('./bottom-slot');
+const components = require('../components');
 
 module.exports = {
 	init: function () {
@@ -20,14 +21,19 @@ module.exports = {
 	},
 	initialiseMessage (config) {
 		const render = this.renderHandler(config.position);
+		const customSetup = this.setupHandler(config.name);
+		const formatData = (conf) => ({ options: conf, customSetup });
 		const getData = config.lazy
 			? fetchAsyncConfig(config)
 			: Promise.resolve(config);
 
-		return getData.then(render);
+		return getData.then(formatData).then(render);
 	},
 	renderHandler (position) {
 		if (position === 'bottom') return bottomSlot;
+	},
+	setupHandler (name) {
+		return components.hasOwnProperty(name) && components[name];
 	},
 	handleError (error) {
 		throw error;

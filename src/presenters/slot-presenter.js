@@ -2,6 +2,7 @@
 const MANIFEST = require('../../manifest');
 
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
+const TOP_SLOT_FLAG = 'messageSlotTop';
 const CLIENT_SIDE_VARIANT_REGEXP = /Client$/;
 const TOP_TYPE = 'top';
 const BOTTOM_TYPE = 'bottom';
@@ -11,7 +12,7 @@ const regexpTest = (regexp) => (val) => regexp.test(val);
 const dataTypeContract = (type) => [TOP_TYPE, BOTTOM_TYPE].includes(type);
 const relevantFlag = (type) => {
 	return {
-		[TOP_TYPE]: '',
+		[TOP_TYPE]: TOP_SLOT_FLAG,
 		[BOTTOM_TYPE]: BOTTOM_SLOT_FLAG
 	}[type];
 };

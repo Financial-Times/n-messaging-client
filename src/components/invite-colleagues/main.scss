@@ -1,0 +1,217 @@
+@import 'o-buttons/main';
+@import 'o-colors/main';
+@import 'o-typography/main';
+@import 'o-share/main';
+@import 'o-grid/main';
+@include oShareBase(invite-colleagues);
+@include oShareActionIcon(facebook, invite-colleagues);
+@include oShareActionIcon(linkedin, invite-colleagues);
+@include oShareActionIcon(mail, invite-colleagues);
+
+.invite-colleagues__outer {
+	background: getColor('wheat');
+	text-align: center;
+}
+
+.invite-colleagues--no-wrap {
+	white-space: nowrap;
+}
+
+.invite-colleagues__inner {
+	@include oTypographySans($scale: 3);
+	padding: 24px 0 12px;
+	@include oGridRespondTo(L) {
+		padding: 24px 74px 12px;
+	}
+}
+
+.invite-colleagues__inner--strong {
+	@include oTypographySansBold($scale: 3);
+}
+
+.invite-colleagues__copy-outer {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	flex-grow: 0;
+	flex-wrap: wrap;
+
+	@include oGridRespondTo(S) {
+		flex-wrap: nowrap;
+	}
+
+	.invite-colleagues__copy-input {
+		max-width: 450px;
+	}
+
+	&.copy-success {
+		.invite-colleagues__copy-input {
+			&::after {
+				@include oIconsGetIcon('tick', getColor('jade'), 24);
+				color: getColor('jade');
+				width: auto;
+				height: 35px;
+				line-height: 35px;
+				background-color: getColor('white');
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				transform: translateY(-50%);
+				padding-left: 70px;
+				@include oGridRespondTo(S) {
+					@include oTypographySansBold($scale: 0, $line-height: 35px);
+					content: 'Copied';
+				}
+			}
+		}
+
+		.invite-colleagues__copy-link {
+			border-color: getColor('jade');
+		}
+	}
+}
+
+.invite-colleagues__copy-input {
+	display: flex;
+	flex-grow: 1;
+	position: relative;
+
+	&::after {
+		content: "";
+		width: auto;
+		height: 35px;
+		line-height: 35px;
+		background: linear-gradient(to left, getColor('white'), transparent);
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 1px;
+		transform: translateY(-50%);
+		padding-left: 60px;
+	}
+}
+
+.invite-colleagues__copy-link {
+	@include oTypographySans($scale: 0);
+	position: relative;
+	color: getColor('black-30');
+	background: getColor('white');
+	border: 1px solid;
+	border-right-width: 0;
+	margin: 12px 0;
+	min-height: 40px;
+	min-width: 200px;
+	padding-left: 8px;
+	text-align: left;
+	flex-grow: 2;
+
+	@include oGridRespondTo(L) {
+		width: 100%;
+	}
+
+	.enhanced & {
+		border-right-width: 1px;
+	}
+}
+
+.invite-colleagues__copy-text {
+	@include oTypographySansBold($scale: 0);
+	background: getColor('white');
+	border: 1px solid getColor('black-30');
+	border-left: 0;
+	color: getColor('black-80');
+	display: inline-block;
+	padding: 11px 20px;
+	margin: 12px 0;
+
+	.enhanced & {
+		display: none;
+	}
+}
+
+.invite-colleagues__copy-link-button {
+	@include oButtons($size: big, $theme: primary);
+	display: none;
+	position: relative;
+	margin: 12px 0;
+
+	.enhanced & {
+		display: inline-block;
+	}
+
+	&::before {
+		content: "Copy link";
+		@include oGridRespondTo(XL) {
+			content: "Copy link and share";
+		}
+	}
+}
+
+.invite-colleagues__copy-text,
+.invite-colleagues__copy-link-button {
+	flex-grow: 0;
+	@include oGridRespondTo(S, L) {
+		flex-grow: 0;
+	}
+}
+
+.invite-colleagues__share {
+	@include oTypographySans($scale: 0);
+	display: flex;
+	justify-content: center;
+	margin: 12px 0;
+}
+
+.invite-colleagues__share-text {
+	padding: 10px 12px 10px 0;
+}
+
+.invite-colleagues-banner__wrapper {
+	.invite-colleagues__copy-link-button {
+		@include oButtonsTheme(inverse);
+		background-color: getColor('black');
+		color: getColor('white');
+		border: getColor('black');
+		@include oGridRespondTo($until: M) {
+			margin-bottom: 12px;
+		}
+	}
+
+	.n-messaging-banner__inner.invite-colleagues-banner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.n-messaging-banner__content {
+		&.invite-colleagues-banner__intro {
+			flex-basis: 100%;
+			text-align: center;
+			@include oGridRespondTo(L) {
+				flex: 2;
+				text-align: left;
+			}
+		}
+
+		&.invite-colleagues-banner__copy {
+			flex-basis: 100%;
+			@include oGridRespondTo(L) {
+				flex: 2;
+				padding-right: 0;
+			}
+		}
+
+		&.invite-colleagues-banner__share {
+			flex-basis: 100%;
+			@include oGridRespondTo(L) {
+				flex: 1;
+				padding-left: 0;
+			}
+		}
+
+		& .invite-colleagues__inner--strong {
+			@include oTypographySansBold($scale: 2);
+		}
+
+	}
+}

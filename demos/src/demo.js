@@ -1,5 +1,5 @@
 const oTracking = require('o-tracking');
-const { nMessagingClient } = require('../../main');
+const { nMessagingClient } = require('../../main-client');
 
 document.documentElement.classList.add('js', 'enhanced');
 

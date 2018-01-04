@@ -10,7 +10,7 @@ const messageSlotBottomTests = messageSlotBottomVariants.map(v => {
 		urls: {
 			[`/messageSlotBottom-${v}`]: 200 // url is irrelevant mainly to help debug
 		}
-	}
+	};
 });
 
 module.exports = messageSlotBottomTests;
