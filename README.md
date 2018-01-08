@@ -104,6 +104,8 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - You can now add your new variant config within `n-messaging-client` in the [`manifest.js`](https://github.com/Financial-Times/n-messaging-client/blob/master/manifest.js).
 - Add the relevant templates, css and js to this component (`n-messaging-client`).
 - If your new message variant is `client` (aka lazy / async) then you will need to set up a new matcher on `next-messaging-guru`(tbc).
+- Build and test your new variant with `make demo`
+- Ship your changes by versioning this component and updating the relevant apps (`next-article` etc.)(`n-ui` dependants (tbc)) to pull it in
 
 
 ## The Problem
