@@ -89,6 +89,11 @@ And finally import and initialise the client side component via your main js ent
 import { nMessagingClient } from 'n-messaging-client';
 nMessagingClient.init();
 ```
+# Development
+
+## Running locally
+
+`make install`. `make demo`. -> http://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used).
 
 ## Configuring Messages
 
