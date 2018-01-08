@@ -119,17 +119,19 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 
 ## The Problem
 - Too many messages shown to the user at the same time
-- No context or hollistic view of what messages to show on a page (conflicting / overlapping)
+- No context or holistic view of what messages to show on a page (conflicting / overlapping)
 - No priority or hierarchy to messages
 - Fickle Cookie / session based tracking of message interactions (view, close, act) which must be duplicated each time
 - No consistent tracking / validation of message interactions
-- No oversight of new messages that are added and how they fit into the hollistic view
+- No oversight of new messages that are added and how they fit into the holistic view
 - No consistency in design and behaviour
 
 ## The Solution
 
 
 ## Overview
+
+### Holistic Messaging Flow
 
 ![next-messaging - flow overview](https://user-images.githubusercontent.com/660635/34673188-45e2193a-f479-11e7-8c80-69ca88a9e8d1.png)
 
