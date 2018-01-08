@@ -4,6 +4,11 @@
 
 _Currently in active development / testing._
 
+**Todo**
+- The "top" message slot, aka service messages
+- `next-messaging-guru` api aka async message configuration
+- port over existing messages
+
 # Usage
 
 The easiest way to enable client side messaging for an application is via the `n-ui` config (TBC).
