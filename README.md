@@ -13,4 +13,7 @@ _Currently in active development / testing._
 
 ## Overview
 
+![next-messaging - flow overview](https://user-images.githubusercontent.com/660635/34673188-45e2193a-f479-11e7-8c80-69ca88a9e8d1.png)
+
+  
 
