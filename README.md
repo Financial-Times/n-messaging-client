@@ -60,8 +60,13 @@ nMessagingClient.init();
 ```
 
 ## The Problem
-
-
+- Too many messages shown to the user at the same time
+- No context or hollistic view of what messages to show on a page (conflicting / overlapping)
+- No priority or hierarchy to messages
+- Fickle Cookie / session based tracking of message interactions (view, close, act) which must be duplicated each time
+- No consistent tracking / validation of message interactions
+- No oversight of new messages that are added and how they fit into the hollistic view
+- No consistency in design and behaviour
 
 ## The Solution
 
