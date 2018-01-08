@@ -8,6 +8,10 @@
 - [ ] The "top" message slot, aka service messages
 - [ ] `next-messaging-guru` api aka async message configuration
 - [ ] port over existing messages
+- [ ] unit tests
+- [ ] a11y tests for all messages
+- [x] a11y tests
+- [x] demo mode
 
 # Usage
 
