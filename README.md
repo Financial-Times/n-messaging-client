@@ -6,6 +6,9 @@ _Currently in active development / testing._
 
 # Usage
 
+The easiest way to enable client side messaging for an application is via the `n-ui` config (TBC).
+Alternatively you can import and initialise the component manually on a application level.
+
 ## Via `n-ui` (TBC)
 
 **This PR needs merging before this would work: https://github.com/Financial-Times/n-ui/pull/1143**
