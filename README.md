@@ -6,7 +6,30 @@ _Currently in active development / testing._
 
 # Usage
 
-### Application level
+## Via `n-ui` (TBC)
+
+**This PR needs merging before this would work: https://github.com/Financial-Times/n-ui/pull/1143**
+
+Enable the messaging feature in your app config via `n-ui`:
+
+```javascript
+// app.js
+
+const nUi = require('@financial-times/n-ui');
+const app = nUi({
+  withMessaging: true
+});
+
+app.locals.nUiConfig = {
+  preset: 'complete',
+  features: {
+    messaging: true
+  }
+};
+
+```
+
+## Application specific
 
 Install client side dependencies (css, js templates) via bower:
 
