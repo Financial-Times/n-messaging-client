@@ -4,6 +4,61 @@
 
 _Currently in active development / testing._
 
+# Usage
+
+### Application level
+
+Install client side dependencies (css, js templates) via bower:
+
+```bower install --save n-messaging-client```
+
+Install server side dependencies (handlebars presenter/helper) via npm:
+
+```npm install --save @financial-times/n-messaging-client```
+
+Add the handlebars helper to app config, you can do this via `n-ui` like so:
+
+```javascript
+// app.js
+
+const nUi = require('@financial-times/n-ui');
+const app = nUi({
+  systemCode: 'my-example-app',
+  helpers: {
+    nMessagingPresenter: require('@financial-times/n-messaging-client').presenter
+  }
+});
+```
+
+Now you can inject the message "slot" template in the relevant place in you markup (as close to the bottom of the `body` tag as possible):
+
+```html
+ <!-- wrapper.html -->
+
+<div>
+  <h1>My Example Page</h1>
+</div>
+
+{{> n-messaging-client/templates/slot type='bottom'}}
+```
+
+Import `n-messaging-client`'s styles to your main css entry:
+
+```scss
+/* main.scss */
+
+@import 'n-messaging-client/main';
+```
+
+And finally import and initialise the client side component via your main js entry:
+
+```javascript
+// main.js
+
+import { nMessagingClient } from 'n-messaging-client';
+nMessagingClient.init();
+```
+
 ## The Problem
 
 
