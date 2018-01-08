@@ -2,12 +2,12 @@
 
 **Lightweight, smart, targeted and behaviourally driven first party messaging on FT.com**
 
-_Currently in active development / testing._
+:construction: _Currently in active development / testing._
 
-**Todo**
-- The "top" message slot, aka service messages
-- `next-messaging-guru` api aka async message configuration
-- port over existing messages
+**Todo** :rocket:
+- [ ] The "top" message slot, aka service messages
+- [ ] `next-messaging-guru` api aka async message configuration
+- [ ] port over existing messages
 
 # Usage
 
