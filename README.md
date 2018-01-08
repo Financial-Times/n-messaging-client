@@ -1,6 +1,6 @@
 # n-messaging-client [![CircleCI](https://circleci.com/gh/Financial-Times/n-messaging-client.svg?style=svg&circle-token=309996b6bdbe638678ee73353626606adf61693b)](https://circleci.com/gh/Financial-Times/n-messaging-client)
 
-**Lightweight, smart, targeted and behaviourally driven first party messaging on FT.com**
+**Lightweight, consistent, smart, targeted and behaviourally driven first party messaging on FT.com**
 
 :construction: _Currently in active development / testing._
 
@@ -89,6 +89,22 @@ And finally import and initialise the client side component via your main js ent
 import { nMessagingClient } from 'n-messaging-client';
 nMessagingClient.init();
 ```
+
+## Configuring Messages
+
+### Viewing messages
+To view a message you can pick the relevant variant on toggler: https://toggler.ft.com/#messageSlotBottom
+
+### Configuration
+Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to pick (unlike the usual random % allocation).
+
+- Firstly you must update the relevant flag to have your new variant.
+- Secondly you must update the appropriate slot array in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/master/server/config/messaging.json) in `next-ammit-api` with your new message config. (If you want to test a message before releasing to the public, you could simply add the variant to the flag and hold off updating `messaging.json`).
+- Variants will not work until both the previous steps are met. 
+- You can now add your new variant config within `n-messaging-client` in the [`manifest.js`](https://github.com/Financial-Times/n-messaging-client/blob/master/manifest.js).
+- Add the relevant templates, css and js to this component (`n-messaging-client`).
+- If your new message variant is `client` (aka lazy / async) then you will need to set up a new matcher on `next-messaging-guru`(tbc).
+
 
 ## The Problem
 - Too many messages shown to the user at the same time
