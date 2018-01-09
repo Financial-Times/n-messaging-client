@@ -122,8 +122,9 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
 - The "top" message slot uses `n-alert`
 
+## Overview
 
-## The Problem
+### The Problem
 - Too many messages shown to the user at the same time
 - No context or holistic view of what messages to show on a page (conflicting / overlapping)
 - No priority or hierarchy to messages
@@ -132,7 +133,7 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - No oversight of new messages that are added and how they fit into the holistic view
 - No consistency in design and behaviour
 
-## The Solution
+### The Solution
 - Message hierarchy as decided by "The Brain(TM)" (`next-ammit-api`)
 - Consistent design and clear usage guidlines (`o-banner` and `n-alert`)
 - Simple integration to applications (`n-messaging-client`)
@@ -141,8 +142,6 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - Targeted user messaging from previous interactions, cohorts and behaviour ("The Brain(TM)" `next-ammit-api`)
 - Clear overview of all our first party messages, to whom they show, on what pages, and when (`messaging.json` in `next-ammit-api`)
 - No more message overload for our users! :tada:
-
-## Overview
 
 ### Parts of `n-messaging-client`
 
