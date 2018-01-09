@@ -141,7 +141,8 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 
 - **The Presenter**: A handlebars helper that is used within the main `slot.html` template. The presenter will interpret the users flags, load the relevant config from the `manifest` and populate a data object that is referenced by the handlebars templates.
 - **The Components**: The various message resources including: templates, js and css.
-- **The Client**: todo
+- **The Client js**: In addition to individual message js there is shared "interaction" and initialisation scripts. Interactions include "act", "view", "close, "skip" and these message events flow back into VoltDB for use by "The Brain(TM)"
+- **The Lazy Load js**: Client side code to load in and init async messages that require a client side call to `next-messaging-guru`
 
 ### Holistic Messaging Flow
 
