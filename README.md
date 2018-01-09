@@ -111,7 +111,7 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 
 - Firstly you must update the relevant flag to have your new variant.
 - Secondly you must update the appropriate slot array in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/master/server/config/messaging.json) in `next-ammit-api` with your new message config. (If you want to test a message before releasing to the public, you could simply add the variant to the flag and hold off updating `messaging.json`).
-- Variants will not work until both the previous steps are met. 
+- Variants will not work until both the previous steps are met.
 - You can now add your new variant config within `n-messaging-client` in the [`manifest.js`](https://github.com/Financial-Times/n-messaging-client/blob/master/manifest.js).
 - Add the relevant templates, css and js to this component (`n-messaging-client`).
 - If your new message variant is `client` (aka lazy / async) then you will need to set up a new matcher on `next-messaging-guru`(tbc).
@@ -154,5 +154,5 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 
 ![next-messaging - flow overview](https://user-images.githubusercontent.com/660635/34673188-45e2193a-f479-11e7-8c80-69ca88a9e8d1.png)
 
-  
+
 
