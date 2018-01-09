@@ -133,7 +133,14 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - No consistency in design and behaviour
 
 ## The Solution
-
+- Message hierarchy as decided by "The Brain(TM)" (`next-ammit-api`)
+- Consistent design and clear usage guidlines (`o-banner` and `n-alert`)
+- Simple integration to applications (`n-messaging-client`)
+- No conflicting messages on the page at once ("top" & "bottom" slots)
+- Standardised, user based and persistent interaction event tracking (`n-messaging-client`, VoltDB & `next-ammit-api`)
+- Targeted user messaging from previous interactions, cohorts and behaviour ("The Brain(TM)" `next-ammit-api`)
+- Clear overview of all our first party messages, to whom they show, on what pages, and when (`messaging.json` in `next-ammit-api`)
+- No more message overload for our users! :tada:
 
 ## Overview
 
