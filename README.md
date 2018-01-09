@@ -2,7 +2,7 @@
 
 **Lightweight, consistent, smart, targeted and behaviourally driven first party messaging on FT.com**
 
-:construction: _Currently in active development / testing._
+:construction: _Currently in active development / testing._ :construction:
 
 **Todo** :rocket:
 - [ ] The "top" message slot, aka service messages
@@ -97,7 +97,9 @@ nMessagingClient.init();
 
 ## Running locally
 
-`make install`. `make demo`. -> http://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used).
+- `make install`
+- `make demo`
+-  visit http://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used).
 
 ## Configuring Messages
 
@@ -116,6 +118,10 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - Build and test your new variant with `make demo`
 - Ship your changes by versioning this component and updating the relevant apps (`next-article` etc.)(`n-ui` dependants (tbc)) to pull it in
 
+### Under the hood :wrench:
+- The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
+- The "top" message slot uses `n-alert`
+
 
 ## The Problem
 - Too many messages shown to the user at the same time
@@ -130,6 +136,12 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 
 
 ## Overview
+
+### Parts of `n-messaging-client`
+
+- **The Presenter**: A handlebars helper that is used within the main `slot.html` template. The presenter will interpret the users flags, load the relevant config from the `manifest` and populate a data object that is referenced by the handlebars templates.
+- **The Components**: The various message resources including: templates, js and css.
+- **The Client**: todo
 
 ### Holistic Messaging Flow
 
