@@ -12,7 +12,8 @@ module.exports = {
 				name: dataSet.nMessagingName,
 				id: dataSet.nMessagingId,
 				content: elm.querySelector('[data-n-messaging-component]'),
-				lazy: dataSet.nMessagingLazy === 'true'
+				lazy: dataSet.nMessagingLazy === 'true',
+				guruEndpoint: dataSet.nMessagingGuruEndpoint
 			};
 		});
 		if (messages.length > 0) {
@@ -22,11 +23,10 @@ module.exports = {
 	initialiseMessage (config) {
 		const render = this.renderHandler(config.position);
 		const customSetup = this.setupHandler(config.name);
-		const formatData = (conf) => ({ options: conf, customSetup });
+		const formatData = (res) => ({ config, guruResult: res, customSetup });
 		const getData = config.lazy
 			? fetchAsyncConfig(config)
-			: Promise.resolve(config);
-
+			: Promise.resolve(null);
 		return getData.then(formatData).then(render);
 	},
 	renderHandler (position) {

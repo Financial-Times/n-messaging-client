@@ -1,6 +1,10 @@
 <h1>Demo of n-messaging-client</h1>
 <p style="display:inline-block;">To see different messages set the relevant flag (<pre style="display:inline-block;">messageSlotBottom</pre> for now) variant via toggler.ft.com. Also make sure you do not have any over rides set via <pre style="display:inline-block;"></pre>FT-Flags</pre> header.</p>
 
-{{> n-messaging-client/templates/slot type='top'}}
+{{#if @root.guruEndpoint}}
+	<p><strong>Currently running against non production guru host: {{@root.guruEndpoint}}</strong></p>
+{{/if}}
 
-{{> n-messaging-client/templates/slot type='bottom'}}
+{{> n-messaging-client/templates/slot type='top' guru=@root.guruEndpoint }}
+
+{{> n-messaging-client/templates/slot type='bottom' guru=@root.guruEndpoint }}

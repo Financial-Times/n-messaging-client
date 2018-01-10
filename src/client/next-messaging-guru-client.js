@@ -1,34 +1,29 @@
-module.exports = function (params) {
-	// TODO: actually fetch this async from an api
-	// fetch from next-messaging-client
-	// include: 'same-origin'
-	// params: {
-	// 	messageName
-	// }
-	return new Promise((resolve) => {
-		setTimeout(() => {
-			resolve(Object.assign({}, {
-				theme: ['marketing', 'small'],
-				contentLong: `
-				<header class="n-messaging-banner__heading">
-					<h1>Your school has free access to FT.com, make the most of it!</h1>
-				</header>
-				<p>If you are 16-19 years old, create your own free account.</p>
-				<ul>
-					<li>Access FT from anywhere</li>
-					<li>Download the app for news on the go</li>
-					<li>Recieve the weekly schools newsletter</li>
-				</ul>
-				`,
-				contentShort: `
-				<header class="n-messaging-banner__heading">
-					<h1>Your school has free access to FT.com, make the most of it!</h1>
-				</header>
-				<p>If you are 16-19 years old, create your own free account.</p>
-				`,
-				buttonLabel: 'Activate subscription',
-				buttonUrl: '#try-button'
-			}, params));
-		}, 2000);
-	});
+module.exports = function ({ guruEndpoint='https://www.ft.com/__message', name }={}) {
+	const url = `${guruEndpoint}/${name}`;
+	const options = {
+		method: 'GET',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		},
+		credentials: 'same-origin' // todo: allow easier local guru testing as this won't work due to different ports
+	};
+	const responseContract = (json) => {
+		if (!json.skip && json.data && json.renderData) return true;
+		throw new Error('Bad response body');
+	};
+	return fetch(url, options)
+		.then(res => {
+			if (res.status === 200) return res.json();
+			res.text().then(txt => {
+				throw new Error(`Bad response status ${status}: ${txt}`)
+			});
+		})
+		.then(json => {
+			if (json.skip) return json;
+			return responseContract(json) && json;
+		})
+		.catch(() => {
+			return false;
+		});
 };

@@ -24,6 +24,7 @@ const app = module.exports = express({
 });
 
 app.get('/*', (req, res) => {
+	if (process.env.GURU_URL) res.locals.guruEndpoint = process.env.GURU_URL;
 	res.render('index',{ layout: 'wrapper', title: 'Demo' });
 });
 

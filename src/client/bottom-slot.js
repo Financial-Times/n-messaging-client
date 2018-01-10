@@ -4,16 +4,21 @@ const { messageEvent, listen } = require('./utils');
 const BANNER_CLASS = 'n-messaging-banner';
 const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
 
-module.exports = function ({ options={}, customSetup }) {
+module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let banner;
-	const generateEvent = messageEvent(options.id);
-	const declarativeElement = !options.lazy && options.content;
+	const generateEvent = config.id && messageEvent(config.id);
+	const declarativeElement = !config.lazy && config.content;
 	const defaults = { bannerClass: BANNER_CLASS, autoOpen: false };
 
 	if (declarativeElement) {
 		banner = new oBanner(declarativeElement, defaults);
+	} else if (guruResult && guruResult.renderData) {
+		banner = new oBanner(null, imperativeOptions(guruResult.renderData, defaults));
 	} else {
-		banner = new oBanner(null, imperativeOptions(options, defaults));
+		if (guruResult.skip && generateEvent) {
+			document.body.dispatchEvent(generateEvent('skip'));
+		}
+		return;
 	}
 
 	// attach event handlers

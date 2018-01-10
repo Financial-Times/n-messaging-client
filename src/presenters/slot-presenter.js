@@ -22,13 +22,14 @@ const resolvePartialPath = (path) => path && `n-messaging-client/templates/parti
 const getConfig = (position, flags) => {
 	const variant = flags(relevantFlag(position));
 	const isLazyLoad = regexpTest(CLIENT_SIDE_VARIANT_REGEXP)(variant);
-	const conf = getVariantConfig(isLazyLoad ? `${position}Lazy` : variant);
+	const conf = getVariantConfig(variant);
 	return Object.assign({}, conf,
 		{
 			variant,
 			position,
 			lazyLoad: isLazyLoad,
-			partial: resolvePartialPath(conf.partial)
+			partial: resolvePartialPath(conf.partial),
+			messageId: conf.messageId
 		}
 	);
 };
