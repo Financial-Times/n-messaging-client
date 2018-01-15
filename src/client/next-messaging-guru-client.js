@@ -15,7 +15,7 @@ module.exports = function ({ guruEndpoint='__message', name }={}) {
 		.then(res => {
 			if (res.status === 200) return res.json();
 			res.text().then(txt => {
-				throw new Error(`Bad response status ${status}: ${txt}`)
+				throw new Error(`Bad response status ${status}: ${txt}`);
 			});
 		})
 		.then(json => {

@@ -7,7 +7,7 @@ const request = require('request');
 	- process.env.GURU_HOST: proxy requests to defined GURU_HOST host
 	- TODO: process.env.MOCK_MODE: return mock responses from config file
 */
-module.exports = (host) => (req, res, next) => {
+module.exports = (host) => (req, res) => {
 	const method = req.method;
 	const headers = req.headers;
 	const url = host + req.url;
@@ -22,4 +22,4 @@ module.exports = (host) => (req, res, next) => {
 			console.log('proxy result STATUS=', proxyRes.statusCode);
 		})
 		.pipe(res);
-}
+};
