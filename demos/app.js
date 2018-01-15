@@ -25,10 +25,10 @@ const app = module.exports = express({
 });
 
 
-app.all('/__message/:id?', proxy(process.env.GURU_URL || 'https://www.ft.com'));
+app.all('/__message/:id?', proxy(process.env.GURU_HOST || 'https://www.ft.com'));
 
 app.get('/*', (req, res) => {
-	if (process.env.GURU_URL) res.locals.guruEndpoint = process.env.GURU_URL;
+	if (process.env.GURU_HOST) res.locals.guruEndpoint = process.env.GURU_HOST;
 	res.render('index',{ layout: 'wrapper', title: 'Demo' });
 });
 

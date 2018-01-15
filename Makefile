@@ -20,7 +20,7 @@ run:
 	@DEMO_MODE=true node demos/app
 
 demo-with-guru: demo-build
-	@GURU_URL=http://local.ft.com:3002 DEMO_MODE=true node demos/app
+	@GURU_HOST=http://local.ft.com:3002 DEMO_MODE=true node demos/app
 
 a11y: demo-build
 	@PA11Y=true DEMO_MODE=true node demos/app
