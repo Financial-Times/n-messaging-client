@@ -5,8 +5,7 @@
 			data-n-messaging-name="{{@nMessagingPresenter.data.variant}}"
 			data-n-messaging-id="{{@nMessagingPresenter.data.messageId}}"
 			data-n-messaging-lazy="{{@nMessagingPresenter.data.lazyLoad}}"
-			data-n-messaging-position="{{@nMessagingPresenter.data.position}}"
-			{{#if guru}} data-n-messaging-guru-endpoint='{{guru}}'{{/if}}>
+			data-n-messaging-position="{{@nMessagingPresenter.data.position}}">
 			{{>(lookup @nMessagingPresenter.data 'partial')}}
 		</div>
 	{{/if}}

@@ -12,8 +12,7 @@ module.exports = {
 				name: dataSet.nMessagingName,
 				id: dataSet.nMessagingId,
 				content: elm.querySelector('[data-n-messaging-component]'),
-				lazy: dataSet.nMessagingLazy === 'true',
-				guruEndpoint: dataSet.nMessagingGuruEndpoint
+				lazy: dataSet.nMessagingLazy === 'true'
 			};
 		});
 		if (messages.length > 0) {

@@ -1,12 +1,11 @@
-module.exports = function ({ guruEndpoint='https://www.ft.com/__message', name }={}) {
+module.exports = function ({ guruEndpoint='__message', name }={}) {
 	const url = `${guruEndpoint}/${name}`;
 	const options = {
 		method: 'GET',
 		headers: {
-			'Accept': 'application/json',
-			'Content-Type': 'application/json'
+			'Accept': 'application/json'
 		},
-		credentials: 'same-origin' // todo: allow easier local guru testing as this won't work due to different ports
+		credentials: 'same-origin'
 	};
 	const responseContract = (json) => {
 		if (!json.skip && json.data && json.renderData) return true;
