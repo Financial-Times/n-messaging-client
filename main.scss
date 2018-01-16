@@ -1,8 +1,9 @@
 @import 'o-banner/main';
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
 
+//ensure banner displays above other elements on page (e.g. imgs on article page)
 .n-messaging-banner {
-    z-index: 100; //ensure banner displays above other elements on page (e.g. imgs on article page)
+	z-index: 100;
 }
 
 @import './src/components/invite-colleagues/main';
