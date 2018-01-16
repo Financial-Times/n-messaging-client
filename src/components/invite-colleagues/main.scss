@@ -1,12 +1,12 @@
-@import 'o-buttons/main';
-@import 'o-colors/main';
-@import 'o-typography/main';
-@import 'o-share/main';
-@import 'o-grid/main';
-@include oShareBase(invite-colleagues);
-@include oShareActionIcon(facebook, invite-colleagues);
-@include oShareActionIcon(linkedin, invite-colleagues);
-@include oShareActionIcon(mail, invite-colleagues);
+@import "o-buttons/main";
+@import "o-colors/main";
+@import "o-typography/main";
+@import "o-share/main";
+@import "o-banner/main";
+@include oShareBase(o-share);
+@include oShareActionIcon(facebook, o-share);
+@include oShareActionIcon(linkedin, o-share);
+@include oShareActionIcon(mail, o-share);
 
 .invite-colleagues__outer {
 	background: getColor('wheat');
@@ -168,6 +168,11 @@
 }
 
 .invite-colleagues-banner__wrapper {
+
+	.o-banner.o-banner--marketing-secondary {
+		z-index: 100;
+	}
+
 	.invite-colleagues__copy-link-button {
 		@include oButtonsTheme(inverse);
 		background-color: getColor('black');
