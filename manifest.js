@@ -9,6 +9,6 @@ module.exports = {
 	},
 	b2bUpsellBanner: {
 		partial: 'bottom/desktop-app-banner',
-		messageId: '' //TODO
+		messageId: 'desktop-app-banner'
 	}
 };
