@@ -1,13 +1,13 @@
 module.exports = {
+	licenceJoinPromptSsiClient: { // name of flag variant
+		partial: 'bottom/lazy', // path to template
+		messageId: 'ssi-join-prompt'// id as specified in ammit-api
+	},
 	b2bUpsellBanner: {
 		partial: 'bottom/b2b-upsell',
 		messageId: 'b2c-invite-colleague-banner'
 	},
-	licenceJoinPromptSsiClient: {
-		partial: 'bottom/lazy',
-		messageId: 'ssi-join-prompt'
-	},
-	b2bUpsellBanner: {
+	desktopAppBanner: {
 		partial: 'bottom/desktop-app-banner',
 		messageId: 'desktop-app-banner'
 	}
