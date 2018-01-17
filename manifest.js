@@ -6,5 +6,9 @@ module.exports = {
 	licenceJoinPromptSsiClient: {
 		partial: 'bottom/lazy',
 		messageId: 'ssi-join-prompt'
+	},
+	b2bUpsellBanner: {
+		partial: 'bottom/desktop-app-banner',
+		messageId: '' //TODO
 	}
 };

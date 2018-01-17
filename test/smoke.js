@@ -1,5 +1,6 @@
 const messageSlotBottomVariants = [
-	'b2bUpsellBanner'
+	'b2bUpsellBanner',
+	'desktopAppBanner'
 ];
 
 const messageSlotBottomTests = messageSlotBottomVariants.map(v => {
