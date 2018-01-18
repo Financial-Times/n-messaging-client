@@ -1,5 +1,8 @@
 @import 'o-banner/main';
+@import 'n-alert-banner/main';
+
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
+@include nAlertBanner($class: 'n-alert-banner', $themes: 'all');
 
 //ensure banner displays above other elements on page (e.g. imgs on article page)
 .n-messaging-banner {
