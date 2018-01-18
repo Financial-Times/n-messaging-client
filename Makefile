@@ -29,6 +29,9 @@ a11y: demo-build
 test: verify
 	make smoke
 
+unit-test:
+	make smoke
+
 smoke:
 	export TEST_URL=http://localhost:5005; \
 	make a11y
