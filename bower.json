@@ -35,7 +35,8 @@
     "o-colors": "^4.1.5",
     "o-typography": "^5.4.2",
     "o-share": "^6.0.0",
-    "o-grid": "^4.3.6"
+    "o-grid": "^4.3.6",
+		"n-alert-banner": "^0.3.0"
   },
   "devDependencies": {
     "n-ui-foundations": "^3.0.0",
