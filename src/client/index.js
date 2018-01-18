@@ -1,4 +1,5 @@
 const fetchAsyncConfig = require('./next-messaging-guru-client');
+const topSlot = require('./top-slot');
 const bottomSlot = require('./bottom-slot');
 const components = require('../components');
 
@@ -29,6 +30,7 @@ module.exports = {
 		return getData.then(formatData).then(render);
 	},
 	renderHandler (position) {
+		if (position === 'top') return topSlot;
 		if (position === 'bottom') return bottomSlot;
 	},
 	setupHandler (name) {
