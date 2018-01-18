@@ -6,5 +6,9 @@ module.exports = {
 	licenceJoinPromptSsiClient: {
 		partial: 'bottom/lazy',
 		messageId: 'ssi-join-prompt'
+	},
+	paymentFailure: {
+		partial: 'bottom/payment-failure',
+		messageId: 'paymentFailure'
 	}
 };
