@@ -66,7 +66,7 @@ const app = nUi({
 });
 ```
 
-Now you can inject the message "slot" template in the relevant place in you markup (as close to the bottom of the `body` tag as possible):
+Now you can inject the message "slot" template in the relevant place in your markup (as close to the bottom of the `body` tag as possible):
 
 ```html
  <!-- wrapper.html -->
@@ -154,6 +154,3 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 ### Holistic Messaging Flow
 
 ![next-messaging - flow overview](https://user-images.githubusercontent.com/660635/34673188-45e2193a-f479-11e7-8c80-69ca88a9e8d1.png)
-
-
-
