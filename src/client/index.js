@@ -10,6 +10,7 @@ module.exports = {
 			return {
 				position: dataSet.nMessagingPosition,
 				name: dataSet.nMessagingName,
+				flag: dataSet.nMessagingFlag,
 				id: dataSet.nMessagingId,
 				content: elm.querySelector('[data-n-messaging-component]'),
 				lazy: dataSet.nMessagingLazy === 'true'

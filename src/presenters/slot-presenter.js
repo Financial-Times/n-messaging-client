@@ -27,6 +27,7 @@ const getConfig = (position, flags) => {
 		{
 			variant,
 			position,
+			flag: relevantFlag(position),
 			lazyLoad: isLazyLoad,
 			partial: resolvePartialPath(conf.partial),
 			messageId: conf.messageId
