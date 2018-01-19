@@ -4,7 +4,7 @@ const messages = [
 		slot: 'messageSlotBottom'
 	},
 	{
-		name: 'paymentFailureAlertBanner',
+		name: 'paymentFailure',
 		slot: 'messageSlotTop'
 	}
 ];

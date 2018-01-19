@@ -5,10 +5,10 @@ module.exports = {
 	},
 	licenceJoinPromptSsiClient: {
 		partial: 'bottom/lazy',
-		messageId: 'ssi-join-prompt'
+		messageId: 'licenceJoinPromptSsiClient'
 	},
-	paymentFailureAlertBanner: {
+	paymentFailure: {
 		partial: 'top/payment-failure',
-		messageId: 'payment-failure-alert-banner'
+		messageId: 'paymentFailure'
 	}
 };

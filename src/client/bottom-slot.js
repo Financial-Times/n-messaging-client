@@ -7,7 +7,7 @@ const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let banner;
-	const generateEvent = config.id && messageEvent(config.id);
+	const generateEvent = config.id && messageEvent({messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
 	const defaults = { bannerClass: BANNER_CLASS, autoOpen: false };
 

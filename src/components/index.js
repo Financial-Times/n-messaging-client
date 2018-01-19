@@ -3,5 +3,5 @@ const removeCloseButton = require('./remove-close-button');
 
 module.exports = {
 	b2bUpsellBanner: inviteColleagues,
-	paymentFailureAlertBanner: removeCloseButton
+	paymentFailure: removeCloseButton
 };
