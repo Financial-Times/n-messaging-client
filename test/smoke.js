@@ -1,16 +1,23 @@
-const messageSlotBottomVariants = [
-	'b2bUpsellBanner'
+const messages = [
+	{
+		name: 'b2bUpsellBanner',
+		slot: 'messageSlotBottom'
+	},
+	{
+		name: 'paymentFailureAlertBanner',
+		slot: 'messageSlotTop'
+	}
 ];
 
-const messageSlotBottomTests = messageSlotBottomVariants.map(v => {
+const messageSlotTests = messages.map(message => {
 	return {
 		headers: {
-			'FT-Flags': `messageSlotBottom:${v}`
+			'FT-Flags': `${message.slot}:${message.name}`
 		},
 		urls: {
-			[`/messageSlotBottom-${v}`]: 200 // url is irrelevant mainly to help debug
+			[`/${message.slot}-${message.name}`]: 200 // url is irrelevant mainly to help debug
 		}
 	};
 });
 
-module.exports = messageSlotBottomTests;
+module.exports = messageSlotTests;
