@@ -1,3 +1,4 @@
+import imperativeOptions from './lib/imperative-options';
 const oBanner = require('o-banner');
 const { messageEvent, listen } = require('./utils');
 
@@ -37,17 +38,3 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 };
-
-function imperativeOptions (opts, defaults) {
-	return {
-		autoOpen: opts.autoOpen || defaults.autoOpen,
-		bannerClass: opts.bannerClass || defaults.bannerClass,
-		theme: opts.theme,
-		contentLong: opts.contentLong,
-		contentShort: opts.contentShort,
-		buttonLabel: opts.buttonLabel,
-		buttonUrl: opts.buttonUrl,
-		linkLabel: opts.linkLabel,
-		linkUrl: opts.linkUrl
-	};
-}
