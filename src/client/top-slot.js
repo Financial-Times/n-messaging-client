@@ -10,7 +10,7 @@ module.exports = function ({ config={}, guruResult, customSetup }) {
 	let alertBanner;
 	const generateEvent = config.id && messageEvent(config.id);
 	const declarativeElement = !config.lazy && config.content;
-	const defaults = { alertBannerClass: ALERT_BANNER_CLASS, autoOpen: false }
+	const defaults = { alertBannerClass: ALERT_BANNER_CLASS, autoOpen: false };
 
 	if (declarativeElement) {
 		alertBanner = new nAlertBanner(declarativeElement, defaults);
