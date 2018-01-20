@@ -1,4 +1,3 @@
-import imperativeOptions from './lib/imperative-options';
 const nAlertBanner = require('n-alert-banner');
 const { messageEvent, listen } = require('./utils');
 
@@ -50,6 +49,6 @@ function imperativeOptions (opts, defaults) {
 		buttonLabel: opts.buttonLabel,
 		buttonUrl: opts.buttonUrl,
 		linkLabel: opts.linkLabel,
-		linkUrl: opts.linkUrl,
+		linkUrl: opts.linkUrl
 	};
 }

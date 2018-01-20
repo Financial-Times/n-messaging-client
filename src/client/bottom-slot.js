@@ -1,4 +1,3 @@
-import imperativeOptions from './lib/imperative-options';
 const oBanner = require('o-banner');
 const { messageEvent, listen } = require('./utils');
 
