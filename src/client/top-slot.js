@@ -1,7 +1,6 @@
 import imperativeOptions from './lib/imperative-options';
-
 const nAlertBanner = require('n-alert-banner');
-const {	messageEvent, listen } = require('./utils');
+const { messageEvent, listen } = require('./utils');
 
 const ALERT_BANNER_CLASS = 'n-alert-banner';
 const ALERT_ACTION_SELECTOR = '[data-n-messaging-alert-banner-action]';
@@ -39,3 +38,18 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 };
+
+function imperativeOptions (opts, defaults) {
+	return {
+		autoOpen: opts.autoOpen || defaults.autoOpen,
+		bannerClass: opts.bannerClass || defaults.bannerClass,
+		theme: opts.theme,
+		contentLongBold: opts.contentLongBold,
+		contentLong: opts.contentLong,
+		contentShort: opts.contentShort,
+		buttonLabel: opts.buttonLabel,
+		buttonUrl: opts.buttonUrl,
+		linkLabel: opts.linkLabel,
+		linkUrl: opts.linkUrl,
+	};
+}
