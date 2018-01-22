@@ -14,6 +14,12 @@
 - [x] a11y tests
 - [x] demo mode
 
+### Monitoring
+
+- [Messaging Grafana Board](http://grafana.ft.com/dashboard/db/next-messaging-guru?orgId=1)
+- [Messaging Beacon Board](https://beacon.ft.com/dashboard/messaging/)
+
+
 # Usage
 
 The easiest way to enable client side messaging for an application is via the `n-ui` config (TBC).
@@ -154,6 +160,3 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 ### Holistic Messaging Flow
 
 ![next-messaging - flow overview](https://user-images.githubusercontent.com/660635/34673188-45e2193a-f479-11e7-8c80-69ca88a9e8d1.png)
-
-
-
