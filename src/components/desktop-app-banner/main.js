@@ -44,5 +44,4 @@ module.exports = function customSetup (banner, done) {
 				submitBtn.disabled = false;
 			});
 	}
-
 };

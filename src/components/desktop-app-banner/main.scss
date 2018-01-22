@@ -15,12 +15,18 @@ $white: oColorsGetPaletteColor('white');
 }
 
 .n-app-banner__error-message {
+	margin-right: 28px;
 	p {
 		@include oTypographySans($scale: -1);
 		margin-top: 0;
 	}
 }
 
+button {
+	.has-sent & {
+		display: none;
+	}
+}
 .n-app-banner__success {
 	@include oTypographySans($scale: -1);
 	display: none;
