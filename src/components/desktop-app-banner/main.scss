@@ -1,16 +1,20 @@
 @import "o-colors/main";
-@import "o-forms/main";
 @import "o-icons/main";
 @import "o-typography/main";
 $teal: oColorsGetPaletteColor('teal');
 $white: oColorsGetPaletteColor('white');
 
-.n-app-banner__error-message {
-	@include oFormsMessage();
-	color: $white;
+.n-app-banner__device {
+	left: 90px;
+	margin-top: 95px;
 	position: absolute;
-	left: 20px;
-	top: 45px;
+}
+
+.n-messaging-banner__content-img {
+	margin-left: 194px;
+}
+
+.n-app-banner__error-message {
 	p {
 		@include oTypographySans($scale: -1);
 		margin-top: 0;
