@@ -3,13 +3,16 @@ const dispatchEvent = (event) => {
 };
 
 module.exports = {
-	messageEvent: function (messageId) {
+	messageEvent: function ({ messageId, position, flag, variant }={}) {
 		return function (action) {
 			return new CustomEvent('oTracking.event', {
 				detail: {
 					category: 'component',
 					action: action,
-					messaging: messageId
+					messaging: messageId,
+					messaging_position: position,
+					messaging_flag: flag,
+					messaging_variant: variant
 				},
 				bubbles: true
 			});
