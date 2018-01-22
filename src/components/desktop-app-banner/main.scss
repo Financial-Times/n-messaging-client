@@ -1,77 +1,9 @@
-@import "o-buttons/main";
 @import "o-colors/main";
 @import "o-forms/main";
 @import "o-icons/main";
 @import "o-typography/main";
 $teal: oColorsGetPaletteColor('teal');
 $white: oColorsGetPaletteColor('white');
-.n-app-banner {
-	@include oTypographySans($scale: 1);
-	background: $teal;
-	bottom: 0;
-	color: oColorsGetTextColor($teal);
-	display: none;
-	left: 0;
-	padding: 40px 0;
-	position: fixed;
-	transition: bottom 1s ease;
-	width: 100%;
-	z-index: 99;
-	@include oGridRespondTo(M) {
-		display: block;
-	}
-}
-
-.n-app-banner__container {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	height: 40px;
-}
-
-.n-app-banner__device {
-	left: 114px;
-	margin-top: -20px;
-	margin-bottom: -195px;
-	position: absolute;
-}
-
-.n-app-banner__strapline {
-	flex: 1;
-	padding-left: 214px;
-	.enhanced & {
-		padding-left: 214px;
-	}
-	p {
-		margin: 0;
-	}
-}
-
-.n-app-banner__app-link {
-	display: inline-block;
-	margin-left: 20px;
-}
-
-.n-app-banner__form {
-	align-items: center;
-	margin-bottom: 0;
-	margin-right: 20px;
-	position: relative;
-	@include oGridRespondTo(XL) {
-		margin-right: 0;
-	}
-}
-
-.n-app-banner__button {
-	@include oButtons($size: big, $theme: inverse);
-	margin-left: 20px;
-	@include oGridRespondTo(XL) {
-		margin-right: 114px;
-	}
-	.has-sent & {
-		display: none;
-	}
-}
 
 .n-app-banner__error-message {
 	@include oFormsMessage();
@@ -100,20 +32,5 @@ $white: oColorsGetPaletteColor('white');
 	}
 	.has-sent & {
 		display: block;
-	}
-}
-
-.n-app-banner__close {
-	@include oIconsGetIcon('cross', $white, 25, $iconset-version: 1);
-	display: none;
-	cursor: pointer;
-	position: absolute;
-	right: 0;
-	top: -25px;
-	.enhanced & {
-		display: block;
-	}
-	@include oGridRespondTo(XL) {
-		right: 0;
 	}
 }

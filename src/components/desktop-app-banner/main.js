@@ -1,13 +1,21 @@
 const { getCurrentLayout } = require('o-grid');
 
+const FORM_SELECTOR = '.js-n-app-banner-form';
+const SUBMIT_SELECTOR = '.js-n-app-banner-button';
+const ERROR_SELECTOR = '.js-n-app-banner-error-message';
+
 module.exports = function customSetup (banner, done) {
-	const form = banner.querySelector('.js-n-app-banner-form');
-	const submitBtn = banner.querySelector('.js-n-app-banner-button');
-	const errorMessage = banner.querySelector('.js-n-app-banner-error-message');
-	const wrapper = banner;
+	const form = banner.innerElement.querySelector(FORM_SELECTOR);
+	const submitBtn = banner.innerElement.querySelector(SUBMIT_SELECTOR);
+	const errorMessage = banner.innerElement.querySelector(ERROR_SELECTOR);
+
+	const wrapper = banner.innerElement;
 
 	if (isShowable()) {
 		form.addEventListener('submit', handleFormSubmit);
+		done();
+	} else {
+		done({ skip: true });
 	}
 
 	function handleFormSubmit (e) {
@@ -37,5 +45,4 @@ module.exports = function customSetup (banner, done) {
 			});
 	}
 
-	done();
 };

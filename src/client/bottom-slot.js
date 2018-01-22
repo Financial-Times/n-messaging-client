@@ -31,7 +31,13 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 	// show banner
 	if (customSetup) {
-		customSetup(banner, () => { banner.open(); });
+		customSetup(banner, ({ skip=false }={}) => {
+			if (skip) {
+				document.body.dispatchEvent(generateEvent('skip'));
+			} else {
+				banner.open();
+			}
+		});
 	} else {
 		banner.open();
 	}

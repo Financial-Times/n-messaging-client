@@ -1,6 +1,6 @@
-<div class="n-messaging-banner n-messaging-banner--closed" data-o-component="n-messaging-banner" data-n-messaging-component="">
-	<div class="n-messaging-banner__outer">
-		<div class="n-messaging-banner__inner" data-o-banner-inner="" data-n-messaging-banner-inner="">
+<div class="desktop-app-banner__wrapper">
+	{{#> n-messaging-client/templates/components/n-messaging-banner}}
+	<div class="n-messaging-banner__inner invite-colleagues-banner" data-o-banner-inner="" data-n-messaging-banner-inner="">
 
 			<!-- Content to display on larger screens -->
 			<div class="n-messaging-banner__content n-messaging-banner__content--long">
@@ -11,18 +11,20 @@
 			<div class="n-messaging-banner__content n-messaging-banner__content--short">
 				<p><strong>Read the FT app anywhere</strong>, even when you&rsquo;re offline.</p>
 			</div>
+
 			<!-- Button and link -->
 			<div class="n-messaging-banner__actions">
 				<form action="/email-app-links" method="POST" class="n-app-banner__form js-n-app-banner-form">
 					<span class="n-app-banner__success">
 						<strong>Thanks.</strong> We&rsquo;ve sent you a link to the FT app.
 					</span>
-					<button type="submit" class="n-app-banner__button js-n-app-banner-button">
-						Email me the link
-					</button>
+					<div class="n-messaging-banner__action">
+							<button type="submit" class="n-messaging-banner__button js-n-app-banner-button" data-n-messaging-banner-action="">Email me the link</button>
+						</div>
 					<div class="n-app-banner__error-message js-n-app-banner-error-message"></div>
 				</form>
 			</div>
-		</div>
+
 	</div>
+	{{/n-messaging-client/templates/components/n-messaging-banner}}
 </div>
