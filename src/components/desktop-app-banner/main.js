@@ -1,14 +1,9 @@
 const { getCurrentLayout } = require('o-grid');
 
-const FORM_SELECTOR = '.js-n-app-banner-form';
-const SUBMIT_SELECTOR = '.js-n-app-banner-button';
-const ERROR_SELECTOR = '.js-n-app-banner-error-message';
-
 module.exports = function customSetup (banner, done) {
-	const form = banner.innerElement.querySelector(FORM_SELECTOR);
-	const submitBtn = banner.innerElement.querySelector(SUBMIT_SELECTOR);
-	const errorMessage = banner.innerElement.querySelector(ERROR_SELECTOR);
-
+	const form = banner.querySelector('.js-n-app-banner-form');
+	const submitBtn = banner.querySelector('.js-n-app-banner-button');
+	const errorMessage = banner.querySelector('.js-n-app-banner-error-message');
 	const wrapper = banner.innerElement;
 
 	if (isShowable()) {
@@ -37,7 +32,7 @@ module.exports = function customSetup (banner, done) {
 				if (response.status !== 200) {
 					throw new Error('<strong>Oops!</strong> Please try again.');
 				}
-				wrapper.className += ' has-sent';
+				wrapper.classList.add('has-sent');
 			})
 			.catch((e) => {
 				errorMessage.innerHTML = `<p>${e.message}</p>`;
