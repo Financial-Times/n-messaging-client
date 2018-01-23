@@ -1,9 +1,9 @@
 const { getCurrentLayout } = require('o-grid');
 
 module.exports = function customSetup (banner, done) {
-	const form = banner.querySelector('.js-n-app-banner-form');
-	const submitBtn = banner.querySelector('.js-n-app-banner-button');
-	const errorMessage = banner.querySelector('.js-n-app-banner-error-message');
+	const form = banner.innerElement.querySelector('.js-n-app-banner-form');
+	const submitBtn = banner.innerElement.querySelector('.js-n-app-banner-button');
+	const errorMessage = banner.innerElement.querySelector('.js-n-app-banner-error-message');
 	const wrapper = banner.innerElement;
 
 	if (isShowable()) {

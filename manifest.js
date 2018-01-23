@@ -9,7 +9,7 @@ module.exports = {
 	},
 	desktopAppBanner: {
 		partial: 'bottom/desktop-app-banner',
-		messageId: 'desktop-app-banner'
+		messageId: 'desktopAppBanner'
 	},
 	licenceJoinPromptSsiClient: {
 		partial: 'bottom/lazy',
