@@ -24,13 +24,14 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	// attach event handlers
-	let actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
+	const actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
 	if (actions.length === 0) {
 		// if no actions specified in markup then default to adding it to the
 		// button element (this can happen when declared imperatively)
-		let buttonAction = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_BUTTON_SELECTOR);
-		let linkAction = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
-		actions = buttonAction ? buttonAction : linkAction;
+		actions = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_BUTTON_SELECTOR);
+		if (actions.length === 0) {
+			actions = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
+		}
 	}
 	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', generateEvent('close'));
 	listen(alertBanner.alertBannerElement, 'n.alertBannerOpen', generateEvent('view'));
@@ -40,7 +41,13 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 	//show alertBanner
 	if (customSetup) {
-		customSetup(alertBanner, () => { alertBanner.open(); });
+		customSetup(alertBanner, ({ skip=false }={}) => {
+			if (skip) {
+				document.body.dispatchEvent(generateEvent('skip'));
+			} else {
+				alertBanner.open();
+			}
+		});
 	} else {
 		alertBanner.open();
 	}

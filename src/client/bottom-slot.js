@@ -28,9 +28,10 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	if (actions.length === 0) {
 		// if no actions specified in markup then default to adding it to the
 		// button element (this can happen when declared imperatively)
-		let buttonAction = banner.innerElement.querySelectorAll(BANNER_BUTTON_SELECTOR);
-		let linkAction = banner.innerElement.querySelectorAll(BANNER_LINK_SELECTOR);
-		actions = buttonAction ? buttonAction : linkAction;
+		actions = banner.innerElement.querySelectorAll(BANNER_BUTTON_SELECTOR);
+		if (actions.length === 0) {
+			actions = banner.innerElement.querySelectorAll(BANNER_LINK_SELECTOR);
+		}
 	}
 	listen(banner.bannerElement, 'o.bannerClosed', generateEvent('close'));
 	listen(banner.bannerElement, 'o.bannerOpened', generateEvent('view'));
