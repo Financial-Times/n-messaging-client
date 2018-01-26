@@ -3,6 +3,8 @@ const { messageEvent, listen } = require('./utils');
 
 const ALERT_BANNER_CLASS = 'n-alert-banner';
 const ALERT_ACTION_SELECTOR = '[data-n-messaging-alert-banner-action]';
+const ALERT_BANNER_BUTTON_SELECTOR = '.n-alert-banner__button';
+const ALERT_BANNER_LINK_SELECTOR = '.n-alert-banner__link';
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let alertBanner;
@@ -22,7 +24,14 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	// attach event handlers
-	const actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
+	let actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
+	if (actions.length === 0) {
+		// if no actions specified in markup then default to adding it to the
+		// button element (this can happen when declared imperatively)
+		let buttonAction = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_BUTTON_SELECTOR);
+		let linkAction = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
+		actions = buttonAction ? buttonAction : linkAction;
+	}
 	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', generateEvent('close'));
 	listen(alertBanner.alertBannerElement, 'n.alertBannerOpen', generateEvent('view'));
 	if (actions && actions.length > 0) {
