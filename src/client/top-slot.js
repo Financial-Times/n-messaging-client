@@ -50,6 +50,7 @@ function imperativeOptions (opts, defaults) {
 		buttonUrl: opts.buttonUrl,
 		linkLabel: opts.linkLabel,
 		linkUrl: opts.linkUrl,
-		noCloseButton: opts.noCloseButton
+		closeButton: opts.closeButton,
+		attachToElement: opts.attachToElement
 	};
 }
