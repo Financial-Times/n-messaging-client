@@ -11,7 +11,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	const defaults = { alertBannerClass: ALERT_BANNER_CLASS, autoOpen: false };
 
 	if (declarativeElement) {
-		alertBanner = new nAlertBanner(declarativeElement, defaults);
+		alertBanner = new nAlertBanner(declarativeElement);
 	} else if (guruResult && guruResult.renderData) {
 		alertBanner = new nAlertBanner(null, imperativeOptions(guruResult.renderData, defaults));
 	} else {
