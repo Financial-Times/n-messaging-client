@@ -1,0 +1,25 @@
+<div class="n-alert-banner n-alert-banner--{{theme}}" data-n-component="n-alert-banner" data-n-messaging-component=""{{#if appendToElement}} data-n-alert-banner-append-to-element="{{appendToElement}}"{{/if}} data-n-alert-banner-close-button="{{#if closeButton}}{{closeButton}}{{else}}true{{/if}}">
+	<div class="n-alert-banner__outer">
+		<div class="n-alert-banner__inner" data-n-alert-banner-inner="">
+			{{#if contentLong}}
+			<!-- Content to display on larger screens -->
+				<div class="n-alert-banner__content n-alert-banner__content--long">
+					{{{contentLong}}}
+				</div>
+			{{/if}}
+			{{#if contentShort}}
+			<!-- Content to display on smaller screens -->
+				<div class="n-alert-banner__content n-alert-banner__content--short">
+					{{{contentShort}}}
+				</div>
+			{{/if}}
+			<div class="n-alert-banner__actions">
+				{{#if linkUrl}}
+					<div class="n-alert-banner__action--primary">
+						<a href={{linkUrl}} class="n-alert-banner__link" data-n-messaging-alert-banner-action="">{{linkLabel}}</a>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>

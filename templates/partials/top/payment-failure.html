@@ -1,17 +1,9 @@
-<div class="n-alert-banner n-alert-banner--error" data-n-component="n-alert-banner" data-n-messaging-component="" data-n-alert-banner-append-to-element="#site-navigation" data-n-alert-banner-close-button="false">
-	<div class="n-alert-banner__outer">
-		<div class="n-alert-banner__inner" data-n-alert-banner-inner="">
-			<div class="n-alert-banner__content n-alert-banner__content--long">
-				<p><b>Payment banner!</b> Please update your card details to continue your FT subscription.</p>
-			</div>
-			<div class="n-alert-banner__content n-alert-banner__content--short">
-				<p>Please update your card details.</p>
-			</div>
-			<div class="n-alert-banner__actions">
-				<div class="n-alert-banner__action--secondary">
-					<a href="https://myaccount.ft.com/payment/view" class="n-alert-banner__link" data-n-messaging-alert-banner-action="">My Account</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+{{> n-messaging-client/templates/components/n-alert-banner
+	theme='error'
+	contentLong='<p><b>Payment banner!</b> Please update your card details to continue your FT subscription.</p>'
+	contentShort='<p>Please update your card details.</p>'
+	linkUrl='https://myaccount.ft.com/payment/view'
+	linkLabel='My Account'
+	appendToElement='#site-navigation'
+	closeButton='false'
+}}
