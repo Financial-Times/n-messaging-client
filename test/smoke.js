@@ -3,6 +3,10 @@ const messages = [
 		name: 'b2bUpsellBanner',
 		slot: 'messageSlotBottom'
 	},
+  {
+		name: 'desktopAppBanner',
+		slot: 'messageSlotBottom'
+	},
 	{
 		name: 'paymentFailure',
 		slot: 'messageSlotTop'

@@ -1,0 +1,46 @@
+@import "o-icons/main";
+@import "o-colors/main";
+@import "o-typography/main";
+
+$white: oColorsGetPaletteColor('white');
+
+.n-app-banner__device {
+	left: 90px;
+	margin-top: 95px;
+	position: absolute;
+}
+
+.n-messaging-banner__content-img {
+	margin-left: 194px;
+}
+
+.n-app-banner__error-message {
+	margin-right: 28px;
+	p {
+		@include oTypographySans($scale: -1);
+		margin-top: 0;
+	}
+}
+
+button {
+	.has-sent & {
+		display: none;
+	}
+}
+.n-app-banner__success {
+	@include oTypographySans($scale: -1);
+	display: none;
+	padding-left: 25px;
+	position: relative;
+	&:before {
+		@include oIconsGetIcon('tick', $white, 25, $iconset-version: 1);
+		display: inline-block;
+		content: '';
+		left: 0;
+		position: absolute;
+		top: -5px;
+	}
+	.has-sent & {
+		display: block;
+	}
+}

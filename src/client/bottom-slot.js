@@ -3,6 +3,7 @@ const { messageEvent, listen } = require('./utils');
 
 const BANNER_CLASS = 'n-messaging-banner';
 const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
+const BANNER_BUTTON_SELECTOR = '.n-messaging-banner__button';
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let banner;
@@ -22,7 +23,12 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	// attach event handlers
-	const actions = banner.innerElement.querySelectorAll(BANNER_ACTION_SELECTOR);
+	let actions = banner.innerElement.querySelectorAll(BANNER_ACTION_SELECTOR);
+	if (actions.length === 0) {
+		// if no actions specified in markup then default to adding it to the
+		// button element (this can happen when declared imperatively)
+		actions = banner.innerElement.querySelectorAll(BANNER_BUTTON_SELECTOR);
+	}
 	listen(banner.bannerElement, 'o.bannerClosed', generateEvent('close'));
 	listen(banner.bannerElement, 'o.bannerOpened', generateEvent('view'));
 	if (actions && actions.length > 0) {
@@ -31,7 +37,13 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 	// show banner
 	if (customSetup) {
-		customSetup(banner, () => { banner.open(); });
+		customSetup(banner, ({ skip=false }={}) => {
+			if (skip) {
+				document.body.dispatchEvent(generateEvent('skip'));
+			} else {
+				banner.open();
+			}
+		});
 	} else {
 		banner.open();
 	}
