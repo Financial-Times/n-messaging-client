@@ -33,8 +33,9 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			actions = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
 		}
 	}
+
 	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', generateEvent('close'));
-	listen(alertBanner.alertBannerElement, 'n.alertBannerOpen', generateEvent('view'));
+	listen(alertBanner.alertBannerElement, 'n.alertBannerOpened', generateEvent('view'));
 	if (actions && actions.length > 0) {
 		actions.forEach((el) => { listen(el, 'click', generateEvent('act')); });
 	}
