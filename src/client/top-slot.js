@@ -24,7 +24,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	// attach event handlers
-	const actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
+	let actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
 	if (actions.length === 0) {
 		// if no actions specified in markup then default to adding it to the
 		// button element (this can happen when declared imperatively)
