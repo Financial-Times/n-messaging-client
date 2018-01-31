@@ -100,6 +100,15 @@ And finally import and initialise the client side component via your main js ent
 import { nMessagingClient } from 'n-messaging-client';
 nMessagingClient.init();
 ```
+
+note: optionally you may only want to init if the a message flag is on the page
+```javascript
+if ( flags.get('messageSlotBottom') || flags.get('messageSlotTop') ) {
+  nMessagingClient.init();
+}
+```
+
+
 # Development
 
 ## Running locally
