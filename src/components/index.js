@@ -3,5 +3,5 @@ const appBanner = require('./desktop-app-banner/main');
 
 module.exports = {
 	b2bUpsellBanner: inviteColleagues,
-	desktopAppBanner: appBanner
+	appPromotingBanner: appBanner
 };
