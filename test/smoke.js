@@ -4,7 +4,7 @@ const messages = [
 		slot: 'messageSlotBottom'
 	},
 	{
-		name: 'desktopAppBanner',
+		name: 'appPromotingBanner',
 		slot: 'messageSlotBottom'
 	},
 	{
