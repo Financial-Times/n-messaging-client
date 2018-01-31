@@ -36,7 +36,7 @@
     "o-typography": "^5.4.2",
     "o-share": "^6.0.0",
     "o-grid": "^4.3.6",
-    "n-alert-banner": "^0.6.0",
+    "n-alert-banner": "^0.7.0",
     "o-icons": "^5.0.0"
   },
   "devDependencies": {
