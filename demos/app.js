@@ -24,13 +24,17 @@ const app = module.exports = express({
 	s3o: false
 });
 
+app.locals.origami = {
+	css: 'o-header@7.2.8',
+	js: 'o-header@7.2.8'
+};
 
 app.all('/__message/:id?', proxy(process.env.GURU_HOST || 'https://www.ft.com'));
 app.post('/email-app-links', (req, res) => {res.send(200);});
 
 app.get('/*', (req, res) => {
 	if (process.env.GURU_HOST) res.locals.guruEndpoint = process.env.GURU_HOST;
-	res.render('index',{ layout: 'wrapper', title: 'Demo' });
+	res.render('index',{ layout: 'vanilla', title: 'Demo' });
 });
 
 const PORT = process.env.PORT || 5005;
