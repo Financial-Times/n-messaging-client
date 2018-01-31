@@ -5,26 +5,31 @@
 	h1 {
 		padding-top: 20px;
 	}
+
 	p {
 		font-size: 16px;
 		display: inline-block;
 		line-height: 1.4;
 	}
-	p.explainer {
+
+	.explainer {
 		font-size: 18px;
 		font-weight: bold;
 	}
-	span.code {
+
+	.code {
 		display: inline-block;
 		background: #eff0f1;
-		border: 1px solid #ccc;
+		border: 1px solid #cccccc;
 		padding: 2px 5px;
 		border-radius: 3px;
 		font-size: 0.8;
 		font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
 	}
+
 	.ipsum {
 		padding-top: 30px;
-		border-top: 1px solid #ddd;
+		border-top: 1px solid #dddddd;
 	}
+
 }
