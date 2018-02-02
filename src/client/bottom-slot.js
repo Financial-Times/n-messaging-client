@@ -3,8 +3,8 @@ const { messageEvent, listen } = require('./utils');
 
 const BANNER_CLASS = 'n-messaging-banner';
 const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
-const BANNER_BUTTON_SELECTOR = '.n-messaging-banner__button';
-const BANNER_LINK_SELECTOR = '.n-messaging-banner__link';
+const BANNER_BUTTON_SELECTOR = `.${BANNER_CLASS}__button`;
+const BANNER_LINK_SELECTOR = `.${BANNER_CLASS}__link`;
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let banner;

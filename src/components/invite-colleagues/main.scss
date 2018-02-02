@@ -6,7 +6,7 @@
 @include oShareActionIcon(mail, invite-colleagues-o-share);
 
 .invite-colleagues__outer {
-	background: getColor('wheat');
+	background: oColorsGetPaletteColor('wheat');
 	text-align: center;
 }
 
@@ -44,12 +44,12 @@
 	&.copy-success {
 		.invite-colleagues__copy-input {
 			&::after {
-				@include oIconsGetIcon('tick', getColor('jade'), 24);
-				color: getColor('jade');
+				@include oIconsGetIcon('tick', oColorsGetPaletteColor('jade'), 24);
+				color: oColorsGetPaletteColor('jade');
 				width: auto;
 				height: 35px;
 				line-height: 35px;
-				background-color: getColor('white');
+				background-color: oColorsGetPaletteColor('white');
 				display: block;
 				position: absolute;
 				top: 50%;
@@ -64,7 +64,7 @@
 		}
 
 		.invite-colleagues__copy-link {
-			border-color: getColor('jade');
+			border-color: oColorsGetPaletteColor('jade');
 		}
 	}
 }
@@ -79,7 +79,7 @@
 		width: auto;
 		height: 35px;
 		line-height: 35px;
-		background: linear-gradient(to left, getColor('white'), transparent);
+		background: linear-gradient(to left, oColorsGetPaletteColor('white'), transparent);
 		display: block;
 		position: absolute;
 		top: 50%;
@@ -92,8 +92,8 @@
 .invite-colleagues__copy-link {
 	@include oTypographySans($scale: 0);
 	position: relative;
-	color: getColor('black-30');
-	background: getColor('white');
+	color: oColorsGetPaletteColor('black-30');
+	background: oColorsGetPaletteColor('white');
 	border: 1px solid;
 	border-right-width: 0;
 	margin: 12px 0;
@@ -114,10 +114,10 @@
 
 .invite-colleagues__copy-text {
 	@include oTypographySansBold($scale: 0);
-	background: getColor('white');
-	border: 1px solid getColor('black-30');
+	background: oColorsGetPaletteColor('white');
+	border: 1px solid oColorsGetPaletteColor('black-30');
 	border-left: 0;
-	color: getColor('black-80');
+	color: oColorsGetPaletteColor('black-80');
 	display: inline-block;
 	padding: 11px 20px;
 	margin: 12px 0;
@@ -163,9 +163,9 @@
 .invite-colleagues-banner__wrapper {
 	.invite-colleagues__copy-link-button {
 		@include oButtonsTheme(inverse);
-		background-color: getColor('black');
-		color: getColor('white');
-		border: getColor('black');
+		background-color: oColorsGetPaletteColor('black');
+		color: oColorsGetPaletteColor('white');
+		border: oColorsGetPaletteColor('black');
 		@include oGridRespondTo($until: M) {
 			margin-bottom: 12px;
 		}

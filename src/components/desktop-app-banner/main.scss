@@ -30,7 +30,7 @@ button {
 	position: relative;
 
 	&::before {
-		@include oIconsGetIcon('tick', getColor('white'), 25, $iconset-version: 1);
+		@include oIconsGetIcon('tick', oColorsGetPaletteColor('white'), 25, $iconset-version: 1);
 		display: inline-block;
 		content: '';
 		left: 0;
