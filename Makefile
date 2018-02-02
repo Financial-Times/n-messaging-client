@@ -14,10 +14,10 @@ demo-build: link-templates
 	@$(DONE)
 
 demo: demo-build
-	@DEMO_MODE=true node demos/app
+	@DEMO_MODE=true nodemon demos/app
 
 run:
-	@DEMO_MODE=true node demos/app
+	@DEMO_MODE=true nodemon demos/app
 
 demo-with-guru: demo-build
 	@GURU_HOST=http://local.ft.com:3002 DEMO_MODE=true node demos/app
