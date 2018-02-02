@@ -1,16 +1,20 @@
 .n-alert-banner--marketing-anon-subscribe {
 
   .n-alert-banner__actions {
-      height: 46px;
-      max-width: 740px;
-      padding-right: 310px;
-      margin: 0 auto 0 auto;
-      background: url('https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fproduct%2FPrintPackshot-2017-09-07_smallest.png?source=next') right bottom no-repeat;
-      background-size: auto 48px;
+    height: 46px;
+    max-width: 740px;
+    padding-right: 310px;
+    margin: 0 auto 0 auto;
+    background: url('https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fproduct%2FPrintPackshot-2017-09-07_smallest.png?source=next') right bottom no-repeat;
+    background-size: auto 48px;
   }
 
   .n-alert-banner__action {
     padding-right: 0px;
+  }
+
+  .n-alert-banner__actions--clickarea {
+    cursor: pointer;
   }
 
 }
