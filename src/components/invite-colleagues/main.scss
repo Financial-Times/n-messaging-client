@@ -1,12 +1,9 @@
-@import "o-buttons/main";
-@import "o-colors/main";
-@import "o-typography/main";
-@import "o-share/main";
-@import "o-banner/main";
-@include oShareBase(o-share);
-@include oShareActionIcon(facebook, o-share);
-@include oShareActionIcon(linkedin, o-share);
-@include oShareActionIcon(mail, o-share);
+@import 'o-share/main';
+
+@include oShareBase(invite-colleagues-o-share);
+@include oShareActionIcon(facebook, invite-colleagues-o-share);
+@include oShareActionIcon(linkedin, invite-colleagues-o-share);
+@include oShareActionIcon(mail, invite-colleagues-o-share);
 
 .invite-colleagues__outer {
 	background: getColor('wheat');
@@ -156,15 +153,11 @@
 	}
 }
 
-.invite-colleagues__share {
+.invite-colleagues__social {
 	@include oTypographySans($scale: 0);
 	display: flex;
 	justify-content: center;
 	margin: 12px 0;
-}
-
-.invite-colleagues__share-text {
-	padding: 10px 12px 10px 0;
 }
 
 .invite-colleagues-banner__wrapper {
@@ -201,7 +194,7 @@
 			}
 		}
 
-		&.invite-colleagues-banner__share {
+		&.invite-colleagues-banner__social {
 			flex-basis: 100%;
 			@include oGridRespondTo(L) {
 				flex: 1;
