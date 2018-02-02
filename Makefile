@@ -13,11 +13,15 @@ demo-build: link-templates
 	webpack --config demos/webpack.config.js
 	@$(DONE)
 
-demo: demo-build
-	@DEMO_MODE=true nodemon demos/app
+demo-build-watch: link-templates
+	webpack --watch --config demos/webpack.config.js &
+	@$(DONE)
+
+demo: demo-build-watch
+	@DEMO_MODE=true nodemon --ext html,css --watch public --watch templates demos/app.js
 
 run:
-	@DEMO_MODE=true nodemon demos/app
+	@DEMO_MODE=true node demos/app
 
 demo-with-guru: demo-build
 	@GURU_HOST=http://local.ft.com:3002 DEMO_MODE=true node demos/app

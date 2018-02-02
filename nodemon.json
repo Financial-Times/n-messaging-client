@@ -1,6 +1,0 @@
-{
-  "watch": ["src/**/*.*", "templates/**/*.*", "demos/**/*.*"],
-  "events": {
-    "exit": "make build-demo"
-  }
-}
