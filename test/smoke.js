@@ -10,6 +10,10 @@ const messages = [
 	{
 		name: 'paymentFailure',
 		slot: 'messageSlotTop'
+	},
+	{
+		name: 'anonSubscribeNow',
+		slot: 'messageSlotTop'
 	}
 ];
 
