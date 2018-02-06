@@ -34,7 +34,7 @@ test: verify
 	make smoke
 
 unit-test:
-	mocha ./src/**/*.spec.js
+	mocha --recursive
 
 smoke:
 	export TEST_URL=http://localhost:5005; \

@@ -1,7 +1,10 @@
+const MESSAGING_PRESENTER = '../../src/handlebars-helpers/nMessagingPresenter';
+const SLOT_PRESENTER = '../presenters/slot-presenter';
+
 const { expect } = require('chai');
 const sinon = require('sinon');
 const proxyquire = require('proxyquire');
-const nMessagingPresenter = require('./nMessagingPresenter');
+const nMessagingPresenter = require(MESSAGING_PRESENTER);
 
 describe('nMessagingPresenter', () => {
 	let context;
@@ -37,8 +40,8 @@ describe('nMessagingPresenter', () => {
 	});
 
 	it('should initalising the SlotPresenter if options has data', () => {
-		const proxyNMessagingPresenter = proxyquire('./nMessagingPresenter', {
-			'../presenters/slot-presenter': stub
+		const proxyNMessagingPresenter = proxyquire(MESSAGING_PRESENTER, {
+			[SLOT_PRESENTER]: stub
 		});
 		proxyNMessagingPresenter(context, options);
 		expect(stub.callCount).to.equal(1);
@@ -52,8 +55,8 @@ describe('nMessagingPresenter', () => {
 	});
 
 	it('should not initalise the SlotPresent if options has no data', () => {
-		const proxyNMessagingPresenter = proxyquire('./nMessagingPresenter', {
-			'../presenters/slot-presenter': stub
+		const proxyNMessagingPresenter = proxyquire(MESSAGING_PRESENTER, {
+			[SLOT_PRESENTER]: stub
 		});
 		delete options.data;
 		proxyNMessagingPresenter(context, options);
