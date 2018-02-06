@@ -14,5 +14,9 @@ module.exports = {
 	paymentFailure: {
 		partial: 'top/payment-failure',
 		messageId: 'paymentFailure'
+	},
+	anonSubscribeNow: {
+		partial: 'top/anon-subscribe-now-teal',
+		messageId: 'anonSubscribeNow',
 	}
 };
