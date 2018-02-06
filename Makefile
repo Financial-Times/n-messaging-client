@@ -31,7 +31,7 @@ a11y: demo-build
 	@$(DONE)
 
 test: verify
-	make smoke
+	make smoke unit-test
 
 unit-test:
 	mocha --recursive
