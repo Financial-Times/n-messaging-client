@@ -1,0 +1,31 @@
+.n-alert-banner--marketing-anon-subscribe {
+	display: none;
+	@include oGridRespondTo('M') {
+		display: block;
+	}
+	.n-alert-banner__outer {
+		height: 56px;
+	}
+	.n-alert-banner__inner {
+		display: table;
+	}
+	.n-alert-banner__actions {
+		height: 56px;
+		max-width: 740px;
+		padding-right: 310px;
+		margin: 0 auto;
+		background: url('https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fproduct%2FPrintPackshot-2017-09-07_smallest.png?source=next') right bottom no-repeat;
+		background-size: auto 48px;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.n-alert-banner__action {
+		padding-right: 0;
+	}
+	.n-alert-banner__button {
+		line-height: 14px;
+	}
+	.n-alert-banner__actions--clickarea {
+		cursor: pointer;
+	}
+}

@@ -1,4 +1,4 @@
-<div class="n-alert-banner n-alert-banner--closed n-alert-banner--{{theme}}" data-n-component="n-alert-banner" data-n-messaging-component=""{{#if appendToElement}} data-n-alert-banner-append-to-element="{{appendToElement}}"{{/if}} data-n-alert-banner-auto-open="false" data-n-alert-banner-close-button="{{#if closeButton}}{{closeButton}}{{else}}true{{/if}}">
+<div class="n-alert-banner n-alert-banner--closed n-alert-banner--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-n-component="n-alert-banner" data-n-messaging-component=""{{#if appendToElement}} data-n-alert-banner-append-to-element="{{appendToElement}}"{{/if}} data-n-alert-banner-auto-open="false" data-n-alert-banner-close-button="{{#if closeButton}}{{closeButton}}{{else}}true{{/if}}" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
 	<div class="n-alert-banner__outer">
 		<div class="o-grid-container n-alert-banner__inner" data-n-alert-banner-inner="">
 			{{#if contentLong}}
@@ -13,15 +13,15 @@
 					{{{contentShort}}}
 				</div>
 			{{/if}}
-			<div class="n-alert-banner__actions">
+			<div class="n-alert-banner__actions" {{#if customDataTrackableActions}}data-trackable="{{customDataTrackableActions}}"{{/if}}>
 				{{#if buttonUrl}}
 					<div class="n-alert-banner__action">
-						<a href="{{buttonUrl}}" class="n-alert-banner__button" data-n-messaging-banner-action="">{{buttonLabel}}</a>
+						<a href="{{buttonUrl}}" class="n-alert-banner__button" data-n-messaging-banner-action="" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
 					</div>
 				{{/if}}
 				{{#if linkUrl}}
 					<div class="n-alert-banner__action--secondary">
-						<a href={{linkUrl}} class="n-alert-banner__link" data-n-messaging-alert-banner-action="">{{linkLabel}}</a>
+						<a href={{linkUrl}} class="n-alert-banner__link" data-n-messaging-alert-banner-action="" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
 					</div>
 				{{/if}}
 			</div>

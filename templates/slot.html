@@ -6,7 +6,8 @@
 			data-n-messaging-flag="{{@nMessagingPresenter.data.flag}}"
 			data-n-messaging-id="{{@nMessagingPresenter.data.messageId}}"
 			data-n-messaging-lazy="{{@nMessagingPresenter.data.lazyLoad}}"
-			data-n-messaging-position="{{@nMessagingPresenter.data.position}}">
+			data-n-messaging-position="{{@nMessagingPresenter.data.position}}"
+			data-trackable="onsite-message-{{@nMessagingPresenter.data.variant}}">
 			{{>(lookup @nMessagingPresenter.data 'partial')}}
 		</div>
 	{{/if}}
