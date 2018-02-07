@@ -18,7 +18,13 @@ module.exports = {
 			};
 		});
 		if (messages.length > 0) {
-			Promise.all(messages.map(msg => this.initialiseMessage(msg))).catch(this.handleError);
+			Promise.all(messages.map(msg => this.initialiseMessage(msg)))
+				.then(() => {
+					// to stop unstyled content flash and banner jumping a n-ui-hide class is added to the slot
+					// removing this class so that banners are displayed if open
+					slots.forEach(el => el.classList.remove('n-ui-hide'));
+				})
+				.catch(this.handleError);
 		}
 	},
 	initialiseMessage (config) {
