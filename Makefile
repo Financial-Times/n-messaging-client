@@ -31,10 +31,10 @@ a11y: demo-build
 	@$(DONE)
 
 test: verify
-	make smoke
+	make smoke unit-test
 
 unit-test:
-	make smoke
+	mocha --recursive
 
 smoke:
 	export TEST_URL=http://localhost:5005; \
