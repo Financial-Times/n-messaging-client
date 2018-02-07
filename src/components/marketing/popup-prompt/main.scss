@@ -1,0 +1,10 @@
+$o-banner-is-silent: false;
+
+@import 'n-sliding-popup/main';
+@import 'o-banner/main';
+
+.n-sliding-popup.subscription-prompt {
+	border: 0;
+	box-shadow: none;
+	background: none;
+}

@@ -19,11 +19,10 @@
 - [Messaging Grafana Board](http://grafana.ft.com/dashboard/db/next-messaging-guru?orgId=1)
 - [Messaging Beacon Board](https://beacon.ft.com/dashboard/messaging/)
 
-
 # Usage
 
 The easiest way to enable client side messaging for an application is via the `n-ui` config (TBC).
-Alternatively you can import and initialise the component manually on a application level.
+Alternatively you can import and initialise the component manually on an application level.
 
 ## Via `n-ui` (TBC)
 
@@ -92,22 +91,22 @@ Import `n-messaging-client`'s styles to your main css entry:
 @import 'n-messaging-client/main';
 ```
 
-And finally import and initialise the client side component via your main js entry:
+And finally import and initialise the client side component via your main js entry, making sure to pass in the flags:
 
 ```javascript
 // main.js
 
 import { nMessagingClient } from 'n-messaging-client';
-nMessagingClient.init();
+nMessagingClient.init(window.FT.flags);
 ```
 
-note: optionally you may only want to init if a message flag is on the page
+Note: optionally you may only want to init if a message flag is on the page
+
 ```javascript
-if ( flags.get('messageSlotBottom') || flags.get('messageSlotTop') ) {
-  nMessagingClient.init();
+if ( window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop ) {
+  nMessagingClient.init(window.FT.flags);
 }
 ```
-
 
 # Development
 
@@ -120,10 +119,12 @@ if ( flags.get('messageSlotBottom') || flags.get('messageSlotTop') ) {
 ## Configuring Messages
 
 ### Viewing messages
-To view a message you can pick the relevant variant on toggler: https://toggler.ft.com/#messageSlotBottom
+
+To view a message you can pick the relevant variant on toggler: [messageSlotBottom](https://toggler.ft.com/#messageSlotBottom) / [messageSlotTop](https://toggler.ft.com/#messageSlotTop)
 
 ### Configuration
-Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to pick (unlike the usual random % allocation).
+
+Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pick (unlike the usual random % allocation).
 
 - Firstly you must update the relevant flag to have your new variant.
 - Secondly you must update the appropriate slot array in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/master/server/config/messaging.json) in `next-ammit-api` with your new message config. (If you want to test a message before releasing to the public, you could simply add the variant to the flag and hold off updating `messaging.json`).
@@ -135,12 +136,14 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - Ship your changes by versioning this component and updating the relevant apps (`next-article` etc.)(`n-ui` dependants (tbc)) to pull it in
 
 ### Under the hood :wrench:
+
 - The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
 - The "top" message slot uses [`n-alert-banner`](https://github.com/Financial-Times/n-alert-banner)
 
 ## Overview
 
 ### The Problem
+
 - Too many messages shown to the user at the same time
 - No context or holistic view of what messages to show on a page (conflicting / overlapping)
 - No priority or hierarchy to messages
@@ -150,12 +153,13 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 - No consistency in design and behaviour
 
 ### The Solution
-- Message hierarchy as decided by "The Brain(TM)" (`next-ammit-api`)
+
+- Message hierarchy as decided by "The Brain™" (`next-ammit-api`)
 - Consistent design and clear usage guidlines (`o-banner` and `n-alert-banner`)
 - Simple integration to applications (`n-messaging-client`)
 - No conflicting messages on the page at once ("top" & "bottom" slots)
 - Standardised, user based and persistent interaction event tracking (`n-messaging-client`, VoltDB & `next-ammit-api`)
-- Targeted user messaging from previous interactions, cohorts and behaviour ("The Brain(TM)" `next-ammit-api`)
+- Targeted user messaging from previous interactions, cohorts and behaviour ("The Brain™" `next-ammit-api`)
 - Clear overview of all our first party messages, to whom they show, on what pages, and when (`messaging.json` in `next-ammit-api`)
 - No more message overload for our users! :tada:
 
@@ -163,7 +167,7 @@ Messaging slot ammit "flags" use "Brain (TM)" logic to decide which variant to p
 
 - **The Presenter**: A handlebars helper that is used within the main `slot.html` template. The presenter will interpret the users flags, load the relevant config from the `manifest` and populate a data object that is referenced by the handlebars templates.
 - **The Components**: The various message resources including: templates, js and css.
-- **The Client js**: In addition to individual message js there is shared "interaction" and initialisation scripts. Interactions include "act", "view", "close, "skip" and these message events flow back into VoltDB for use by "The Brain(TM)"
+- **The Client js**: In addition to individual message js there is shared "interaction" and initialisation scripts. Interactions include "act", "view", "close, "skip" and these message events flow back into VoltDB for use by "The Brain™"
 - **The Lazy Load js**: Client side code to load in and init async messages that require a client side call to [`next-messaging-guru`](https://github.com/Financial-Times/next-messaging-guru)
 
 ### Holistic Messaging Flow

@@ -3,8 +3,11 @@ const topSlot = require('./top-slot');
 const bottomSlot = require('./bottom-slot');
 const components = require('../components');
 
+let _flags;
+
 module.exports = {
-	init: function () {
+	init: function (flags) {
+		_flags = flags;
 		const slots = document.querySelectorAll('[data-n-messaging-slot]');
 		const messages = slots && Array.prototype.slice.call(slots).map(elm => {
 			const dataSet = elm.dataset || {};
@@ -32,7 +35,7 @@ module.exports = {
 	},
 	renderHandler (position) {
 		if (position === 'top') return topSlot;
-		if (position === 'bottom') return bottomSlot;
+		if (position === 'bottom') return bottomSlot.bind(this, _flags);
 	},
 	setupHandler (name) {
 		return components.hasOwnProperty(name) && components[name];

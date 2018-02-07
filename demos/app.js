@@ -31,6 +31,7 @@ app.locals.origami = {
 
 app.all('/__message/:id?', proxy(process.env.GURU_HOST || 'https://www.ft.com'));
 app.post('/email-app-links', (req, res) => {res.sendStatus(200);});
+app.get('/country', (req, res) => { res.json('"GBR"'); });
 
 app.get('/*', (req, res) => {
 	if (process.env.GURU_HOST) res.locals.guruEndpoint = process.env.GURU_HOST;

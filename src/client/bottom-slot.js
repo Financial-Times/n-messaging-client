@@ -6,7 +6,7 @@ const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
 const BANNER_BUTTON_SELECTOR = '.n-messaging-banner__button';
 const BANNER_LINK_SELECTOR = '.n-messaging-banner__link';
 
-module.exports = function ({ config={}, guruResult, customSetup }={}) {
+module.exports = function (flags, { config={}, guruResult, customSetup }={}) {
 	let banner;
 	const generateEvent = config.id && messageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
@@ -41,7 +41,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 	// show banner
 	if (customSetup) {
-		customSetup(banner, ({ skip=false }={}) => {
+		customSetup(banner, flags, ({ skip=false }={}) => {
 			if (skip) {
 				document.body.dispatchEvent(generateEvent('skip'));
 			} else {

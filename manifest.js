@@ -18,5 +18,9 @@ module.exports = {
 	anonSubscribeNow: {
 		partial: 'top/anon-subscribe-now-teal',
 		messageId: 'anonSubscribeNow',
+	},
+	marketingPopupPrompt: {
+		partial: 'bottom/marketing-popup-prompt',
+		messageId: 'marketingPopupPrompt'
 	}
 };
