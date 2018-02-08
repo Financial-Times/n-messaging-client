@@ -1,5 +1,5 @@
-module.exports = function ({ guruEndpoint='/__message', name }={}) {
-	const url = `${guruEndpoint}/${name}`;
+module.exports = function ({ guruEndpoint='/__message', name, guruQueryString }={}) {
+	const url = `${guruEndpoint}/${name}${guruQueryString ? '?' + guruQueryString : ''}`;
 	const options = {
 		method: 'GET',
 		headers: {

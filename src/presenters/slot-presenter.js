@@ -3,12 +3,11 @@ const MANIFEST = require('../../manifest');
 
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
 const TOP_SLOT_FLAG = 'messageSlotTop';
-const CLIENT_SIDE_VARIANT_REGEXP = /Client$/;
+const LAZY_REGEXP = /\/lazy$/;
 const TOP_TYPE = 'top';
 const BOTTOM_TYPE = 'bottom';
 
 const parseFlagsObject = (flags) => (key) => flags && flags.hasOwnProperty(key) && flags[key];
-const regexpTest = (regexp) => (val) => regexp.test(val);
 const dataTypeContract = (type) => [TOP_TYPE, BOTTOM_TYPE].includes(type);
 const relevantFlag = (type) => {
 	return {
@@ -21,16 +20,16 @@ const resolvePartialPath = (path) => path && `n-messaging-client/templates/parti
 
 const getConfig = (position, flags) => {
 	const variant = flags(relevantFlag(position));
-	const isLazyLoad = regexpTest(CLIENT_SIDE_VARIANT_REGEXP)(variant);
 	const conf = getVariantConfig(variant);
 	return Object.assign({}, conf,
 		{
 			variant,
 			position,
 			flag: relevantFlag(position),
-			lazyLoad: isLazyLoad,
+			lazyLoad: LAZY_REGEXP.test(conf.partial),
 			partial: resolvePartialPath(conf.partial),
-			messageId: conf.messageId
+			messageId: conf.messageId,
+			guruQueryString: conf.guruQueryString
 		}
 	);
 };

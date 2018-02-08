@@ -18,5 +18,10 @@ module.exports = {
 	anonSubscribeNow: {
 		partial: 'top/anon-subscribe-now-teal',
 		messageId: 'anonSubscribeNow',
+	},
+	marketingPopupPrompt: {
+		partial: 'bottom/lazy',
+		messageId: 'marketingPopupPrompt',
+		guruQueryString: 'offerId=c1773439-53dc-df3d-9acc-20ce2ecde318'
 	}
 };
