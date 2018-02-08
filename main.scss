@@ -1,17 +1,33 @@
+@import "o-buttons/main";
 @import "o-colors/main";
+@import "o-grid/main";
 @import "o-icons/main";
 @import "o-typography/main";
-@import "o-buttons/main";
 
-@import 'o-banner/main';
 @import 'n-alert-banner/main';
+@import 'o-banner/main';
+
+@include oFontsInclude(MetricWeb);
+@include oFontsInclude(MetricWeb, $weight: semibold);
 
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
 @include nAlertBanner($class: 'n-alert-banner', $themes: 'all');
 
-//ensure banner displays above other elements on page (e.g. imgs on article page)
+// ensure banner displays above other elements on page (e.g. imgs on article page)
 .n-messaging-banner {
 	z-index: 100;
+}
+
+// ensure the inner content of the banner is aligned to page content
+.n-alert-banner__inner {
+	@include oGridContainer();
+}
+
+// set font
+.n-alert-banner,
+.n-messaging-banner {
+	font-family: sans-serif;
+	font-size: 0.8125em;
 }
 
 @import './src/components/invite-colleagues/main';
