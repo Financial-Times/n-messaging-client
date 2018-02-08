@@ -1,9 +1,3 @@
-@import "o-icons/main";
-@import "o-colors/main";
-@import "o-typography/main";
-
-$white: oColorsGetPaletteColor('white');
-
 .n-app-banner__device {
 	left: 90px;
 	margin-top: 95px;
@@ -36,7 +30,7 @@ button {
 	position: relative;
 
 	&::before {
-		@include oIconsGetIcon('tick', $white, 25, $iconset-version: 1);
+		@include oIconsGetIcon('tick', oColorsGetPaletteColor('white'), 25, $iconset-version: 1);
 		display: inline-block;
 		content: '';
 		left: 0;

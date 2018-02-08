@@ -14,7 +14,8 @@ module.exports = {
 				flag: dataSet.nMessagingFlag,
 				id: dataSet.nMessagingId,
 				content: elm.querySelector('[data-n-messaging-component]'),
-				lazy: dataSet.nMessagingLazy === 'true'
+				lazy: dataSet.nMessagingLazy === 'true',
+				guruQueryString: dataSet.nMessagingGuruQueryString
 			};
 		});
 		if (messages.length > 0) {
