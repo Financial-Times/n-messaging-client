@@ -15,6 +15,10 @@ module.exports = {
 		partial: 'top/payment-failure',
 		messageId: 'paymentFailure'
 	},
+	registrationNotice: {
+		partial: 'top/registration-notice',
+		messageId: 'registrationNotice'
+	},
 	anonSubscribeNow: {
 		partial: 'top/anon-subscribe-now-teal',
 		messageId: 'anonSubscribeNow',
