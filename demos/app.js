@@ -14,6 +14,7 @@ const app = module.exports = express({
 	withNavigation: false,
 	withAnonMiddleware: false,
 	hasHeadCss: false,
+	layoutsDir: resolve(__dirname,'./templates/layouts'),
 	viewsDirectory: '/demos/templates',
 	partialsDirectory: resolve(__dirname, '../public'),
 	directory: process.cwd(),
@@ -34,7 +35,7 @@ app.post('/email-app-links', (req, res) => {res.sendStatus(200);});
 
 app.get('/*', (req, res) => {
 	if (process.env.GURU_HOST) res.locals.guruEndpoint = process.env.GURU_HOST;
-	res.render('index',{ layout: 'vanilla', title: 'Demo' });
+	res.render('index',{ layout: 'custom-vanilla', title: 'Demo' });
 });
 
 const PORT = process.env.PORT || 5005;
