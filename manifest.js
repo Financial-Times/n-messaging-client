@@ -35,5 +35,10 @@ module.exports = {
 	adBlockerRegBanner: {
 		partial: 'bottom/ad-blocker-reg-banner',
 		messageId: 'adBlockerRegBanner'
+	},
+	gdprConsent: {
+		partial: 'top/gdpr-consent',
+		messageId: 'gdprConsent',
+		coreExperience: true
 	}
 };

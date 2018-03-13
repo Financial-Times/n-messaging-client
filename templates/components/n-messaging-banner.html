@@ -1,4 +1,4 @@
-<div class="n-messaging-banner n-messaging-banner--closed{{#if themeMarketing}} n-messaging-banner--marketing{{/if}}{{#if small}} n-messaging-banner--small{{/if}}" data-o-component="n-messaging-banner" data-n-messaging-component="">
+<div class="n-messaging-banner {{#unless @nMessagingPresenter.data.coreExperience}}n-messaging-banner--closed{{/unless}}{{#if themeMarketing}} n-messaging-banner--marketing{{/if}}{{#if small}} n-messaging-banner--small{{/if}}" data-o-component="n-messaging-banner" data-n-messaging-component="">
 	<div class="n-messaging-banner__outer">
 		{{#if @partial-block}}
 			{{{@partial-block}}}
