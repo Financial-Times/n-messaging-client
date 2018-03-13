@@ -38,7 +38,6 @@ module.exports = {
 	},
 	gdprConsent: {
 		partial: 'top/gdpr-consent',
-		messageId: 'gdprConsent',
-		coreExperience: true
+		messageId: 'gdprConsent'
 	}
 };

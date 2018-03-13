@@ -1,9 +1,6 @@
 {{#nMessagingPresenter @this type=type flags=@root.flags}}
 	{{#if @nMessagingPresenter.hasMessage}}
 		<div
-			{{#unless @nMessagingPresenter.data.coreExperience}}
-			class="n-ui-hide"
-			{{/unless}}
 			data-n-messaging-slot="{{type}}"
 			data-n-messaging-name="{{@nMessagingPresenter.data.variant}}"
 			data-n-messaging-flag="{{@nMessagingPresenter.data.flag}}"
