@@ -83,7 +83,17 @@ Now you can inject the message "slot" template in the relevant place in your mar
 {{> n-messaging-client/templates/slot type='bottom'}}
 ```
 
-Import `n-messaging-client`'s styles to your main css entry:
+Import `n-messaging-client`'s styles to your main css entry. 
+
+If you're using a message type that is server-rendered, import the critical stylesheet into the 'head' section of your main.scss.
+
+```scss
+/* critical.scss */
+
+@import 'n-messaging-client/critical';
+```
+
+In all cases, whether your messages will be client or server rendered, also include the n-messaging-client/main.scss *outside* the 'head' section of your main.scss, so it will be lazily loaded.
 
 ```scss
 /* main.scss */
