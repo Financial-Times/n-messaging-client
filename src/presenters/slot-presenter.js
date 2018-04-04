@@ -29,7 +29,8 @@ const getConfig = (position, flags) => {
 			lazyLoad: LAZY_REGEXP.test(conf.partial),
 			partial: resolvePartialPath(conf.partial),
 			messageId: conf.messageId,
-			guruQueryString: conf.guruQueryString
+			guruQueryString: conf.guruQueryString,
+			tooltip: conf.tooltip
 		}
 	);
 };

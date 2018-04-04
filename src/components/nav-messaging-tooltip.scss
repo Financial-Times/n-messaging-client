@@ -1,0 +1,41 @@
+.n-alert-banner--neutral {
+	.n-alert-banner__outer {
+		background-color: oColorsGetPaletteColor($name: 'wheat');
+	}
+
+	.n-alert-banner__inner {
+		justify-content: space-between;
+	}
+
+	.n-alert-banner__content {
+		@include oTypographySans($scale: 0);
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		&:before {
+			display: none;
+		}
+		@include oGridRespondTo(M) {
+			padding-right: 24px;
+		}
+	}
+
+	.n-alert-banner__close {
+		position: static;
+		background-size: 12px;
+	}
+}
+
+.n-messaging-client-tooltip {
+	display: none !important;
+	@include oGridRespondTo(M) {
+		display: block !important;
+	}
+}
+
+.js [data-n-messaging-tooltip="true"] {
+	display: block !important;
+	@include oGridRespondTo(M) {
+		display: none !important;
+	}
+}
