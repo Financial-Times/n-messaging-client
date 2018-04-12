@@ -1,5 +1,5 @@
 const oBanner = require('o-banner');
-const { messageEvent, listen } = require('./utils');
+const { generateMessageEvent, listen } = require('./utils');
 
 const BANNER_CLASS = 'n-messaging-banner';
 const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
@@ -8,7 +8,7 @@ const BANNER_LINK_SELECTOR = `.${BANNER_CLASS}__link`;
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let banner;
-	const generateEvent = config.id && messageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
+	const trackEventAction = config.id && generateMessageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
 	const defaults = { bannerClass: BANNER_CLASS, autoOpen: false };
 
@@ -17,8 +17,8 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	} else if (guruResult && guruResult.renderData) {
 		banner = new oBanner(null, imperativeOptions(guruResult.renderData, defaults));
 	} else {
-		if (guruResult.skip && generateEvent) {
-			document.body.dispatchEvent(generateEvent('skip'));
+		if (guruResult.skip && trackEventAction) {
+			trackEventAction('skip');
 		}
 		return;
 	}
@@ -33,17 +33,17 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			actions = banner.innerElement.querySelectorAll(BANNER_LINK_SELECTOR);
 		}
 	}
-	listen(banner.bannerElement, 'o.bannerClosed', generateEvent('close'));
-	listen(banner.bannerElement, 'o.bannerOpened', generateEvent('view'));
+	listen(banner.bannerElement, 'o.bannerClosed', () => trackEventAction('close'));
+	listen(banner.bannerElement, 'o.bannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
-		actions.forEach((el) => { listen(el, 'click', generateEvent('act')); });
+		actions.forEach((el) => { listen(el, 'click', () => trackEventAction('act')); });
 	}
 
 	// show banner
 	if (customSetup) {
 		customSetup(banner, ({ skip=false }={}) => {
 			if (skip) {
-				document.body.dispatchEvent(generateEvent('skip'));
+				trackEventAction('skip');
 			} else {
 				banner.open();
 			}

@@ -1,5 +1,5 @@
 const nAlertBanner = require('n-alert-banner');
-const { messageEvent, listen } = require('./utils');
+const { generateMessageEvent, listen } = require('./utils');
 
 const ALERT_BANNER_CLASS = 'n-alert-banner';
 const ALERT_ACTION_SELECTOR = '[data-n-messaging-alert-banner-action]';
@@ -8,7 +8,7 @@ const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let alertBanner;
-	const generateEvent = config.id && messageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
+	const trackEventAction = config.id && generateMessageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
 	const defaults = { alertBannerClass: ALERT_BANNER_CLASS, autoOpen: false };
 
@@ -17,8 +17,8 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	} else if (guruResult && guruResult.renderData) {
 		alertBanner = new nAlertBanner(null, imperativeOptions(guruResult.renderData, defaults));
 	} else {
-		if (guruResult.skip && generateEvent) {
-			document.body.dispatchEvent(generateEvent('skip'));
+		if (guruResult.skip && trackEventAction) {
+			trackEventAction('skip');
 		}
 		return;
 	}
@@ -34,17 +34,17 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		}
 	}
 
-	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', generateEvent('close'));
-	listen(alertBanner.alertBannerElement, 'n.alertBannerOpened', generateEvent('view'));
+	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', () => trackEventAction('close'));
+	listen(alertBanner.alertBannerElement, 'n.alertBannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
-		actions.forEach((el) => { listen(el, 'click', generateEvent('act')); });
+		actions.forEach((el) => { listen(el, 'click', () => trackEventAction('act')); });
 	}
 
 	//show alertBanner
 	if (customSetup) {
 		customSetup(alertBanner, ({ skip=false }={}) => {
 			if (skip) {
-				document.body.dispatchEvent(generateEvent('skip'));
+				trackEventAction('skip');
 			} else {
 				alertBanner.open();
 			}

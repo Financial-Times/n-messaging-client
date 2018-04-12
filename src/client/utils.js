@@ -3,26 +3,24 @@ const dispatchEvent = (event) => {
 };
 
 module.exports = {
-	messageEvent: function ({ messageId, position, flag, variant }={}) {
+	generateMessageEvent: function ({ messageId, position, flag, variant }={}) {
 		return function (action) {
-			return new CustomEvent('oTracking.event', {
-				detail: {
-					category: 'component',
-					action: action,
-					messaging: messageId,
-					messaging_position: position,
-					messaging_flag: flag,
-					messaging_variant: variant
-				},
-				bubbles: true
-			});
+			const detail = {
+				category: 'n-messaging',
+				action: action,
+				messaging: messageId,
+				messaging_position: position,
+				messaging_flag: flag,
+				messaging_variant: variant
+			};
+			const messagingEvent = new CustomEvent('oTracking.event', { detail, bubbles: true });
+			dispatchEvent(messagingEvent);
+			/* TODO: remove below fallback event once we port to the above */
+			const oldEvent = new CustomEvent('oTracking.event', { detail: Object.assign({}, detail, { category: 'component' }), bubbles: true });
+			dispatchEvent(oldEvent);
 		};
 	},
-	listen: function (el, ev, message) {
-		if (el) {
-			el.addEventListener(ev, function () {
-				dispatchEvent(message);
-			});
-		}
+	listen: function (el, ev, cb) {
+		if (el) el.addEventListener(ev, cb);
 	}
 };
