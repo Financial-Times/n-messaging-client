@@ -1,22 +1,18 @@
+$o-message-is-silent: false;
 @import "o-buttons/main";
 @import "o-colors/main";
 @import "o-grid/main";
 @import "o-icons/main";
 @import "o-typography/main";
 
-@import 'n-alert-banner/main';
+@import 'o-message/main';
 @import 'o-banner/main';
 @import './src/components/nav-messaging-tooltip';
 
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
 
-@include nAlertBanner($class: 'n-alert-banner', $themes: 'neutral');
-
-// ensure the top n-alert-banner inner content is aligned to page content
-.n-alert-banner__inner {
-	@include oGridContainer();
-}
+@include oMessage($class: 'n-alert-banner', $types: 'alert', $status: 'all');
 
 // set base font
 .n-alert-banner,
