@@ -2,7 +2,7 @@ const oTooltip = require('o-tooltip');
 
 module.exports = function customSetup (banner, done) {
 
-	const contentEl = banner.innerElement.querySelector('.n-alert-banner__content');
+	const contentEl = banner.messageElement.querySelector('.n-alert-banner__content');
 	const targetElement = document.querySelector('.o-header__top-link--myft').parentElement;
 	const opts = {
 		target: 'o-header__top-link--myft',
