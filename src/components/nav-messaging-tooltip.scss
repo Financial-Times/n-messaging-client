@@ -1,9 +1,7 @@
 [data-n-messaging-tooltip="true"] .n-alert-banner--neutral {
 
 	.n-alert-banner__container {
-		@include oMessageContainer;
 		background-color: oColorsGetPaletteColor($name: 'wheat');
-		// @include oTypographySans($scale: 0);
 		padding-left: 0;
 		padding-right: 0;
 		margin-left: 0;
@@ -28,6 +26,7 @@
 }
 
 .n-messaging-client-tooltip {
+	@include oTypographySans($scale: 0);
 	display: none !important;
 	@include oGridRespondTo(M) {
 		display: block !important;

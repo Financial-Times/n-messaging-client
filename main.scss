@@ -29,6 +29,10 @@ $o-tooltip-is-silent: false;
 	font-size: 0.8125em;
 }
 
+.n-alert-banner__close {
+	border-bottom: none;
+}
+
 @import './src/components/invite-colleagues/main';
 @import './src/components/desktop-app-banner/main';
 @import './src/components/anon-subscribe-now-teal/main';
