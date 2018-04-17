@@ -1,20 +1,9 @@
 [data-n-messaging-tooltip="true"] .n-alert-banner--neutral {
-	.n-alert-banner__content--highlight {
-		@include oMessageContentHighlight;
-	}
 
 	.n-alert-banner__container {
 		@include oMessageContainer;
 		background-color: oColorsGetPaletteColor($name: 'wheat');
-	}
-
-	.n-alert-banner__content {
-		justify-content: space-between;
-		padding-left: 10px;
-	}
-
-	.n-alert-banner__anything {
-		@include oTypographySans($scale: 0);
+		// @include oTypographySans($scale: 0);
 		padding-left: 0;
 		padding-right: 0;
 		margin-left: 0;
@@ -26,11 +15,15 @@
 		}
 	}
 
-	.n-alert-banner__close {
-		position: static;
-		background-size: 12px;
+	.n-alert-banner__content {
+		padding-left: 10px;
 	}
 
+
+	.n-alert-banner__close {
+		right: 12px;
+		border-bottom: none;
+	}
 
 }
 
