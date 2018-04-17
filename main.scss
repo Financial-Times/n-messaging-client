@@ -30,7 +30,7 @@ $o-tooltip-is-silent: false;
 }
 
 .n-alert-banner__close {
-	border-bottom: none;
+	border-bottom: 0;
 }
 
 @import './src/components/invite-colleagues/main';
