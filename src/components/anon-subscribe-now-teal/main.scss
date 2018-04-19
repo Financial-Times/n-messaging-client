@@ -26,7 +26,6 @@
 	}
 
 	.n-alert-banner__actions__primary {
-		// @include oMessageAlertButtonState($buttonBackground, $text);
 		@include oMessageButtonBase;
 		@include oButtonsTheme($theme: (background: 'white', accent: 'black', colorizer: 'primary'));
 		margin-right: 0;
