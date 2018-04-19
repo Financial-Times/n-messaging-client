@@ -62,10 +62,9 @@ function imperativeOptions (opts, defaults) {
 		type: opts.type,
 		status: opts.status,
 		parentElement: opts.parentElement,
-		theme: opts.theme,
 		content: {
-			highlight: opts.highlight,
-			detail: opts.detail,
+			highlight: opts.contentTitle,
+			detail: opts.content,
 			additionalInfo: opts.additionalInfo
 		},
 		actions: {
@@ -78,6 +77,6 @@ function imperativeOptions (opts, defaults) {
 				url: opts.linkUrl
 			}
 		},
-		close: opts.close
+		close: opts.closeButton
 	};
 }
