@@ -7,9 +7,6 @@ const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
-	console.log('================')
-	console.log("config", config);
-	console.log('================')
 	let alertBanner;
 	const trackEventAction = config.id && generateMessageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
