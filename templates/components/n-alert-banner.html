@@ -1,14 +1,16 @@
 <div class="n-alert-banner n-alert-banner--alert-bleed {{#if noCloseButton}}close-button-inner{{/if}} {{#unless renderOpen}}n-alert-banner--closed{{/unless}} n-alert-banner--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-n-messaging-component="" data-n-alert-banner-auto-open="false" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
 	<div class="n-alert-banner__container">
 		<div class="n-alert-banner__content">
-			<p class="n-alert-banner__content-main">
-				{{#if contentTitle}}
-					<span class="n-alert-banner__content-highlight">{{contentTitle}}</span>
-				{{/if}}
-				{{#if content}}
-					{{{content}}}
-				{{/if}}
-			</p>
+			{{#ifSome contentTitle content}}
+				<p class="n-alert-banner__content-main">
+					{{#if contentTitle}}
+						<span class="n-alert-banner__content-highlight">{{contentTitle}}</span>
+					{{/if}}
+					{{#if content}}
+						{{{content}}}
+					{{/if}}
+				</p>
+			{{/ifSome}}
 			{{#ifSome buttonUrl linkUrl}}
 				<div class="n-alert-banner__actions" data-n-messaging-alert-banner-action="" {{#if customDataTrackableActions}}data-trackable="{{customDataTrackableActions}}{{/if}}">
 					{{#if buttonUrl}}
