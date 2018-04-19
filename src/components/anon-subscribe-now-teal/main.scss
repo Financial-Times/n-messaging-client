@@ -1,14 +1,9 @@
-$background: 'teal-80';
-$buttonBackground: 'black';
-$text: 'white';
-$colorizer: 'inverse';
-
 .n-alert-banner--marketing-anon-subscribe {
 	display: none;
 
 	@include oGridRespondTo('M') {
 		display: block;
-		background-color: oColorsGetPaletteColor($background);
+		background-color: oColorsGetPaletteColor('teal-80');
 	}
 
 	.n-alert-banner__content {
