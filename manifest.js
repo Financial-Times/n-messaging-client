@@ -11,6 +11,11 @@ module.exports = {
 		partial: 'bottom/desktop-app-banner',
 		messageId: 'appPromotingBanner'
 	},
+	marketingPopupPrompt: {
+		partial: 'bottom/lazy',
+		messageId: 'marketingPopupPrompt',
+		guruQueryString: 'offerId=c1773439-53dc-df3d-9acc-20ce2ecde318'
+	},
 	paymentFailure: {
 		partial: 'top/payment-failure',
 		messageId: 'paymentFailure'
@@ -22,19 +27,6 @@ module.exports = {
 	anonSubscribeNow: {
 		partial: 'top/anon-subscribe-now-teal',
 		messageId: 'anonSubscribeNow',
-	},
-	marketingPopupPrompt: {
-		partial: 'bottom/lazy',
-		messageId: 'marketingPopupPrompt',
-		guruQueryString: 'offerId=c1773439-53dc-df3d-9acc-20ce2ecde318'
-	},
-	adBlockerSubBanner: {
-		partial: 'bottom/ad-blocker-sub-banner',
-		messageId: 'adBlockerSubBanner'
-	},
-	adBlockerRegBanner: {
-		partial: 'bottom/ad-blocker-reg-banner',
-		messageId: 'adBlockerRegBanner'
 	},
 	gdprConsent: {
 		partial: 'top/gdpr-consent',
