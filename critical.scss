@@ -12,9 +12,3 @@
 @include oFontsInclude(MetricWeb, $weight: semibold);
 
 @include oMessage($class: 'n-alert-banner', $types: 'alert', $status: 'all');
-
-// set base font
-.n-messaging-banner {
-	font-family: sans-serif;
-	font-size: 0.8125em;
-}
