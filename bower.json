@@ -32,7 +32,7 @@
   "dependencies": {
     "n-alert-banner": "^1.0.0",
     "n-ui-foundations": "^3.0.0",
-    "o-banner": "^1.5.0",
+    "o-banner": "^1.6.0",
     "o-share": "^6.0.0",
     "o-tooltip": "^3.1.1",
     "superstore-sync": "^2.1.1",

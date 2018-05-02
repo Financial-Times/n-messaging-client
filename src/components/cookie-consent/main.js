@@ -57,12 +57,19 @@ module.exports = function customSetup (banner, done) {
 		}, 1);
 	};
 
-	document.addEventListener('DOMContentLoaded', () => {
-	if (hasAccepted) {
+	const init = () => {
+		if (hasAccepted) {
 			removeBanner();
 		} else {
 			setup();
 		}
 		done();
+	};
+
+	// this may or may not fire depending on containing app set up
+	document.addEventListener('DOMContentLoaded', () => {
+		init();
 	});
+
+	init();
 };
