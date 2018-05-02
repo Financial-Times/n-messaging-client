@@ -38,6 +38,8 @@ module.exports = function customSetup (banner, done) {
 		const accepted = wrapper.querySelectorAll('[data-action="accepted"]');
 		accepted.forEach(elem => elem.addEventListener('click', (event) => accept(elem, event), false));
 
+		bannerElem.classList.add('n-messaging-banner--fixed');
+
 		// NB: we are adding height to the bottom of the page for user testing and then refining to snap-to-static, there are som edge cases to iron out
 		oViewport.listenTo('resize');
 		oViewport.listenTo('orientation');

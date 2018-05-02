@@ -11,7 +11,7 @@
 	/* overrides always fixed */
 	.n-messaging-banner {
 		position: static;
-		@at-root .enhanced & {
+		@at-root .enhanced &.n-messaging-banner--fixed {
 			position: fixed;
 			transform: translateY(0);
 		}
