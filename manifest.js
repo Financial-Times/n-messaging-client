@@ -11,6 +11,14 @@ module.exports = {
 		partial: 'bottom/desktop-app-banner',
 		messageId: 'appPromotingBanner'
 	},
+	cookieConsentA: {
+		partial: 'bottom/cookie-consent',
+		messageId: 'cookieConsentA'
+	},
+	cookieConsentB: {
+		partial: 'bottom/cookie-consent',
+		messageId: 'cookieConsentB'
+	},
 	marketingPopupPrompt: {
 		partial: 'bottom/lazy',
 		messageId: 'marketingPopupPrompt',

@@ -1,0 +1,22 @@
+<div class="cookie-consent-banner__wrapper variant-{{@nMessagingPresenter.data.variant}}">
+	{{#> n-messaging-client/templates/components/n-messaging-banner
+		renderOpen='true'
+		themeMarketing='true'
+	}}
+	<div class="n-messaging-banner__header">
+			<h2 class="n-messaging-banner__head">Cookies on the FT</h2>
+	</div>
+	<div class="n-messaging-banner__inner" data-o-banner-inner="" data-n-messaging-banner-inner="">
+		<div class="n-messaging-banner__content">
+			<p>We use cookies as described in our <a href="http://help.ft.com/help/legal-privacy/cookies/" class="n-messaging-banner__link--outside-page" data-trackable="onsite-message-link">Cookie Policy</a>. You can change these settings at any time but parts of our site will not function correctly without them.</p>
+		</div>
+		<!-- Button and link -->
+		<div class="n-messaging-banner__actions">
+			<div class="n-messaging-banner__link--standalone"><a href="https://help.ft.com/help/legal-privacy/cookies/how-to-manage-cookies/" data-action="accepted" data-trackable="onsite-message-link">Manage cookies</a></div>
+			<div class="n-messaging-banner__action n-ui-hide-core">
+				<button type="button" class="n-messaging-banner__button" data-n-messaging-banner-action=""  data-action="accepted" data-trackable="onsite-message-button">Accept &amp; continue</button>
+			</div>
+		</div>
+	</div>
+	{{/n-messaging-client/templates/components/n-messaging-banner}}
+</div>
