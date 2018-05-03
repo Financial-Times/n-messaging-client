@@ -7,15 +7,9 @@ module.exports = function customSetup (banner, done) {
 	const bannerElem = banner.bannerElement;
 	const wrapper = banner.innerElement;
 
-	let documentHeight;
-	let bannerElemHeight;
-
-	const updateDocumentHeight = () => {
-		documentHeight = document.body.clientHeight;
-	};
-
-	const addBannerHeight = () => {
-		document.body.style.height = `${documentHeight + bannerElemHeight}px`;
+	const setBodyMarginForBanner = () => {
+		const bannerElemHeight = bannerElem.getBoundingClientRect().height + parseInt(window.getComputedStyle(bannerElem).marginBottom, 10);
+		document.body.style.marginBottom = `${bannerElemHeight}px`;
 	};
 
 	const removeBanner = () => {
@@ -38,40 +32,26 @@ module.exports = function customSetup (banner, done) {
 		const accepted = wrapper.querySelectorAll('[data-action="accepted"]');
 		accepted.forEach(elem => elem.addEventListener('click', (event) => accept(elem, event), false));
 
-		bannerElem.classList.add('n-messaging-banner--fixed');
-
-		// NB: we are adding height to the bottom of the page for user testing and then refining to snap-to-static, there are som edge cases to iron out
-		oViewport.listenTo('resize');
-		oViewport.listenTo('orientation');
-		oViewport.listenTo('scroll');
-		document.body.addEventListener('oViewport.orientation', () => {
-			updateDocumentHeight();
-			addBannerHeight();
-		});
-		document.body.addEventListener('oViewport.resize', () => {
-			updateDocumentHeight();
-			addBannerHeight();
-		});
-		updateDocumentHeight();
-		setTimeout(() => {
-			bannerElemHeight = bannerElem.getBoundingClientRect().height;
-			addBannerHeight();
-		}, 1);
-	};
-
-	const init = () => {
-		if (hasAccepted) {
-			removeBanner();
-		} else {
-			setup();
+		if (!CSS.supports('position', 'sticky')) {
+			bannerElem.classList.add('n-messaging-banner--fixed');
+			oViewport.listenTo('resize');
+			oViewport.listenTo('orientation');
+			document.body.addEventListener('oViewport.orientation', () => {
+				setBodyMarginForBanner();
+			});
+			document.body.addEventListener('oViewport.resize', () => {
+				setBodyMarginForBanner();
+			});
+			setTimeout(() => {
+				setBodyMarginForBanner();
+			}, 1);
 		}
-		done();
 	};
 
-	// this may or may not fire depending on containing app set up
-	document.addEventListener('DOMContentLoaded', () => {
-		init();
-	});
-
-	init();
+	if (hasAccepted) {
+		removeBanner();
+	} else {
+		setup();
+	}
+	done();
 };

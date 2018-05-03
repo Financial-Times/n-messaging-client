@@ -1,3 +1,16 @@
+/* stylelint-disable selector-class-pattern */
+.n-messaging-slot--cookieConsent,
+.n-messaging-slot--cookieConsentA,
+.n-messaging-slot--cookieConsentB {
+	position: sticky;
+	bottom: 0;
+	z-index: 100;
+}
+.n-messaging-slot--cookieConsentB {
+	bottom: $spacing-unit;
+}
+/* stylelint-enable */
+
 .cookie-consent-banner__wrapper {
 	.n-messaging-banner__close {
 		display: none;

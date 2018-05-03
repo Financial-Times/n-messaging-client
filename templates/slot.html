@@ -1,6 +1,7 @@
 {{#nMessagingPresenter @this type=type flags=@root.flags}}
 	{{#if @nMessagingPresenter.hasMessage}}
 		<div
+			class="n-messaging-slot n-messaging-slot--{{@nMessagingPresenter.data.variant}}"
 			data-n-messaging-slot="{{type}}"
 			data-n-messaging-name="{{@nMessagingPresenter.data.variant}}"
 			data-n-messaging-flag="{{@nMessagingPresenter.data.flag}}"
