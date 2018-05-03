@@ -29,10 +29,10 @@ module.exports = function customSetup (banner, done) {
 	};
 
 	const setup = () => {
-		const accepted = wrapper.querySelectorAll('[data-action="accepted"]');
+		const accepted = [].slice.call(wrapper.querySelectorAll('[data-action="accepted"]'));
 		accepted.forEach(elem => elem.addEventListener('click', (event) => accept(elem, event), false));
 
-		if (!CSS.supports('position', 'sticky')) {
+		if (typeof CSS === 'undefined' || !CSS.supports('position', 'sticky')) {
 			bannerElem.classList.add('n-messaging-banner--fixed');
 			oViewport.listenTo('resize');
 			oViewport.listenTo('orientation');
@@ -47,7 +47,6 @@ module.exports = function customSetup (banner, done) {
 			}, 1);
 		}
 	};
-
 	if (hasAccepted) {
 		removeBanner();
 	} else {

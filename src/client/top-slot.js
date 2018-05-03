@@ -33,7 +33,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			actions = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
 		}
 	}
-
+	actions = [].slice.call(actions);
 	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', () => trackEventAction('close'));
 	listen(alertBanner.alertBannerElement, 'n.alertBannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
