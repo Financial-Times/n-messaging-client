@@ -102,6 +102,8 @@
 	.n-messaging-banner__link--outside-page {
 		position: relative;
 		@include oTypographyLinkExternal;
+		border-bottom: 1px solid oColorsGetPaletteColor('teal-80'); /* overrides grey underline */
+		margin-right: $spacing-unit; /* override 24px margin from origami mixin */
 	}
 
 	/* design variant B overrides */

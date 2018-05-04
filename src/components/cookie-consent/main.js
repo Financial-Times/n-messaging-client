@@ -1,9 +1,9 @@
-const store = require('superstore-sync');
 const oViewport = require('o-viewport');
-const LOCAL_STORE_KEY = 'COOKIE_CONSENT_GDPR';
+const cookieStore = require('n-ui-foundations').cookieStore;
+const LOCAL_STORE_KEY = 'FTCookieConsentGDPR';
 
 module.exports = function customSetup (banner, done) {
-	const hasAccepted = store.local.get(LOCAL_STORE_KEY);
+	const hasAccepted = cookieStore.get(LOCAL_STORE_KEY) === 'true';
 	const bannerElem = banner.bannerElement;
 	const wrapper = banner.innerElement;
 
@@ -21,7 +21,10 @@ module.exports = function customSetup (banner, done) {
 		if (elemHref) { // pause to allow us to save new state
 			event.preventDefault();
 		}
-		store.local.set(LOCAL_STORE_KEY, true);
+		cookieStore.set(LOCAL_STORE_KEY, 'true', {
+			domain: '.ft.com',
+			maxAge: 60*60*24*365*2
+		});
 		removeBanner();
 		if (elemHref) { // continue with journey
 			location.href = elemHref;
