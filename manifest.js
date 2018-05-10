@@ -40,11 +40,6 @@ module.exports = {
 		partial: 'top/gdpr-consent',
 		messageId: 'gdprConsent'
 	},
-	navMyFt: {
-		partial: 'top/nav-my-ft',
-		messageId: 'navMyFt',
-		tooltip: true
-	},
 	navContactPreferences: {
 		partial: 'top/nav-contact-preferences',
 		messageId: 'navContactPreferences',
