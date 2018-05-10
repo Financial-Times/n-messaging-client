@@ -4,6 +4,7 @@ const cookieConsent = require('./cookie-consent/main');
 const anonSubscribe = require('./anon-subscribe-now-teal/main');
 const navMyFt = require('./nav-myft/main');
 const navContactPreferences = require('./nav-contact-preferences/main');
+const profile = require('./profile/main');
 
 module.exports = {
 	b2bUpsellBanner: inviteColleagues,
@@ -12,5 +13,6 @@ module.exports = {
 	cookieConsentB: cookieConsent,
 	anonSubscribeNow: anonSubscribe,
 	navMyFt,
-	navContactPreferences
+	navContactPreferences,
+	profile
 };

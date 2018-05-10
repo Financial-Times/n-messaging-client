@@ -49,5 +49,9 @@ module.exports = {
 		partial: 'top/nav-contact-preferences',
 		messageId: 'navContactPreferences',
 		tooltip: true
+	},
+	profile: {
+		partial: 'top/profile',
+		messageId: 'profile'
 	}
 };
