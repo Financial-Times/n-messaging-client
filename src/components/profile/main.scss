@@ -31,6 +31,11 @@
 		margin: 0 !important;
 		height: 100%;
 		background-color: oColorsGetPaletteColor('paper');
+		left: 0 !important;
+
+		@include oGridRespondTo(M) {
+			left: 50% !important;
+		}
 
 		&-loader {
 			top: 0;
