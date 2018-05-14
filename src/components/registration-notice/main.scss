@@ -4,9 +4,11 @@
 
 .o-overlay {
 	@include oOverlay;
+	z-index: 1000;
 
 	&-shadow {
 		@include oOverlayShadow;
+		z-index: 1000;
 	}
 
 	&__heading {
@@ -28,10 +30,11 @@
 	&--n-overlay {
 		top: 0 !important;
 		right: 0;
+		left: 0 !important;
 		margin: 0 !important;
 		height: 100%;
 		background-color: oColorsGetPaletteColor('paper');
-		left: 0 !important;
+		border: 0;
 
 		@include oGridRespondTo(M) {
 			left: 50% !important;
