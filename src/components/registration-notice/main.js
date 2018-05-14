@@ -10,22 +10,22 @@ const generateHtml = (src) => `
 
 module.exports = function customSetup (banner, done) {
 	const overlayTrigger = banner.innerElement.querySelector('a');
-	if (!overlayTrigger) {
-		return;
+
+	if (overlayTrigger) {
+		const src = overlayTrigger.href + '?embedded=true';
+		const options = {
+			html: `${generateHtml(src)}`,
+			trigger: overlayTrigger,
+			heading: {
+				title: overlayTrigger.text,
+				visuallyHideTitle: true
+			}
+		};
+
+		// Remove default link functionality for overlay to open
+		overlayTrigger.addEventListener('click', e => e.preventDefault());
+
+		new Overlay(componentName, options);
 	}
-
-	// Remove default link functionality for overlay to open
-	overlayTrigger.addEventListener('click', e => e.preventDefault());
-
-	const src = overlayTrigger.href + '?embedded=true';
-	const options = {
-		html: `${generateHtml(src)}`,
-		trigger: overlayTrigger,
-		heading: {
-			title: overlayTrigger.text,
-			visuallyHideTitle: true
-		}
-	};
-	new Overlay(componentName, options);
 	done();
 };
