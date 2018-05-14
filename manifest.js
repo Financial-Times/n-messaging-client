@@ -48,7 +48,7 @@ module.exports = {
 	profile: {
 		partial: 'top/profile',
 		messageId: 'profile'
-  },
+	},
 	privacyPolicy: {
 		partial: 'top/privacy-policy',
 		messageId: 'privacyPolicy'
