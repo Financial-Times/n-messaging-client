@@ -1,3 +1,4 @@
+
 <div class="cookie-consent-banner__wrapper variant-{{@nMessagingPresenter.data.variant}}">
 	{{#> n-messaging-client/templates/components/n-messaging-banner
 		renderOpen=true
@@ -13,7 +14,15 @@
 		</div>
 		<!-- Button and link -->
 		<div class="n-messaging-banner__actions">
-			<div class="n-messaging-banner__link--standalone"><a href="https://help.ft.com/help/legal-privacy/cookies/how-to-manage-cookies/" data-action="accepted" data-trackable="onsite-message-link" data-n-messaging-banner-action="">Manage cookies</a></div>
+			<div class="n-messaging-banner__link--standalone"><a
+				{{#if data.nMessagingPresenter.flags.controlCentrePreferencesPage}}
+					href="https://www.ft.com/preferences/manage-cookies"
+				{{else }}
+					href="https://help.ft.com/help/legal-privacy/cookies/how-to-manage-cookies/"
+				{{/if}}
+				data-action="accepted"
+				data-trackable="onsite-message-link"
+				data-n-messaging-banner-action="">Manage cookies</a></div>
 			<div class="n-messaging-banner__action n-ui-hide-core">
 				<button type="button" class="n-messaging-banner__button" data-n-messaging-banner-action=""  data-action="accepted" data-trackable="onsite-message-button">Accept &amp; continue</button>
 			</div>

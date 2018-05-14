@@ -41,6 +41,7 @@ const SlotPresenter = class SlotPresenter {
 		this._data = _data || {};
 		this.position = dataTypeContract(_data.type) && _data.type;
 		this.config = getConfig(this.position, parseFlagsObject(this._data.flags));
+		this.flags = _data.flags;
 	}
 
 	get data () {
