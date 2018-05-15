@@ -1,3 +1,20 @@
-[data-n-messaging-name="privacyPolicy"] .n-alert-banner__inner {
-	white-space: normal;
+[data-n-messaging-name="privacyPolicy"] {
+	border-top: 1px solid getColor('black-20');
+	border-bottom: 1px solid getColor('black-20');
+
+	.n-alert-banner__inner {
+		white-space: normal;
+	}
+
+	.n-alert-banner__outer {
+		background-color: getColor('wheat');
+	}
+
+	.n-alert-banner__content--long {
+		margin-left: 0;
+		padding-left: 0;
+		&:before {
+			display: none;
+		}
+	}
 }
