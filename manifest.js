@@ -48,5 +48,9 @@ module.exports = {
 	privacyPolicy: {
 		partial: 'top/privacy-policy',
 		messageId: 'privacyPolicy'
+	},
+	tlsDeprecation: {
+		partial: 'top/tls-deprecation',
+		messageID: 'tlsDeprecation'
 	}
 };
