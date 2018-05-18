@@ -48,5 +48,9 @@ module.exports = {
 	privacyPolicy: {
 		partial: 'top/privacy-policy',
 		messageId: 'privacyPolicy'
+	},
+	deloitteSubscription: {
+		partial: 'top/deloitte-subscription',
+		messageId: 'deloitteSubscription'
 	}
 };
