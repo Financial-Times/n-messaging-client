@@ -9,10 +9,11 @@ const generateHtml = (src) => `
 <iframe class="${iframeClass}" src="${src}"></iframe>`;
 
 module.exports = function customSetup (banner, done) {
-	const overlayTrigger = banner.innerElement.querySelector('a');
+	const overlayTrigger = banner.innerElement.querySelector('.n-alert-banner__action a');
+	const closeTrigger = banner.innerElement.querySelector('.n-alert-banner__action--secondary a');
 
 	if (overlayTrigger) {
-		const src = overlayTrigger.href + '?embedded=true';
+		const src = overlayTrigger.href + (/\?/.test(overlayTrigger.href) ? '&' : '?') + 'embedded=true';
 		const options = {
 			html: `${generateHtml(src)}`,
 			trigger: overlayTrigger,
@@ -27,5 +28,13 @@ module.exports = function customSetup (banner, done) {
 
 		new Overlay(componentName, options);
 	}
+
+	if (closeTrigger) {
+		closeTrigger.addEventListener('click', e => {
+			banner.close();
+			e.preventDefault();
+		});
+	}
+
 	done();
 };
