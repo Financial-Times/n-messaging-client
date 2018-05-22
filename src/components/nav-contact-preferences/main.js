@@ -13,5 +13,8 @@ module.exports = function customSetup (banner, done) {
 
 	const tooltip = new oTooltip(targetElement, opts);
 	tooltip.tooltipEl.classList.add('n-messaging-client-tooltip');
+	tooltip.tooltipEl.addEventListener('oTooltip.close', () => {
+		banner.close();
+	});
 	done();
 };
