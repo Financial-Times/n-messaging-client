@@ -1,3 +1,5 @@
+$o-tooltip-is-silent : false;
+
 @import "o-buttons/main";
 @import "o-colors/main";
 @import "o-grid/main";
@@ -6,7 +8,6 @@
 
 @import 'o-message/main';
 @import 'o-banner/main';
-$o-tooltip-is-silent : false;
 @import "o-tooltip/main";
 @import './src/components/nav-messaging-tooltip';
 @import './src/components/privacy-policy/main';
@@ -14,8 +15,6 @@ $o-tooltip-is-silent : false;
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
-@include nAlertBanner($class: 'n-alert-banner', $themes: 'all');
-
 @include oMessage($class: 'n-alert-banner', $types: 'alert', $status: 'all');
 
 // ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
