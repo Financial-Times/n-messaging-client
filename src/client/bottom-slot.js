@@ -33,6 +33,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			actions = banner.innerElement.querySelectorAll(BANNER_LINK_SELECTOR);
 		}
 	}
+	actions = [].slice.call(actions);
 	listen(banner.bannerElement, 'o.bannerClosed', () => trackEventAction('close'));
 	listen(banner.bannerElement, 'o.bannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {

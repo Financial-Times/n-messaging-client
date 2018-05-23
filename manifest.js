@@ -11,6 +11,14 @@ module.exports = {
 		partial: 'bottom/desktop-app-banner',
 		messageId: 'appPromotingBanner'
 	},
+	cookieConsentA: {
+		partial: 'bottom/cookie-consent',
+		messageId: 'cookieConsentA'
+	},
+	cookieConsentB: {
+		partial: 'bottom/cookie-consent',
+		messageId: 'cookieConsentB'
+	},
 	marketingPopupPrompt: {
 		partial: 'bottom/lazy',
 		messageId: 'marketingPopupPrompt',
@@ -32,14 +40,17 @@ module.exports = {
 		partial: 'top/gdpr-consent',
 		messageId: 'gdprConsent'
 	},
-	navMyFt: {
-		partial: 'top/nav-my-ft',
-		messageId: 'navMyFt',
-		tooltip: true
-	},
 	navContactPreferences: {
 		partial: 'top/nav-contact-preferences',
 		messageId: 'navContactPreferences',
 		tooltip: true
+	},
+	privacyPolicy: {
+		partial: 'top/privacy-policy',
+		messageId: 'privacyPolicy'
+	},
+	deloitteSubscription: {
+		partial: 'top/deloitte-subscription',
+		messageId: 'deloitteSubscription'
 	}
 };

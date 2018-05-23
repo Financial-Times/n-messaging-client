@@ -8,6 +8,10 @@ const messages = [
 		slot: 'messageSlotBottom'
 	},
 	{
+		name: 'cookieConsent',
+		slot: 'messageSlotBottom'
+	},
+	{
 		name: 'paymentFailure',
 		slot: 'messageSlotTop'
 	},
