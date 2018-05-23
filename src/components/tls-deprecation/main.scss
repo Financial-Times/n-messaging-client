@@ -1,0 +1,33 @@
+/* stylelint-disable selector-class-pattern */
+/* higher specificity is needed as competing styles are lazily loaded in main.scss */
+.n-messaging-slot--tlsDeprecation[data-n-messaging-name="tlsDeprecation"] {
+	.n-alert-banner {
+		border-bottom: 1px solid getColor('black-20');
+	}
+
+	.n-alert-banner__inner {
+		white-space: normal;
+	}
+
+	.n-alert-banner__outer {
+		background-color: getColor('wheat');
+	}
+
+	.n-alert-banner__content--long {
+		margin-left: 0;
+		padding-left: 0;
+		&:before {
+			display: none;
+		}
+	}
+
+	.n-alert-banner__content--short {
+		margin-left: 0;
+		padding: 1em 0 1em 0;
+		&:before {
+			display: none;
+		}
+	}
+}
+	/* stylelint-enable */
+
