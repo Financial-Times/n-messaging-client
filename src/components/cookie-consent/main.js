@@ -17,22 +17,13 @@ module.exports = function customSetup (banner, done) {
 	};
 
 	const setAccepted = () => {
+		const today = new Date();
+		const expires = today.setMonth(today.getMonth() + 6);
 		cookieStore.set(LOCAL_STORE_KEY, 'true', {
 			domain: '.ft.com',
-			maxAge: 60*60*24*365*2
+			expires: new Date(expires)
 		});
 		removeBanner();
-	};
-
-	const acceptAction = (elem, event) => {
-		const elemHref = elem.getAttribute('href');
-		if (elemHref) { // pause to allow us to save new state
-			event.preventDefault();
-		}
-		setAccepted();
-		if (elemHref) { // continue with journey
-			location.href = elemHref;
-		}
 	};
 
 	const updateConsent = (elem, event) => {
@@ -50,9 +41,7 @@ module.exports = function customSetup (banner, done) {
 	};
 
 	const setup = () => {
-		const accepted = [].slice.call(wrapper.querySelectorAll('[data-action="accepted"]'));
 		const acceptForm = [].slice.call(wrapper.querySelectorAll('[data-action="accept-form"]'));
-		accepted.forEach(elem => elem.addEventListener('click', (event) => acceptAction(elem, event), false));
 		acceptForm.forEach(elem => elem.addEventListener('submit', (event) => updateConsent(elem, event), false));
 
 		if (typeof CSS === 'undefined' || !CSS.supports('position', 'sticky')) {
