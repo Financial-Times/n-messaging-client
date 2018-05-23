@@ -52,5 +52,9 @@ module.exports = {
 	tlsDeprecation: {
 		partial: 'top/tls-deprecation',
 		messageID: 'tlsDeprecation'
+  },
+	deloitteSubscription: {
+		partial: 'top/deloitte-subscription',
+		messageId: 'deloitteSubscription'
 	}
 };

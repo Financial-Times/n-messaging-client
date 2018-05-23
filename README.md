@@ -14,6 +14,9 @@
 - [x] a11y tests
 - [x] demo mode
 
+### Explainer
+Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3bGka2XNS0OrOMowaqyGxZFmwZY831xtEJA/edit)
+
 ### Monitoring
 
 - [Messaging Grafana Board](http://grafana.ft.com/dashboard/db/next-messaging-guru?orgId=1)
