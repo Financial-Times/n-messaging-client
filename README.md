@@ -2,13 +2,29 @@
 
 **Lightweight, consistent, smart, targeted and behaviourally driven first party messaging on FT.com**
 
-:construction: _Currently in active development / testing._ :construction:
+### Table of Contents
 
-**Todo** :rocket:
-- [ ] The "top" message slot, aka service messages ([`n-alert-banner`](https://github.com/Financial-Times/n-alert-banner))
+* [To Do](#todo)
+* [Monitoring](#monitoring)
+* [Usage](#usage)
+	- [Application specific](#application-specific)
+* [Development](#development)
+	- [Running locally](#running-locally)
+	- [Configuring Messages](#configuring-messages)
+		- [Viewing messages](#viewing-messages)
+		- [Configuration](#configuration)
+		- [Under the hood](#under-the-hood)
+* [Overview](#overview)
+	- [The Problem](#the-problem)
+	- [The Solution](#the-solution)
+	- [Parts of n-messaging-client](#parts-of)
+	- [Holistic Messaging Flow](#holistic-messaging-flow)
+
+### Todo :rocket:
+- [x] The "top" message slot, aka service messages ([`o-message`](https://github.com/Financial-Times/n-alert-banner))
 - [x] [`next-messaging-guru`](https://github.com/Financial-Times/next-messaging-guru) api aka async message configuration
 - [ ] polish
-- [ ] port over existing messages
+- [x] port over existing messages
 - [ ] unit tests
 - [ ] a11y tests for all messages
 - [x] a11y tests
@@ -83,7 +99,7 @@ Now you can inject the message "slot" template in the relevant place in your mar
 {{> n-messaging-client/templates/slot type='bottom'}}
 ```
 
-Import `n-messaging-client`'s styles to your main css entry. 
+Import `n-messaging-client`'s styles to your main css entry.
 
 If you're using a message type that is server-rendered, import the critical stylesheet into the 'head' section of your main.scss.
 
@@ -125,7 +141,7 @@ if ( window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop ) {
 ## Running locally
 
 - `make install`
-- `make demo`
+- `make demo` (will build and run demo)
 -  visit http://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used).
 
 ## Configuring Messages
@@ -150,9 +166,9 @@ Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pic
 ### Under the hood :wrench:
 
 - The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
-- The "top" message slot uses [`n-alert-banner`](https://github.com/Financial-Times/n-alert-banner)
+- The "top" message slot uses [o-message`](http://registry.origami.ft.com/components/o-message)
 
-## Overview
+# Overview
 
 ### The Problem
 
