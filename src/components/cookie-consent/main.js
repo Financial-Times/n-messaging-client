@@ -16,16 +16,6 @@ module.exports = function customSetup (banner, done) {
 		bannerElem.parentNode.removeChild(bannerElem);
 	};
 
-	const setAccepted = () => {
-		const today = new Date();
-		const expires = today.setMonth(today.getMonth() + 6);
-		cookieStore.set(LOCAL_STORE_KEY, 'true', {
-			domain: '.ft.com',
-			expires: new Date(expires)
-		});
-		removeBanner();
-	};
-
 	const updateConsent = (elem, event) => {
 		const elemAction = elem.getAttribute('action');
 		const elemMethod = elem.getAttribute('method');
@@ -34,7 +24,7 @@ module.exports = function customSetup (banner, done) {
 		return fetch(elemAction, {
 			method: elemMethod
 		})
-		.then(setAccepted)
+		.then(removeBanner)
 		.catch(error => {
 			return { error };
 		});
