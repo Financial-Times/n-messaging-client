@@ -10,12 +10,12 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let alertBanner;
 	const trackEventAction = config.id && generateMessageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
-	const defaults = { messageClass: ALERT_BANNER_CLASS, autoOpen: false };
+	const options = { messageClass: ALERT_BANNER_CLASS, autoOpen: false, close: nAlertBanner.getDataAttributes(declarativeElement).close};
 
 	if (declarativeElement) {
-		alertBanner = new nAlertBanner(declarativeElement, defaults);
+		alertBanner = new nAlertBanner(declarativeElement, options);
 	} else if (guruResult && guruResult.renderData) {
-		alertBanner = new nAlertBanner(null, imperativeOptions(guruResult.renderData, defaults));
+		alertBanner = new nAlertBanner(null, imperativeOptions(guruResult.renderData, options));
 	} else {
 		if (guruResult.skip && trackEventAction) {
 			trackEventAction('skip');
@@ -33,7 +33,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			actions = alertBanner.messageElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
 		}
 	}
-	
+
 	actions = [].slice.call(actions);
 	listen(alertBanner.alertBannerElement, 'o.messageClosed', () => trackEventAction('close'));
 	listen(alertBanner.alertBannerElement, 'o.messageOpen', () => trackEventAction('view'));
