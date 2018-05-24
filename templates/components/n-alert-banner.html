@@ -1,4 +1,4 @@
-<div class="n-alert-banner n-alert-banner--alert-bleed {{#unless close}}close-button-inner{{/unless}} {{#unless renderOpen}}n-alert-banner--closed{{/unless}} n-alert-banner--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-n-messaging-component="" data-n-alert-banner-auto-open="false" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
+<div class="n-alert-banner n-alert-banner--alert-bleed{{#unless renderOpen}} n-alert-banner--closed{{/unless}} n-alert-banner--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-close={{closeButton}}  data-n-messaging-component="" data-n-alert-banner-auto-open="false" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
 	<div class="n-alert-banner__container">
 		<div class="n-alert-banner__content">
 			{{#ifSome contentTitle content}}
@@ -7,7 +7,7 @@
 						<span class="n-alert-banner__content-highlight">{{contentTitle}}</span>
 					{{/if}}
 					{{#if content}}
-						{{{content}}}
+						<span class="n-alert-banner__content-detail">{{{content}}}</span>
 					{{/if}}
 				</p>
 			{{/ifSome}}
