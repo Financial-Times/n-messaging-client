@@ -8,6 +8,7 @@
 }
 .n-messaging-slot--cookieConsentB {
 	@include oGridRespondTo($from: M) {
+		max-width: $spacing-unit*24+$spacing-unit*2;
 		bottom: $spacing-unit;
 	}
 }
