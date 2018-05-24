@@ -22,7 +22,8 @@ module.exports = function customSetup (banner, done) {
 		event.preventDefault();
 		// call the consent proxy to set other cookies to yes, but still hide banner if those fail. User can manage via preferences pages.
 		return fetch(elemAction, {
-			method: elemMethod
+			method: elemMethod,
+			credentials: 'include'
 		})
 		.then(removeBanner)
 		.catch(error => {
