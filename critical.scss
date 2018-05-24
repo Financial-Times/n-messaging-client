@@ -6,12 +6,13 @@ $o-tooltip-is-silent : false;
 @import "o-icons/main";
 @import "o-typography/main";
 
+@import 'n-alert-banner/main';
 @import 'o-message/main';
 @import 'o-banner/main';
 @import "o-tooltip/main";
 @import './src/components/nav-messaging-tooltip';
 @import './src/components/privacy-policy/main';
-@import './src/components/tls-deprecation/main';
+
 
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
