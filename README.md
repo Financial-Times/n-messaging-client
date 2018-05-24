@@ -163,7 +163,7 @@ Two things have to be in place for a message to be "live":
 1) the variant must exist on the flag
 2) there must be config in messaging.json for that variant
 
-For easy client-side validation of the message, (does it render correctly on the page etc). Don't ship part 2. Just have a varaint, and test the message via turning it on in toggler.
+For easy client-side validation of the message, (does it render correctly on the page etc). Don't ship part 2. Just have a variant, and test the message via turning it on in toggler.
 
 When you are ready to ship the best method is to: Remove the variant from the flag. Ship part 2 (`messaging.json`). And then when you are good to go, re-add the variant to the flag. This method avoids having to deploy code to turn the feature on.
 
