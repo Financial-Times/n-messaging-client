@@ -16,43 +16,23 @@ module.exports = function customSetup (banner, done) {
 		bannerElem.parentNode.removeChild(bannerElem);
 	};
 
-	const setAccepted = () => {
-		cookieStore.set(LOCAL_STORE_KEY, 'true', {
-			domain: '.ft.com',
-			maxAge: 60*60*24*365*2
-		});
-		removeBanner();
-	};
-
-	const acceptAction = (elem, event) => {
-		const elemHref = elem.getAttribute('href');
-		if (elemHref) { // pause to allow us to save new state
-			event.preventDefault();
-		}
-		setAccepted();
-		if (elemHref) { // continue with journey
-			location.href = elemHref;
-		}
-	};
-
 	const updateConsent = (elem, event) => {
 		const elemAction = elem.getAttribute('action');
 		const elemMethod = elem.getAttribute('method');
 		event.preventDefault();
 		// call the consent proxy to set other cookies to yes, but still hide banner if those fail. User can manage via preferences pages.
 		return fetch(elemAction, {
-			method: elemMethod
+			method: elemMethod,
+			credentials: 'include'
 		})
-		.then(setAccepted)
+		.then(removeBanner)
 		.catch(error => {
 			return { error };
 		});
 	};
 
 	const setup = () => {
-		const accepted = [].slice.call(wrapper.querySelectorAll('[data-action="accepted"]'));
 		const acceptForm = [].slice.call(wrapper.querySelectorAll('[data-action="accept-form"]'));
-		accepted.forEach(elem => elem.addEventListener('click', (event) => acceptAction(elem, event), false));
 		acceptForm.forEach(elem => elem.addEventListener('submit', (event) => updateConsent(elem, event), false));
 
 		if (typeof CSS === 'undefined' || !CSS.supports('position', 'sticky')) {

@@ -1,31 +1,3 @@
-$o-tooltip-is-silent: false;
-
-@import "o-buttons/main";
-@import "o-colors/main";
-@import "o-grid/main";
-@import "o-icons/main";
-@import "o-typography/main";
-
-@import 'o-banner/main';
-@import "o-tooltip/main";
-@import 'o-message/main';
-
-@include oFontsInclude(MetricWeb);
-@include oFontsInclude(MetricWeb, $weight: semibold);
-
-@include oBanner($class: 'n-messaging-banner', $themes: 'all');
-@include oMessage($class: 'n-alert-banner', $types: 'alert', $status: 'all');
-
-// ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
-.n-messaging-banner {
-	z-index: 100;
-}
-
-.n-alert-banner__close {
-	border-bottom: 0;
-}
-
 @import './src/components/invite-colleagues/main';
 @import './src/components/desktop-app-banner/main';
 @import './src/components/anon-subscribe-now-teal/main';
-@import './src/components/cookie-consent/main';
