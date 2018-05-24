@@ -14,19 +14,13 @@
 	}
 
 	.n-alert-banner__content--long {
-		margin-left: 0;
+		margin-left: 40px;
 		padding-left: 0;
-		&:before {
-			display: none;
-		}
 	}
 
 	.n-alert-banner__content--short {
-		margin-left: 0;
+		margin-left: 40px;
 		padding: 1em 0;
-		&:before {
-			display: none;
-		}
 	}
 }
 	/* stylelint-enable */
