@@ -52,6 +52,7 @@ module.exports = function customSetup (banner, done) {
 	};
 
 	if (hasAccepted) {
+		removeBanner();
 		done({ skip: true });
 	} else {
 		setup();
