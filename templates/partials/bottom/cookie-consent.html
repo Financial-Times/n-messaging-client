@@ -1,3 +1,4 @@
+{{#if flags.gdprCookieBanner}}
 <div class="cookie-consent-banner__wrapper variant-{{@nMessagingPresenter.data.variant}}">
 	{{#> n-messaging-client/templates/components/n-messaging-banner
 		renderOpen=true
@@ -26,3 +27,4 @@
 	</div>
 	{{/n-messaging-client/templates/components/n-messaging-banner}}
 </div>
+{{/if}}
