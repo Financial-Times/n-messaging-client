@@ -14,10 +14,10 @@
 			{{#ifSome buttonUrl linkUrl}}
 				<div class="n-alert-banner__actions" data-n-messaging-alert-banner-action="" {{#if customDataTrackableActions}}data-trackable="{{customDataTrackableActions}}{{/if}}">
 					{{#if buttonUrl}}
-						<a href="{{buttonUrl}}" class="n-alert-banner__actions__primary" data-n-alert-banner-banner-action="" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
+						<a href="{{buttonUrl}}" class="n-alert-banner__actions__primary" data-n-alert-banner-action="" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
 					{{/if}}
 					{{#if linkUrl}}
-					<a href="{{linkUrl}}" class="n-alert-banner__actions__secondary" data-n-alert-banner-banner-action="" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
+					<a href="{{linkUrl}}" class="n-alert-banner__actions__secondary" data-n-alert-banner-action="" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
 					{{/if}}
 				</div>
 			{{/ifSome}}
