@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 /* higher specificity is needed as competing styles are lazily loaded in main.scss */
-.n-messaging-slot--privacyPolicy[data-n-messaging-name="privacyPolicy"] {
+.n-messaging-slot--tlsDeprecation[data-n-messaging-name="tlsDeprecation"] {
 	.n-alert-banner {
 		border-bottom: 1px solid getColor('black-20');
 	}
@@ -14,11 +14,13 @@
 	}
 
 	.n-alert-banner__content--long {
-		margin-left: 0;
+		margin-left: 40px;
 		padding-left: 0;
-		&:before {
-			display: none;
-		}
+	}
+
+	.n-alert-banner__content--short {
+		margin-left: 40px;
+		padding: 1em 0;
 	}
 }
-/* stylelint-enable */
+	/* stylelint-enable */

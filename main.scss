@@ -1,37 +1,4 @@
-@import "n-ui-foundations/main";
-@import "o-buttons/main";
-
-@import 'n-alert-banner/main';
-@import 'o-banner/main';
-$o-tooltip-is-silent : false;
-@import "o-tooltip/main";
-
-@include oFontsInclude(MetricWeb);
-@include oFontsInclude(MetricWeb, $weight: semibold);
-
-@include oBanner($class: 'n-messaging-banner', $themes: 'all');
-@include nAlertBanner($class: 'n-alert-banner', $themes: 'all');
-
-// ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
-.n-messaging-banner {
-	z-index: 100;
-}
-
-// ensure the top n-alert-banner inner content is aligned to page content
-.n-alert-banner__inner {
-	@include oGridContainer();
-}
-
-// set base font
-.n-alert-banner,
-.n-messaging-banner {
-	font-family: sans-serif;
-	font-size: 0.8125em;
-}
-
 @import './src/components/invite-colleagues/main';
 @import './src/components/desktop-app-banner/main';
 @import './src/components/anon-subscribe-now-teal/main';
-@import './src/components/cookie-consent/main';
 @import './src/components/registration-notice/main';
-@import './src/components/privacy-policy/main';

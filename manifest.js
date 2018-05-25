@@ -48,5 +48,13 @@ module.exports = {
 	privacyPolicy: {
 		partial: 'top/privacy-policy',
 		messageId: 'privacyPolicy'
+	},
+	tlsDeprecation: {
+		partial: 'top/tls-deprecation',
+		messageID: 'tlsDeprecation'
+	},
+	deloitteSubscription: {
+		partial: 'top/deloitte-subscription',
+		messageId: 'deloitteSubscription'
 	}
 };

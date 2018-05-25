@@ -58,6 +58,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 function imperativeOptions (opts, defaults) {
 	return {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
+		suppressCloseButton: opts.suppressCloseButton || false,
 		bannerClass: opts.bannerClass || defaults.bannerClass,
 		theme: opts.theme,
 		contentLong: opts.contentLong,

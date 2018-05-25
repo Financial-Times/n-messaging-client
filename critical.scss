@@ -6,13 +6,21 @@
 
 @import 'n-alert-banner/main';
 @import 'o-banner/main';
+$o-tooltip-is-silent : false;
+@import "o-tooltip/main";
 @import './src/components/nav-messaging-tooltip';
 @import './src/components/privacy-policy/main';
+@import './src/components/tls-deprecation/main';
 
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
+@include oBanner($class: 'n-messaging-banner', $themes: 'all');
+@include nAlertBanner($class: 'n-alert-banner', $themes: 'all');
 
-@include nAlertBanner($class: 'n-alert-banner', $themes: 'neutral');
+// ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
+.n-messaging-banner {
+	z-index: 100;
+}
 
 // ensure the top n-alert-banner inner content is aligned to page content
 .n-alert-banner__inner {
@@ -25,3 +33,17 @@
 	font-family: sans-serif;
 	font-size: 0.8125em;
 }
+
+// ensure the top n-alert-banner inner content is aligned to page content
+.n-alert-banner__inner {
+	@include oGridContainer();
+}
+
+// set base font
+.n-alert-banner,
+.n-messaging-banner {
+	font-family: sans-serif;
+	font-size: 0.8125em;
+}
+
+@import './src/components/cookie-consent/main';
