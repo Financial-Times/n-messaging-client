@@ -35,8 +35,8 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	actions = [].slice.call(actions);
-	listen(alertBanner.alertBannerElement, 'o.messageClosed', () => trackEventAction('close'));
-	listen(alertBanner.alertBannerElement, 'o.messageOpen', () => trackEventAction('view'));
+	listen(alertBanner.messageElement, 'o.messageClosed', () => trackEventAction('close'));
+	listen(alertBanner.messageElement, 'o.messageOpen', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
 		actions.forEach((el) => { listen(el, 'click', () => trackEventAction('act')); });
 	}
