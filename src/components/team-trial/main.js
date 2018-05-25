@@ -15,7 +15,7 @@ module.exports = function customSetup (banner, done) {
 	if (overlayTrigger) {
 		const src = overlayTrigger.href + (/\?/.test(overlayTrigger.href) ? '&' : '?') + 'embedded=true';
 		const options = {
-			html: `${generateHtml(src)}`,
+			html: generateHtml(src),
 			trigger: overlayTrigger,
 			heading: {
 				title: overlayTrigger.text,
