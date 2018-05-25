@@ -3,7 +3,7 @@ const appPromotingBanner = require('./desktop-app-banner/main');
 const cookieConsent = require('./cookie-consent/main');
 const anonSubscribeNow = require('./anon-subscribe-now-teal/main');
 const navContactPreferences = require('./nav-contact-preferences/main');
-const registrationNotice = require('./registration-notice/main');
+const teamTrial = require('./team-trial/main');
 
 module.exports = {
 	b2bUpsellBanner,
@@ -12,5 +12,5 @@ module.exports = {
 	cookieConsentB: cookieConsent,
 	anonSubscribeNow,
 	navContactPreferences,
-	registrationNotice
+	teamTrial
 };
