@@ -28,9 +28,9 @@ module.exports = {
 		partial: 'top/payment-failure',
 		messageId: 'paymentFailure'
 	},
-	registrationNotice: {
-		partial: 'top/registration-notice',
-		messageId: 'registrationNotice'
+	teamTrial: {
+		partial: 'top/team-trial',
+		messageId: 'teamTrial'
 	},
 	anonSubscribeNow: {
 		partial: 'top/anon-subscribe-now-teal',
@@ -48,6 +48,10 @@ module.exports = {
 	privacyPolicy: {
 		partial: 'top/privacy-policy',
 		messageId: 'privacyPolicy'
+	},
+	tlsDeprecation: {
+		partial: 'top/tls-deprecation',
+		messageID: 'tlsDeprecation'
 	},
 	deloitteSubscription: {
 		partial: 'top/deloitte-subscription',

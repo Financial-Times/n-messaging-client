@@ -30,6 +30,9 @@
 - [x] a11y tests
 - [x] demo mode
 
+### Explainer
+Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3bGka2XNS0OrOMowaqyGxZFmwZY831xtEJA/edit)
+
 ### Monitoring
 
 - [Messaging Grafana Board](http://grafana.ft.com/dashboard/db/next-messaging-guru?orgId=1)
@@ -168,7 +171,21 @@ Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pic
 - The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
 - The "top" message slot uses [o-message`](http://registry.origami.ft.com/components/o-message)
 
-# Overview
+### Releasing a message to production
+
+Firstly this assumes you have versioned and published this module and have the new version installed and deployed in the relevant applications.
+
+Two things have to be in place for a message to be "live":
+1) the variant must exist on the flag
+2) there must be config in for that variant
+
+For easy client-side validation of the message, (does it render correctly on the page etc). Don't ship part 2. Just have a variant, and test the message via turning it on in toggler.
+
+When you are ready to ship the best method is to: Remove the variant from the flag. Ship part 2 (`messaging.json`). And then when you are good to go, re-add the variant to the flag. This method avoids having to deploy code to turn the feature on.
+
+If you need to turn a message off in production quickly, simply remove the variant from the flag.
+
+## Overview
 
 ### The Problem
 

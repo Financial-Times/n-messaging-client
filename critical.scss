@@ -10,6 +10,7 @@ $o-tooltip-is-silent : false;
 @import "o-tooltip/main";
 @import './src/components/nav-messaging-tooltip';
 @import './src/components/privacy-policy/main';
+@import './src/components/tls-deprecation/main';
 
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
@@ -44,3 +45,5 @@ $o-tooltip-is-silent : false;
 	font-family: sans-serif;
 	font-size: 0.8125em;
 }
+
+@import './src/components/cookie-consent/main';

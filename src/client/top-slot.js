@@ -37,7 +37,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', () => trackEventAction('close'));
 	listen(alertBanner.alertBannerElement, 'n.alertBannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
-		actions.forEach((el) => { listen(el, 'click', () => trackEventAction('act')); });
+		actions.forEach((el) => { listen(el, 'click', () => trackEventAction(el.dataset['nMessagingAlertBannerAction'] || 'act')); });
 	}
 
 	//show alertBanner
