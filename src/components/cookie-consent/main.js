@@ -50,10 +50,13 @@ module.exports = function customSetup (banner, done) {
 			}, 1);
 		}
 	};
+
 	if (hasAccepted) {
 		removeBanner();
+		done({ skip: true });
 	} else {
 		setup();
+		done();
 	}
-	done();
+
 };
