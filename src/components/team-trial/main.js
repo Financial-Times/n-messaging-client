@@ -31,6 +31,7 @@ module.exports = function customSetup (banner, done) {
 
 	if (closeTrigger) {
 		closeTrigger.addEventListener('click', e => {
+			// Add close class rather than calling close to avoid a close event firing
 			banner.alertBannerElement.classList.add('n-alert-banner--closed');
 			e.preventDefault();
 		});
