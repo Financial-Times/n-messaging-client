@@ -31,7 +31,7 @@ module.exports = function customSetup (banner, done) {
 
 	if (closeTrigger) {
 		closeTrigger.addEventListener('click', e => {
-			banner.close();
+			banner.alertBannerElement.classList.add('n-alert-banner--closed');
 			e.preventDefault();
 		});
 	}
