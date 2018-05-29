@@ -16,12 +16,12 @@
 			<div class="n-alert-banner__actions" {{#if customDataTrackableActions}}data-trackable="{{customDataTrackableActions}}"{{/if}}>
 				{{#if buttonUrl}}
 					<div class="n-alert-banner__action">
-						<a href="{{buttonUrl}}" class="n-alert-banner__button" data-n-messaging-alert-banner-action="" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
+						<a href="{{buttonUrl}}" class="n-alert-banner__button" data-n-messaging-alert-banner-action="{{buttonAction}}" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
 					</div>
 				{{/if}}
 				{{#if linkUrl}}
 					<div class="n-alert-banner__action--secondary">
-						<a href={{linkUrl}} class="n-alert-banner__link" data-n-messaging-alert-banner-action="" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
+						<a href={{linkUrl}} class="n-alert-banner__link" data-n-messaging-alert-banner-action="{{linkAction}}" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
 					</div>
 				{{/if}}
 			</div>
