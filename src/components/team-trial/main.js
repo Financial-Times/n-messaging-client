@@ -9,8 +9,8 @@ const generateHtml = (src) => `
 <iframe class="${iframeClass}" src="${src}"></iframe>`;
 
 module.exports = function customSetup (banner, done) {
-	const overlayTrigger = banner.innerElement.querySelector('.n-alert-banner__action a');
-	const closeTrigger = banner.innerElement.querySelector('.n-alert-banner__action--secondary a');
+	const overlayTrigger = banner.messageElement.querySelector('.n-alert-banner__actions__primary');
+	const closeTrigger = banner.messageElement.querySelector('.n-alert-banner__actions__secondary');
 
 	if (overlayTrigger) {
 		const src = overlayTrigger.href + (/\?/.test(overlayTrigger.href) ? '&' : '?') + 'embedded=true';
@@ -32,7 +32,7 @@ module.exports = function customSetup (banner, done) {
 	if (closeTrigger) {
 		closeTrigger.addEventListener('click', e => {
 			// Add close class rather than calling close to avoid a close event firing
-			banner.alertBannerElement.classList.add('n-alert-banner--closed');
+			banner.messageElement.classList.add('n-alert-banner--closed');
 			e.preventDefault();
 		});
 	}

@@ -1,4 +1,4 @@
-<div class="n-alert-banner n-alert-banner--alert-bleed{{#unless renderOpen}} n-alert-banner--closed{{/unless}} n-alert-banner--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-close={{closeButton}}  data-n-messaging-component="" data-n-alert-banner-auto-open="false" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
+<div class="n-alert-banner n-alert-banner--alert-bleed{{#unless renderOpen}} n-alert-banner--closed{{/unless}} n-alert-banner--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-close="{{closeButton}}" data-n-messaging-component="" data-n-alert-banner-auto-open="false" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
 	<div class="n-alert-banner__container">
 		<div class="n-alert-banner__content">
 			{{#ifSome contentTitle content}}
@@ -12,12 +12,12 @@
 				</p>
 			{{/ifSome}}
 			{{#ifSome buttonUrl linkUrl}}
-				<div class="n-alert-banner__actions" data-n-messaging-alert-banner-action="" {{#if customDataTrackableActions}}data-trackable="{{customDataTrackableActions}}{{/if}}">
+				<div class="n-alert-banner__actions" {{#if customDataTrackableActions}} data-trackable="{{customDataTrackableActions}}"{{/if}}>
 					{{#if buttonUrl}}
-						<a href="{{buttonUrl}}" class="n-alert-banner__actions__primary" data-n-alert-banner-action="" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
+					<a href="{{buttonUrl}}" class="n-alert-banner__actions__primary" data-n-alert-banner-action="{{buttonAction}}" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
 					{{/if}}
 					{{#if linkUrl}}
-					<a href="{{linkUrl}}" class="n-alert-banner__actions__secondary" data-n-alert-banner-action="" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
+					<a href="{{linkUrl}}" class="n-alert-banner__actions__secondary" data-n-alert-banner-action="{{linkAction}}" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
 					{{/if}}
 				</div>
 			{{/ifSome}}

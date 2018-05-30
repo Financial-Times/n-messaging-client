@@ -2,7 +2,7 @@ const nAlertBanner = require('o-message');
 const { generateMessageEvent, listen } = require('./utils');
 
 const ALERT_BANNER_CLASS = 'n-alert-banner';
-const ALERT_ACTION_SELECTOR = '[data-n-messaging-alert-banner-action]';
+const ALERT_ACTION_SELECTOR = '[data-n-alert-banner-action]';
 const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 
@@ -38,7 +38,9 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	listen(alertBanner.messageElement, 'o.messageClosed', () => trackEventAction('close'));
 	listen(alertBanner.messageElement, 'o.messageOpen', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
-		actions.forEach((el) => { listen(el, 'click', () => trackEventAction(el.dataset['nMessagingAlertBannerAction'] || 'act')); });
+		actions.forEach((el) => {
+			listen(el, 'click', () => trackEventAction(el.dataset['nAlertBannerAction'] || 'act'));
+		});
 	}
 
 	//show alertBanner
