@@ -21,7 +21,7 @@ $o-tooltip-is-silent : false;
 
 // ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
 .n-messaging-banner {
-	z-index: 100;
+	@include nUiZIndexFor('notification');
 }
 
 // set base font
