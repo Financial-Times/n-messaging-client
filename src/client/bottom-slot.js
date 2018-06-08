@@ -10,12 +10,11 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let banner;
 	const trackEventAction = config.id && generateMessageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
 	const declarativeElement = !config.lazy && config.content;
-	const defaults = { bannerClass: BANNER_CLASS, autoOpen: false };
 
 	if (declarativeElement) {
-		banner = new oBanner(declarativeElement, defaults);
+		banner = new oBanner(declarativeElement);
 	} else if (guruResult && guruResult.renderData) {
-		banner = new oBanner(null, imperativeOptions(guruResult.renderData, defaults));
+		banner = new oBanner(null, imperativeOptions(guruResult.renderData, { bannerClass: BANNER_CLASS, autoOpen: false }));
 	} else {
 		if (guruResult.skip && trackEventAction) {
 			trackEventAction('skip');
