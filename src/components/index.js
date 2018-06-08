@@ -11,6 +11,7 @@ module.exports = {
 	appPromotingBanner,
 	cookieConsentA: cookieConsent,
 	cookieConsentB: cookieConsent,
+	cookieConsentC: cookieConsent,
 	anonSubscribeNow,
 	navContactPreferences,
 	teamTrial,

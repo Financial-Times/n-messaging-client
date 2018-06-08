@@ -19,6 +19,10 @@ module.exports = {
 		partial: 'bottom/cookie-consent',
 		messageId: 'cookieConsentB'
 	},
+	cookieConsentC: {
+		partial: 'bottom/cookie-consent',
+		messageId: 'cookieConsentC'
+	},
 	marketingPopupPrompt: {
 		partial: 'bottom/lazy',
 		messageId: 'marketingPopupPrompt',
