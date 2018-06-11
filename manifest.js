@@ -13,7 +13,7 @@ module.exports = {
 	},
 	cookieConsentA: {
 		partial: 'bottom/cookie-consent',
-		messageId: 'cookieConsentB'
+		messageId: 'cookieConsentA'
 	},
 	cookieConsentB: {
 		partial: 'bottom/cookie-consent',
