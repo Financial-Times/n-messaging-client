@@ -60,9 +60,5 @@ module.exports = {
 	deloitteSubscription: {
 		partial: 'top/deloitte-subscription',
 		messageId: 'deloitteSubscription'
-	},
-	usaSale: {
-		partial: 'top/usa-sale',
-		messageId: 'usaSale'
 	}
 };
