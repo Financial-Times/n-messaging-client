@@ -3,12 +3,12 @@ module.exports = {
 		partial: 'bottom/lazy', // path to template
 		messageId: 'licenceJoinPromptSsiClient' // id as specified in ammit-api
 	},
-	b2bUpsellBanner: {
+	inviteColleagues: {
 		partial: 'bottom/b2b-upsell',
 		messageId: 'b2c-invite-colleague-banner'
 	},
 	appPromotingBanner: {
-		partial: 'bottom/desktop-app-banner',
+		partial: 'bottom/appPromotingBanner',
 		messageId: 'appPromotingBanner'
 	},
 	cookieConsentA: {
