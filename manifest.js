@@ -8,7 +8,7 @@ module.exports = {
 		messageId: 'b2c-invite-colleague-banner'
 	},
 	appPromotingBanner: {
-		partial: 'bottom/appPromotingBanner',
+		partial: 'bottom/app-promoting-banner',
 		messageId: 'appPromotingBanner'
 	},
 	cookieConsentA: {
