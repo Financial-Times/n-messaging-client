@@ -40,6 +40,11 @@ module.exports = {
 		partial: 'top/anon-subscribe-now-teal',
 		messageId: 'anonSubscribeNow',
 	},
+	navAccountSettings: {
+		partial: 'top/nav-account-settings',
+		messageId: 'navAccountSettings',
+		tooltip: true
+	},
 	tlsDeprecation: {
 		partial: 'top/tls-deprecation',
 		messageId: 'tlsDeprecation'
