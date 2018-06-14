@@ -17,12 +17,10 @@ module.exports = function customSetup (banner, done) {
 
 	const updateConsent = (elem, event) => {
 		event.preventDefault();
-		const elemAction = elem.getAttribute('href');
-
 		// call the consent proxy to set default cookie acceptance
 		// but still hide banner if those fail
 		// User can manage via preferences pages
-		return fetch(elemAction, {
+		return fetch('https://consent.ft.com/__consent/consent-record-cookie', {
 			method: 'GET',
 			credentials: 'include'
 		})
