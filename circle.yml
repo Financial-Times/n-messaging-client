@@ -11,4 +11,5 @@ deployment:
     tag: /^v?\d+\.\d+\.\d+(?:-beta\.\d+)?$/
     owner: Financial-Times
     commands:
-    - make npm-publish
+      - npm version --no-git-tag-version ${CIRCLE_TAG}
+      - npm publish --access public
