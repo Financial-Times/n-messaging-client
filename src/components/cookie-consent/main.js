@@ -35,10 +35,10 @@ module.exports = function customSetup (banner, done) {
 		if (cookieBanner) {
 			cookieBanner.classList.remove('n-ui-hide-enhanced');
 		}
-		const acceptForm = [].slice.call(wrapper.querySelectorAll('[data-action="accept-form"]'));
-		acceptForm.forEach(elem =>
+		const acceptButtons = wrapper.querySelectorAll('[data-action="accept-form"]');
+		[].forEach.call(acceptButtons, elem =>
 			elem.addEventListener(
-				'submit',
+				'click',
 				event => updateConsent(elem, event),
 				false
 			)
