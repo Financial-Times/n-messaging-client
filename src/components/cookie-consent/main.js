@@ -14,6 +14,7 @@ module.exports = function customSetup (banner, done) {
 
 	const removeBanner = () => {
 		bannerElem.parentNode.removeChild(bannerElem);
+		document.body.focus();
 	};
 
 	const updateConsent = (elem, event) => {

@@ -1,11 +1,11 @@
 const oTooltip = require('o-tooltip');
 
 module.exports = function customSetup (banner, done) {
-
+	const selector = '[data-trackable="My Account"]';
 	const contentEl = banner.messageElement.querySelector('.n-alert-banner__content');
-	const targetElement = document.querySelector('[data-id="subnav-alerts"]');
+	const targetElement = document.querySelector(selector);
 	const opts = {
-		target: '[data-id="subnav-alerts"]',
+		target: selector,
 		content: contentEl.innerHTML,
 		showOnConstruction: true,
 		position: 'below'

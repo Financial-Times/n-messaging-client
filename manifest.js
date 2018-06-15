@@ -40,18 +40,10 @@ module.exports = {
 		partial: 'top/anon-subscribe-now-teal',
 		messageId: 'anonSubscribeNow',
 	},
-	gdprConsent: {
-		partial: 'top/gdpr-consent',
-		messageId: 'gdprConsent'
-	},
-	navContactPreferences: {
-		partial: 'top/nav-contact-preferences',
-		messageId: 'navContactPreferences',
+	navAccountSettings: {
+		partial: 'top/nav-account-settings',
+		messageId: 'navAccountSettings',
 		tooltip: true
-	},
-	privacyPolicy: {
-		partial: 'top/privacy-policy',
-		messageId: 'privacyPolicy'
 	},
 	tlsDeprecation: {
 		partial: 'top/tls-deprecation',

@@ -30,6 +30,10 @@
 	@include oGridRespondTo(M) {
 		display: block !important;
 	}
+
+	.n-alert-banner__content-main {
+		hyphens: none;
+	}
 }
 
 .js [data-n-messaging-tooltip="true"] {
