@@ -10,7 +10,7 @@ $o-tooltip-is-silent : false;
 @import 'o-message/main';
 @import 'o-banner/main';
 @import "o-tooltip/main";
-@import './src/components/nav-messaging-tooltip';
+@import './src/components/top/nav-messaging-tooltip';
 
 
 @include oFontsInclude(MetricWeb);
