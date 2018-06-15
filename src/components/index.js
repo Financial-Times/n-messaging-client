@@ -1,7 +1,7 @@
-const topSlot = require('./top');
-const bottomSlot = require('./bottom');
+const top = require('./top');
+const bottom = require('./bottom');
 
 module.exports = {
-	topSlot,
-	bottomSlot
+	top,
+	bottom
 };
