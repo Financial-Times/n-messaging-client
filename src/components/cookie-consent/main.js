@@ -33,13 +33,11 @@ module.exports = function customSetup (banner, done) {
 		if (cookieBanner) {
 			cookieBanner.classList.remove('n-ui-hide-enhanced');
 		}
-		const acceptButtons = wrapper.querySelectorAll('[data-action="accept-form"]');
-		[].forEach.call(acceptButtons, elem =>
-			elem.addEventListener(
-				'click',
-				event => updateConsent(elem, event),
-				false
-			)
+		const acceptButton = wrapper.querySelector('[data-action="accept-form"]');
+		acceptButton.addEventListener(
+			'click',
+			event => updateConsent(acceptButton, event),
+			false
 		);
 
 		if (typeof CSS === 'undefined' || !CSS.supports('position', 'sticky')) {
