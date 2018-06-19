@@ -25,7 +25,7 @@ module.exports = {
 	},
 	initialiseMessage (config) {
 		const render = this.renderHandler(config.position);
-		const customSetup = this.setupHandler(config.name);
+		const customSetup = this.setupHandler(config.name, config.position);
 		const formatData = (res) => ({ config, guruResult: res, customSetup });
 		const getData = config.lazy
 			? fetchAsyncConfig(config)
@@ -36,8 +36,8 @@ module.exports = {
 		if (position === 'top') return topSlot;
 		if (position === 'bottom') return bottomSlot;
 	},
-	setupHandler (name) {
-		return components.hasOwnProperty(name) && components[name];
+	setupHandler (name, position) {
+		return components[position] && components[position].hasOwnProperty(name) && components[position][name];
 	},
 	handleError (error) {
 		throw error;
