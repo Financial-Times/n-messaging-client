@@ -44,9 +44,5 @@ module.exports = {
 		partial: 'top/nav-account-settings',
 		messageId: 'navAccountSettings',
 		tooltip: true
-	},
-	deloitteSubscription: {
-		partial: 'top/deloitte-subscription',
-		messageId: 'deloitteSubscription'
 	}
 };
