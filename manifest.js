@@ -45,10 +45,6 @@ module.exports = {
 		messageId: 'navAccountSettings',
 		tooltip: true
 	},
-	tlsDeprecation: {
-		partial: 'top/tls-deprecation',
-		messageId: 'tlsDeprecation'
-	},
 	deloitteSubscription: {
 		partial: 'top/deloitte-subscription',
 		messageId: 'deloitteSubscription'
