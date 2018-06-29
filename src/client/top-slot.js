@@ -41,7 +41,8 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	listen(alertBanner.messageElement, 'o.messageOpen', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
 		actions.forEach((el) => {
-			listen(el, 'click', () => trackEventAction(el.dataset['nAlertBannerAction'] || 'act'));
+			const trackingAttr = el.dataset.nAlertBannerActionType;
+			listen(el, 'click', () => trackEventAction(el.dataset['nAlertBannerAction'] || 'act', trackingAttr));
 		});
 	}
 

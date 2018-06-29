@@ -37,7 +37,10 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	listen(banner.bannerElement, 'o.bannerClosed', () => trackEventAction('close'));
 	listen(banner.bannerElement, 'o.bannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
-		actions.forEach((el) => { listen(el, 'click', () => trackEventAction('act')); });
+		actions.forEach((el) => {
+			const trackingAttr = el.dataset.nMessagingBannerActionType;
+			listen(el, 'click', () => trackEventAction(el.dataset['nMessagingBannerAction'] || 'act', trackingAttr));
+		});
 	}
 
 	// show banner
