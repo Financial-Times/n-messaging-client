@@ -15,7 +15,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	if (declarativeElement) {
 		banner = new oBanner(declarativeElement, oBanner.getOptionsFromDom(declarativeElement));
 	} else if (guruResult && guruResult.renderData) {
-		banner = new oBanner(null, imperativeOptions(guruResult.renderData, Object.assign({ bannerClass: BANNER_CLASS, autoOpen: false }, oBanner.getOptionsFromDom(declarativeElement))));
+		banner = new oBanner(null, imperativeOptions(guruResult.renderData, { bannerClass: BANNER_CLASS, autoOpen: false }));
 	} else {
 		if (guruResult.skip && trackEventAction) {
 			trackEventAction('skip');
