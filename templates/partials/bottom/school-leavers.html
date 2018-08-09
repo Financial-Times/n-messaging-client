@@ -1,10 +1,11 @@
 <div class="school-leaver__wrapper">
 	{{> n-messaging-client/templates/components/n-messaging-banner
-		themeMarketing='true'
 		small='true'
 		contentLong = '
-		<header class="school-leaver__header">
-			<h1 class="school-leaver__header">Going to University or College this year?</h1>
+		<header class="school-leaver__heading">
+			<h1>
+				Going to University or College this year?
+			</h1>
 		</header>
 		<p class="school-leaver__sub-heading">Save 50% with our exclusive student offer and:</p>
 		<ul class="school-leaver__list">
@@ -12,21 +13,31 @@
 				<li>Jump start your assignments</li>
 				<li>Ace that interview</li>
 		</ul>
+		<div class="school-leaver__tandc">
+			At the end of your eligibility, your subscription will renew automatically at the full price unless you cancel before the
+			end of your subscription term. <a href="https://subs.ft.com/spa3_stutcs">For full T&Cs see here</a>.
+		</div>
 		'
 	
 		contentShort = '
-	    <header id="usa" class="n-messaging-banner__heading">
-			<h1>Going to University or College this year?</h1>
+	    <header class="school-leaver__heading">
+			<h1 class="school-leaver__heading school-leaver__heading--part-1">Going to University or College this year?</h1>
 		</header>
-		<p>Save 50% with our exclusive student offer:</p>
-		<ul>
+		<p class="school-leaver__sub-heading">Save 50% with our exclusive student offer:</p>
+		<ul class="school-leaver__list">
 			<li>Stand out from the crowd</li>
 			<li>Jump start your assignments</li>
 			<li>Ace that interview</li>
 		</ul>
+		<div class="school-leaver__tandc">
+			At the end of your eligibility, your subscription will renew automatically at the full price unless you cancel before the
+			end of your subscription term.
+			<a href="https://subs.ft.com/spa3_stutcs">For full T&Cs see here</a>.
+		</div>
 		    '
 		buttonLabel='Subscribe now - save 50%'
 		buttonUrl='https://www.ft.com/student'
 		renderOpen='true'
+
 	}}
 </div>

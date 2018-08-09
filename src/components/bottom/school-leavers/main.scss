@@ -1,18 +1,57 @@
 @include oFontsInclude(FinancierDisplayWeb, $weight: bold);
 
 .school-leaver__wrapper {
-    // background-image: 
-}
 
-.school-leaver__header {
-    @include oTypography($scale: 7);
-    font-family: FinancierDisplayWeb,serif
-}
+    .n-messaging-banner__inner {
+        background-color: getColor('slate');
+    }
 
-.school-leaver__sub-heading {
+    .n-messaging-banner--small .n-messaging-banner__content h1 {
+        @include oTypographyDisplayBold($scale: 4);
+        color: getColor('white');
+        margin-bottom: 12px;
+        @include oGridRespondTo($from: M) {
+            @include oTypographyDisplayBold($scale: 7);
+        }
+    }
 
-}
+    //TODO HOW TO GET SEMIBOLD?
+    .school-leaver__sub-heading {
+        @include oTypographySansBold($scale: 0);
+        color: getColor('teal');
+        @include oGridRespondTo($from: M) {
+            @include oTypographySansBold($scale: 3);
+        }
+    }
 
-.school-leaver__list {
+    ul {
+        @include oTypographySize($scale: 0);
+        @include oGridRespondTo($from: M) {
+            @include oTypographySize($scale: 2);
+        }
+    }
+
+    .n-messaging-banner__actions {
+        margin-top: 4px;
+    }
+
+    .n-messaging-banner__button {
+		@include oButtonsTheme(primary);
+        @include oTypographySize($scale: 2);
+        margin-bottom: 60px;
+        @include oGridRespondTo($from: M) {
+            margin: 24px 0 48px;
+        }
+    }
     
+    .school-leaver__tandc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        background-color: getColor('black');
+        @include oTypographySize($scale: -2);
+        color: getColor('white');
+    }
+
 }
