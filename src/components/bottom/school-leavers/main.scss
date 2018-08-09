@@ -24,6 +24,7 @@
 	}
 
 	ul {
+		color: getColor('white-80');
 		@include oTypographySize($scale: 0);
 		@include oGridRespondTo($from: M) {
 			@include oTypographySize($scale: 2);
@@ -31,7 +32,10 @@
 	}
 
 	.n-messaging-banner__actions {
-		margin-top: 4px;
+		margin-top: 12px;
+		@include oGridRespondTo($from: M) {
+			margin-top: 0;
+		}
 	}
 
 	.n-messaging-banner__button {
