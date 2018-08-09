@@ -26,6 +26,9 @@ module.exports = {
 	usaSaleBottom: {
 		path: 'bottom/usa-sale',
 	},
+	secondarySchoolLeavers: {
+		path: 'bottom/school-leavers',
+	},
 	paymentFailure: {
 		path: 'top/payment-failure'
 	},

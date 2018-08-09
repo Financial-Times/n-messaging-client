@@ -1,0 +1,18 @@
+@include oFontsInclude(FinancierDisplayWeb, $weight: bold);
+
+.school-leaver__wrapper {
+    // background-image: 
+}
+
+.school-leaver__header {
+    @include oTypography($scale: 7);
+    font-family: FinancierDisplayWeb,serif
+}
+
+.school-leaver__sub-heading {
+
+}
+
+.school-leaver__list {
+    
+}

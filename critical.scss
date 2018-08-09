@@ -12,7 +12,6 @@ $o-tooltip-is-silent : false;
 @import "o-tooltip/main";
 @import './src/components/top/nav-messaging-tooltip';
 
-
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
