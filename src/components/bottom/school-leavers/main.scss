@@ -17,7 +17,7 @@
 
 	.school-leaver__sub-heading {
 		@include oTypographySansBold($scale: 0);
-		color: getColor('teal');
+		color: getColor('teal-70');
 		@include oGridRespondTo($from: M) {
 			@include oTypographySansBold($scale: 3);
 		}
