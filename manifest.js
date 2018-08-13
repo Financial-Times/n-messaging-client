@@ -26,6 +26,9 @@ module.exports = {
 	secondarySchoolLeavers: {
 		path: 'bottom/school-leavers',
 	},
+	swgEntitlementsPrompt: {
+		path: 'bottom/swg-entitlements-prompt',
+	},
 	paymentFailure: {
 		path: 'top/payment-failure'
 	},
