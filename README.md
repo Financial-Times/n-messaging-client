@@ -4,7 +4,6 @@
 
 ### Table of Contents
 
-* [To Do](#todo)
 * [Monitoring](#monitoring)
 * [Usage](#usage)
 	- [Application specific](#application-specific)
