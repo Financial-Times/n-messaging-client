@@ -20,16 +20,6 @@
 	- [Parts of n-messaging-client](#parts-of)
 	- [Holistic Messaging Flow](#holistic-messaging-flow)
 
-### Todo :rocket:
-- [x] The "top" message slot, aka service messages ([`o-message`](https://github.com/Financial-Times/n-alert-banner))
-- [x] [`next-messaging-guru`](https://github.com/Financial-Times/next-messaging-guru) api aka async message configuration
-- [ ] polish
-- [x] port over existing messages
-- [ ] unit tests
-- [ ] a11y tests for all messages
-- [x] a11y tests
-- [x] demo mode
-
 ### Explainer
 Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3bGka2XNS0OrOMowaqyGxZFmwZY831xtEJA/edit)
 
@@ -42,29 +32,6 @@ Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3
 
 The easiest way to enable client side messaging for an application is via the `n-ui` config (TBC).
 Alternatively you can import and initialise the component manually on an application level.
-
-## Via `n-ui` (TBC)
-
-**This PR needs merging before this would work: https://github.com/Financial-Times/n-ui/pull/1143**
-
-Enable the messaging feature in your app config via `n-ui`:
-
-```javascript
-// app.js
-
-const nUi = require('@financial-times/n-ui');
-const app = nUi({
-  withMessaging: true
-});
-
-app.locals.nUiConfig = {
-  preset: 'complete',
-  features: {
-    messaging: true
-  }
-};
-
-```
 
 ## Application specific
 
