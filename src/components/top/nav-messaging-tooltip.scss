@@ -1,26 +1,7 @@
 [data-n-messaging-tooltip="true"] .n-alert-banner--neutral {
-	.n-alert-banner__content--long {
-		@include alertBannerContentLong;
-	}
 
-	.n-alert-banner__content--short {
-		@include alertBannerContentShort;
-	}
-
-	.n-alert-banner__outer {
-		@include alertBannerOuter;
+	.n-alert-banner__container {
 		background-color: oColorsGetPaletteColor($name: 'wheat');
-	}
-
-	.n-alert-banner__inner {
-		@include alertBannerInner;
-		justify-content: space-between;
-		padding-left: 10px;
-	}
-
-	.n-alert-banner__content {
-		@include alertBannerContent;
-		@include oTypographySans($scale: 0);
 		padding-left: 0;
 		padding-right: 0;
 		margin-left: 0;
@@ -32,18 +13,26 @@
 		}
 	}
 
-	.n-alert-banner__close {
-		position: static;
-		background-size: 12px;
+	.n-alert-banner__content {
+		padding-left: 10px;
 	}
 
+	.n-alert-banner__close {
+		right: 12px;
+		border-bottom: 0;
+	}
 
 }
 
 .n-messaging-client-tooltip {
+	@include oTypographySans($scale: 0);
 	display: none !important;
 	@include oGridRespondTo(M) {
 		display: block !important;
+	}
+
+	.n-alert-banner__content-main {
+		hyphens: none;
 	}
 }
 

@@ -1,9 +1,7 @@
 const oViewport = require('o-viewport');
-const cookieStore = require('n-ui-foundations').cookieStore;
-const LOCAL_STORE_KEY = 'FTCookieConsentGDPR';
 
 module.exports = function customSetup (banner, done) {
-	const hasAccepted = cookieStore.get(LOCAL_STORE_KEY) === 'true';
+	const hasAccepted = /FTCookieConsentGDPR=true/.test(document.cookie);
 	const bannerElem = banner.bannerElement;
 	const wrapper = banner.innerElement;
 
@@ -14,26 +12,33 @@ module.exports = function customSetup (banner, done) {
 
 	const removeBanner = () => {
 		bannerElem.parentNode.removeChild(bannerElem);
+		document.body.focus();
 	};
 
 	const updateConsent = (elem, event) => {
-		const elemAction = elem.getAttribute('action');
-		const elemMethod = elem.getAttribute('method');
 		event.preventDefault();
-		// call the consent proxy to set other cookies to yes, but still hide banner if those fail. User can manage via preferences pages.
-		return fetch(elemAction, {
-			method: elemMethod,
+		// call the consent proxy to set default cookie acceptance
+		// but still hide banner if those fail
+		// User can manage via preferences pages
+		return fetch('https://consent.ft.com/__consent/consent-record-cookie', {
+			method: 'GET',
 			credentials: 'include'
 		})
 		.then(removeBanner)
-		.catch(error => {
-			return { error };
-		});
+		.catch(error => ({ error }));
 	};
 
 	const setup = () => {
-		const acceptForm = [].slice.call(wrapper.querySelectorAll('[data-action="accept-form"]'));
-		acceptForm.forEach(elem => elem.addEventListener('submit', (event) => updateConsent(elem, event), false));
+		const cookieBanner = bannerElem.closest('.n-ui-hide-enhanced');
+		if (cookieBanner) {
+			cookieBanner.classList.remove('n-ui-hide-enhanced');
+		}
+		const acceptButton = wrapper.querySelector('[data-action="accept-form"]');
+		acceptButton.addEventListener(
+			'click',
+			event => updateConsent(acceptButton, event),
+			false
+		);
 
 		if (typeof CSS === 'undefined' || !CSS.supports('position', 'sticky')) {
 			bannerElem.classList.add('n-messaging-banner--fixed');
@@ -52,7 +57,6 @@ module.exports = function customSetup (banner, done) {
 	};
 
 	if (hasAccepted) {
-		removeBanner();
 		done({ skip: true });
 	} else {
 		setup();

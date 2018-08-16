@@ -1,3 +1,5 @@
+$o-tooltip-is-silent : false;
+
 @import "o-buttons/main";
 @import "o-colors/main";
 @import "o-grid/main";
@@ -5,26 +7,19 @@
 @import "o-typography/main";
 
 @import 'n-alert-banner/main';
+@import 'o-message/main';
 @import 'o-banner/main';
-$o-tooltip-is-silent : false;
 @import "o-tooltip/main";
-@import './src/components/nav-messaging-tooltip';
-@import './src/components/privacy-policy/main';
-@import './src/components/tls-deprecation/main';
+@import './src/components/top/nav-messaging-tooltip';
 
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
-@include nAlertBanner($class: 'n-alert-banner', $themes: 'all');
+@include oMessage($class: 'n-alert-banner', $types: 'alert', $status: 'all');
 
 // ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
 .n-messaging-banner {
-	z-index: 100;
-}
-
-// ensure the top n-alert-banner inner content is aligned to page content
-.n-alert-banner__inner {
-	@include oGridContainer();
+	@include nUiZIndexFor('notification');
 }
 
 // set base font
@@ -34,16 +29,4 @@ $o-tooltip-is-silent : false;
 	font-size: 0.8125em;
 }
 
-// ensure the top n-alert-banner inner content is aligned to page content
-.n-alert-banner__inner {
-	@include oGridContainer();
-}
-
-// set base font
-.n-alert-banner,
-.n-messaging-banner {
-	font-family: sans-serif;
-	font-size: 0.8125em;
-}
-
-@import './src/components/cookie-consent/main';
+@import './src/components/bottom/cookie-consent/main';

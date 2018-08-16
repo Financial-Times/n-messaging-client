@@ -4,7 +4,7 @@ const dispatchEvent = (event) => {
 
 module.exports = {
 	generateMessageEvent: function ({ messageId, position, flag, variant }={}) {
-		return function (action) {
+		return function (action, trackingAttr) {
 			const detail = {
 				category: 'n-messaging',
 				action: action,
@@ -13,6 +13,8 @@ module.exports = {
 				messaging_flag: flag,
 				messaging_variant: variant
 			};
+			if (trackingAttr)
+				detail.messaging_action = trackingAttr;
 			const messagingEvent = new CustomEvent('oTracking.event', { detail, bubbles: true });
 			dispatchEvent(messagingEvent);
 			/* TODO: remove below fallback event once we port to the above */

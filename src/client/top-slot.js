@@ -1,21 +1,23 @@
-const nAlertBanner = require('n-alert-banner');
+const nAlertBanner = require('o-message');
 const { generateMessageEvent, listen } = require('./utils');
 
 const ALERT_BANNER_CLASS = 'n-alert-banner';
-const ALERT_ACTION_SELECTOR = '[data-n-messaging-alert-banner-action]';
+const ALERT_ACTION_SELECTOR = '[data-n-alert-banner-action]';
 const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 
+const TOP_SLOT_FLAG = 'messageSlotTop';
+
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	let alertBanner;
-	const trackEventAction = config.id && generateMessageEvent({ messageId: config.id, position: config.position, variant: config.name, flag: config.flag });
+	const trackEventAction = config.name && generateMessageEvent({ messageId: config.name, position: config.slot, variant: config.name, flag: TOP_SLOT_FLAG });
 	const declarativeElement = !config.lazy && config.content;
-	const defaults = { alertBannerClass: ALERT_BANNER_CLASS, autoOpen: false };
+	const options = { messageClass: ALERT_BANNER_CLASS, autoOpen: false, close: nAlertBanner.getDataAttributes(declarativeElement).close};
 
 	if (declarativeElement) {
-		alertBanner = new nAlertBanner(declarativeElement);
+		alertBanner = new nAlertBanner(declarativeElement, options);
 	} else if (guruResult && guruResult.renderData) {
-		alertBanner = new nAlertBanner(null, imperativeOptions(guruResult.renderData, defaults));
+		alertBanner = new nAlertBanner(null, imperativeOptions(guruResult.renderData, options));
 	} else {
 		if (guruResult.skip && trackEventAction) {
 			trackEventAction('skip');
@@ -24,20 +26,24 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	// attach event handlers
-	let actions = alertBanner.innerElement.querySelectorAll(ALERT_ACTION_SELECTOR);
+	let actions = alertBanner.messageElement.querySelectorAll(ALERT_ACTION_SELECTOR);
 	if (actions.length === 0) {
 		// if no actions specified in markup then default to adding it to the
 		// button element (this can happen when declared imperatively)
-		actions = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_BUTTON_SELECTOR);
+		actions = alertBanner.messageElement.querySelectorAll(ALERT_BANNER_BUTTON_SELECTOR);
 		if (actions.length === 0) {
-			actions = alertBanner.innerElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
+			actions = alertBanner.messageElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
 		}
 	}
+
 	actions = [].slice.call(actions);
-	listen(alertBanner.alertBannerElement, 'n.alertBannerClosed', () => trackEventAction('close'));
-	listen(alertBanner.alertBannerElement, 'n.alertBannerOpened', () => trackEventAction('view'));
+	listen(alertBanner.messageElement, 'o.messageClosed', () => trackEventAction('close'));
+	listen(alertBanner.messageElement, 'o.messageOpen', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
-		actions.forEach((el) => { listen(el, 'click', () => trackEventAction(el.dataset['nMessagingAlertBannerAction'] || 'act')); });
+		actions.forEach((el) => {
+			const trackingAttr = el.dataset.nAlertBannerActionType;
+			listen(el, 'click', () => trackEventAction(el.dataset['nAlertBannerAction'] || 'act', trackingAttr));
+		});
 	}
 
 	//show alertBanner
@@ -58,15 +64,25 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 function imperativeOptions (opts, defaults) {
 	return {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
-		bannerClass: opts.bannerClass || defaults.bannerClass,
-		theme: opts.theme,
-		contentLongBold: opts.contentLongBold,
-		contentLong: opts.contentLong,
-		contentShort: opts.contentShort,
-		buttonLabel: opts.buttonLabel,
-		buttonUrl: opts.buttonUrl,
-		linkLabel: opts.linkLabel,
-		linkUrl: opts.linkUrl,
-		closeButton: opts.closeButton
+		messageClass: opts.messageClass || defaults.messageClass,
+		type: opts.type,
+		status: opts.status,
+		parentElement: opts.parentElement,
+		content: {
+			highlight: opts.contentTitle,
+			detail: opts.content,
+			additionalInfo: opts.additionalInfo
+		},
+		actions: {
+			primary: {
+				text: opts.buttonLabel,
+				url: opts.buttonUrl
+			},
+			secondary: {
+				text: opts.linkLabel,
+				url: opts.linkUrl
+			}
+		},
+		close: opts.closeButton
 	};
 }

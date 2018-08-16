@@ -1,0 +1,133 @@
+[data-n-messaging-name="cookieConsentA"],
+[data-n-messaging-name="cookieConsentB"],
+[data-n-messaging-name="cookieConsentC"] {
+	position: sticky;
+	bottom: 0;
+	z-index: 100;
+	@include oGridRespondTo($from: M) {
+		max-width: $spacing-unit*24+$spacing-unit*2;
+		bottom: $spacing-unit;
+	}
+}
+
+.cookie-banner {
+	/* overrides always fixed */
+	.n-messaging-banner {
+		@include oTypographySans($scale: 0);
+		position: static;
+		@at-root .enhanced &.n-messaging-banner--fixed {
+			position: fixed;
+			transform: translateY(0);
+		}
+		@include oGridRespondTo($from: M) {
+			max-width: $spacing-unit*24;
+			margin: $spacing-unit;
+		}
+		@include oGridRespondTo($from: XL) {
+			margin-left: calc(((100vw - #{map-get($o-grid-layouts, 'XL')}) / 2) + #{$spacing-unit/2});
+		}
+	}
+
+	.n-messaging-banner__outer {
+		padding: oTypographySpacingSize($units: 3) oTypographySpacingSize($units: 6) oTypographySpacingSize($units: 6);
+		@include oGridRespondTo($from: M) {
+			padding: oTypographySpacingSize($units: 6) oTypographySpacingSize($units: 10) oTypographySpacingSize($units: 10);
+		}
+	}
+
+	.cookie-banner__head {
+		@include oTypographySize($scale: 2);
+		margin-top: 0;
+		margin-bottom: oTypographySpacingSize($units: 1);
+	}
+
+	.cookie-banner__actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: oTypographySpacingSize($units: 5);
+	}
+
+	.n-messaging-banner__button {
+		@include oButtonsTheme(primary);
+		@include oGridRespondTo($from: 375px) {
+			@include oTypographySize($scale: 1);
+		}
+	}
+
+	.cookie-banner__link--external {
+		@include oTypographyLinkExternal;
+		margin-right: $spacing-unit; /* override 24px margin from origami mixin */
+	}
+
+	.cookie-banner__link,
+	.cookie-banner__link--external {
+		border-bottom-color: oColorsGetPaletteColor('teal-80');
+	}
+
+	&.variant-cookieConsentC { /* stylelint-disable-line */
+		.n-messaging-banner__outer {
+			padding-top: oTypographySpacingSize($units: 5);
+		}
+
+		.cookie-banner__head {
+			@include oTypographySans($scale: 3);
+			padding-bottom: oTypographySpacingSize($units: 3);
+			margin-bottom: oTypographySpacingSize($units: 4);
+			position: relative;
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				height: oTypographySpacingSize($units: 1);
+				width: 60px;
+				bottom: 0;
+				left: 0;
+				background-color: oColorsGetTint('jade', 50);
+			}
+		}
+
+		.cookie-banner__link--external {
+			@include oTypographyLinkExternal;
+			margin-right: $spacing-unit; /* override 24px margin from origami mixin */
+		}
+
+		.cookie-banner__link,
+		.cookie-banner__link--external {
+			color: oColorsGetPaletteColor('black-80');
+			border-bottom-color: oColorsGetPaletteColor('black-50');
+		}
+
+		.cookie-banner__link--external::after {
+				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black-80'), 24, $iconset-version: 1);
+		}
+
+		.cookie-banner__actions {
+			@include oGridRespondTo($until: S) {
+				margin-top: oTypographySpacingSize($units: 2);
+				display: block;
+			}
+		}
+
+		.n-messaging-banner__button {
+			background-color: oColorsGetTint('jade', 50);
+			margin-top: oTypographySpacingSize($units: 4);
+			width: 100%;
+			@include oGridRespondTo($until: S) {
+				@include oTypographySans($scale: -1);
+				min-height: auto;
+				padding-top: 6px;
+				padding-bottom: 6px;
+			}
+			@include oGridRespondTo($from: S) {
+				margin-top: 0;
+			}
+			@include oGridRespondTo($from: M) {
+				width: auto;
+			}
+			&:hover {
+				background-color: oColorsGetTint('jade', 40);
+			}
+		}
+	}
+}

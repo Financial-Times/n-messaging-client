@@ -6,10 +6,10 @@ module.exports = {
 	strings: {
 		deny: [],
 		denyOverrides: [
-			'27e66825-bc4f-ba59-a3cd-1a8f08579bfe', // templates/partials/top/anon-subscribe-now-teal.html:3|11
-			'a9582121-87c2-09a7-0cc0-4caf594985d5', // popup-prompt/main.js:131
-			'c1773439-53dc-df3d-9acc-20ce2ecde318', // popup-prompt/main.js:133
-			'45e2193a-f479-11e7-8c80-69ca88a9e8d1' // README.md:175
+			'45e2193a-f479-11e7-8c80-69ca88a9e8d1', // README.md:204
+			'c1773439-53dc-df3d-9acc-20ce2ecde318', // manifest.js:24
+			'27e66825-bc4f-ba59-a3cd-1a8f08579bfe', // templates/partials/top/anon-subscribe-now-teal.html:3
+			'1c06e610-c7a7-c0fe-3356-e498223688ae' // templates/partials/top/usa-sale.html:3
 		]
 	}
 };

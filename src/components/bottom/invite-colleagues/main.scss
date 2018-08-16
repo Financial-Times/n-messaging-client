@@ -161,6 +161,11 @@
 }
 
 .invite-colleagues-banner__wrapper {
+	@include oGridRespondTo($until: S) {
+		display: none;
+	}
+
+
 	.invite-colleagues__copy-link-button {
 		@include oButtonsTheme(inverse);
 		background-color: oColorsGetPaletteColor('black');

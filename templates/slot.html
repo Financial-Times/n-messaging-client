@@ -1,17 +1,12 @@
-{{#nMessagingPresenter @this type=type flags=@root.flags}}
+{{#nMessagingPresenter @this type=type root=@root}}
 	{{#if @nMessagingPresenter.hasMessage}}
 		<div
-			class="n-messaging-slot n-messaging-slot--{{@nMessagingPresenter.data.variant}}"
+			class="n-messaging-slot"
 			data-n-messaging-slot="{{type}}"
 			data-n-messaging-name="{{@nMessagingPresenter.data.variant}}"
-			data-n-messaging-flag="{{@nMessagingPresenter.data.flag}}"
-			data-n-messaging-id="{{@nMessagingPresenter.data.messageId}}"
-			data-n-messaging-lazy="{{@nMessagingPresenter.data.lazyLoad}}"
-			data-n-messaging-guru-query-string="{{@nMessagingPresenter.data.guruQueryString}}"
-			data-n-messaging-position="{{@nMessagingPresenter.data.position}}"
-			data-n-messaging-tooltip="{{@nMessagingPresenter.data.tooltip}}"
-			data-trackable="onsite-message-{{@nMessagingPresenter.data.variant}}">
-			{{>(lookup @nMessagingPresenter.data 'partial')}}
+			data-trackable="onsite-message-{{@nMessagingPresenter.data.variant}}"
+			data-n-messaging-tooltip="{{@nMessagingPresenter.data.tooltip}}">
+			{{>(lookup @nMessagingPresenter.data 'path')}}
 		</div>
 	{{/if}}
 {{/nMessagingPresenter}}

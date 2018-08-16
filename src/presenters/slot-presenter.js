@@ -3,7 +3,6 @@ const MANIFEST = require('../../manifest');
 
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
 const TOP_SLOT_FLAG = 'messageSlotTop';
-const LAZY_REGEXP = /\/lazy$/;
 const TOP_TYPE = 'top';
 const BOTTOM_TYPE = 'bottom';
 
@@ -18,18 +17,14 @@ const relevantFlag = (type) => {
 const getVariantConfig = (variant) => (MANIFEST && MANIFEST[variant]) || {};
 const resolvePartialPath = (path) => path && `n-messaging-client/templates/partials/${path}`;
 
-const getConfig = (position, flags) => {
+const getConfig = (position, root, flags) => {
 	const variant = flags(relevantFlag(position));
 	const conf = getVariantConfig(variant);
 	return Object.assign({}, conf,
 		{
 			variant,
-			position,
-			flag: relevantFlag(position),
-			lazyLoad: LAZY_REGEXP.test(conf.partial),
-			partial: resolvePartialPath(conf.partial),
-			messageId: conf.messageId,
-			guruQueryString: conf.guruQueryString,
+			root,
+			path: resolvePartialPath(conf.path),
 			tooltip: conf.tooltip
 		}
 	);
@@ -40,7 +35,8 @@ const SlotPresenter = class SlotPresenter {
 	constructor (_data) {
 		this._data = _data || {};
 		this.position = dataTypeContract(_data.type) && _data.type;
-		this.config = getConfig(this.position, parseFlagsObject(this._data.flags));
+		const root = this._data.root || {};
+		this.config = getConfig(this.position, root, parseFlagsObject(root.flags));
 	}
 
 	get data () {
@@ -48,7 +44,7 @@ const SlotPresenter = class SlotPresenter {
 	}
 
 	get hasMessage () {
-		return !!(this.config.variant && this.config.partial);
+		return !!(this.config.variant && this.config.path);
 	}
 
 };

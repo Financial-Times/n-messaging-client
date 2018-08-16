@@ -1,60 +1,45 @@
 module.exports = {
-	licenceJoinPromptSsiClient: { // name of flag variant
-		partial: 'bottom/lazy', // path to template
-		messageId: 'licenceJoinPromptSsiClient' // id as specified in ammit-api
+	licenceJoinPromptSsiClient: { // name of flag variant and must match the messageId in ammit-api
+		path: 'bottom/lazy', // path to template
+		lazy: true
 	},
-	b2bUpsellBanner: {
-		partial: 'bottom/b2b-upsell',
-		messageId: 'b2c-invite-colleague-banner'
+	inviteColleagues: {
+		path: 'bottom/invite-colleagues'
 	},
 	appPromotingBanner: {
-		partial: 'bottom/desktop-app-banner',
-		messageId: 'appPromotingBanner'
+		path: 'bottom/app-promoting-banner'
 	},
 	cookieConsentA: {
-		partial: 'bottom/cookie-consent',
-		messageId: 'cookieConsentA'
+		path: 'bottom/cookie-consent'
 	},
 	cookieConsentB: {
-		partial: 'bottom/cookie-consent',
-		messageId: 'cookieConsentB'
+		path: 'bottom/cookie-consent'
+	},
+	cookieConsentC: {
+		path: 'bottom/cookie-consent'
 	},
 	marketingPopupPrompt: {
-		partial: 'bottom/lazy',
-		messageId: 'marketingPopupPrompt',
+		path: 'bottom/lazy',
+		lazy: true,
 		guruQueryString: 'offerId=c1773439-53dc-df3d-9acc-20ce2ecde318'
 	},
+	secondarySchoolLeavers: {
+		path: 'bottom/school-leavers',
+	},
 	paymentFailure: {
-		partial: 'top/payment-failure',
-		messageId: 'paymentFailure'
+		path: 'top/payment-failure'
 	},
 	teamTrial: {
-		partial: 'top/team-trial',
-		messageId: 'teamTrial'
+		path: 'top/team-trial'
 	},
 	anonSubscribeNow: {
-		partial: 'top/anon-subscribe-now-teal',
-		messageId: 'anonSubscribeNow',
+		path: 'top/anon-subscribe-now-teal'
 	},
-	gdprConsent: {
-		partial: 'top/gdpr-consent',
-		messageId: 'gdprConsent'
-	},
-	navContactPreferences: {
-		partial: 'top/nav-contact-preferences',
-		messageId: 'navContactPreferences',
+	navAccountSettings: {
+		path: 'top/nav-account-settings',
 		tooltip: true
 	},
-	privacyPolicy: {
-		partial: 'top/privacy-policy',
-		messageId: 'privacyPolicy'
-	},
-	tlsDeprecation: {
-		partial: 'top/tls-deprecation',
-		messageID: 'tlsDeprecation'
-	},
-	deloitteSubscription: {
-		partial: 'top/deloitte-subscription',
-		messageId: 'deloitteSubscription'
+	usaSaleTop: {
+		path: 'top/usa-sale'
 	}
 };
