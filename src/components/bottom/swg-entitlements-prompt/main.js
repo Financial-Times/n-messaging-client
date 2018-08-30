@@ -1,15 +1,23 @@
-import {swgLoader} from 'n-swg';
-const bottomSlotOccupied = document.querySelector('[data-n-messaging-slot="bottom"]');
+const swgImport = require('n-swg');
+const swgLoader = swgImport.swgLoader;
 
-module.exports = async () => {
-    if (!bottomSlotOccupied) {
-        const swg = await swgLoader();
-        await swg.init();
-        const entitlements = await swg.checkEntitlements();
-        //console.log('entitlements', entitlements);
-        // if (entitlements && entitlements.granted) {
-            //console.log('GRANTED! PLEASE ONWARD JOURNEY');
-            swg.defaultOnwardEntitledJourney(entitlements);
-        // }
-    }
-} 
+module.exports = (banner) => {
+		let swg;
+		swgLoader({ manualInitDomain: 'ft.com:subscribed', customOnwardJourney: true })
+		.then((result) => {
+			swg = result;
+			swg.init();
+		})
+		.then(() => swg.checkEntitlements())
+		.then(entitlements => {
+			if (entitlements) {
+				// get cta properties from n-swg and apply them to the banner button
+				const ctaProperties = swg.getEntitledOnwardJourneyProps(entitlements);
+				const bannerCta = banner.bannerElement.querySelector('.n-messaging-banner__button');
+				bannerCta.innerHTML = ctaProperties.copy;
+				bannerCta.setAttribute('href', ctaProperties.href);
+				bannerCta.addEventListener('click', ctaProperties.callback);
+				banner.open();
+			}
+		});
+};

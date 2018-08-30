@@ -18,6 +18,9 @@ module.exports = {
 	cookieConsentC: {
 		path: 'bottom/cookie-consent'
 	},
+	swgEntitlementsPrompt: {
+		path: 'bottom/swg-entitlements-prompt',
+	},
 	marketingPopupPrompt: {
 		path: 'bottom/lazy',
 		lazy: true,
@@ -25,9 +28,6 @@ module.exports = {
 	},
 	secondarySchoolLeavers: {
 		path: 'bottom/school-leavers',
-	},
-	swgEntitlementsPrompt: {
-		path: 'bottom/swg-entitlements-prompt',
 	},
 	paymentFailure: {
 		path: 'top/payment-failure'
