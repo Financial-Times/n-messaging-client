@@ -37,5 +37,5 @@ unit-test:
 	mocha --recursive
 
 smoke:
-	export TEST_URL=http://localhost:5005; \
+	export TEST_URL=http://localhost:5050; \
 	make a11y
