@@ -38,7 +38,7 @@ app.get('/*', (req, res) => {
 	res.render('index',{ layout: 'custom-vanilla', title: 'Demo' });
 });
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5005;
 
 const listen = app.listen(PORT);
 
