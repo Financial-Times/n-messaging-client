@@ -1,5 +1,4 @@
-const swgImport = require('n-swg');
-const swgLoader = swgImport.swgLoader;
+const swgLoader = require('n-swg').swgLoader;
 
 module.exports = (banner) => {
 		let swg;
