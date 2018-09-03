@@ -3,7 +3,7 @@ const swgLoader = swgImport.swgLoader;
 
 module.exports = (banner) => {
 		let swg;
-		swgLoader({ manualInitDomain: 'ft.com:subscribed', customOnwardJourney: true })
+		swgLoader({ customOnwardJourney: true })
 		.then((result) => {
 			swg = result;
 			swg.init();
