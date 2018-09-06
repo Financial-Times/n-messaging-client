@@ -19,7 +19,7 @@ module.exports = {
 		path: 'bottom/cookie-consent'
 	},
 	swgEntitlementsPrompt: {
-		path: 'bottom/swg-entitlements-prompt',
+		path: 'bottom/swg-entitlements-prompt'
 	},
 	marketingPopupPrompt: {
 		path: 'bottom/lazy',
