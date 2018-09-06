@@ -43,6 +43,6 @@
     "n-swg": "^0.15.0"
   },
   "devDependencies": {
-    "o-tracking": "^1.3.8"
+    "o-tracking": "^1.4.0"
   }
 }
