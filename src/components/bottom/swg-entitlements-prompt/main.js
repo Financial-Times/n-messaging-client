@@ -8,7 +8,7 @@ module.exports = (banner, done) => {
 				swg.init();
 				return swg.checkEntitlements();
 			}).then(entitlements => {
-				if (entitlements && !entitlements.granted && !entitlements.hasEntitlements) {
+				if (entitlements && !entitlements.granted && entitlements.hasEntitlements) {
 					// get cta properties from n-swg and apply them to the banner button
 					const ctaProperties = swg.getEntitledOnwardJourneyProps(entitlements);
 					const bannerCta = banner.bannerElement.querySelector('.n-messaging-banner__button');
