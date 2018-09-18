@@ -5,8 +5,8 @@ const parseSlot = (path) => {
 	if (path.includes('top')) return 'messageSlotTop';
 };
 
-// create array of feature names and slots based on manifest
-const createMessage = (key) => {
+// create array for pa11y, with url and FT flag setting for each message
+const createTest = (key) => {
 	const slotName = parseSlot(manifest[key].path);
 	return {
 		headers: {
@@ -17,6 +17,6 @@ const createMessage = (key) => {
 		}
 	};
 };
-const messageSlotTests = Object.keys(manifest).map(createMessage);
+const messageSlotTests = Object.keys(manifest).map(createTest);
 
 module.exports = messageSlotTests;
