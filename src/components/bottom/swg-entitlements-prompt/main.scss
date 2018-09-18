@@ -1,0 +1,23 @@
+.swg-entitlements-prompt__wrapper {
+
+	.n-messaging-banner__action {
+		position: relative;
+	}
+
+	.n-messaging-banner__button {
+		@include oButtons;
+		@include oButtonsSize('big');
+		@include oButtonsTheme('secondary');
+		background-color: oColorsGetPaletteColor('white');
+		padding-left: 40px;
+
+		&:before {
+			content: '';
+			background: transparent url('https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2FG_active_focused_pressed.svg?source=m-login&width=20&height=20&format=svg') no-repeat;
+			position: absolute;
+			left: 10px;
+			width: 18px;
+			height: 18px;
+		}
+	}
+}

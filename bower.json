@@ -39,9 +39,10 @@
     "o-typography": "^5.7.3",
     "n-alert-banner": "^1.0.0",
     "o-overlay": "^2.4.3",
-    "o-loading": "^2.2.2"
+    "o-loading": "^2.2.2",
+    "n-swg": "^0.15.0"
   },
   "devDependencies": {
-    "o-tracking": "^1.3.8"
+    "o-tracking": "^1.4.0"
   }
 }

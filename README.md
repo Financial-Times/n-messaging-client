@@ -2,17 +2,22 @@
 
 **Lightweight, consistent, smart, targeted and behaviourally driven first party messaging on FT.com**
 
-:construction: _Currently in active development / testing._ :construction:
+### Table of Contents
 
-**Todo** :rocket:
-- [ ] The "top" message slot, aka service messages ([`n-alert-banner`](https://github.com/Financial-Times/n-alert-banner))
-- [x] [`next-messaging-guru`](https://github.com/Financial-Times/next-messaging-guru) api aka async message configuration
-- [ ] polish
-- [ ] port over existing messages
-- [ ] unit tests
-- [ ] a11y tests for all messages
-- [x] a11y tests
-- [x] demo mode
+* [Monitoring](#monitoring)
+* [Usage](#usage)
+	- [Application specific](#application-specific)
+* [Development](#development)
+	- [Running locally](#running-locally)
+	- [Configuring Messages](#configuring-messages)
+		- [Viewing messages](#viewing-messages)
+		- [Configuration](#configuration)
+		- [Under the hood](#under-the-hood)
+* [Overview](#overview)
+	- [The Problem](#the-problem)
+	- [The Solution](#the-solution)
+	- [Parts of n-messaging-client](#parts-of)
+	- [Holistic Messaging Flow](#holistic-messaging-flow)
 
 ### Explainer
 Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3bGka2XNS0OrOMowaqyGxZFmwZY831xtEJA/edit)
@@ -26,29 +31,6 @@ Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3
 
 The easiest way to enable client side messaging for an application is via the `n-ui` config (TBC).
 Alternatively you can import and initialise the component manually on an application level.
-
-## Via `n-ui` (TBC)
-
-**This PR needs merging before this would work: https://github.com/Financial-Times/n-ui/pull/1143**
-
-Enable the messaging feature in your app config via `n-ui`:
-
-```javascript
-// app.js
-
-const nUi = require('@financial-times/n-ui');
-const app = nUi({
-  withMessaging: true
-});
-
-app.locals.nUiConfig = {
-  preset: 'complete',
-  features: {
-    messaging: true
-  }
-};
-
-```
 
 ## Application specific
 
@@ -86,7 +68,7 @@ Now you can inject the message "slot" template in the relevant place in your mar
 {{> n-messaging-client/templates/slot type='bottom'}}
 ```
 
-Import `n-messaging-client`'s styles to your main css entry. 
+Import `n-messaging-client`'s styles to your main css entry.
 
 If you're using a message type that is server-rendered, import the critical stylesheet into the 'head' section of your main.scss.
 
@@ -128,7 +110,7 @@ if ( window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop ) {
 ## Running locally
 
 - `make install`
-- `make demo`
+- `make demo` (will build and run demo)
 -  visit http://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used).
 
 ## Configuring Messages
@@ -153,7 +135,7 @@ Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pic
 ### Under the hood :wrench:
 
 - The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
-- The "top" message slot uses [`n-alert-banner`](https://github.com/Financial-Times/n-alert-banner)
+- The "top" message slot uses [o-message`](http://registry.origami.ft.com/components/o-message)
 
 ### Releasing a message to production
 
@@ -161,7 +143,7 @@ Firstly this assumes you have versioned and published this module and have the n
 
 Two things have to be in place for a message to be "live":
 1) the variant must exist on the flag
-2) there must be config in messaging.json for that variant
+2) there must be config in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/master/server/config/messaging.json) for that variant
 
 For easy client-side validation of the message, (does it render correctly on the page etc). Don't ship part 2. Just have a variant, and test the message via turning it on in toggler.
 

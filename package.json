@@ -26,5 +26,7 @@
     "request": "^2.87.0",
     "sinon": "^6.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@financial-times/n-swg": "^0.15.0"
+  }
 }

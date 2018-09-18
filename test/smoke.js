@@ -18,6 +18,10 @@ const messages = [
 	{
 		name: 'anonSubscribeNow',
 		slot: 'messageSlotTop'
+	},
+	{
+		name: 'swgEntitlementsPrompt',
+		slot: 'messageSlotBottom'
 	}
 ];
 
