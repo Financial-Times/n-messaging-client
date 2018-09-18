@@ -1,21 +1,18 @@
 const manifest = require('../manifest');
 
-let messages = [];
-
 const parseSlot = (path) => {
 	if (path.includes('bottom')) return 'messageSlotBottom';
 	if (path.includes('top')) return 'messageSlotTop';
 };
 
 // create array of feature names and slots based on manifest
-for (let key in manifest) {
-	if (manifest.hasOwnProperty(key)) {
-		messages.push({
-			name: key,
-			slot: parseSlot(manifest[key]['path'])
-		});
-	}
-}
+const createMessage = function (key) {
+	return {
+		name: key,
+		slot: parseSlot(manifest[key].path)
+	};
+};
+const messages = Object.keys(manifest).map(createMessage);
 
 const messageSlotTests = messages.map(message => {
 	return {
