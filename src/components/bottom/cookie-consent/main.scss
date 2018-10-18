@@ -57,7 +57,6 @@
 
 	.cookie-banner__link--external {
 		@include oTypographyLinkExternal;
-		margin-right: $spacing-unit; /* override 24px margin from origami mixin */
 	}
 
 	.cookie-banner__link,
@@ -89,7 +88,6 @@
 
 		.cookie-banner__link--external {
 			@include oTypographyLinkExternal;
-			margin-right: $spacing-unit; /* override 24px margin from origami mixin */
 		}
 
 		.cookie-banner__link,
