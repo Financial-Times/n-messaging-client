@@ -27,6 +27,6 @@
     "sinon": "^6.0.0"
   },
   "dependencies": {
-    "@financial-times/n-swg": "^0.15.0"
+    "@financial-times/n-swg": "^1.0.0"
   }
 }
