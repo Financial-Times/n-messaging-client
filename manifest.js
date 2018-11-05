@@ -30,7 +30,10 @@ module.exports = {
 		path: 'top/payment-failure'
 	},
 	teamTrial: {
-		path: 'top/team-trial'
+		path: 'bottom/team-trial'
+	},
+	teamTrialV2: {
+		path: 'bottom/team-trial-v2'
 	},
 	anonSubscribeNow: {
 		path: 'top/anon-subscribe-now-teal'
