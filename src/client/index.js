@@ -14,6 +14,7 @@ module.exports = {
 				name: dataSet.nMessagingName,
 				content: elm.querySelector('[data-n-messaging-component]'),
 				path: variant.path,
+				component: variant.component,
 				lazy: variant.lazy,
 				guruQueryString: variant.guruQueryString
 			};
@@ -25,7 +26,7 @@ module.exports = {
 	},
 	initialiseMessage (config) {
 		const render = this.renderHandler(config.slot);
-		const customSetup = this.setupHandler(config.path);
+		const customSetup = this.setupHandler(config.component || config.path);
 		const formatData = (res) => ({ config, guruResult: res, customSetup });
 		const getData = config.lazy
 			? fetchAsyncConfig(config)

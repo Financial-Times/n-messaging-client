@@ -9,8 +9,8 @@ const generateHtml = (src) => `
 <iframe class="${iframeClass}" src="${src}"></iframe>`;
 
 module.exports = function customSetup (banner, done) {
-	const overlayTrigger = banner.messageElement.querySelector('.n-alert-banner__actions__primary');
-	const closeTrigger = banner.messageElement.querySelector('.n-alert-banner__actions__secondary');
+
+	const overlayTrigger = banner.bannerElement.querySelector('.n-messaging-banner__button');
 
 	if (overlayTrigger) {
 		const src = overlayTrigger.href + (/\?/.test(overlayTrigger.href) ? '&' : '?') + 'embedded=true';
@@ -27,14 +27,6 @@ module.exports = function customSetup (banner, done) {
 		overlayTrigger.addEventListener('click', e => e.preventDefault());
 
 		new Overlay(componentName, options);
-	}
-
-	if (closeTrigger) {
-		closeTrigger.addEventListener('click', e => {
-			// Add close class rather than calling close to avoid a close event firing
-			banner.messageElement.classList.add('n-alert-banner--closed');
-			e.preventDefault();
-		});
 	}
 
 	done();
