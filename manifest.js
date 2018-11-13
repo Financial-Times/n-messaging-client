@@ -44,6 +44,6 @@ module.exports = {
 		tooltip: true
 	},
   bookYourConsult: {
-    path: 'bottom/book-your-consult'
+		path: 'bottom/book-your-consult'
   }
 };
