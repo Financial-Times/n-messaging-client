@@ -42,5 +42,8 @@ module.exports = {
 	navAccountSettings: {
 		path: 'top/nav-account-settings',
 		tooltip: true
-	}
+	},
+  bookYourConsult: {
+    path: 'bottom/book-your-consult'
+  }
 };
