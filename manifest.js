@@ -43,7 +43,7 @@ module.exports = {
 		path: 'top/nav-account-settings',
 		tooltip: true
 	},
-  bookYourConsult: {
+	bookYourConsult: {
 		path: 'bottom/book-your-consult'
-  }
+	}
 };
