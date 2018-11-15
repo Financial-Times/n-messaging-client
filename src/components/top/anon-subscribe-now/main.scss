@@ -10,32 +10,21 @@
 		align-items: center;
 		display: flex;
 		height: 56px;
-		margin-left: auto;
-		margin-right: auto;
+		justify-content: center;
 		padding: 0 20px;
-		text-align: right;
 	}
 
 	.n-alert-banner__cell {
-		flex: 0;
-		margin: 0 auto;
 		padding: 0 15px;
 	}
 
 	.n-alert-banner__content-main {
 		@include oTypographyDisplay($scale: 2);
-
-		flex: 1;
 	}
 
 	.n-alert-banner__image {
 		line-height: 0;
 		padding: 0;
-	}
-
-	.n-alert-banner__actions {
-		flex: 1;
-		text-align: left;
 	}
 
 	.n-alert-banner__actions__primary {
