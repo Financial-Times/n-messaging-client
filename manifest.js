@@ -32,10 +32,6 @@ module.exports = {
 	teamTrial: {
 		path: 'bottom/team-trial'
 	},
-	teamTrialV2: {
-		path: 'bottom/team-trial-v2',
-		component: 'bottom/team-trial'
-	},
 	anonSubscribeNow: {
 		path: 'top/anon-subscribe-now-teal'
 	},
