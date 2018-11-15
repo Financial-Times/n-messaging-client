@@ -1,0 +1,25 @@
+{{#ifEquals flags.topPromoSlotTest 'variant'}}
+	{{> n-messaging-client/templates/components/n-alert-banner
+		theme='marketing__anon-subscribe'
+		contentTitle='Make informed decisions. Try the FT.'
+		buttonUrl='https://sub.ft.com/spa2_14/?segmentId=27e66825-bc4f-ba59-a3cd-1a8f08579bfe&utm_uk=WWAFL&utm_eu=WWAFM&utm_us=JJIBAF&utm_as=FFIBAX'
+		buttonLabel='Choose your FT trial'
+		closeButton=false
+		customClass='n-alert-banner--marketing__anon-subscribe--dark'
+		customDataTrackableBanner='marketing-promo:header'
+		customDataTrackableActions='marketing-promo:box'
+		customDataTrackableButton='marketing-promo:link'
+	}}
+{{else}}
+	{{> n-messaging-client/templates/components/n-alert-banner
+		theme='marketing__anon-subscribe'
+		contentTitle='Get a fresh start.'
+		contentImage='https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fproduct%2Fanon-banner-lifestyle-image.png?source=next&height=56'
+		buttonUrl='https://sub.ft.com/spa2_14/?segmentId=27e66825-bc4f-ba59-a3cd-1a8f08579bfe&utm_uk=WWAFL&utm_eu=WWAFM&utm_us=JJIBAF&utm_as=FFIBAX'
+		buttonLabel='Choose your FT trial'
+		closeButton=false
+		customDataTrackableBanner='marketing-promo:header'
+		customDataTrackableActions='marketing-promo:box'
+		customDataTrackableButton='marketing-promo:link'
+	}}
+{{/ifEquals}}

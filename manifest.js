@@ -33,7 +33,7 @@ module.exports = {
 		path: 'bottom/team-trial'
 	},
 	anonSubscribeNow: {
-		path: 'top/anon-subscribe-now-teal'
+		path: 'top/anon-subscribe-now'
 	},
 	navAccountSettings: {
 		path: 'top/nav-account-settings',

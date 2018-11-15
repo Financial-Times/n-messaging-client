@@ -2,7 +2,7 @@
 	<div class="n-alert-banner__container">
 		<div class="n-alert-banner__content">
 			{{#ifSome contentTitle contentDetail}}
-				<p class="n-alert-banner__content-main">
+				<p class="n-alert-banner__content-main n-alert-banner__cell">
 					{{#if contentTitle}}
 						<span class="n-alert-banner__content-highlight">{{contentTitle}}</span>
 					{{/if}}
@@ -11,8 +11,13 @@
 					{{/if}}
 				</p>
 			{{/ifSome}}
+			{{#if contentImage}}
+			<div class="n-alert-banner__image n-alert-banner__cell">
+				<img src="{{contentImage}}" alt="{{contentTitle}}">
+			</div>
+			{{/if}}
 			{{#ifSome buttonUrl linkUrl}}
-				<div class="n-alert-banner__actions" {{#if customDataTrackableActions}} data-trackable="{{customDataTrackableActions}}"{{/if}}>
+				<div class="n-alert-banner__actions n-alert-banner__cell" {{#if customDataTrackableActions}} data-trackable="{{customDataTrackableActions}}"{{/if}}>
 					{{#if buttonUrl}}
 					<a href="{{buttonUrl}}" class="n-alert-banner__actions__primary" data-n-alert-banner-action="{{buttonAction}}" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}">{{buttonLabel}}</a>
 					{{/if}}
