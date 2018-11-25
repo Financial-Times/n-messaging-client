@@ -27,6 +27,7 @@
 .n-messaging-client-tooltip {
 	@include oTypographySans($scale: 0);
 	display: none !important;
+	z-index: 103 !important;
 	@include oGridRespondTo(M) {
 		display: block !important;
 	}

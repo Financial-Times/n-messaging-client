@@ -1,4 +1,4 @@
-.n-app-banner__device {
+.n-onboarding-app-banner__device {
 	left: 90px;
 	margin-top: 95px;
 	position: absolute;
@@ -8,7 +8,7 @@
 	margin-left: 194px;
 }
 
-.n-app-banner__error-message {
+.n-onboarding-app-banner__error-message {
 	margin-right: 28px;
 
 	p {
@@ -23,14 +23,14 @@
 	}
 }
 
-.n-app-banner__success {
+.n-onboarding-app-banner__success {
 	@include oTypographySans($scale: -1);
 	display: none;
 	padding-left: 25px;
 	position: relative;
 
 	&::before {
-		@include oIconsGetIcon('tick', oColorsGetPaletteColor('white'), 25, $iconset-version: 1);
+		@include oIconsGetIcon('tick', oColorsGetPaletteColor('black'), 25, $iconset-version: 1);
 		display: inline-block;
 		content: '';
 		left: 0;

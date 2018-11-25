@@ -1,0 +1,27 @@
+<div class="n-messaging-banner">
+	{{#> n-messaging-client/templates/components/n-messaging-banner
+			renderOpen=true
+	}}
+	<div class="n-messaging-banner__inner invite-colleagues-banner" data-o-banner-inner="" data-n-messaging-banner-inner="">
+		<img alt="" class="n-onboarding-app-banner__device n-ui-hide-core" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fonboarding%2Fios-app.png?source=n-ui&width=120">
+		<!-- Content to display on larger screens -->
+		<div class="n-messaging-banner__content n-messaging-banner__content-img">
+			<p><strong>Read anytime, anywhere - even offline.</strong></p>
+			<p>Get the App. Available on Android and iOS.</p>
+		</div>
+		<!-- Button and link -->
+		<div class="n-messaging-banner__actions">
+			<form action="/email-app-links" method="POST" class="n-onboarding-app-banner__form js-n-onboarding-app-banner-form">
+				<span class="n-onboarding-app-banner__success">
+					<strong>Thanks.</strong> We&rsquo;ve sent you a link to the FT app.
+				</span>
+				<div class="n-messaging-banner__action">
+						<button type="submit" class="n-messaging-banner__button js-n-onboarding-app-banner-button" data-n-messaging-banner-action="" data-trackable="onsite-message-button">Email me the link</button>
+					</div>
+				<div class="n-onboarding-app-banner__error-message js-n-onboarding-banner-error-message"></div>
+			</form>
+		</div>
+
+	</div>
+	{{/n-messaging-client/templates/components/n-messaging-banner}}
+</div>
