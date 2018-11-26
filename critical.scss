@@ -14,6 +14,7 @@ $o-tooltip-is-silent : false;
 
 @include oFontsInclude(MetricWeb);
 @include oFontsInclude(MetricWeb, $weight: semibold);
+@include oFontsInclude(FinancierDisplayWeb, $weight: bold);
 @include oBanner($class: 'n-messaging-banner', $themes: 'all');
 @include oMessage($class: 'n-alert-banner', $types: 'alert', $status: 'all');
 

@@ -32,12 +32,8 @@ module.exports = {
 	teamTrial: {
 		path: 'bottom/team-trial'
 	},
-	teamTrialV2: {
-		path: 'bottom/team-trial-v2',
-		component: 'bottom/team-trial'
-	},
 	anonSubscribeNow: {
-		path: 'top/anon-subscribe-now-teal'
+		path: 'top/anon-subscribe-now'
 	},
 	navAccountSettings: {
 		path: 'top/nav-account-settings',
@@ -55,5 +51,8 @@ module.exports = {
 	onboardingRegion: {
 		path: 'top/onboarding-region',
 		tooltip: true
+	},
+	bookYourConsult: {
+		path: 'bottom/book-your-consult'
 	}
 };

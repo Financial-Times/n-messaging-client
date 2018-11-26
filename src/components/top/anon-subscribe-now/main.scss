@@ -1,4 +1,4 @@
-.n-alert-banner--marketing-anon-subscribe {
+.n-alert-banner--marketing__anon-subscribe {
 	display: none;
 
 	@include oGridRespondTo('M') {
@@ -7,22 +7,28 @@
 	}
 
 	.n-alert-banner__content {
-		display: table;
-		margin-left: auto;
-		margin-right: auto;
+		align-items: center;
+		display: flex;
+		height: 56px;
+		justify-content: center;
 		padding: 0 20px;
 	}
 
-	.n-alert-banner__actions {
-		height: 56px;
-		max-width: 740px;
-		padding-right: 310px;
-		margin: 0 auto;
-		background: url('https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fproduct%2FPrintPackshot-2017-09-07_smallest.png?source=next') right bottom no-repeat;
-		background-size: auto 48px;
-		display: table-cell;
-		vertical-align: middle;
-		padding-bottom: 0;
+	.n-alert-banner__cell {
+		padding: 0 15px;
+	}
+
+	.n-alert-banner__content-main {
+		@include oTypographyDisplay($scale: 2);
+	}
+
+	.n-alert-banner__image {
+		line-height: 0;
+		padding: 0;
+
+		img {
+			height: 56px;
+		}
 	}
 
 	.n-alert-banner__actions__primary {
@@ -39,5 +45,16 @@
 
 	.n-alert-banner__actions--clickarea {
 		cursor: pointer;
+	}
+
+	&--dark {
+		@include oGridRespondTo('M') {
+			background-color: oColorsGetPaletteColor('black');
+			color: oColorsGetPaletteColor('white');
+		}
+
+		.n-alert-banner__actions__primary {
+			@include oButtonsTheme('primary-inverse');
+		}
 	}
 }

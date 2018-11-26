@@ -17,7 +17,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	} else if (guruResult && guruResult.renderData) {
 		banner = new oBanner(null, imperativeOptions(guruResult.renderData, { bannerClass: BANNER_CLASS, autoOpen: false }));
 	} else {
-		if (guruResult.skip && trackEventAction) {
+		if (guruResult && guruResult.skip && trackEventAction) {
 			trackEventAction('skip');
 		}
 		return;
@@ -58,7 +58,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 };
 
-function imperativeOptions (opts, defaults) {
+function imperativeOptions (opts = {}, defaults = {}) {
 	return {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
 		suppressCloseButton: opts.suppressCloseButton || false,
