@@ -15,7 +15,7 @@ const init = (banner, done) => {
 		const tooltip = new oTooltip(targetElement, opts);
 		tooltip.tooltipEl.classList.add('n-messaging-client-tooltip');
 		tooltip.tooltipEl.querySelector('.n-alert-banner__content-main').classList.add('n-alert-banner--alert-bleed');
-		tooltip.tooltipEl.addEventListener('oTooltip.hover', () => {
+		tooltip.tooltipEl.addEventListener('oTooltip.close', () => {
 			banner.close();
 		});
 	}
