@@ -54,5 +54,8 @@ module.exports = {
 	},
 	bookYourConsult: {
 		path: 'bottom/book-your-consult'
+	},
+	brexitCampaign: {
+		path: 'bottom/brexit'
 	}
 };

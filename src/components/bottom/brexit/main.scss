@@ -1,0 +1,14 @@
+.n-messaging-banner--product.n-messaging-banner--small .n-messaging-banner__inner {
+    background-color: oColorsGetPaletteColor('oxford-30');
+}
+
+.n-messaging-banner--product .n-messaging-banner__button {
+    @include oButtonsTheme($theme: (background: 'oxford-30', accent: 'white', colorizer: 'primary'));
+}
+
+.n-messaging-banner__inner {
+    &:after {
+        // content: url(Brexit-flag.png),
+        // background-image: url(image.jpg),
+    }
+}
