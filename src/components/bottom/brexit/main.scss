@@ -1,13 +1,28 @@
 .n-messaging-banner--product.n-messaging-banner--small .n-messaging-banner__inner {
 	background-color: oColorsGetPaletteColor('oxford-30');
+	position: relative;
+	overflow: hidden;
+
+	&:after {
+		@include oGridRespondTo(M) {
+			position: absolute;
+			content: "";
+			background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:brand-brexit?source=origami-registry&width=430);
+			height: 330px;
+			width: 430px;
+			background-repeat: no-repeat;
+			top: 79px;
+			left: 282px;
+		}
+	}
+
+}
+
+// to wrap content text so that it doesn't get hidden behind the flag image
+.n-messaging-banner__content span {
+	display: inline-block;
 }
 
 .n-messaging-banner--product .n-messaging-banner__button {
 	@include oButtonsTheme($theme: (background: 'oxford-30', accent: 'white', colorizer: 'primary'));
-}
-
-.n-messaging-banner__inner {
-	&:after {
-		content: ''; //TODO add flag img here
-	}
 }
