@@ -24,7 +24,7 @@ module.exports = {
 	marketingPopupPrompt: {
 		path: 'bottom/lazy',
 		lazy: true,
-		guruQueryString: 'offerId=c1773439-53dc-df3d-9acc-20ce2ecde318'
+		guruQueryString: 'offerId=1dbc248e-b98d-b703-bc25-a05cc5670804'
 	},
 	paymentFailure: {
 		path: 'top/payment-failure'
