@@ -11,7 +11,7 @@ module.exports = {
 			'97212eb0-abb9-11e8-8253-48106866cd8a', // demos/templates/layouts/custom-vanilla.html:29
 			'1dbc248e-b98d-b703-bc25-a05cc5670804', // manifest.js:27
 			'a8785152-8c22-33e8-5af8-2dfeeed3bbae', // templates/partials/bottom/brexit.html:13
-			'27e66825-bc4f-ba59-a3cd-1a8f08579bfe' // templates/partials/top/anon-subscribe-now.html:5|18
+			'5f60b8b4-cbf0-18d7-df41-9caa1171e8c1' // templates/partials/top/anon-subscribe-now.html:5|18
 		]
 	}
 };
