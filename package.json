@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@financial-times/n-gage": "3.4.0",
+    "@financial-times/n-gage": "3.6.0",
     "@financial-times/n-internal-tool": "^2.2.4",
     "@financial-times/n-webpack": "^3.1.0",
     "bower": "^1.8.4",
