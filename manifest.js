@@ -60,8 +60,8 @@ module.exports = {
 	},
 	techScrollAsia: {
 		path: 'bottom/tech-scroll-asia'
-  },
-  b2bTrialMobile: {
-    path: 'bottom/b2b-trial-mobile'
-  },
+	},
+	b2bTrialMobile: {
+		path: 'bottom/b2b-trial-mobile'
+	},
 };
