@@ -61,7 +61,7 @@ module.exports = {
 	techScrollAsia: {
 		path: 'bottom/tech-scroll-asia'
 	},
-	b2bTrialMobile: {
-		path: 'bottom/b2b-trial-mobile'
+	appPromoMobile: {
+		path: 'bottom/app-promo-mobile'
 	},
 };
