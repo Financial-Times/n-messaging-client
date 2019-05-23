@@ -50,12 +50,13 @@
 				position: relative;
 				top: 50%;
 				left: 50%;
-
-				@include oLoadingColor('dark');
-				@include oLoadingSize('large');
-				@include oLoading;
 			}
 		}
+
+		@include oLoading($opts: (
+			'themes': ('dark'),
+			'sizes': ('large')
+		));
 
 		.o-overlay__heading {
 			background-color: oColorsGetPaletteColor('wheat');

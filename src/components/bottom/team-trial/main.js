@@ -4,7 +4,7 @@ const loaderClass = 'o-overlay--n-overlay-loader';
 const iframeClass = 'o-overlay--n-overlay-iframe';
 const generateHtml = (src) => `
 <article class="${loaderClass}">
-	<div class="${loaderClass}-indicator"></div>
+	<div class="${loaderClass}-indicator o-loading o-loading--dark o-loading--large"></div>
 </article>
 <iframe class="${iframeClass}" src="${src}"></iframe>`;
 
