@@ -25,21 +25,24 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 	// attach event handlers
 	let actions = banner.innerElement.querySelectorAll(BANNER_ACTION_SELECTOR);
+	let linkActions = [];
 	if (actions.length === 0) {
 		// if no actions specified in markup then default to adding it to the
 		// button element (this can happen when declared imperatively)
 		actions = banner.innerElement.querySelectorAll(BANNER_BUTTON_SELECTOR);
-		if (actions.length === 0) {
-			actions = banner.innerElement.querySelectorAll(BANNER_LINK_SELECTOR);
-		}
+		linkActions = banner.innerElement.querySelectorAll(BANNER_LINK_SELECTOR);
 	}
-	actions = [].slice.call(actions);
+	actions = [
+		...actions,
+		...linkActions
+	];
 	listen(banner.bannerElement, 'o.bannerClosed', () => trackEventAction('close'));
 	listen(banner.bannerElement, 'o.bannerOpened', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
 		actions.forEach((el) => {
 			const trackingAttr = el.dataset.nMessagingBannerActionType;
-			listen(el, 'click', () => trackEventAction(el.dataset['nMessagingBannerAction'] || 'act', trackingAttr));
+			const actionText = el.textContent;
+			listen(el, 'click', () => trackEventAction(el.dataset['nMessagingBannerAction'] || 'act', trackingAttr || actionText));
 		});
 	}
 

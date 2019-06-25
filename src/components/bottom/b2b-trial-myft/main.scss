@@ -1,0 +1,16 @@
+.n-messaging-banner--b2b-trial-myft {
+	.n-messaging-banner__outer {
+		background-color: oColorsGetPaletteColor('claret');
+		color: #ffffff;
+		.n-messaging-banner__close {
+			background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+		}
+	}
+	.n-messaging-banner__button {
+		@include oButtonsTheme($theme: (background: (oColorsGetPaletteColor('claret')), accent: 'white', colorizer: 'primary'));
+	}
+	.n-messaging-banner__link {
+		color: #ffffff;
+		border-color: #ffffff;
+	}
+}

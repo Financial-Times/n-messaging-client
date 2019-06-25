@@ -58,6 +58,28 @@ module.exports = {
 	brexitCampaign: {
 		path: 'bottom/brexit'
 	},
+	b2bTrialNewsletter: {
+		path: 'bottom/lazy',
+		lazy: true
+	},
+	b2bTrialMyFt: {
+		path: 'bottom/lazy',
+		lazy: true
+	},
+	b2bTrialCountdown: {
+		path: 'top/lazy',
+		lazy: true
+	},
+	b2bTrialContactUs: {
+		path: 'bottom/b2b-trial-contact-us'
+	},
+	b2bTrialMember: {
+		path: 'bottom/b2b-trial-member',
+		lazy: true
+	},
+	b2bTrialMobile: {
+		path: 'bottom/b2b-trial-mobile'
+	},
 	techScrollAsia: {
 		path: 'bottom/tech-scroll-asia'
 	},
@@ -67,5 +89,5 @@ module.exports = {
 	},
 	appPromoMobile: {
 		path: 'bottom/app-promo-mobile'
-	},
+	}
 };
