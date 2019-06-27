@@ -89,5 +89,8 @@ module.exports = {
 	},
 	appPromoMobile: {
 		path: 'bottom/app-promo-mobile'
+	},
+	contentMessage: {
+		path: 'bottom/content-message'
 	}
 };
