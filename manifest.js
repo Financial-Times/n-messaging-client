@@ -100,5 +100,16 @@ module.exports = {
 	b2cSubAcquisitions: {
 		path: 'bottom/lazy',
 		lazy: true
+	},
+	ftWeekendPromo: {
+		path: 'bottom/ft-weekend-promo'
+	},
+	giftArticles: {
+		path: 'top/gift-articles',
+		tooltip: true
+	},
+	myFtFeedpage: {
+		path: 'top/my-ft-feedpage',
+		tooltip: true
 	}
 };
