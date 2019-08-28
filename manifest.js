@@ -6,9 +6,6 @@ module.exports = {
 	inviteColleagues: {
 		path: 'bottom/invite-colleagues'
 	},
-	appPromotingBanner: {
-		path: 'bottom/app-promoting-banner'
-	},
 	cookieConsentA: {
 		path: 'bottom/cookie-consent'
 	},
