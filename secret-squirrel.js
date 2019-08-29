@@ -11,7 +11,6 @@ module.exports = {
 			'97212eb0-abb9-11e8-8253-48106866cd8a', // demos/templates/layouts/custom-vanilla.html:29
 			'c1773439-53dc-df3d-9acc-20ce2ecde318', // manifest.js:27
 			'ed76f4a7-dcc0-f60d-5f92-0bd9b43f30dd', // templates/partials/bottom/b2b-trial-contact-us.html:21
-			'a8785152-8c22-33e8-5af8-2dfeeed3bbae', // templates/partials/bottom/brexit.html:13
 			'e8ab77e7-19fc-20af-e9c2-7afe11ca167c', // templates/partials/bottom/content-message.html:15
 			'5f60b8b4-cbf0-18d7-df41-9caa1171e8c1', // templates/partials/top/anon-subscribe-now.html:5|18
 			'eb62aef2-4bdc-0f31-a2c5-6532b8e17896'	// templates/partials/bottom/content-message.html:15
