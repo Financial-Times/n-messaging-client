@@ -52,9 +52,6 @@ module.exports = {
 	bookYourConsult: {
 		path: 'bottom/book-your-consult'
 	},
-	brexitCampaign: {
-		path: 'bottom/brexit'
-	},
 	b2bTrialNewsletter: {
 		path: 'bottom/lazy',
 		lazy: true
