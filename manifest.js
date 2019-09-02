@@ -3,9 +3,6 @@ module.exports = {
 		path: 'bottom/lazy', // path to template
 		lazy: true
 	},
-	inviteColleagues: {
-		path: 'bottom/invite-colleagues'
-	},
 	cookieConsentA: {
 		path: 'bottom/cookie-consent'
 	},
