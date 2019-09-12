@@ -14,7 +14,7 @@
 			font-style: normal;
 		}
 	}
-	
+
 	.n-messaging-banner__button {
 		@include oMessageButtonBase;
 		@include oButtonsTheme($theme: (background: 'white', accent: 'black', colorizer: 'primary'));
