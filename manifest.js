@@ -20,6 +20,9 @@ module.exports = {
 		lazy: true,
 		guruQueryString: 'offerId=c1773439-53dc-df3d-9acc-20ce2ecde318'
 	},
+	newAgendaPopupPrompt: {
+		path: 'bottom/new-agenda'
+	},
 	paymentFailure: {
 		path: 'top/payment-failure'
 	},
