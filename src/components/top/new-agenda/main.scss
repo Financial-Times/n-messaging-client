@@ -1,0 +1,68 @@
+.n-alert-banner--marketing__new-agenda {
+	display: none;
+
+	@include oGridRespondTo('M') {
+		display: block;
+		background-color: oColorsGetPaletteColor('lemon');
+	}
+
+	.n-alert-banner__content {
+		align-items: center;
+		display: flex;
+		height: 56px;
+		justify-content: center;
+		padding: 0 20px;
+	}
+
+	.n-alert-banner__cell {
+		padding: 0 15px;
+	}
+
+	.n-alert-banner__content-main {
+		@include oTypographySans($scale: 3);
+		text-transform: uppercase;
+
+		em {
+			@include oTypographyDisplay($scale: 3);
+			font-style: normal;
+		}
+
+		@include oGridRespondTo('L') {
+			&,
+			& em {
+				@include oTypographySize($scale: 4);
+			}
+		}
+	}
+
+	.n-alert-banner__actions__primary {
+		@include oMessageButtonBase;
+		@include oButtonsTheme($theme: (background: 'white', accent: 'black', colorizer: 'primary'));
+		margin-right: 0;
+			// This is a hack around the fact that custom buttons do not
+			// support buttons with three colours. TODO: add this to o-buttons
+			// https://github.com/Financial-Times/o-buttons/issues/128
+		&:not([disabled]):hover {
+			background-color: oColorsGetPaletteColor('lemon');
+			color: oColorsGetPaletteColor('black');
+		}
+	}
+
+	.n-alert-banner__actions--clickarea {
+		cursor: pointer;
+	}
+
+	&--paywall-freeze {
+		text-align: center;
+
+		.n-alert-banner__content {
+			height: 94px;
+		}
+
+		.n-alert-banner__content-detail {
+			@include oTypographySize($scale: 2);
+			display: block;
+			font-weight: 600;
+		}
+	}
+}

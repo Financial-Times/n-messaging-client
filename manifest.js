@@ -106,8 +106,8 @@ module.exports = {
 		path: 'top/my-ft-feedpage',
 		tooltip: true
 	},
-	myftDisengagedHeaderTooltip: {
-		path: 'top/myft-disengaged-header-tooltip',
+	myftDisengagedTooltip: {
+		path: 'top/myft-disengaged-tooltip',
 		tooltip: true
 	},
 	nbeAutoSub: {
@@ -120,4 +120,10 @@ module.exports = {
 		path: 'bottom/lazy',
 		lazy: true
 	},
+	tnaCampaignBanner : {
+		path: 'top/new-agenda'
+	},
+	tnaPaywallFreezeBanner : {
+		path: 'top/new-agenda-paywall-freeze'
+	}
 };
