@@ -1,77 +1,58 @@
 @import 'o-overlay/main';
 @import 'o-loading/main';
 
+@include oOverlay();
+
+// Overlay override, I'm not sure why 😬
 .o-overlay {
-	@include oOverlay;
 	z-index: 1000;
+}
 
-	&-shadow {
-		@include oOverlayShadow;
-		z-index: 1000;
+.o-overlay--n-overlay {
+	top: 0 !important;
+	right: 0;
+	left: 0 !important;
+	margin: 0 !important;
+	height: 100%;
+	background-color: oColorsByName('paper');
+	border: 0;
+
+	@include oGridRespondTo(M) {
+		left: 50% !important;
 	}
 
-	&__heading {
-		@include oOverlayHeading;
-	}
-
-	&__title {
-		@include oOverlayTitle;
-	}
-
-	&__close {
-		@include oOverlayClose;
-	}
-
-	&__content {
-		@include oOverlayContent;
-	}
-
-	&--n-overlay {
-		top: 0 !important;
+	&-loader {
+		top: 0;
+		bottom: 0;
+		left: 0;
 		right: 0;
-		left: 0 !important;
-		margin: 0 !important;
+		position: absolute;
+
+		&-indicator {
+			position: relative;
+			top: 50%;
+			left: 50%;
+		}
+	}
+
+	@include oLoading($opts: (
+		'themes': ('dark'),
+		'sizes': ('large')
+	));
+
+	.o-overlay__heading {
+		background-color: oColorsByName('wheat');
+	}
+
+	.o-overlay__content {
+		padding: 0;
 		height: 100%;
-		background-color: oColorsGetPaletteColor('paper');
+	}
+
+	.o-overlay--n-overlay-iframe {
+		position: absolute;
 		border: 0;
-
-		@include oGridRespondTo(M) {
-			left: 50% !important;
-		}
-
-		&-loader {
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			position: absolute;
-
-			&-indicator {
-				position: relative;
-				top: 50%;
-				left: 50%;
-			}
-		}
-
-		@include oLoading($opts: (
-			'themes': ('dark'),
-			'sizes': ('large')
-		));
-
-		.o-overlay__heading {
-			background-color: oColorsGetPaletteColor('wheat');
-		}
-
-		.o-overlay__content {
-			padding: 0;
-			height: 100%;
-		}
-
-		.o-overlay--n-overlay-iframe {
-			position: absolute;
-			border: 0;
-			width: 100%;
-			height: 100%;
-		}
+		width: 100%;
+		height: 100%;
 	}
 }

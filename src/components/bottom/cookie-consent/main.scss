@@ -29,87 +29,93 @@
 	}
 
 	.n-messaging-banner__outer {
-		padding: oTypographySpacingSize($units: 3) oTypographySpacingSize($units: 6) oTypographySpacingSize($units: 6);
+		padding: oSpacingByName('s3') oSpacingByName('s6') oSpacingByName('s6');
 		@include oGridRespondTo($from: M) {
-			padding: oTypographySpacingSize($units: 6) oTypographySpacingSize($units: 10) oTypographySpacingSize($units: 10);
+			padding: oSpacingByName('s6') oSpacingByName('m12') oSpacingByName('m12');
 		}
 	}
 
 	.cookie-banner__head {
-		@include oTypographySize($scale: 2);
+		@include oTypographySans($scale: 2, $include-font-family: false);
 		margin-top: 0;
-		margin-bottom: oTypographySpacingSize($units: 1);
+		margin-bottom: oSpacingByName('s1');
 	}
 
 	.cookie-banner__actions {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: oTypographySpacingSize($units: 5);
+		margin-top: oSpacingByName('s6');
 	}
 
 	.n-messaging-banner__button {
-		@include oButtonsTheme(primary);
+		@include oButtonsContent((
+			'type': 'primary'
+		));
 		@include oGridRespondTo($from: 375px) {
-			@include oTypographySize($scale: 1);
+			@include oTypographySans($scale: 1, $include-font-family: false);
 		}
 	}
 
 	.cookie-banner__link--external {
-		@include oTypographyLinkExternal;
+		@include oTypographyLink($external: true);
 	}
 
 	.cookie-banner__link,
 	.cookie-banner__link--external {
-		border-bottom-color: oColorsGetPaletteColor('teal-80');
+		border-bottom-color: oColorsByName('teal-80');
 	}
 
 	&.variant-cookieConsentC { /* stylelint-disable-line */
 		.n-messaging-banner__outer {
-			padding-top: oTypographySpacingSize($units: 5);
+			padding-top: oSpacingByName('s6');
 		}
 
 		.cookie-banner__head {
 			@include oTypographySans($scale: 3);
-			padding-bottom: oTypographySpacingSize($units: 3);
-			margin-bottom: oTypographySpacingSize($units: 4);
+			padding-bottom: oSpacingByName('s3');
+			margin-bottom: oSpacingByName('s4');
 			position: relative;
 			&:after {
 				content: '';
 				display: block;
 				position: absolute;
-				height: oTypographySpacingSize($units: 1);
+				height: oSpacingByName('s1');
 				width: 60px;
 				bottom: 0;
 				left: 0;
-				background-color: oColorsGetTint('jade', 50);
+				background-color: oColorsMix('jade', 'black', 89);
 			}
 		}
 
 		.cookie-banner__link--external {
-			@include oTypographyLinkExternal;
+			@include oTypographyLink($external: true);
 		}
 
 		.cookie-banner__link,
 		.cookie-banner__link--external {
-			color: oColorsGetPaletteColor('black-80');
-			border-bottom-color: oColorsGetPaletteColor('black-50');
+			color: oColorsByName('black-80');
+			border-bottom-color: oColorsByName('black-50');
 		}
 
 		.cookie-banner__link--external::after {
-				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black-80'), 24, $iconset-version: 1);
+			@include oIconsContent(
+				$icon-name: 'outside-page',
+				$color: oColorsByName('black-80'),
+				$size: 24
+			);
 		}
 
 		.cookie-banner__actions {
 			@include oGridRespondTo($until: S) {
-				margin-top: oTypographySpacingSize($units: 2);
+				margin-top: oSpacingByName('s2');
 				display: block;
 			}
 		}
 
 		.n-messaging-banner__button {
-			background-color: oColorsGetTint('jade', 50);
-			margin-top: oTypographySpacingSize($units: 4);
+			background-color: oColorsMix('jade', 'black', 89);
+			margin-top: oSpacingByName('s4');
 			width: 100%;
 			@include oGridRespondTo($until: S) {
 				@include oTypographySans($scale: -1);
@@ -124,7 +130,7 @@
 				width: auto;
 			}
 			&:hover {
-				background-color: oColorsGetTint('jade', 40);
+				background-color: oColorsMix('jade', 'black', 70);
 			}
 		}
 	}

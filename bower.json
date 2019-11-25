@@ -30,20 +30,20 @@
     "secret-squirrel.js"
   ],
   "dependencies": {
-    "n-ui-foundations": "^3.0.1",
-    "o-banner": "^2.3.0",
-    "o-share": "^6.1.2",
-    "o-tooltip": "^3.1.2",
+    "n-ui-foundations": "^4.0.0-beta.1",
+    "o-banner": "^3.0.0",
+    "o-share": "^7.0.0",
+    "o-tooltip": "^4.0.0",
     "next-myft-client": "^7.7.0",
-    "o-message": "^2.2.2",
-    "o-viewport": "^3.1.5",
-    "o-typography": "^5.7.3",
-    "n-alert-banner": "^1.0.0",
-    "o-overlay": "^2.4.3",
-    "o-loading": "^3.1.2",
-    "n-swg": "^0.15.0"
+    "o-message": "^4.0.0",
+    "o-viewport": "^4.0.0",
+    "o-typography": "^6.0.0",
+    "n-alert-banner": "^2.0.0",
+    "o-overlay": "^3.0.0",
+    "o-loading": "^4.0.0",
+    "n-swg": "^2.0.0"
   },
   "devDependencies": {
-    "o-tracking": "^1.4.0"
+    "o-tracking": "^2.0.0"
   }
 }

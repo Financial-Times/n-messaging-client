@@ -3,7 +3,7 @@
 
 	@include oGridRespondTo('M') {
 		display: block;
-		background-color: oColorsGetPaletteColor('lemon');
+		background-color: oColorsByName('lemon');
 	}
 
 	.n-alert-banner__content {
@@ -30,22 +30,20 @@
 		@include oGridRespondTo('L') {
 			&,
 			& em {
-				@include oTypographySize($scale: 4);
+				@include oTypographySans($scale: 4, $include-font-family: false);
 			}
 		}
 	}
 
 	.n-alert-banner__actions__primary {
-		@include oMessageButtonBase;
-		@include oButtonsTheme($theme: (background: 'white', accent: 'black', colorizer: 'primary'));
+		@include oButtonsContent((
+			'type': 'primary',
+			'theme': (
+				'color': 'black',
+				'context': 'white'
+			)
+		));
 		margin-right: 0;
-			// This is a hack around the fact that custom buttons do not
-			// support buttons with three colours. TODO: add this to o-buttons
-			// https://github.com/Financial-Times/o-buttons/issues/128
-		&:not([disabled]):hover {
-			background-color: oColorsGetPaletteColor('lemon');
-			color: oColorsGetPaletteColor('black');
-		}
 	}
 
 	.n-alert-banner__actions--clickarea {
@@ -60,7 +58,7 @@
 		}
 
 		.n-alert-banner__content-detail {
-			@include oTypographySize($scale: 2);
+			@include oTypographySans($scale: 2, $include-font-family: false);
 			display: block;
 			font-weight: 600;
 		}

@@ -28,7 +28,13 @@
 	}
 
 	.n-messaging-banner__button {
-		@include oButtonsTheme($theme: (background: (#262A33), accent: 'white', colorizer: 'primary'));
+		@include oButtonsContent((
+			'type': 'primary',
+			'theme': (
+				'color': 'white',
+				'context': #262A33
+			)
+		));
 	}
 
 	.n-messaging-banner__button {

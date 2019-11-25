@@ -1,10 +1,10 @@
 .n-messaging-banner--new-agenda {
 	.n-messaging-banner__inner {
-		background-color: oColorsGetPaletteColor('lemon');
+		background-color: oColorsByName('lemon');
 	}
 
 	.n-messaging-banner__heading::after {
-		border-color: oColorsGetPaletteColor('black');
+		border-color: oColorsByName('black');
 	}
 
 	.n-messaging-banner__heading-title {
@@ -16,15 +16,13 @@
 	}
 
 	.n-messaging-banner__button {
-		@include oMessageButtonBase;
-		@include oButtonsTheme($theme: (background: 'white', accent: 'black', colorizer: 'primary'));
+		@include oButtonsContent((
+			'type': 'primary',
+			'theme': (
+				'color': 'black',
+				'context': 'white'
+			)
+		));
 		margin-right: 0;
-			// This is a hack around the fact that custom buttons do not
-			// support buttons with three colours. TODO: add this to o-buttons
-			// https://github.com/Financial-Times/o-buttons/issues/128
-		&:not([disabled]):hover {
-			background-color: oColorsGetPaletteColor('lemon');
-			color: oColorsGetPaletteColor('black');
-		}
 	}
 }
