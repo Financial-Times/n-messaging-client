@@ -56,15 +56,6 @@ module.exports = function ({ guruEndpoint='/__message', name, guruQueryString }=
 				}
 			}
 
-			// This bit is temporary
-			const classRegExp = /class="n-messaging-banner/g;
-			if (json && json.renderData && typeof json.renderData.contentShort === 'string') {
-				json.renderData.contentShort = json.renderData.contentShort.replace(classRegExp, 'class="o-banner');
-			}
-			if (json && json.renderData && typeof json.renderData.contentLong === 'string') {
-				json.renderData.contentLong = json.renderData.contentLong.replace(classRegExp, 'class="o-banner');
-			}
-
 			return json;
 		})
 
