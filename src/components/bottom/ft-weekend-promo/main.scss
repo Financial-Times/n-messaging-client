@@ -1,4 +1,4 @@
-.o-banner--ft-weekend-promo {
+.n-messaging-client-messaging-banner--ft-weekend-promo {
 	.o-banner__inner {
 		background-color: #262A33;
 		background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-ft-weekend-promo.s3-eu-west-1.amazonaws.com%2Fleaf_motif.png?source=ip-envoy");
@@ -30,6 +30,7 @@
 	.o-banner__button {
 		@include oButtonsContent((
 			'type': 'primary',
+			'size': 'big',
 			'theme': (
 				'color': 'white',
 				'context': #262A33
@@ -48,6 +49,7 @@
 		height: 14px;
 		background: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-ft-weekend-promo.s3-eu-west-1.amazonaws.com%2Fbook-icon.png?source=ip-envoy");
 		background-size: cover;
+		transform: none; // lol, this is to override list typography
 	}
 
 	.article-link-list li>a {
