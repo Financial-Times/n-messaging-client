@@ -4,7 +4,7 @@
 	position: absolute;
 }
 
-.o-banner__content-img {
+.n-messaging-client-messaging-banner__content-img {
 	margin-left: 194px;
 }
 
@@ -17,10 +17,8 @@
 	}
 }
 
-.o-banner__button {
-	.has-sent & {
-		display: none;
-	}
+.has-sent .n-messaging-client-messaging-banner .o-banner__button {
+	display: none;
 }
 
 .n-onboarding-app-banner__success {

@@ -3,7 +3,7 @@ const { generateMessageEvent, listen, messageEventLimitsBreached } = require('./
 
 const BOTTOM_SLOT_CONTENT_SELECTOR = '[data-n-messaging-slot="bottom"] [data-n-messaging-component]';
 const BANNER_CLASS = 'o-banner';
-const BANNER_ACTION_SELECTOR = '[data-o-banner-action]';
+const BANNER_ACTION_SELECTOR = '[data-n-messaging-banner-action]';
 const BANNER_BUTTON_SELECTOR = `.${BANNER_CLASS}__button`;
 const BANNER_LINK_SELECTOR = `.${BANNER_CLASS}__link`;
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';

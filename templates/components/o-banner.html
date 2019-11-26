@@ -1,10 +1,9 @@
-<div class="o-banner
+<div class="o-banner n-messaging-client-messaging-banner
 	{{#unless renderOpen}}o-banner--closed{{/unless}}
 	{{#if themeMarketing}} o-banner--marketing{{/if}}
 	{{#if themeProduct}} o-banner--product{{/if}}
 	{{#if themeCompact}} o-banner--compact{{/if}}
 	{{#if small}} o-banner--small{{/if}}"
-	data-o-component="o-banner"
 	data-n-messaging-component=""
 	data-o-banner-banner-class="{{#if bannerClass}}{{bannerClass}}{{else}}o-banner{{/if}}"
 	data-o-banner-auto-open="false"
@@ -34,12 +33,12 @@
 			<div class="o-banner__actions">
 				{{#if buttonUrl}}
 				<div class="o-banner__action">
-					<a href="{{buttonUrl}}" class="o-banner__button" data-o-banner-action="" data-trackable="onsite-message-button">{{buttonLabel}}</a>
+					<a href="{{buttonUrl}}" class="o-banner__button" data-n-messaging-banner-action="" data-trackable="onsite-message-button">{{buttonLabel}}</a>
 				</div>
 				{{/if}}
 				{{#if linkUrl}}
 				<div class="o-banner__action o-banner__action--secondary">
-					<a href="{{linkUrl}}" class="o-banner__link" data-o-banner-action="" data-trackable="onsite-message-link">{{linkLabel}}</a>
+					<a href="{{linkUrl}}" class="o-banner__link" data-n-messaging-banner-action="" data-trackable="onsite-message-link">{{linkLabel}}</a>
 				</div>
 				{{/if}}
 			</div>

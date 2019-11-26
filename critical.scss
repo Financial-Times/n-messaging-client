@@ -31,14 +31,14 @@ $o-tooltip-is-silent : false;
 	'layout': ('default', 'inner')
 ));
 
-// ensure the bottom o-banner displays above other elements on page (e.g. imgs on article page)
-.o-banner {
+// ensure the bottom banner displays above other elements on page (e.g. imgs on article page)
+.n-messaging-client-messaging-banner {
 	@include nUiZIndexFor('notification');
 }
 
 // set base font
-.o-message,
-.o-banner {
+.n-messaging-client-alert-banner,
+.n-messaging-client-messaging-banner {
 	font-family: sans-serif;
 	font-size: 0.8125em;
 }
