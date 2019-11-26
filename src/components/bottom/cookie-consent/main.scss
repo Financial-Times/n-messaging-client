@@ -50,7 +50,8 @@
 
 	.o-banner__button {
 		@include oButtonsContent((
-			'type': 'primary'
+			'type': 'primary',
+			'size': 'big'
 		));
 		@include oGridRespondTo($from: 375px) {
 			@include oTypographySans($scale: 1, $include-font-family: false);

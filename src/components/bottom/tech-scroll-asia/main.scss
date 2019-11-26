@@ -29,6 +29,7 @@
 	.o-banner__button {
 		@include oButtonsContent((
 			'type': 'primary',
+			'size': 'big',
 			'theme': (
 				'color': 'white',
 				'context': #3A70AF
