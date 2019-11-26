@@ -1,13 +1,13 @@
-.n-messaging-banner--new-agenda {
-	.n-messaging-banner__inner {
+.o-banner--new-agenda {
+	.o-banner__inner {
 		background-color: oColorsByName('lemon');
 	}
 
-	.n-messaging-banner__heading::after {
+	.o-banner__heading::after {
 		border-color: oColorsByName('black');
 	}
 
-	.n-messaging-banner__heading-title {
+	.o-banner__heading-title {
 		text-transform: uppercase;
 		em {
 			@include oTypographyDisplay();
@@ -15,7 +15,7 @@
 		}
 	}
 
-	.n-messaging-banner__button {
+	.o-banner__button {
 		@include oButtonsContent((
 			'type': 'primary',
 			'theme': (

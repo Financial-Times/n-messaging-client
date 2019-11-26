@@ -1,4 +1,4 @@
-.n-alert-banner--marketing__new-agenda {
+.o-message--marketing__new-agenda {
 	display: none;
 
 	@include oGridRespondTo('M') {
@@ -6,7 +6,7 @@
 		background-color: oColorsByName('lemon');
 	}
 
-	.n-alert-banner__content {
+	.o-message__content {
 		align-items: center;
 		display: flex;
 		height: 56px;
@@ -14,11 +14,11 @@
 		padding: 0 20px;
 	}
 
-	.n-alert-banner__cell {
+	.o-message__cell {
 		padding: 0 15px;
 	}
 
-	.n-alert-banner__content-main {
+	.o-message__content-main {
 		@include oTypographySans($scale: 3);
 		text-transform: uppercase;
 
@@ -35,7 +35,7 @@
 		}
 	}
 
-	.n-alert-banner__actions__primary {
+	.o-message__actions__primary {
 		@include oButtonsContent((
 			'type': 'primary',
 			'theme': (
@@ -46,18 +46,18 @@
 		margin-right: 0;
 	}
 
-	.n-alert-banner__actions--clickarea {
+	.o-message__actions--clickarea {
 		cursor: pointer;
 	}
 
 	&--paywall-freeze {
 		text-align: center;
 
-		.n-alert-banner__content {
+		.o-message__content {
 			height: 94px;
 		}
 
-		.n-alert-banner__content-detail {
+		.o-message__content-detail {
 			@include oTypographySans($scale: 2, $include-font-family: false);
 			display: block;
 			font-weight: 600;

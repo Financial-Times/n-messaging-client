@@ -12,10 +12,10 @@
 
 .cookie-banner {
 	/* overrides always fixed */
-	.n-messaging-banner {
+	.o-banner {
 		@include oTypographySans($scale: 0);
 		position: static;
-		@at-root .enhanced &.n-messaging-banner--fixed {
+		@at-root .enhanced &.o-banner--fixed {
 			position: fixed;
 			transform: translateY(0);
 		}
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.n-messaging-banner__outer {
+	.o-banner__outer {
 		padding: oSpacingByName('s3') oSpacingByName('s6') oSpacingByName('s6');
 		@include oGridRespondTo($from: M) {
 			padding: oSpacingByName('s6') oSpacingByName('m12') oSpacingByName('m12');
@@ -48,7 +48,7 @@
 		margin-top: oSpacingByName('s6');
 	}
 
-	.n-messaging-banner__button {
+	.o-banner__button {
 		@include oButtonsContent((
 			'type': 'primary'
 		));
@@ -67,7 +67,7 @@
 	}
 
 	&.variant-cookieConsentC { /* stylelint-disable-line */
-		.n-messaging-banner__outer {
+		.o-banner__outer {
 			padding-top: oSpacingByName('s6');
 		}
 
@@ -113,7 +113,7 @@
 			}
 		}
 
-		.n-messaging-banner__button {
+		.o-banner__button {
 			background-color: oColorsMix('jade', 'black', 89);
 			margin-top: oSpacingByName('s4');
 			width: 100%;

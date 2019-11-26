@@ -1,8 +1,8 @@
 const nAlertBanner = require('o-message');
 const { generateMessageEvent, listen, messageEventLimitsBreached } = require('./utils');
 
-const ALERT_BANNER_CLASS = 'n-alert-banner';
-const ALERT_ACTION_SELECTOR = '[data-n-alert-banner-action]';
+const ALERT_BANNER_CLASS = 'o-message';
+const ALERT_ACTION_SELECTOR = '[data-o-message-action]';
 const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 

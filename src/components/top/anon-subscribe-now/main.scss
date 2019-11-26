@@ -1,4 +1,4 @@
-.n-alert-banner--marketing__anon-subscribe {
+.o-message--marketing__anon-subscribe {
 	display: none;
 
 	@include oGridRespondTo('M') {
@@ -6,7 +6,7 @@
 		background-color: oColorsByName('teal-80');
 	}
 
-	.n-alert-banner__content {
+	.o-message__content {
 		align-items: center;
 		display: flex;
 		height: 56px;
@@ -14,15 +14,15 @@
 		padding: 0 20px;
 	}
 
-	.n-alert-banner__cell {
+	.o-message__cell {
 		padding: 0 15px;
 	}
 
-	.n-alert-banner__content-main {
+	.o-message__content-main {
 		@include oTypographyDisplay($scale: 2);
 	}
 
-	.n-alert-banner__image {
+	.o-message__image {
 		line-height: 0;
 		padding: 0;
 
@@ -31,7 +31,7 @@
 		}
 	}
 
-	.n-alert-banner__actions__primary {
+	.o-message__actions__primary {
 		@include oButtonsContent((
 			'type': 'primary',
 			'theme': (
@@ -42,7 +42,7 @@
 		margin-right: 0;
 	}
 
-	.n-alert-banner__actions--clickarea {
+	.o-message__actions--clickarea {
 		cursor: pointer;
 	}
 
@@ -52,7 +52,7 @@
 			color: oColorsByName('white');
 		}
 
-		.n-alert-banner__actions__primary {
+		.o-message__actions__primary {
 			@include oButtonsContent((
 				'type': 'primary',
 				'theme': 'inverse'

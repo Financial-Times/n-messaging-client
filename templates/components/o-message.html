@@ -1,0 +1,31 @@
+<div class="o-message o-message--alert-bleed{{#unless renderOpen}} o-message--closed{{/unless}} o-message--{{theme}}{{#if customClass}} {{customClass}}{{/if}}" data-close="{{closeButton}}" data-n-messaging-component="" data-o-message-auto-open="false" {{#if customDataTrackableBanner}}data-trackable="{{customDataTrackableBanner}}"{{/if}}>
+	<div class="o-message__container">
+		<div class="o-message__content">
+			{{#ifSome contentTitle contentDetail}}
+				<p class="o-message__content-main o-message__cell">
+					{{#if contentTitle}}
+						<span class="o-message__content-highlight">{{{contentTitle}}}</span>
+					{{/if}}
+					{{#if contentDetail}}
+						<span class="o-message__content-detail">{{{contentDetail}}}</span>
+					{{/if}}
+				</p>
+			{{/ifSome}}
+			{{#if contentImage}}
+			<div class="o-message__image o-message__cell">
+				<img src="{{contentImage}}" alt="{{contentTitle}}">
+			</div>
+			{{/if}}
+			{{#ifSome buttonUrl linkUrl}}
+				<div class="o-message__actions o-message__cell" {{#if customDataTrackableActions}} data-trackable="{{customDataTrackableActions}}"{{/if}}>
+					{{#if buttonUrl}}
+					<a href="{{buttonUrl}}" class="o-message__actions__primary" data-o-message-action="{{buttonAction}}" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}" role="button">{{buttonLabel}}</a>
+					{{/if}}
+					{{#if linkUrl}}
+					<a href="{{linkUrl}}" class="o-message__actions__secondary" data-o-message-action="{{linkAction}}" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
+					{{/if}}
+				</div>
+			{{/ifSome}}
+		</div>
+	</div>
+</div>

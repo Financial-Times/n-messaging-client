@@ -1,17 +1,17 @@
 {{#ifEquals flags.topPromoSlotTest 'variant'}}
-	{{> n-messaging-client/templates/components/n-alert-banner
+	{{> n-messaging-client/templates/components/o-message
 		theme='marketing__anon-subscribe'
 		contentTitle='Make informed decisions. Try the FT.'
 		buttonUrl='https://subs.ft.com/spa3_trials?segmentId=5f60b8b4-cbf0-18d7-df41-9caa1171e8c1&utm_eu=WWIBEAU&utm_us=JJIBAN&utm_as=FIBAZ'
 		buttonLabel='Choose your FT trial'
 		closeButton=false
-		customClass='n-alert-banner--marketing__anon-subscribe--dark'
+		customClass='o-message--marketing__anon-subscribe--dark'
 		customDataTrackableBanner='marketing-promo:header'
 		customDataTrackableActions='marketing-promo:box'
 		customDataTrackableButton='marketing-promo:link'
 	}}
 {{else}}
-	{{> n-messaging-client/templates/components/n-alert-banner
+	{{> n-messaging-client/templates/components/o-message
 		theme='marketing__anon-subscribe'
 		contentTitle='Get a fresh start.'
 		contentImage='https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fwww.ft.com%2F__assets%2Fcreatives%2Fproduct%2Fanon-banner-lifestyle-image.png?source=next&height=112&quality=high'

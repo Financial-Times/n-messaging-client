@@ -41,7 +41,7 @@ module.exports = function customSetup (banner, done) {
 		);
 
 		if (typeof CSS === 'undefined' || !CSS.supports('position', 'sticky')) {
-			bannerElem.classList.add('n-messaging-banner--fixed');
+			bannerElem.classList.add('o-banner--fixed');
 			oViewport.listenTo('resize');
 			oViewport.listenTo('orientation');
 			document.body.addEventListener('oViewport.orientation', () => {

@@ -1,0 +1,50 @@
+<div class="o-banner
+	{{#unless renderOpen}}o-banner--closed{{/unless}}
+	{{#if themeMarketing}} o-banner--marketing{{/if}}
+	{{#if themeProduct}} o-banner--product{{/if}}
+	{{#if themeCompact}} o-banner--compact{{/if}}
+	{{#if small}} o-banner--small{{/if}}"
+	data-o-component="o-banner"
+	data-n-messaging-component=""
+	data-o-banner-banner-class="{{#if bannerClass}}{{bannerClass}}{{else}}o-banner{{/if}}"
+	data-o-banner-auto-open="false"
+	{{#if suppressCloseButton}} data-o-banner-suppress-close-button="true"{{/if}}
+	>
+	<div class="o-banner__outer">
+		{{#if @partial-block}}
+			{{{@partial-block}}}
+		{{else}}
+		<div class="o-banner__inner" data-o-banner-inner="" data-o-banner-inner="">
+
+			{{#if contentLong}}
+			<!-- Content to display on larger screens -->
+			<div class="o-banner__content o-banner__content--long">
+				{{{contentLong}}}
+			</div>
+			{{/if}}
+
+			{{#if contentShort}}
+			<!-- Content to display on smaller screens -->
+			<div class="o-banner__content o-banner__content--short">
+				{{{contentShort}}}
+			</div>
+			{{/if}}
+
+			<!-- Button and link -->
+			<div class="o-banner__actions">
+				{{#if buttonUrl}}
+				<div class="o-banner__action">
+					<a href="{{buttonUrl}}" class="o-banner__button" data-o-banner-action="" data-trackable="onsite-message-button">{{buttonLabel}}</a>
+				</div>
+				{{/if}}
+				{{#if linkUrl}}
+				<div class="o-banner__action o-banner__action--secondary">
+					<a href="{{linkUrl}}" class="o-banner__link" data-o-banner-action="" data-trackable="onsite-message-link">{{linkLabel}}</a>
+				</div>
+				{{/if}}
+			</div>
+
+		</div>
+		{{/if}}
+	</div>
+</div>

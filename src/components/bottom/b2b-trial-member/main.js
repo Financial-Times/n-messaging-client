@@ -1,5 +1,5 @@
 module.exports = function customSetup (banner, done) {
-	const submitBtn = banner.innerElement.querySelector('.n-messaging-banner__button');
+	const submitBtn = banner.innerElement.querySelector('.o-banner__button');
 
 	function handleClick (e) {
 		e.preventDefault();

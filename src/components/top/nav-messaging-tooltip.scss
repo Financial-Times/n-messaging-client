@@ -1,6 +1,6 @@
-[data-n-messaging-tooltip="true"] .n-alert-banner--neutral {
+[data-n-messaging-tooltip="true"] .o-message--neutral {
 
-	.n-alert-banner__container {
+	.o-message__container {
 		background-color: oColorsByName('wheat');
 		padding-left: 0;
 		padding-right: 0;
@@ -13,11 +13,11 @@
 		}
 	}
 
-	.n-alert-banner__content {
+	.o-message__content {
 		padding-left: 10px;
 	}
 
-	.n-alert-banner__close {
+	.o-message__close {
 		right: 12px;
 		border-bottom: 0;
 	}
@@ -32,7 +32,7 @@
 		display: block !important;
 	}
 
-	.n-alert-banner__content-main {
+	.o-message__content-main {
 		hyphens: none;
 	}
 }

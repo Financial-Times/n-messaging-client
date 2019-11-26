@@ -3,6 +3,10 @@
 @import '../../critical';
 @import '../../main';
 
+html {
+	background-color: oColorsByName('paper');
+}
+
 .mock-content {
 
 	h1 {

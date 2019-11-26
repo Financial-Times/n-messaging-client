@@ -10,7 +10,7 @@ const generateHtml = (src) => `
 
 module.exports = function customSetup (banner, done) {
 
-	const overlayTrigger = banner.bannerElement.querySelector('.n-messaging-banner__button');
+	const overlayTrigger = banner.bannerElement.querySelector('.o-banner__button');
 
 	if (overlayTrigger) {
 		const src = overlayTrigger.href + (/\?/.test(overlayTrigger.href) ? '&' : '?') + 'embedded=true';

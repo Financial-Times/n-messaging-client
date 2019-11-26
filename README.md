@@ -167,7 +167,7 @@ If you need to turn a message off in production quickly, simply remove the varia
 ### The Solution
 
 - Message hierarchy as decided by "The Brain™" (`next-ammit-api`)
-- Consistent design and clear usage guidlines (`o-banner` and `n-alert-banner`)
+- Consistent design and clear usage guidlines (`o-banner` and `o-message`)
 - Simple integration to applications (`n-messaging-client`)
 - No conflicting messages on the page at once ("top" & "bottom" slots)
 - Standardised, user based and persistent interaction event tracking (`n-messaging-client`, VoltDB & `next-ammit-api`)
