@@ -3,12 +3,8 @@
 
 @include oOverlay();
 
-// Overlay override, I'm not sure why 😬
-.o-overlay {
-	z-index: 1000;
-}
-
 .o-overlay--n-overlay {
+	z-index: 1000;
 	top: 0 !important;
 	right: 0;
 	left: 0 !important;
