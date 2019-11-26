@@ -36,11 +36,4 @@ $o-tooltip-is-silent : false;
 	@include nUiZIndexFor('notification');
 }
 
-// set base font
-.n-messaging-client-alert-banner,
-.n-messaging-client-messaging-banner {
-	font-family: sans-serif;
-	font-size: 0.8125em;
-}
-
 @import './src/components/bottom/cookie-consent/main';
