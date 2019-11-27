@@ -49,10 +49,9 @@
 	}
 
 	.o-banner__button {
-		@include oButtonsContent((
-			'type': 'primary',
-			'size': 'big'
-		));
+		@include oButtonsContent($opts: (
+			'type': 'primary'
+		), $include-base-styles: false);
 		@include oGridRespondTo($from: 375px) {
 			@include oTypographySans($scale: 1, $include-font-family: false);
 		}

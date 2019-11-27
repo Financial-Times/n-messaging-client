@@ -28,14 +28,13 @@
 	}
 
 	.o-banner__button {
-		@include oButtonsContent((
+		@include oButtonsContent($opts: (
 			'type': 'primary',
-			'size': 'big',
 			'theme': (
 				'color': 'white',
 				'context': #262A33
 			)
-		));
+		), $include-base-styles: false);
 	}
 
 	.o-banner__button {

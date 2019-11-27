@@ -16,7 +16,10 @@
 	}
 
 	.o-banner__button {
-		@include oButtonsContent((
+		// Note: base styles need to be included for this button
+		// as the size should be small. I can't get this to work
+		// when excluding base styles. It'll go away soon
+		@include oButtonsContent($opts: (
 			'type': 'primary',
 			'theme': (
 				'color': 'black',

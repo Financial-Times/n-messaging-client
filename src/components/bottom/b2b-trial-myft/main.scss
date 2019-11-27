@@ -7,13 +7,13 @@
 		}
 	}
 	.o-banner__button {
-		@include oButtonsContent((
+		@include oButtonsContent($opts: (
 			'type': 'primary',
 			'theme': (
 				'color': 'white',
 				'context': 'claret'
 			)
-		));
+		), $include-base-styles: false);
 	}
 	.o-banner__link {
 		color: #ffffff;

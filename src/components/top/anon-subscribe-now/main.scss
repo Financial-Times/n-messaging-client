@@ -32,13 +32,13 @@
 	}
 
 	.o-message__actions__primary {
-		@include oButtonsContent((
+		@include oButtonsContent($opts: (
 			'type': 'primary',
 			'theme': (
 				'color': 'black',
 				'context': 'white'
 			)
-		));
+		), $include-base-styles: false);
 		margin-right: 0;
 	}
 
@@ -53,10 +53,10 @@
 		}
 
 		.o-message__actions__primary {
-			@include oButtonsContent((
+			@include oButtonsContent($opts: (
 				'type': 'primary',
 				'theme': 'inverse'
-			));
+			), $include-base-styles: false);
 		}
 	}
 }
