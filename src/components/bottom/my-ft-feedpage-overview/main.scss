@@ -1,6 +1,6 @@
-.n-messaging-banner--my-ft-feedpage-overview {
+.n-messaging-client-messaging-banner--my-ft-feedpage-overview {
 
-	.n-messaging-banner__inner {
+	.o-banner__inner {
 		color: black;
 		background: white;
 
@@ -14,12 +14,12 @@
 		}
 	}
 
-	.n-messaging-banner__heading h1 {
+	.o-banner__heading h1 {
 		font-family: FinancierDisplayWeb, serif;
 		font-size: 28px;
 	}
 
-	.n-messaging-banner__heading:after {
+	.o-banner__heading:after {
 		margin-top: 8px;
 		margin-bottom: 16px;
 		content: '';
@@ -29,18 +29,18 @@
 	}
 
 	/* so the text doesn't overlap when background image is displayed */
-	.n-messaging-banner__content p {
+	.o-banner__content p {
 		@include oGridRespondTo($from: M) {
 			width: 50%;
 		}
 	}
 
 
-	.n-messaging-banner__topicname {
+	.o-banner__topicname {
 		color: #E6175C;
 	}
 
-	.n-messaging-banner__button {
+	.o-banner__button {
 		color: white;
 		background-color: black;
 		&:hover,
