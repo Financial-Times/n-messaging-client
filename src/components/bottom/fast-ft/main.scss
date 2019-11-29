@@ -1,0 +1,63 @@
+.n-messaging-client-messaging-banner--fast-ft {
+
+	.o-banner__inner {
+		color: black;
+		background: white;
+
+		@include oGridRespondTo($from: M) {
+			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-fast-ft.s3-eu-west-1.amazonaws.com%2FfastFT_promo_message_graphic.png?source=ip-envoy");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position-x: right;
+			background-position-y: bottom;
+			background-size: 45%;
+		}
+	}
+
+	.o-banner__heading h1 {
+		font-family: FinancierDisplayWeb, serif;
+		font-size: 20px;
+		@include oGridRespondTo($from: M) {
+			font-size: 28px;
+		}
+	}
+
+	.o-banner__product_name {
+		color: #CC0000;
+	}
+
+	.o-banner__heading:after {
+		margin-top: 8px;
+		margin-bottom: 16px;
+		content: '';
+		display: block;
+		width: 100px;
+		border-bottom: 0;
+	}
+
+	/* so the text doesn't overlap when background image is displayed */
+	.o-banner__content p {
+		@include oGridRespondTo($from: M) {
+			width: 50%;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+	}
+
+	.o-banner__button {
+		color: white;
+		background-color: black;
+		&:hover,
+		&:focus {
+			color: black;
+			background-color: white;
+			border-color: black;
+		}
+	}
+
+
+
+
+
+
+}
