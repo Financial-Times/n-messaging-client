@@ -16,10 +16,7 @@
 
 	.o-banner__heading h1 {
 		font-family: FinancierDisplayWeb, serif;
-		font-size: 20px;
-		@include oGridRespondTo($from: M) {
-			font-size: 28px;
-		}
+		font-size: 28px;
 	}
 
 	.o-banner__product_name {
