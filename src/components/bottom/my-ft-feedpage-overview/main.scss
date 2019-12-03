@@ -8,8 +8,8 @@
 			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-my-ft-feedpage-overview.s3-eu-west-1.amazonaws.com%2FmyFTFeedpageOverview_graphic.png?source=ip-envoy");
 			background-size: contain;
 			background-repeat: no-repeat;
-			background-position-x: right;
-			background-position-y: bottom;
+			background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
+			background-position-y: calc(100% + 1px);
 			background-size: 45%;
 		}
 	}
