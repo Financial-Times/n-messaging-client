@@ -10,13 +10,18 @@
 			background-repeat: no-repeat;
 			background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
 			background-position-y: calc(100% + 1px);
-			background-size: 45%;
+			background-size: 40%;
 		}
+	}
+
+	.o-banner__heading {
+		padding-right: 20px;  // smaller than default o-banner setting, so we can get it all onto one line for a normal desktop.
 	}
 
 	.o-banner__heading h1 {
 		font-family: FinancierDisplayWeb, serif;
 		font-size: 28px;
+		line-height: 28px;
 	}
 
 	.o-banner__product_name {
