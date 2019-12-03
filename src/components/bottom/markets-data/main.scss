@@ -1,0 +1,60 @@
+.n-messaging-client-messaging-banner--markets-data {
+
+	.o-banner__inner {
+		color: black;
+		background: white;
+
+		@include oGridRespondTo($from: M) {
+			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-markets-data.s3-eu-west-1.amazonaws.com%2Fmarkets_data.png?source=ip-envoy");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
+			background-position-y: calc(100% + 1px);
+			background-size: 45%;
+		}
+	}
+
+	.o-banner__heading h1 {
+		font-family: FinancierDisplayWeb, serif;
+		font-size: 28px;
+	}
+
+	.o-banner__product_name {
+		color: #29C697;
+	}
+
+	.o-banner__heading:after {
+		margin-top: 8px;
+		margin-bottom: 16px;
+		content: '';
+		display: block;
+		width: 100px;
+		border-bottom: 0;
+	}
+
+
+	.o-banner__content p {
+		@include oGridRespondTo($from: M) {
+			width: 60%; // so the text doesn't overlap when background image is displayed
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+	}
+
+	.o-banner__button {
+		color: white;
+		background-color: black;
+		&:hover,
+		&:focus {
+			color: black;
+			background-color: white;
+			border-color: black;
+		}
+	}
+
+
+
+
+
+
+}

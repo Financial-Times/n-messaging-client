@@ -134,5 +134,8 @@ module.exports = {
 	},
 	fastFt : {
 		path: 'bottom/fast-ft'
+	},
+	marketsData : {
+		path: 'bottom/markets-data'
 	}
 };
