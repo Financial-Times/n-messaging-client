@@ -5,7 +5,7 @@
 		background: white;
 
 		@include oGridRespondTo($from: M) {
-			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-markets-data.s3-eu-west-1.amazonaws.com%2Fmarkets_data.png?source=ip-envoy");
+			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-markets-data.s3-eu-west-1.amazonaws.com%2Fmarkets_data.png?source=ip-envoy&width=196");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
@@ -37,7 +37,6 @@
 		border-bottom: 0;
 	}
 
-
 	.o-banner__content p {
 		@include oGridRespondTo($from: M) {
 			width: 60%; // so the text doesn't overlap when background image is displayed
@@ -56,10 +55,4 @@
 			border-color: black;
 		}
 	}
-
-
-
-
-
-
 }

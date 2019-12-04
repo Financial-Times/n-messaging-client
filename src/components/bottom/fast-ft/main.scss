@@ -5,7 +5,7 @@
 		background: white;
 
 		@include oGridRespondTo($from: M) {
-			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-fast-ft.s3-eu-west-1.amazonaws.com%2FfastFT_promo_message_graphic.png?source=ip-envoy");
+			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-fast-ft.s3-eu-west-1.amazonaws.com%2FfastFT_promo_message_graphic.png?source=ip-envoy&width=220");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
