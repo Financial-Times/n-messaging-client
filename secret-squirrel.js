@@ -14,7 +14,8 @@ module.exports = {
 			'eb62aef2-4bdc-0f31-a2c5-6532b8e17896', // templates/partials/bottom/content-message.html:15
 			'ae5ae5b5-cf1e-6ecc-d83e-4af44b410722', // templates/partials/bottom/new-agenda.html:16
 			'5f60b8b4-cbf0-18d7-df41-9caa1171e8c1', // templates/partials/top/anon-subscribe-now.html:5|18
-			'58faf1a5-41a3-0485-e2b0-f045491b585a' // templates/partials/top/new-agenda.html:4
+			'58faf1a5-41a3-0485-e2b0-f045491b585a', // templates/partials/top/new-agenda.html:4
+			'79c8c0c5-1686-7f28-3aeb-c14688d59749' // templates/partials/top/print-banner-uk-election.html:4
 		]
 	}
 };

@@ -32,6 +32,9 @@ module.exports = {
 	anonSubscribeNow: {
 		path: 'top/anon-subscribe-now'
 	},
+	printBannerUkElection: {
+		path: 'top/print-banner-uk-election'
+	},
 	navAccountSettings: {
 		path: 'top/nav-account-settings',
 		tooltip: true
