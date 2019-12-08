@@ -29,7 +29,7 @@ module.exports = {
 	anonSubscribeNow: {
 		path: 'top/anon-subscribe-now'
 	},
-	printBannerUkElection: {
+	ukElection: {
 		path: 'top/print-banner-uk-election'
 	},
 	printBannerUsa: {
