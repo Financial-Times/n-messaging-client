@@ -30,7 +30,7 @@ module.exports = {
 		path: 'top/anon-subscribe-now'
 	},
 	ukElection: {
-		path: 'top/print-banner-uk-election'
+		path: 'top/uk-election'
 	},
 	printBannerUsa: {
 		path: 'top/print-banner-usa'
