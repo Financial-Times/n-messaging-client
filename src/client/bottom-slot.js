@@ -18,6 +18,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		banner = new oBanner(declarativeElement, oBanner.getOptionsFromDom(declarativeElement));
 	} else if (guruResult && guruResult.renderData) {
 		banner = new oBanner(null, imperativeOptions(guruResult.renderData, { bannerClass: BANNER_CLASS, autoOpen: false }));
+		banner.bannerElement.classList.add(N_MESSAGING_BANNER_CLASS);
 
 		// Add custom classes to the banner. This is used to get around
 		// the fact that o-banner now validates themes. This should probably
