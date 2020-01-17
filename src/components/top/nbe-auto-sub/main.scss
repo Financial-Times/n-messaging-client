@@ -3,8 +3,10 @@
 	display: block;
 	background-color: oColorsByName('teal-50');
 
-	.o-message__content {
-		padding-bottom: oSpacingByName('s2');
+	@include oGridRespondTo($until: L) {
+		.o-message__content {
+			padding-bottom: oSpacingByName('s2');
+		}
 	}
 
 	.o-message__content-main {
