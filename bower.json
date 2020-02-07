@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "n-ui-foundations": "^4.0.0-beta.1",
-    "o-banner": "^3.0.0",
+    "o-banner": "^3.2.0",
     "o-share": "^7.0.0",
     "o-tooltip": "^4.0.0",
     "next-myft-client": "^7.7.0",
