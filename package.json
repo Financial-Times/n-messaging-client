@@ -29,7 +29,7 @@
     "snyk": "^1.168.0"
   },
   "dependencies": {
-    "@financial-times/n-swg": "^1.0.0",
+    "@financial-times/n-swg": "^2.0.0",
     "js-cookie": "^2.2.0"
   }
 }
