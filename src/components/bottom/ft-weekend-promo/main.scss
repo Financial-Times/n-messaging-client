@@ -1,12 +1,14 @@
 .n-messaging-client-messaging-banner--ft-weekend-promo {
-	.o-banner__inner {
-		background-color: #262A33;
-		background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-ft-weekend-promo.s3-eu-west-1.amazonaws.com%2Fleaf_motif.png?source=ip-envoy");
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position-x: right;
-		color: white;
-		border: 5px solid white;
+	.o-banner__outer {
+		.o-banner__inner {
+			background-color: #262A33;
+			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-ft-weekend-promo.s3-eu-west-1.amazonaws.com%2Fleaf_motif.png?source=ip-envoy");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position-x: right;
+			color: white;
+			border: 5px solid white;
+		}
 	}
 
 	.o-banner__close {

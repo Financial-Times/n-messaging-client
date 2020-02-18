@@ -1,16 +1,17 @@
 .n-messaging-client-messaging-banner--markets-data {
+	.o-banner__outer {
+		.o-banner__inner {
+			color: black;
+			background: white;
 
-	.o-banner__inner {
-		color: black;
-		background: white;
-
-		@include oGridRespondTo($from: M) {
-			background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-markets-data.s3-eu-west-1.amazonaws.com%2Fmarkets_data.png?source=ip-envoy&width=196");
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
-			background-position-y: calc(100% + 1px);
-			background-size: 40%;
+			@include oGridRespondTo($from: M) {
+				background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fenvoy-markets-data.s3-eu-west-1.amazonaws.com%2Fmarkets_data.png?source=ip-envoy&width=196");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position-x: calc(100% + 1px); // a workaround to remove 1px gap on the right/bottom
+				background-position-y: calc(100% + 1px);
+				background-size: 40%;
+			}
 		}
 	}
 
