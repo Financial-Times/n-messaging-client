@@ -38,7 +38,7 @@
 		"webpack-cli": "^3.3.10"
 	},
 	"dependencies": {
-		"@financial-times/x-follow-button": "1.0.4",
+		"@financial-times/x-follow-button": "1.1.1",
 		"js-cookie": "2.2.0"
 	}
 }
