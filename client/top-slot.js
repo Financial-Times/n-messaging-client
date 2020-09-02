@@ -117,5 +117,7 @@ function imperativeOptions (opts, defaults) {
 			}
 		},
 		close: opts.closeButton,
+		dynamicTrackingData: opts.dynamicTrackingData,
+		state: opts.state,
 	};
 }
