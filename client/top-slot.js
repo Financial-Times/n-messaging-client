@@ -35,7 +35,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		trackingContext: config.trackingContext,
 		variant: variant
 	});
-	const declarativeElement = getServerRenderedBanner(config, guruResult);
+	const declarativeElement = !config.lazy && getServerRenderedBanner(config, guruResult);
 	const options = { messageClass: ALERT_BANNER_CLASS, autoOpen: false, close: message.getDataAttributes(declarativeElement).close};
 
 	if (declarativeElement) {
@@ -117,6 +117,5 @@ function imperativeOptions (opts, defaults) {
 			}
 		},
 		close: opts.closeButton,
-		dynamicTrackingData: opts.dynamicTrackingData
 	};
 }
