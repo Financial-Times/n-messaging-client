@@ -43,7 +43,8 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		return;
 	}
 
-	const allOptions = imperativeOptions(guruResult ? guruResult.renderData : {}, options);
+	const guruRenderData = guruResult && guruResult.renderData || {};
+	const allOptions = imperativeOptions(guruRenderData, options);
 	const alertBanner = new message(declarativeElement, allOptions);
 
 	if (messageEventLimitsBreached(config.name)) {
