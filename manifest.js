@@ -79,5 +79,10 @@ module.exports = {
 	remainingArticlesTest: {
 		path: 'bottom/remaining-articles',
 		lazy: true
-	}
+	},
+	tryFullAccess: {
+		path: 'top/lazy',
+		lazy: true,
+		guruQueryString: 'offerId=499f84e9-d7fb-f90d-ba6a-9cbb65060a44',
+	},
 };
