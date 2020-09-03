@@ -7,6 +7,7 @@ const ALERT_ACTION_SELECTOR = '[data-o-message-action]';
 const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 
+const TOP_SLOT_CONTENT_SELECTOR = '[data-n-messaging-slot="top"] [data-n-messaging-component]';
 const TOP_SLOT_FLAG = 'messageSlotTop';
 
 function getServerRenderedBanner (config, guruResult) {
@@ -100,7 +101,7 @@ function imperativeOptions (opts, defaults) {
 		messageClass: opts.messageClass || defaults.messageClass,
 		type: opts.type,
 		status: opts.status,
-		parentElement: opts.parentElement,
+		parentElement: opts.parentElement || TOP_SLOT_CONTENT_SELECTOR,
 		content: {
 			highlight: opts.contentTitle,
 			detail: opts.content,
