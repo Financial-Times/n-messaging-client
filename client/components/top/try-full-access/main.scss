@@ -1,0 +1,7 @@
+@include oMessageAddState('try-full-access', (
+	'foreground-color': 'white',
+	'background-color': 'slate',
+	'highlight-color': 'lemon',
+	'button-type': 'primary',
+	'icon': 'user',
+), $types: ('notice', 'alert'));
