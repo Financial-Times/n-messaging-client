@@ -7,6 +7,7 @@ const ALERT_ACTION_SELECTOR = '[data-o-message-action]';
 const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
 
+const TOP_SLOT_CONTENT_SELECTOR = '[data-n-messaging-slot="top"] [data-n-messaging-component]';
 const TOP_SLOT_FLAG = 'messageSlotTop';
 
 function getServerRenderedBanner (config, guruResult) {
@@ -26,7 +27,6 @@ function getServerRenderedBanner (config, guruResult) {
 }
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
-	let alertBanner;
 	const variant = (guruResult && guruResult.renderData && guruResult.renderData.dynamicTrackingData) || config.name;
 	const trackEventAction = config.name && generateMessageEvent({
 		flag: TOP_SLOT_FLAG,
@@ -38,16 +38,14 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	const declarativeElement = getServerRenderedBanner(config, guruResult);
 	const options = { messageClass: ALERT_BANNER_CLASS, autoOpen: false, close: message.getDataAttributes(declarativeElement).close};
 
-	if (declarativeElement) {
-		alertBanner = new message(declarativeElement, options);
-	} else if (guruResult && guruResult.renderData) {
-		alertBanner = new message(null, imperativeOptions(guruResult.renderData, options));
-	} else {
-		if (guruResult.skip && trackEventAction) {
-			trackEventAction('skip');
-		}
+	if (guruResult && guruResult.skip && trackEventAction) {
+		trackEventAction('skip');
 		return;
 	}
+
+	const guruRenderData = guruResult && guruResult.renderData || {};
+	const allOptions = imperativeOptions(guruRenderData, options);
+	const alertBanner = new message(declarativeElement, allOptions);
 
 	if (messageEventLimitsBreached(config.name)) {
 		trackEventAction('skip'); // todo do we actually need to do this?
@@ -99,8 +97,7 @@ function imperativeOptions (opts, defaults) {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
 		messageClass: opts.messageClass || defaults.messageClass,
 		type: opts.type,
-		status: opts.status,
-		parentElement: opts.parentElement,
+		parentElement: opts.parentElement || TOP_SLOT_CONTENT_SELECTOR,
 		content: {
 			highlight: opts.contentTitle,
 			detail: opts.content,
@@ -117,6 +114,7 @@ function imperativeOptions (opts, defaults) {
 			}
 		},
 		close: opts.closeButton,
-		dynamicTrackingData: opts.dynamicTrackingData
+		dynamicTrackingData: opts.dynamicTrackingData,
+		state: opts.state,
 	};
 }

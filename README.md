@@ -131,7 +131,7 @@ Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pic
 ### Under the hood :wrench:
 
 - The "bottom" message slot uses [`o-banner`](http://registry.origami.ft.com/components/o-banner)
-- The "top" message slot uses [o-message`](http://registry.origami.ft.com/components/o-message)
+- The "top" message slot uses [`o-message`](http://registry.origami.ft.com/components/o-message)
 
 ### Releasing a message to production
 
