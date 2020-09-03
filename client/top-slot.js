@@ -27,7 +27,6 @@ function getServerRenderedBanner (config, guruResult) {
 }
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
-	let alertBanner;
 	const variant = (guruResult && guruResult.renderData && guruResult.renderData.dynamicTrackingData) || config.name;
 	const trackEventAction = config.name && generateMessageEvent({
 		flag: TOP_SLOT_FLAG,
@@ -36,19 +35,16 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		trackingContext: config.trackingContext,
 		variant: variant
 	});
-	const declarativeElement = !config.lazy && getServerRenderedBanner(config, guruResult);
+	const declarativeElement = getServerRenderedBanner(config, guruResult);
 	const options = { messageClass: ALERT_BANNER_CLASS, autoOpen: false, close: message.getDataAttributes(declarativeElement).close};
 
-	if (declarativeElement) {
-		alertBanner = new message(declarativeElement, options);
-	} else if (guruResult && guruResult.renderData) {
-		alertBanner = new message(null, imperativeOptions(guruResult.renderData, options));
-	} else {
-		if (guruResult.skip && trackEventAction) {
-			trackEventAction('skip');
-		}
+	if (guruResult && guruResult.skip && trackEventAction) {
+		trackEventAction('skip');
 		return;
 	}
+
+	const allOptions = imperativeOptions(guruResult ? guruResult.renderData : {}, options);
+	const alertBanner = new message(declarativeElement, allOptions);
 
 	if (messageEventLimitsBreached(config.name)) {
 		trackEventAction('skip'); // todo do we actually need to do this?
