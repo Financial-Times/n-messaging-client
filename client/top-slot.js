@@ -100,7 +100,6 @@ function imperativeOptions (opts, defaults) {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
 		messageClass: opts.messageClass || defaults.messageClass,
 		type: opts.type,
-		status: opts.status,
 		parentElement: opts.parentElement || TOP_SLOT_CONTENT_SELECTOR,
 		content: {
 			highlight: opts.contentTitle,
