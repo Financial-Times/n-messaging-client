@@ -5,3 +5,34 @@
 	'button-type': 'primary',
 	'icon': 'user',
 ), $types: ('notice', 'alert'));
+
+.o-message--try-full-access {
+	display: flex;
+
+	.o-message__content {
+		display: flex;
+		flex-direction: column;
+
+		.o-message__content-main {
+			display: flex;
+			flex-direction: column;
+
+			margin-right: 0;
+			text-transform: uppercase;
+		}
+	}
+
+	.o-message__content-detail {
+		text-align: right;
+		color: oColorsByName('lemon');
+	}
+
+	.o-message__content-highlight {
+		padding-right: 40px;
+	}
+
+	.o-message__actions {
+		text-align: center;
+		padding: 0 0 10px;
+	}
+}
