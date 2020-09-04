@@ -83,6 +83,6 @@ module.exports = {
 	tryFullAccess: {
 		path: 'top/lazy',
 		lazy: true,
-		guruQueryString: 'offerId=499f84e9-d7fb-f90d-ba6a-9cbb65060a44',
+		guruQueryString: 'offerId=41218b9e-c8ae-c934-43ad-71b13fcb4465',
 	},
 };

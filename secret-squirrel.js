@@ -10,6 +10,7 @@ module.exports = {
 			'4312a4ca-aeac-11e8-99ca-68cf89602132', // demos/templates/layouts/custom-vanilla.html:14
 			'97212eb0-abb9-11e8-8253-48106866cd8a', // demos/templates/layouts/custom-vanilla.html:29
 			'499f84e9-d7fb-f90d-ba6a-9cbb65060a44', // manifest.js:24
+			'41218b9e-c8ae-c934-43ad-71b13fcb4465', // manifest.js:86
 			'5a2ecc7c-f349-715e-f2c4-ce657532f71c', // server/templates/components/o-message-notice.html:23
 			'ed76f4a7-dcc0-f60d-5f92-0bd9b43f30dd', // server/templates/partials/bottom/b2b-trial-contact-us.html:21
 			'eb62aef2-4bdc-0f31-a2c5-6532b8e17896', // server/templates/partials/bottom/content-message.html:15
