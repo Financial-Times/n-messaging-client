@@ -46,7 +46,14 @@
 	}
 
 	.o-message__content-highlight {
-		padding-right: 100px;
+		@media (min-width: 370px) {
+			padding-right: 100px;
+		}
+
+		@media (min-width: 740px) {
+			padding-right: 170px;
+			padding-bottom: 10px;
+		}
 	}
 
 	.o-message__actions {
