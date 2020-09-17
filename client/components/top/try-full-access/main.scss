@@ -1,71 +1,102 @@
 @include oMessageAddState('try-full-access', (
 	'foreground-color': 'white',
 	'background-color': 'slate',
-	'highlight-color': 'lemon',
+	'highlight-color': 'white',
 	'button-type': 'primary',
 	'icon': 'user',
 ), $types: ('notice', 'alert'));
 
 .o-message--try-full-access {
 	display: flex;
+	flex-direction: column;
 
-	.o-message__content {
-		display: flex;
-		flex-direction: column;
+	@include oGridRespondTo(M) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
 
-		@media (min-width: 740px) {
-			flex-direction: row;
-			align-items: center;
+	.o-message__container {
+		min-width: 320px;
+
+		@include oGridRespondTo(M) {
+			min-width: 720px;
+		}
+		@include oGridRespondTo(L) {
+			min-width: 980px;
 		}
 
-		.o-message__content-main {
+		.o-message__content {
 			display: flex;
 			flex-direction: column;
+			justify-content: space-around;
 
-			margin-right: 0;
-			margin-bottom: 8px;
+			@include oGridRespondTo(M) {
+				flex-direction: row;
+				align-items: center;
+			}
 
-			text-transform: uppercase;
-			font-size: 18px;
+			.o-message__content-main {
+				display: flex;
+				flex-direction: column;
 
-			@media (min-width: 740px) {
-				margin-right: 30px;
-				margin-top: 30px;
-				margin-bottom: 30px;
+				margin-top: oSpacingByName('s4');
+				margin-bottom: oSpacingByName('s6');
+				text-transform: uppercase;
+				font-size: 18px;
+				font-weight: bold;
+				line-height: 20px;
 
-				font-size: 24px;
+				@include oGridRespondTo(M) {
+					margin-top: oSpacingByName('s8');
+					margin-bottom: oSpacingByName('s8');
+					font-size: 24px;
+					line-height: 28px;
+				}
 			}
 		}
-	}
 
-	.o-message__content-detail {
-		text-align: right;
-
-		font-family: serif;
-		color: oColorsByName('lemon');
-	}
-
-	.o-message__content-highlight {
-		@media (min-width: 370px) {
-			padding-right: 100px;
+		.o-message__content-detail {
+			color: oColorsByName('white');
+			.highlight {
+				color: oColorsByName('wheat');
+			}
+			@include oGridRespondTo(XS) {
+				margin-left: 52px;
+			}
+			@include oGridRespondTo(S) {
+				margin-left: 70px;
+			}
+			@include oGridRespondTo(M) {
+				margin-left: 132px;
+			}
 		}
 
-		@media (min-width: 740px) {
-			padding-right: 170px;
-			padding-bottom: 10px;
+		.o-message__content-highlight {
+			color: oColorsByName('wheat');
 		}
-	}
 
-	.o-message__actions {
-		text-align: center;
-		padding: 0 0 16px;
+		.o-message__actions {
+			a {
+				font-size: 16px;
+			}
 
-		@media (min-width: 740px) {
-			padding: 0;
+			// not using oSpacingByName below so the second line is aligned with
+			// a letter on the top line
+			@include oGridRespondTo(XS) {
+				margin-left: 52px;
+			}
+
+			@include oGridRespondTo(S) {
+				margin-left: 70px;
+			}
+
+			@include oGridRespondTo(M) {
+				margin-left: 0;
+			}
 		}
-	}
 
-	.o-message__actions__primary {
-		padding: 10px 25px;
+		.o-message__actions__primary {
+			padding: oSpacingByName('s3') oSpacingByName('s6');
+		}
 	}
 }
