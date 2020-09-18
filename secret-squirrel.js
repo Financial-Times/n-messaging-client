@@ -12,7 +12,7 @@ module.exports = {
 			'97212eb0-abb9-11e8-8253-48106866cd8a', // demos/templates/layouts/custom-vanilla.html:29
 			'info@companyx\\.com', // docs/corporate-cancellation-message.md:31|36
 			'499f84e9-d7fb-f90d-ba6a-9cbb65060a44', // manifest.js:24
-			'683995bf-ed3f-2fd6-d589-1628ebad1629', // manifest.js:86
+			'41218b9e-c8ae-c934-43ad-71b13fcb4465', // manifest.js:86
 			'5a2ecc7c-f349-715e-f2c4-ce657532f71c', // server/templates/components/o-message-notice.html:23
 			'eb62aef2-4bdc-0f31-a2c5-6532b8e17896', // server/templates/partials/bottom/content-message.html:16
 			'2a6a4586-ace0-6465-aebe-aa1ecc543271', // server/templates/partials/bottom/us-election-2020-promo.html:17
