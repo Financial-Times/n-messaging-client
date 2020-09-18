@@ -79,5 +79,8 @@ module.exports = {
 	remainingArticlesTest: {
 		path: 'bottom/remaining-articles',
 		lazy: true
+	},
+	aberdeenStandardLifeCancellation: {
+		path: 'bottom/asi-cancellation'
 	}
 };
