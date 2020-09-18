@@ -1,7 +1,7 @@
 @include oMessageAddState('try-full-access', (
 	'foreground-color': oColorsByName('white'),
 	'background-color': oColorsByName('slate'),
-	'highlight-color': oColorsByName('wheat'),
+	'highlight-color': oColorsByName('white'),
 	'button-type': 'primary',
 ), $types: ('notice'));
 
