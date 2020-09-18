@@ -1,10 +1,9 @@
 @include oMessageAddState('try-full-access', (
 	'foreground-color': oColorsByName('white'),
 	'background-color': oColorsByName('slate'),
-	'highlight-color': oColorsByName('white'),
+	'highlight-color': oColorsByName('wheat'),
 	'button-type': 'primary',
-	'icon': 'user',
-), $types: ('notice', 'alert'));
+), $types: ('notice'));
 
 .o-message--try-full-access {
 	display: flex;
@@ -57,10 +56,6 @@
 
 		.o-message__content-detail {
 			color: oColorsByName('white');
-
-			.highlighted {
-				color: oColorsByName('wheat');
-			}
 
 			@include oGridRespondTo(XS) {
 				margin-left: 52px;
