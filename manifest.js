@@ -82,5 +82,10 @@ module.exports = {
 	},
 	aberdeenStandardLifeCancellation: {
 		path: 'bottom/asi-cancellation'
+	},
+	tryFullAccess: {
+		path: 'top/lazy',
+		lazy: true,
+		guruQueryString: 'offerId=41218b9e-c8ae-c934-43ad-71b13fcb4465',
 	}
 };
