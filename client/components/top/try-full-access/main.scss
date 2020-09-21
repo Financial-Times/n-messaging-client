@@ -39,7 +39,7 @@
 				flex-direction: column;
 
 				margin-top: oSpacingByName('s4');
-				margin-bottom: oSpacingByName('s6');
+				margin-bottom: oSpacingByName('s4');
 				text-transform: uppercase;
 				font-size: 18px;
 				font-weight: bold;
@@ -73,6 +73,8 @@
 		}
 
 		.o-message__actions {
+			padding-bottom: oSpacingByName('s6');
+
 			a {
 				font-size: 16px;
 			}
@@ -89,6 +91,8 @@
 
 			@include oGridRespondTo(M) {
 				margin-left: 0;
+				padding-bottom: 0;
+				padding-top: oSpacingByName('s2');
 			}
 		}
 
