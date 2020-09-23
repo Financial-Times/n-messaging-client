@@ -61,9 +61,6 @@ module.exports = {
 	usElection2020Promo: {
 		path: 'bottom/us-election-2020-promo'
 	},
-	coronavirusNewsletterPromoTop: {
-		path: 'top/coronavirus-newsletter-promo-top'
-	},
 	tbybInTrialSubscribe: {
 		path: 'bottom/tbyb-in-trial-subscribe'
 	},
