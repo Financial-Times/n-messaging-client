@@ -40,7 +40,8 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		messageClass: ALERT_BANNER_CLASS,
 		autoOpen: false,
 		close: message.getDataAttributes(declarativeElement).close,
-		type: 'notice'
+		type: 'notice',
+		state: 'skip'
 	};
 
 	if (guruResult && guruResult.skip && trackEventAction) {
