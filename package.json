@@ -1,44 +1,48 @@
 {
-	"name": "@financial-times/n-messaging-client",
-	"version": "0.0.0",
-	"repository": "Financial-Times/n-messaging-client",
-	"description": "Lightweight first party messaging for use with \"The Brain\"",
-	"main": "main-server.js",
-	"scripts": {
-		"precommit": "node_modules/.bin/secret-squirrel",
-		"commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
-		"prepush": "make verify -j3",
-		"prepare": "npx snyk protect || npx snyk protect -d || true"
-	},
-	"license": "MIT",
-	"x-dash": {
-		"engine": {
-			"browser": "preact"
-		}
-	},
-	"devDependencies": {
-		"@financial-times/dotcom-server-handlebars": "2.2.0",
-		"@financial-times/n-gage": "6.2.1",
-		"bower": "^1.8.8",
-		"chai": "^4.1.2",
-		"cookie-parser": "^1.4.4",
-		"eslint": "^6.8.0",
-		"eslint-plugin-react": "^7.18.3",
-		"express": "^4.17.1",
-		"mocha": "^5.2.0",
-		"node-sass": "^4.13.1",
-		"nodemon": "^1.17.5",
-		"postcss": "^7.0.26",
-		"preact": "^8.5.3",
-		"request": "^2.87.0",
-		"sinon": "^6.0.0",
-		"snyk": "^1.168.0",
-		"sucrase": "^3.12.1",
-		"webpack": "^4.41.5",
-		"webpack-cli": "^3.3.10"
-	},
-	"dependencies": {
-		"@financial-times/x-follow-button": "1.0.4",
-		"js-cookie": "2.2.0"
-	}
+  "name": "@financial-times/n-messaging-client",
+  "version": "0.0.0",
+  "repository": "Financial-Times/n-messaging-client",
+  "description": "Lightweight first party messaging for use with \"The Brain\"",
+  "main": "main-server.js",
+  "scripts": {
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
+  },
+  "license": "MIT",
+  "x-dash": {
+    "engine": {
+      "browser": "preact"
+    }
+  },
+  "devDependencies": {
+    "@financial-times/dotcom-server-handlebars": "2.2.0",
+    "@financial-times/n-gage": "6.2.1",
+    "bower": "^1.8.8",
+    "chai": "^4.1.2",
+    "cookie-parser": "^1.4.4",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "express": "^4.17.1",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^1.17.5",
+    "postcss": "^7.0.26",
+    "preact": "^8.5.3",
+    "request": "^2.87.0",
+    "sinon": "^6.0.0",
+    "snyk": "^1.168.0",
+    "sucrase": "^3.12.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@financial-times/x-follow-button": "1.0.4",
+    "js-cookie": "2.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "node_modules/.bin/secret-squirrel-commitmsg",
+      "pre-commit": "node_modules/.bin/secret-squirrel",
+      "pre-push": "make verify -j3"
+    }
+  }
 }
