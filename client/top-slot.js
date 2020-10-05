@@ -50,7 +50,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	}
 
 	const guruRenderData = guruResult && guruResult.renderData || {};
-	const allOptions = imperativeOptions(guruRenderData, options);
+	const allOptions = imperativeOptions(guruRenderData, options, config);
 	const alertBanner = new message(declarativeElement, allOptions);
 
 	if (messageEventLimitsBreached(config.name)) {
@@ -98,12 +98,12 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 };
 
-function imperativeOptions (opts, defaults) {
+function imperativeOptions (opts, defaults, config) {
 	return {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
 		messageClass: opts.messageClass || defaults.messageClass,
 		type: opts.type || defaults.type,
-		parentElement: opts.parentElement || TOP_SLOT_CONTENT_SELECTOR,
+		parentElement: config.lazy ? opts.parentElement || TOP_SLOT_CONTENT_SELECTOR : null,
 		content: {
 			highlight: opts.contentTitle,
 			detail: opts.content,
