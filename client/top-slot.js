@@ -36,7 +36,12 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		variant: variant
 	});
 	const declarativeElement = getServerRenderedBanner(config, guruResult);
-	const options = { messageClass: ALERT_BANNER_CLASS, autoOpen: false, close: message.getDataAttributes(declarativeElement).close};
+	const options = {
+		messageClass: ALERT_BANNER_CLASS,
+		autoOpen: false,
+		close: message.getDataAttributes(declarativeElement).close,
+		type: 'notice'
+	};
 
 	if (guruResult && guruResult.skip && trackEventAction) {
 		trackEventAction('skip');
@@ -96,7 +101,7 @@ function imperativeOptions (opts, defaults) {
 	return {
 		autoOpen: opts.autoOpen || defaults.autoOpen,
 		messageClass: opts.messageClass || defaults.messageClass,
-		type: opts.type,
+		type: opts.type || defaults.type,
 		parentElement: opts.parentElement || TOP_SLOT_CONTENT_SELECTOR,
 		content: {
 			highlight: opts.contentTitle,
