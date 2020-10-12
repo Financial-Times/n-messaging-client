@@ -7,7 +7,6 @@ module.exports = {
 		deny: [],
 		denyOverrides: [
 			'45e2193a-f479-11e7-8c80-69ca88a9e8d1', // README.md:217
-			'5655d099e4b01077e911d60f', // client/components/top/energy-source-promo/main.js:2, manifest.js:76
 			'4312a4ca-aeac-11e8-99ca-68cf89602132', // demos/templates/layouts/custom-vanilla.html:14
 			'97212eb0-abb9-11e8-8253-48106866cd8a', // demos/templates/layouts/custom-vanilla.html:29
 			'info@companyx\\.com', // docs/corporate-cancellation-message.md:31|36
