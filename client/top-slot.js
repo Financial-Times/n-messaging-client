@@ -6,6 +6,7 @@ const ALERT_BANNER_CLASS = 'o-message';
 const ALERT_ACTION_SELECTOR = '[data-o-message-action]';
 const ALERT_BANNER_BUTTON_SELECTOR = `.${ALERT_BANNER_CLASS}__button`;
 const ALERT_BANNER_LINK_SELECTOR = `.${ALERT_BANNER_CLASS}__link`;
+const PRIMARY_ACTION_SELECTOR = '.o-message__actions__primary';
 
 const TOP_SLOT_CONTENT_SELECTOR = '[data-n-messaging-slot="top"] [data-n-messaging-component]';
 const TOP_SLOT_FLAG = 'messageSlotTop';
@@ -58,9 +59,12 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		return;
 	}
 
+	// custom tracking event can be empty string
+	const hasCustomEvent = allOptions.customTrackingEvent !== undefined;
+
 	// attach event handlers
 	let actions = alertBanner.messageElement.querySelectorAll(ALERT_ACTION_SELECTOR);
-	if (actions.length === 0) {
+	if (actions.length === 0 && !hasCustomEvent) {
 		// if no actions specified in markup then default to adding it to the
 		// button element (this can happen when declared imperatively)
 		actions = alertBanner.messageElement.querySelectorAll(ALERT_BANNER_BUTTON_SELECTOR);
@@ -68,8 +72,17 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			actions = alertBanner.messageElement.querySelectorAll(ALERT_BANNER_LINK_SELECTOR);
 		}
 	}
+	// can be an empty string
+	else if (hasCustomEvent) {
+		const primaryAction = alertBanner.messageElement.querySelector(PRIMARY_ACTION_SELECTOR);
+		if (primaryAction) {
+			primaryAction.setAttribute('data-n-alert-banner-action', allOptions.customTrackingEvent);
+			actions = [primaryAction];
+		}
+	}
 
 	actions = [].slice.call(actions);
+
 	listen(alertBanner.messageElement, 'o.messageClosed', () => trackEventAction('close'));
 	listen(alertBanner.messageElement, 'o.messageOpen', () => trackEventAction('view'));
 	if (actions && actions.length > 0) {
@@ -119,6 +132,7 @@ function imperativeOptions (opts, defaults, config) {
 				url: opts.linkUrl
 			}
 		},
+		customTrackingEvent: opts.customTrackingEvent,
 		close: opts.closeButton,
 		dynamicTrackingData: opts.dynamicTrackingData,
 		state: opts.state || defaults.state,
