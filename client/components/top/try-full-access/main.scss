@@ -57,7 +57,7 @@
 		.o-message__content-detail {
 			color: oColorsByName('white');
 
-			@include oGridRespondTo(XS) {
+			@include oGridRespondTo(S) {
 				margin-left: 52px;
 			}
 			@include oGridRespondTo(S) {
@@ -81,7 +81,7 @@
 
 			// not using oSpacingByName below so the second line is aligned with
 			// a letter on the top line
-			@include oGridRespondTo(XS) {
+			@include oGridRespondTo(S) {
 				margin-left: 52px;
 			}
 
