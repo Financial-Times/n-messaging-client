@@ -78,5 +78,8 @@ module.exports = {
 		path: 'top/lazy',
 		lazy: true,
 		guruQueryString: 'offerId=41218b9e-c8ae-c934-43ad-71b13fcb4465',
+	},
+	usElectionPollTracker: {
+		path: 'top/us-election-poll-tracker'
 	}
 };
