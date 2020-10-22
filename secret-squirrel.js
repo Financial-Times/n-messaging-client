@@ -17,7 +17,6 @@ module.exports = {
 			'2a6a4586-ace0-6465-aebe-aa1ecc543271', // server/templates/partials/bottom/us-election-2020-promo.html:17
 			'5f60b8b4-cbf0-18d7-df41-9caa1171e8c1', // server/templates/partials/top/anon-subscribe-now.html:5|18
 			'a44c9005-2a9c-fe2a-9140-1311ff87f25f', // server/templates/partials/top/print-banner-usa.html:4
-			'79c8c0c5-1686-7f28-3aeb-c14688d59749' // server/templates/partials/top/uk-election.html:4
 		]
 	}
 };
