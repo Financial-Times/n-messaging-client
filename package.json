@@ -5,7 +5,10 @@
   "description": "Lightweight first party messaging for use with \"The Brain\"",
   "main": "main-server.js",
   "scripts": {
-    "prepare": "npx snyk protect || npx snyk protect -d || true"
+    "prepare": "npx snyk protect || npx snyk protect -d || true",
+    "precommit": "secret-squirrel",
+    "commitmsg": "secret-squirrel-commitmsg",
+    "prepush": "make verify -j3"
   },
   "license": "MIT",
   "x-dash": {
