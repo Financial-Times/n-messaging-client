@@ -81,5 +81,11 @@ module.exports = {
 	},
 	usElectionPollTracker: {
 		path: 'top/us-election-poll-tracker'
+	},
+	usElectionWeekDiscount50: {
+		path: 'top/us-election-week-discount-50',
+	},
+	usElectionWeekDiscount33: {
+		path: 'top/us-election-week-discount-33',
 	}
 };
