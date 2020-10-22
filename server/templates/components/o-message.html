@@ -19,10 +19,13 @@
 			{{#ifSome buttonUrl linkUrl}}
 				<div class="o-message__actions o-message__cell" {{#if customDataTrackableActions}} data-trackable="{{customDataTrackableActions}}"{{/if}}>
 					{{#if buttonUrl}}
-					<a href="{{buttonUrl}}" class="o-message__actions__primary" data-o-message-action="{{buttonAction}}" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}" role="button">{{buttonLabel}}</a>
+					<a href="{{buttonUrl}}" class="o-message__actions__primary" data-o-message-action="{{buttonAction}}" data-trackable="{{#if customDataTrackableButton}}{{customDataTrackableButton}}{{else}}onsite-message-button{{/if}}" role="button">{{{buttonLabel}}}</a>
 					{{/if}}
 					{{#if linkUrl}}
 					<a href="{{linkUrl}}" class="o-message__actions__secondary" data-o-message-action="{{linkAction}}" data-trackable="{{#if customDataTrackableLink}}{{customDataTrackableLink}}{{else}}onsite-message-link{{/if}}">{{linkLabel}}</a>
+					{{/if}}
+					{{#if buttonExplanatoryText}}
+						<span class="o-message__button-explanatory-text">{{{buttonExplanatoryText}}}</span>
 					{{/if}}
 				</div>
 			{{/ifSome}}
