@@ -37,9 +37,6 @@ module.exports = {
 			opportunity_subtype: 'top_trial_splitter'
 		}
 	},
-	ukElection: {
-		path: 'top/uk-election'
-	},
 	printBannerUsa: {
 		path: 'top/print-banner-usa',
 		trackingContext: {
