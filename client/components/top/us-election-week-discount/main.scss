@@ -1,0 +1,84 @@
+$wheatLikeColor: #FCD7BA; // couldn't find origami analogy
+
+.o-banner__inner {
+	background-color: oColorsByName('slate');
+	color: oColorsByName('white');
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	@media (min-width: 600px) {
+		justify-content: space-around;
+	}
+}
+
+.o-banner__content {
+	width: 375px;
+
+	@media (min-width: 600px) {
+		flex-grow: unset;
+		width: unset;
+	}
+}
+
+.o-banner__heading {
+	font-size: 16px;
+
+	@media (min-width: 600px) {
+		font-size: 28px;
+	}
+
+	& h1 {
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 1.07;
+
+		.o-banner__heading_part1 {
+			color: $wheatLikeColor;
+		}
+
+		@media (min-width: 600px) {
+			font-size: 40px;
+		}
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+.o-banner__actions {
+	display: block;
+	margin-top: 10px;
+	font-size: 16px;
+	text-align: center;
+
+	@media (min-width: 600px) {
+		font-size: 22px;
+	}
+}
+
+.o-banner__action {
+	color: white;
+	padding: 10px;
+	border: 1px solid $wheatLikeColor;
+	width: 217px;
+
+	@media (min-width: 600px) {
+		width: 130px;
+	}
+
+	:hover {
+		background-color: $wheatLikeColor;
+		color: black;
+	}
+}
+
+.o-banner__terms_and_conditions {
+	color: oColorsMix(black, paper, 20);
+	font-size: 12px;
+	text-align: left;
+
+	@media (min-width: 600px) {
+		text-align: right;
+	}
+}
