@@ -1,85 +1,74 @@
 $wheatLikeColor: #FCD7BA; // couldn't find origami analogy
 
-.o-banner__inner {
+.o-message--us-election-2020-promo {
+
 	background-color: oColorsByName('slate');
-	color: oColorsByName('white');
-	padding-top: 15px;
-	padding-bottom: 15px;
 
-	@media (min-width: 600px) {
-		max-width: unset;
-		justify-content: space-around;
-	}
-}
+	.o-message__content {
+		display: flex;
+		flex-direction: column;
 
-.o-banner__content {
-	width: 375px;
-
-	@media (min-width: 600px) {
-		flex-grow: unset;
-		width: unset;
-	}
-}
-
-.o-banner__heading {
-	font-size: 16px;
-
-	@media (min-width: 600px) {
-		font-size: 28px;
-	}
-
-	& h1 {
-		font-size: 22px;
-		font-weight: 600;
-		line-height: 1.07;
-
-		.o-banner__heading_part1 {
-			color: $wheatLikeColor;
+		@include oGridRespondTo(M) {
+			flex-direction: row;
+			justify-content: space-around;
 		}
+	}
 
-		@media (min-width: 600px) {
+	.o-message__content-main {
+		color: oColorsByName('white');
+		font-size: 22px;
+		line-height: 17px;
+		white-space: nowrap;
+
+		@include oGridRespondTo(M) {
 			font-size: 40px;
+			line-height: 31px;
 		}
 	}
 
-	&::after {
-		display: none;
-	}
-}
-
-.o-banner__actions {
-	display: block;
-	margin-top: 10px;
-	font-size: 16px;
-	text-align: center;
-
-	@media (min-width: 600px) {
-		font-size: 22px;
-	}
-}
-
-.o-banner__action {
-	color: white;
-	padding: 10px;
-	border: 1px solid $wheatLikeColor;
-	width: 217px;
-
-	@media (min-width: 600px) {
-		width: 130px;
+	.o-message__content-highlight_part1 {
+		color: $wheatLikeColor;
 	}
 
-	:hover {
+	.o-message__content-detail {
+		font-size: 16px;
+
+		@include oGridRespondTo(M) {
+			font-size: 28px;
+		}
+	}
+
+	.o-message__actions {
+		text-align: left;
+
+		@include oGridRespondTo(M) {
+			margin-top: 16px;
+			text-align: right;
+		}
+	}
+
+	.o-message__actions__primary {
+		color: oColorsByName('white');
+		padding: 10px;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+		font-weight: unset;
+		border: 1px solid $wheatLikeColor;
+
+		@include oGridRespondTo(M) {
+			width: 165px;
+			font-size: 22px;
+		}
+	}
+
+	.o-message__actions__primary:hover {
 		background-color: $wheatLikeColor;
 		color: black;
 	}
-}
 
-.o-banner__terms_and_conditions {
-	color: oColorsMix(black, paper, 20);
-	font-size: 12px;
-	text-align: left;
-
-	@media (min-width: 600px) {
-		text-align: right;
+	.o-message__button-explanatory-text {
+		color: oColorsMix(black, paper, 20);
+		font-size: 12px;
 	}
 }
