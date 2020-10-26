@@ -1,12 +1,23 @@
 $wheatLikeColor: #FCD7BA; // couldn't find origami analogy
+$smallScreenBannerWidth: 375px;
 
 .o-message--us-election-2020-promo {
 
 	background-color: oColorsByName('slate');
+	width: 375px;
+	margin: auto;
+	@include oGridRespondTo(M) {
+		width: unset;
+	}
 
 	.o-message__content {
 		display: flex;
 		flex-direction: column;
+		margin-right: 10px;
+
+		@include oGridRespondTo($until: M) {
+			padding-left: 0 !important; // hacky but seems necessary to remove left space from the small banner
+		}
 
 		@include oGridRespondTo(M) {
 			flex-direction: row;
