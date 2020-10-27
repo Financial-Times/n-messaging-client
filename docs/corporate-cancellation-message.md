@@ -151,6 +151,3 @@ Renovate bot will open PRs in:
 - [next-article](https://github.com/Financial-Times/next-article)
 
 You will need to find those PRs, and bring them to the attention of the relevant team to have those PRs approved and merged quickly. 
-
-
-
