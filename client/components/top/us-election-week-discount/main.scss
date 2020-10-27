@@ -1,7 +1,7 @@
-$wheatLikeColor: #FCD7BA; // couldn't find origami analogy
+$wheatLikeColor: oColorsByName('wheat');
 $smallScreenBannerWidth: 375px;
 
-.o-message--us-election-2020-promo {
+.o-message--us-election-2020-discount-promo {
 
 	background-color: oColorsByName('slate');
 	width: 375px;
@@ -43,6 +43,7 @@ $smallScreenBannerWidth: 375px;
 
 	.o-message__content-detail {
 		font-size: 16px;
+		display: block;
 
 		@include oGridRespondTo(M) {
 			font-size: 28px;
@@ -79,6 +80,7 @@ $smallScreenBannerWidth: 375px;
 	}
 
 	.o-message__button-explanatory-text {
+		display: block;
 		color: oColorsMix(black, paper, 20);
 		font-size: 12px;
 	}
