@@ -1,4 +1,4 @@
-$wheatLikeColor: oColorsByName('wheat');
+$wheatLikeColor: #FCD8B5; // no analogy in Origami
 $smallScreenBannerWidth: 375px;
 
 .o-message--us-election-2020-discount-promo {
@@ -6,6 +6,7 @@ $smallScreenBannerWidth: 375px;
 	background-color: oColorsByName('slate');
 	width: 375px;
 	margin: auto;
+
 	@include oGridRespondTo(M) {
 		width: unset;
 	}
@@ -14,6 +15,7 @@ $smallScreenBannerWidth: 375px;
 		display: flex;
 		flex-direction: column;
 		margin-right: 10px;
+		line-height: unset;
 
 		@include oGridRespondTo($until: M) {
 			padding-left: 0 !important; // hacky but seems necessary to remove left space from the small banner
@@ -26,6 +28,7 @@ $smallScreenBannerWidth: 375px;
 	}
 
 	.o-message__content-main {
+		align-self: center;
 		color: oColorsByName('white');
 		font-size: 22px;
 		line-height: 17px;
