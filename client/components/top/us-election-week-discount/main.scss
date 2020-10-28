@@ -4,11 +4,13 @@ $smallScreenBannerWidth: 375px;
 .o-message--us-election-2020-discount-promo {
 
 	background-color: oColorsByName('slate');
-	width: 375px;
-	margin: auto;
 
-	@include oGridRespondTo(M) {
-		width: unset;
+	.o-message__container {
+		max-width: 375px;
+		margin: 0 auto;
+		@include oGridRespondTo(M) {
+			width: 100%;
+		}
 	}
 
 	.o-message__content {
@@ -28,7 +30,7 @@ $smallScreenBannerWidth: 375px;
 	}
 
 	.o-message__content-main {
-		align-self: center;
+		align-self: flex-start;
 		color: oColorsByName('white');
 		font-size: 22px;
 		line-height: 17px;
