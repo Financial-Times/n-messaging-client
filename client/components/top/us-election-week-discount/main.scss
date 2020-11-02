@@ -8,9 +8,6 @@ $smallScreenBannerWidth: 375px;
 	.o-message__container {
 		max-width: 375px;
 		margin: 0 auto;
-		@include oGridRespondTo(M) {
-			width: 100%;
-		}
 	}
 
 	.o-message__content {
@@ -37,6 +34,7 @@ $smallScreenBannerWidth: 375px;
 		white-space: nowrap;
 
 		@include oGridRespondTo(M) {
+			align-self: center;
 			font-size: 40px;
 			line-height: 31px;
 		}
