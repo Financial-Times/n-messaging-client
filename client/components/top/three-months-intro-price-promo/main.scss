@@ -1,0 +1,81 @@
+$wheatLikeColor: #FCD8B5; // no analogy in Origami
+$smallScreenBannerWidth: 375px;
+
+.o-message--three-months-intro-price-promo {
+
+	background-color: oColorsByName('slate');
+
+	.o-message__container {
+		display: flex;
+
+		.o-message__content {
+			color: oColorsByName('white');
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			margin: 0 auto;
+
+			@include oGridRespondTo($from: L) {
+				flex-direction: row;
+				align-items: center;
+				padding: 15px 130px;
+			}
+
+			.o-message__content-main {
+				@include oGridRespondTo($from: L) {
+					margin-right: oSpacingByName('m12');
+				}
+			}
+		}
+	}
+
+	.o-message__content-highlight {
+		@include oTypographySans($scale: 2);
+
+		@include oGridRespondTo(M) {
+			@include oTypographySans($scale: 3);
+		}
+
+		@include oGridRespondTo($from: L) {
+			@include oTypographySans($scale: 4);
+		}
+	}
+
+	.o-message__content-detail {
+		color: oColorsByName('wheat');
+		@include oTypographySans($scale: 0);
+		display: block;
+
+		@include oGridRespondTo(M) {
+			@include oTypographySans($scale: 2);
+		}
+
+		@include oGridRespondTo($from: L) {
+			@include oTypographySans($scale: 3);
+		}
+	}
+
+	.o-message__actions {
+		padding-bottom: oSpacingByName('s4');
+		@include oGridRespondTo($from: L) {
+			padding: 0;
+		}
+	}
+
+	.o-message__actions__primary {
+		padding: oSpacingByName('s2') oSpacingByName('s4');
+		background-color: oColorsByName('white');
+		color: oColorsByName('slate');
+		border-color: transparent;
+		@include oTypographySans($scale: -1);
+
+		@include oGridRespondTo($from: M) {
+			@include oTypographySans($scale: 0);
+		}
+
+		@include oGridRespondTo($from: L) {
+			padding: oSpacingByName('s3') oSpacingByName('s6');
+		}
+	}
+
+}
