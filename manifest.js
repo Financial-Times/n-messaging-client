@@ -87,5 +87,8 @@ module.exports = {
 	},
 	usElectionWeekDiscount33: {
 		path: 'top/us-election-week-discount-33',
+	},
+	threeMonthsIntroPricePromo: {
+		path: 'top/three-months-intro-price-promo',
 	}
 };
