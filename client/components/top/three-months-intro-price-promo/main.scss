@@ -11,7 +11,7 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 			flex-direction: column;
 			margin: 0 auto;
 			width: 355px;
-		  padding: 0;
+			padding: 0;
 
 			@include oGridRespondTo($from: M) {
 				width: 780px;
