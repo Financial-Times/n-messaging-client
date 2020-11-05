@@ -25,6 +25,7 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 				@include oTypographySans($scale: 0);
 
 				.o-message__content-highlight {
+					text-transform: uppercase;
 					@include oTypographySans($scale: 2);
 
 					@include oGridRespondTo($from: M) {
