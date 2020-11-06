@@ -8,6 +8,7 @@
 .o-message--try-full-access {
 	display: flex;
 	flex-direction: column;
+	border-bottom: 1px solid oColorsByName('wheat');
 
 	@include oGridRespondTo(M) {
 		flex-direction: row;
