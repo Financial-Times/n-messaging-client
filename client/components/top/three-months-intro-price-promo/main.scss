@@ -1,5 +1,6 @@
 $wheatLikeColor: #FCD8B5; // no analogy in Origami
 .o-message--three-months-intro-price-promo {
+	border-bottom: 1px solid oColorsByName('paper');
 	background-color: oColorsByName('slate');
 
 	.o-message__container {
