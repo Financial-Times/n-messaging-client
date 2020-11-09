@@ -55,9 +55,6 @@ module.exports = {
 		path: 'top/myft-disengaged-tooltip',
 		tooltip: true
 	},
-	usElection2020Promo: {
-		path: 'bottom/us-election-2020-promo'
-	},
 	tbybInTrialSubscribe: {
 		path: 'bottom/tbyb-in-trial-subscribe'
 	},
