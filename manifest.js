@@ -37,9 +37,6 @@ module.exports = {
 			opportunity_subtype: 'top_trial_splitter'
 		}
 	},
-	ukElection: {
-		path: 'top/uk-election'
-	},
 	printBannerUsa: {
 		path: 'top/print-banner-usa',
 		trackingContext: {
@@ -57,9 +54,6 @@ module.exports = {
 	myftDisengagedTooltip: {
 		path: 'top/myft-disengaged-tooltip',
 		tooltip: true
-	},
-	usElection2020Promo: {
-		path: 'bottom/us-election-2020-promo'
 	},
 	tbybInTrialSubscribe: {
 		path: 'bottom/tbyb-in-trial-subscribe'
@@ -79,7 +73,13 @@ module.exports = {
 		lazy: true,
 		guruQueryString: 'offerId=41218b9e-c8ae-c934-43ad-71b13fcb4465',
 	},
-	usElectionPollTracker: {
-		path: 'top/us-election-poll-tracker'
+	usElectionWeekDiscount50: {
+		path: 'top/us-election-week-discount-50',
+	},
+	usElectionWeekDiscount33: {
+		path: 'top/us-election-week-discount-33',
+	},
+	threeMonthsIntroPricePromo: {
+		path: 'top/three-months-intro-price-promo',
 	}
 };
