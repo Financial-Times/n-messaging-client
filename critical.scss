@@ -30,7 +30,7 @@ $o-tooltip-is-silent : false;
 	'layout': ('default', 'inner')
 ));
 @include oCookieMessage($opts: (
-  'themes': ('alternative')
+	'themes': ('alternative')
 ));
 
 // ensure the bottom banner displays above other elements on page (e.g. imgs on article page)
