@@ -16,7 +16,6 @@ module.exports = {
 			'5f60b8b4-cbf0-18d7-df41-9caa1171e8c1', // server/templates/partials/top/anon-subscribe-now.html:5|18
 			'a44c9005-2a9c-fe2a-9140-1311ff87f25f', // server/templates/partials/top/print-banner-usa.html:4
 			'5bf62004-3d64-7398-250f-ca54576064b3', // server/templates/partials/top/three-months-intro-price-promo.html:5
-			'6bc930e8-52c0-8e48-32bf-0a0be69db204' // server/templates/partials/top/us-election-week-discount-33.html:5, server/templates/partials/top/us-election-week-discount-50.html:5
 		]
 	}
 };
