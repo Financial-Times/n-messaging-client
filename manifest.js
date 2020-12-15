@@ -61,6 +61,12 @@ module.exports = {
 	tbybPostTrialSubscribe: {
 		path: 'bottom/tbyb-post-trial-subscribe'
 	},
+	wapoInTrialSubscribe: {
+		path: 'bottom/wapo-in-trial-subscribe'
+	},
+	wapoPostTrialSubscribe: {
+		path: 'bottom/wapo-post-trial-subscribe'
+	},
 	remainingArticlesTest: {
 		path: 'bottom/remaining-articles',
 		lazy: true
