@@ -43,6 +43,7 @@
     "o-tracking": "^2.0.6",
     "n-myft-ui": "^22.0.0",
     "n-swg": "^2.1.1",
-    "o-grid": "^5.2.6"
+    "o-grid": "^5.2.6",
+    "o-cookie-message": "^5.0.9"
   }
 }
