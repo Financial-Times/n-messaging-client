@@ -33,6 +33,11 @@ $o-tooltip-is-silent : false;
 	'themes': ('alternative')
 ));
 
+// ensure the cookie message displays above other elements on page
+.o-cookie-message {
+	@include nUiZIndexFor('notification');
+}
+
 // ensure the bottom banner displays above other elements on page (e.g. imgs on article page)
 .n-messaging-client-messaging-banner {
 	@include nUiZIndexFor('notification');
