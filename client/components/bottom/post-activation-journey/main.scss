@@ -1,9 +1,24 @@
-.n-messaging-postActivationJourney {
-	&--action {
+.n-messaging-client-messaging-banner-post-activation-journey {
+	& .o-banner__actions {
+		display: flex;
+		justify-content: space-between;
+
+		& .o-banner__action {
+			background-color: oColorsByName("teal");
+		}
+	}
+
+	&--close,
+	& --close:hover {
 		color: grey;
 	}
 
-	&--action:hover {
-		color: grey;
+	& .o-banner--slate-lemon.o-banner--small .o-banner__inner {
+		color: oColorsByName("black");
+		background-color: oColorsByName("white");
+	}
+
+	& .o-banner--slate-lemon .o-banner__close {
+		display: none;
 	}
 }

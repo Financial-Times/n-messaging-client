@@ -1,20 +1,22 @@
-<div role="dialog" aria-labelledby="o-cookie-message-label" aria-describedby="o-cookie-message-description" class="o-cookie-message o-cookie-message--active n-messaging-postActivationJourney">
-    <div class="o-cookie-message__outer">
-        <div class="o-cookie-message__inner">
-            <div class="o-cookie-message__content">
-                <p>Take a moment to tell us about your sign up experience?</p>
-            </div>
-            <div class="o-cookie-message__actions">
-
-                <div class="o-cookie-message__action">
-                    <a href="https://survey.ft.com/jfe/form/SV_8BLQylXVJFXxXn" class="o-cookie-message__button">
-                        Leave Feedback
-                    </a>
-                </div>
-                <div>
-                    <a class="n-messaging-postActivationJourney__close" class="o-banner__close">No, thanks</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="n-messaging-client-messaging-banner n-messaging-client-messaging-banner-post-activation-journey">
+	{{#> n-messaging-client/server/templates/components/o-banner
+		themeSlateLemon=true
+		renderOpen=true
+		small=true
+		closeLabel="Close the banner"
+	}}
+	<div class="o-banner__inner" data-o-banner-inner="" data-o-banner-inner="">
+		<div class="o-banner__content">
+		<p>Take a moment to tell us about your sign up experience?</p>
+		</div>
+		<div class="o-banner__actions">
+			<div>
+				<a class="n-messaging-client-messaging-banner-post-activation-journey--close" class="o-banner__link">No, thanks</a>
+			</div>
+			<div class="o-cookie-message__action">
+				<a href="https://survey.ft.com/jfe/form/SV_8BLQylXVJFXxXn" class="o-cookie-message__button">Leave Feedback</a>
+			</div>
+		</div>
+	</div>
+	{{/n-messaging-client/server/templates/components/o-banner}}
 </div>

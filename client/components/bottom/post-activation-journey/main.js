@@ -1,7 +1,7 @@
-module.exports = (banner, done, guruResult) => {
-const closeButton = banner.bannerElement.querySelector('.n-messaging-postActivationJourney--close');
-closeButton.addEventListener('click', function closePopup () {
-    banner.close();
-});
-  done();
-}
+module.exports = (banner, done) => {
+	const closeButton = banner.bannerElement.querySelector('.n-messaging-client-messaging-banner-post-activation-journey--close');
+	closeButton.addEventListener('click', function closePopup () {
+		banner.close();
+	});
+	done();
+};
