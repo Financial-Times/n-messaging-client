@@ -13,12 +13,7 @@
 		color: grey;
 	}
 
-	& .o-banner--slate-lemon.o-banner--small .o-banner__inner {
-		color: oColorsByName("black");
-		background-color: oColorsByName("white");
-	}
-
-	& .o-banner--slate-lemon .o-banner__close {
+	& .o-banner__close {
 		display: none;
 	}
 }
