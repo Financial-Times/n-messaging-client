@@ -1,19 +1,10 @@
 .n-messaging-client-messaging-banner-post-activation-journey {
-	& .o-banner__actions {
-		display: flex;
-		justify-content: space-between;
-
-		& .o-banner__action {
-			background-color: oColorsByName("teal");
-		}
+	&__action {
+		margin-left: oSpacingByName("s4");
 	}
 
 	&--close,
-	& --close:hover {
+	&--close:hover {
 		color: grey;
-	}
-
-	& .o-banner__close {
-		display: none;
 	}
 }
