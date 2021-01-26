@@ -1,0 +1,10 @@
+.n-messaging-client-messaging-banner-post-activation-journey {
+	&__action {
+		margin-left: oSpacingByName("s4");
+	}
+
+	&--close,
+	&--close:hover {
+		color: grey;
+	}
+}

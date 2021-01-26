@@ -58,6 +58,9 @@ module.exports = {
 	tbybInTrialSubscribe: {
 		path: 'bottom/tbyb-in-trial-subscribe'
 	},
+	postActivationJourney: {
+		path: 'bottom/post-activation-journey'
+	},
 	tbybPostTrialSubscribe: {
 		path: 'bottom/tbyb-post-trial-subscribe'
 	},
