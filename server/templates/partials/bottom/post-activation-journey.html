@@ -1,19 +1,20 @@
 <div class="n-messaging-client-messaging-banner n-messaging-client-messaging-banner-post-activation-journey">
 	{{#> n-messaging-client/server/templates/components/o-banner
+		suppressCloseButton=true
 		renderOpen=true
 		small=true
 		closeLabel="Close the banner"
 	}}
 	<div class="o-banner__inner" data-o-banner-inner="">
 		<div class="o-banner__content">
-			<p>Take a moment to tell us about your sign up experience?</p>
+			<p>Take a moment to tell us about your sign up experience</p>
 		</div>
 		<div class="o-banner__actions">
 			<div>
 				<a class="n-messaging-client-messaging-banner-post-activation-journey--close" class="o-banner__link">No, thanks</a>
 			</div>
-			<div>
-				<a href="https://survey.ft.com/jfe/form/SV_8BLQylXVJFXxXnL" class="o-banner__button" data-o-banner-action="Leave Feedback" data-o-banner-action-type="" target="_blank" rel="noopener" n-messaging-banner-action="Leave Feedback">Leave Feedback<span class="o-normalise-visually-hidden"> (opens in new window)</span></a>
+			<div class="n-messaging-client-messaging-banner-post-activation-journey__action">
+				<a href="https://survey.ft.com/jfe/form/SV_8BLQylXVJFXxXnL" class="o-banner__button" target="_blank" rel="noopener" n-messaging-banner-action-type="Leave Feedback">Leave Feedback<span class="o-normalise-visually-hidden"> (opens in new window)</span></a>
 			</div>
 		</div>
 	</div>
