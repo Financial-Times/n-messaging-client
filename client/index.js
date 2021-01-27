@@ -25,7 +25,7 @@ module.exports = {
 				.catch(this.handleError);
 		}
 	},
-	initialiseMessage(config) {
+	initialiseMessage (config) {
 		const customSetup = this.setupHandler(config.component || config.path);
 		// This function makes assumptions about the kind of component which
 		// goes in a slot. Ignore all these assumptions and only use "custom
