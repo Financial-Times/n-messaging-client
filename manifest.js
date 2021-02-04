@@ -84,5 +84,9 @@ module.exports = {
 	},
 	threeMonthsIntroPricePromo: {
 		path: 'top/three-months-intro-price-promo',
+	},
+	climateCapitalFeedback: {
+		path: 'top/lazy',
+		lazy: true,
 	}
 };
