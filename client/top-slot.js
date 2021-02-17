@@ -40,6 +40,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	const options = {
 		messageClass: ALERT_BANNER_CLASS,
 		autoOpen: false,
+		openInNewWindow: false,
 		close: message.getDataAttributes(declarativeElement).close,
 		type: 'notice',
 		state: 'skip'
@@ -125,7 +126,8 @@ function imperativeOptions (opts, defaults, config) {
 		actions: {
 			primary: {
 				text: opts.buttonLabel,
-				url: opts.buttonUrl
+				url: opts.buttonUrl,
+				openInNewWindow: opts.openInNewWindow,
 			},
 			secondary: {
 				text: opts.linkLabel,
