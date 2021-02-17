@@ -120,9 +120,9 @@ To view a message you can pick the relevant variant on toggler: [messageSlotBott
 Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pick (unlike the usual random % allocation).
 
 - Firstly you must update the relevant flag to have your new variant.
-- Secondly you must update the appropriate slot array in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/master/server/config/messaging.json) in `next-ammit-api` with your new message config. (If you want to test a message before releasing to the public, you could simply add the variant to the flag and hold off updating `messaging.json`).
+- Secondly you must update the appropriate slot array in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/HEAD/server/config/messaging.json) in `next-ammit-api` with your new message config. (If you want to test a message before releasing to the public, you could simply add the variant to the flag and hold off updating `messaging.json`).
 - Variants will not work until both the previous steps are met.
-- You can now add your new variant config within `n-messaging-client` in the [`manifest.js`](https://github.com/Financial-Times/n-messaging-client/blob/master/manifest.js).
+- You can now add your new variant config within `n-messaging-client` in the [`manifest.js`](https://github.com/Financial-Times/n-messaging-client/blob/HEAD/manifest.js).
 - Add the relevant templates, css and js to this component (`n-messaging-client`).
 - If your new message variant is `client` (aka lazy / async) then you will need to set up a new matcher on [`next-messaging-guru`](https://github.com/Financial-Times/next-messaging-guru).
 - Build and test your new variant with `make demo`
@@ -139,7 +139,7 @@ Firstly this assumes you have versioned and published this module and have the n
 
 Two things have to be in place for a message to be "live":
 1) the variant must exist on the flag
-2) there must be config in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/master/server/config/messaging.json) for that variant
+2) there must be config in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/HEAD/server/config/messaging.json) for that variant
 
 For easy client-side validation of the message, (does it render correctly on the page etc). Don't ship part 2. Just have a variant, and test the message via turning it on in toggler.
 

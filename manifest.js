@@ -44,10 +44,6 @@ module.exports = {
 			opportunity_subtype: 'top_trial_splitter_US'
 		}
 	},
-	navAccountSettings: {
-		path: 'top/nav-account-settings',
-		tooltip: true
-	},
 	contentMessage: {
 		path: 'bottom/content-message'
 	},
