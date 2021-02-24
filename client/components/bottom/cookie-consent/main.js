@@ -4,6 +4,13 @@ const { generateMessageEvent, listen } = require('./utils');
 
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
 
+/**
+ * Initialise and log interactions on the cookie message component.
+ *
+ * @param {CookieMessage} cookieMessage
+ * @param {Object} config
+ * @return {void}
+ */
 module.exports = function customSetup (config) {
 	const cookieMessage = oCookieMessage.init();
 
@@ -14,6 +21,11 @@ module.exports = function customSetup (config) {
 	}
 };
 
+/**
+ * @param {CookieMessage} cookieMessage
+ * @param {Object} config
+ * @return {void}
+ */
 function trackCookieMessageInteractions (cookieMessage, config) {
 	const trackEventAction = generateMessageEvent({
 		flag: BOTTOM_SLOT_FLAG,
