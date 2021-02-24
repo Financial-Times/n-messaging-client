@@ -39,6 +39,14 @@ const updateMessageEventCount = (messageId, event) => {
 module.exports = {
 	generateMessageEvent: function ({ messageId, position, flag, trackingContext, variant }={}) {
 		return function (action, trackingAttr) {
+			// Do nothing when the message id is not configured. This is to
+			// replicate existing behaviour prior to a tangential refactor. It's
+			// not clear if a missing id is possible or likely, or whether it's
+			// something that should be warned of.
+			if (!messageId) {
+				return;
+			}
+
 			const detail = Object.assign({
 				category: 'n-messaging',
 				action: action,

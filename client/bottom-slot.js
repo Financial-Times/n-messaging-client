@@ -12,52 +12,52 @@ const BANNER_LINK_SELECTOR = `.${BANNER_CLASS}__link`;
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
-	let banner;
 	const guruRenderData = guruResult && guruResult.renderData || {};
-	const variant = (guruRenderData && guruRenderData.dynamicTrackingData) || config.name;
+	const trackEventAction = getTracker(config, guruRenderData);
 
-	const trackingContext = Object.assign(
-		config.trackingContext || {},
-		guruRenderData && guruRenderData.trackingContext || {},
-	);
+	const skip = guruResult && guruResult.skip;
+	const bannerLimitBreached = messageEventLimitsBreached(config.name);
+	if (skip | bannerLimitBreached) {
+		trackEventAction('skip');
+		return;
+	}
 
-	const trackEventAction = config.name && generateMessageEvent({
-		flag: BOTTOM_SLOT_FLAG,
-		messageId: config.name,
-		position: config.slot,
-		trackingContext,
-		variant
-	});
-
+	// Return silently if the banner cannot be rendered.
+	// Note: This logic is carried over after refactoring, it's unclear if the
+	// original intention was to silently skip without firing an event.
 	const declarativeElement = !config.lazy && config.content;
+	const hasGuruResult = guruResult && guruResult.renderData;
+	const cannotRenderBanner = !declarativeElement && !hasGuruResult;
+	if (cannotRenderBanner) {
+		return;
+	}
 
-	if (declarativeElement) {
-		banner = new oBanner(declarativeElement, oBanner.getOptionsFromDom(declarativeElement));
-	} else if (guruResult && guruResult.renderData) {
-		banner = new oBanner(null, imperativeOptions(guruResult.renderData, { bannerClass: BANNER_CLASS, autoOpen: false }));
-		banner.bannerElement.classList.add(N_MESSAGING_BANNER_CLASS);
+	// Render the banner.
+	const banner = declarativeElement ?
+		new oBanner(declarativeElement) :
+		renderBannerFromData(guruRenderData);
 
-		// Add custom classes to the banner. This is used to get around
-		// the fact that o-banner now validates themes. This should probably
-		// be revised after the major cascade
-		if (Array.isArray(guruResult.renderData.customThemes)) {
-			for (const theme of guruResult.renderData.customThemes) {
-				banner.bannerElement.classList.add(`${N_MESSAGING_BANNER_CLASS}--${theme}`);
-			}
-		}
+	// Setup banner tracking.
+	trackBannerInteractions(banner, trackEventAction);
 
+	// Display the banner.
+	if (!customSetup) {
+		banner.open();
 	} else {
-		if (guruResult && guruResult.skip && trackEventAction) {
-			trackEventAction('skip');
+		customSetup = customSetup || customSetup.default; // ESM modules
+		function customSetupCallback ({ skip = false } = {}) {
+			if (skip) {
+				trackEventAction('skip');
+				return;
+			}
+			banner.open();
 		}
+		customSetup(banner, customSetupCallback, guruResult, trackEventAction);
 		return;
 	}
+};
 
-	if (messageEventLimitsBreached(config.name)) {
-		trackEventAction('skip'); // todo do we actually need to do this?
-		return;
-	}
-
+function trackBannerInteractions (banner, trackEventAction) {
 	// attach event handlers
 	let actions = banner.innerElement.querySelectorAll(BANNER_ACTION_SELECTOR);
 	let linkActions = [];
@@ -80,43 +80,52 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			listen(el, 'click', () => trackEventAction(el.dataset['nMessagingBannerAction'] || 'act', trackingAttr || actionText));
 		});
 	}
+}
 
-	// show banner
-	if (customSetup) {
-		if (customSetup.default) {
-			customSetup = customSetup.default; // ESM modules
+function renderBannerFromData (guruRenderData) {
+	const options = {
+		autoOpen: guruRenderData.autoOpen || false,
+		suppressCloseButton: guruRenderData.suppressCloseButton || false,
+		bannerClass: guruRenderData.bannerClass || BANNER_CLASS,
+		theme: guruRenderData.bannerTheme,
+		layout: guruRenderData.bannerLayout,
+		formEncoding: guruRenderData.formEncoding,
+		formMethod: guruRenderData.formMethod,
+		formAction: guruRenderData.formAction,
+		contentLong: guruRenderData.contentLong,
+		contentShort: guruRenderData.contentShort,
+		buttonLabel: guruRenderData.buttonLabel,
+		buttonUrl: guruRenderData.buttonUrl,
+		linkLabel: guruRenderData.linkLabel,
+		linkUrl: guruRenderData.linkUrl,
+		appendTo: BOTTOM_SLOT_CONTENT_SELECTOR,
+		dynamicTrackingData: guruRenderData.dynamicTrackingData
+	};
+
+	const banner = new oBanner(null, options);
+
+	// Add custom classes to the banner.
+	banner.bannerElement.classList.add(N_MESSAGING_BANNER_CLASS);
+	if (Array.isArray(guruRenderData.customThemes)) {
+		for (const theme of guruRenderData.customThemes) {
+			banner.bannerElement.classList.add(`${N_MESSAGING_BANNER_CLASS}--${theme}`);
 		}
-		function customSetupCallback ({ skip=false }={}) {
-			if (skip) {
-				trackEventAction('skip');
-			} else {
-				banner.open();
-			}
-		}
-		customSetup(banner, customSetupCallback, guruResult, trackEventAction);
-	} else {
-		banner.open();
 	}
 
-};
-
-function imperativeOptions (opts = {}, defaults = {}) {
-	return {
-		autoOpen: opts.autoOpen || defaults.autoOpen,
-		suppressCloseButton: opts.suppressCloseButton || false,
-		bannerClass: opts.bannerClass || defaults.bannerClass,
-		theme: opts.bannerTheme,
-		layout: opts.bannerLayout,
-		formEncoding: opts.formEncoding,
-		formMethod: opts.formMethod,
-		formAction: opts.formAction,
-		contentLong: opts.contentLong,
-		contentShort: opts.contentShort,
-		buttonLabel: opts.buttonLabel,
-		buttonUrl: opts.buttonUrl,
-		linkLabel: opts.linkLabel,
-		linkUrl: opts.linkUrl,
-		appendTo: BOTTOM_SLOT_CONTENT_SELECTOR,
-		dynamicTrackingData: opts.dynamicTrackingData
-	};
+	return banner;
 }
+
+function getTracker (config, guruRenderData) {
+	const variant = guruRenderData.dynamicTrackingData || config.name;
+	const trackingContext = Object.assign(
+		config.trackingContext || {},
+		guruRenderData.trackingContext || {},
+	);
+	return generateMessageEvent({
+		flag: BOTTOM_SLOT_FLAG,
+		messageId: config.name,
+		position: config.slot,
+		trackingContext,
+		variant
+	});
+};
