@@ -40,6 +40,6 @@ function trackCookieMessageInteractions (cookieMessage, config) {
 
 	const actionElements = document.querySelectorAll('[data-n-messaging-manage-cookies],[data-n-messaging-accept-cookies]');
 	actionElements.forEach(actionElement => {
-		listen(actionElement, 'click', () => trackEventAction('act', actionElement.textContent));
+		listen(actionElement, 'click', () => trackEventAction('act', actionElement.textContent.trim()));
 	});
 }
