@@ -12,21 +12,6 @@ const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
  * @return {void}
  */
 module.exports = function customSetup (config) {
-	const cookieMessage = oCookieMessage.init();
-
-	try {
-		trackCookieMessageInteractions(cookieMessage, config);
-	} catch (error) {
-		console.warn('Could not report cookie message interactions.', error); // eslint-disable-line no-console
-	}
-};
-
-/**
- * @param {CookieMessage} cookieMessage
- * @param {Object} config
- * @return {void}
- */
-function trackCookieMessageInteractions (cookieMessage, config) {
 	const trackEventAction = generateMessageEvent({
 		flag: BOTTOM_SLOT_FLAG,
 		messageId: config.name,
@@ -35,11 +20,13 @@ function trackCookieMessageInteractions (cookieMessage, config) {
 		variant: config.name
 	});
 
-	listen(cookieMessage.cookieMessageElement, 'oCookieMessage.close', () => trackEventAction('close'));
-	listen(cookieMessage.cookieMessageElement, 'oCookieMessage.view', () => trackEventAction('view'));
+	listen(document.documentElement, 'oCookieMessage.close', () => trackEventAction('close'));
+	listen(document.documentElement, 'oCookieMessage.view', () => trackEventAction('view'));
+
+	oCookieMessage.init();
 
 	const actionElements = document.querySelectorAll('[data-n-messaging-manage-cookies],[data-n-messaging-accept-cookies]');
 	actionElements.forEach(actionElement => {
 		listen(actionElement, 'click', () => trackEventAction('act', actionElement.textContent.trim()));
 	});
-}
+};
