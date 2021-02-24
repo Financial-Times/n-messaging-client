@@ -1,6 +1,6 @@
 const oCookieMessage = require('o-cookie-message').default;
 
-const { generateMessageEvent, listen } = require('./utils');
+const { generateMessageEvent, listen } = require('../../../utils');
 
 const BOTTOM_SLOT_FLAG = 'messageSlotBottom';
 
