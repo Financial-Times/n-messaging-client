@@ -17,7 +17,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 
 	const skip = guruResult && guruResult.skip;
 	const bannerLimitBreached = messageEventLimitsBreached(config.name);
-	if (skip | bannerLimitBreached) {
+	if (skip || bannerLimitBreached) {
 		trackEventAction('skip');
 		return;
 	}
