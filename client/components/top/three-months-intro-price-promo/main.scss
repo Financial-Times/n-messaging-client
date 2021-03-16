@@ -11,11 +11,11 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 			display: flex;
 			flex-direction: column;
 			margin: 0 auto;
-			width: 355px;
+			width: auto;
 			padding: 0;
 
 			@include oGridRespondTo($from: M) {
-				width: 780px;
+				min-width: 780px;
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
@@ -23,10 +23,12 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 			}
 
 			.o-message__content-main {
+
 				@include oTypographySans($scale: 0);
 
 				.o-message__content-highlight {
 					text-transform: uppercase;
+					color: $wheatLikeColor;
 					@include oTypographySans($scale: 2);
 
 					@include oGridRespondTo($from: M) {
@@ -39,7 +41,6 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 				}
 
 				.o-message__content-detail {
-					color: $wheatLikeColor;
 					display: block;
 				}
 			}
@@ -55,12 +56,12 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 
 	.o-message__actions__primary {
 		padding: oSpacingByName('s2') oSpacingByName('s6');
-		background-color: oColorsByName('white');
+		background-color: $wheatLikeColor;
 		color: oColorsByName('slate');
 		border-color: transparent;
 
 		&:hover {
-			background-color: $wheatLikeColor;
+			background-color: oColorsByName('white');
 		}
 
 		@include oGridRespondTo($from: M) {

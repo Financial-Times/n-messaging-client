@@ -15,7 +15,6 @@ module.exports = {
 			'eb62aef2-4bdc-0f31-a2c5-6532b8e17896', // server/templates/partials/bottom/content-message.html:16
 			'5f60b8b4-cbf0-18d7-df41-9caa1171e8c1', // server/templates/partials/top/anon-subscribe-now.html:5|18
 			'a44c9005-2a9c-fe2a-9140-1311ff87f25f', // server/templates/partials/top/print-banner-usa.html:4
-			'5bf62004-3d64-7398-250f-ca54576064b3', // server/templates/partials/top/three-months-intro-price-promo.html:5
 		]
 	}
 };
