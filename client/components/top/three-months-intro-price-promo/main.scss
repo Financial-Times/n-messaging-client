@@ -11,11 +11,19 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 			display: flex;
 			flex-direction: column;
 			margin: 0 auto;
-			width: auto;
+			width: 355px;
 			padding: 0;
 
 			@include oGridRespondTo($from: M) {
-				min-width: 780px;
+				width: 780px;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding: oSpacingByName('s4');
+			}
+
+			@include oGridRespondTo($from: L) {
+				width: 980px;
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
@@ -47,7 +55,7 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 		}
 	}
 	.o-message__actions {
-		padding-bottom: oSpacingByName('s4');
+		padding-bottom: 0;
 
 		@include oGridRespondTo($from: M) {
 			padding: 0;
