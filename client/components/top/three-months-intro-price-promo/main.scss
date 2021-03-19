@@ -23,10 +23,12 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 			}
 
 			@include oGridRespondTo($from: L) {
-				width: 980px;
+				min-width: 780px;
+				width: auto;
 			}
 
 			.o-message__content-main {
+				margin-left: 0;
 
 				@include oTypographySans($scale: 0);
 
@@ -47,17 +49,29 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 
 				.o-message__content-detail {
 					display: block;
+
+					@include oTypographySans($scale: 0);
+
+					@include oGridRespondTo($from: S) {
+						@include oTypographySans($scale: 1);
+					}
+
+					@include oGridRespondTo($from: M) {
+						@include oTypographySans($scale: 2);
+					}
 				}
 			}
 		}
 	}
 	.o-message__actions {
 		padding-bottom: 0;
+		margin-left: 0;
 		margin-bottom: oSpacingByName('s1');
 
 		@include oGridRespondTo($from: M) {
 			padding: 0;
 			margin-bottom: 0;
+			margin-left: oSpacingByName('s4');;
 		}
 	}
 
