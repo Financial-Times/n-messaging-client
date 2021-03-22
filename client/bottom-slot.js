@@ -1,4 +1,4 @@
-let oBanner = require('o-banner');
+let oBanner = require('@financial-times/o-banner');
 oBanner = oBanner.default || oBanner;
 
 const { generateMessageEvent, listen, messageEventLimitsBreached } = require('./utils');

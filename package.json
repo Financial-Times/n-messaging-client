@@ -35,8 +35,16 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@financial-times/n-swg": "^2.1.1",
+    "@financial-times/o-banner": "^3.4.2",
+    "@financial-times/o-cookie-message": "^5.1.2",
+    "@financial-times/o-message": "^4.2.6",
+    "@financial-times/o-tooltip": "^4.0.9",
     "@financial-times/x-follow-button": "1.0.4",
-    "js-cookie": "2.2.0"
+    "js-cookie": "2.2.0",
+    "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
+    "next-myft-client": "git+ssh://git@github.com/Financial-Times/next-myft-client.git",
+    "next-session-client": "git+ssh://git@github.com/Financial-Times/next-session-client.git"
   },
   "husky": {
     "hooks": {
