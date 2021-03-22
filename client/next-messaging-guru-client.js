@@ -3,7 +3,8 @@ module.exports = function ({ guruEndpoint='/__message', name, guruQueryString }=
 	const options = {
 		method: 'GET',
 		headers: {
-			'Accept': 'application/json'
+			'Accept': 'application/json',
+			'FT-Skip-Cache': 'Yes',
 		},
 		credentials: 'same-origin'
 	};
