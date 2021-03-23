@@ -8,20 +8,12 @@ demo-certs:
 	cd demos && $(SHELL) make-certs.sh
 	@$(DONE)
 
-demo-js:
+demo-build:
 	webpack --config demos/webpack.config.js
 	@$(DONE)
 
-demo-css:
-	node-sass --include-path=bower_components --include-path=node_modules --output demos/public demos/src/demo.scss
-	@$(DONE)
-
-demo-build: demo-js demo-css
-	@$(DONE)
-
-demo-watch: demo-css # demo-css because node-sass doesn't build one at start of watch
+demo-watch:
 	webpack --watch --config demos/webpack.config.js &
-	node-sass --watch --include-path=bower_components --include-path=node_modules --output demos/public demos/src/demo.scss &
 	nodemon --ext js,css,html --watch demos/ --watch server/ demos/start.js
 
 demo-run:

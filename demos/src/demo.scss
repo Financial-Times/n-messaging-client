@@ -1,16 +1,15 @@
-$system-code: 'n-messaging-client';
+$system-code: "n-messaging-client";
 
 @import "o-buttons/main";
-@import 'n-ui-foundations/main';
-@import '../../critical';
-@import '../../main';
+@import "n-ui-foundations/main";
+@import "../../critical";
+@import "../../main";
 
 html {
-	background-color: oColorsByName('paper');
+	background-color: oColorsByName("paper");
 }
 
 .mock-content {
-
 	h1 {
 		padding-top: 20px;
 	}
@@ -33,12 +32,12 @@ html {
 		padding: 2px 5px;
 		border-radius: 3px;
 		font-size: 0.8;
-		font-family: Consolas,Menlo,Monaco,Lucida Console,Courier New,monospace,sans-serif;
+		font-family: Consolas, Menlo, Monaco, Lucida Console, Courier New, monospace,
+			sans-serif;
 	}
 
 	.ipsum {
 		padding-top: 30px;
 		border-top: 1px solid #dddddd;
 	}
-
 }

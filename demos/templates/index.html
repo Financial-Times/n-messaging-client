@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 
-		<link rel="stylesheet" href="public/demo.css">
+		<link rel="stylesheet" href="public/demoStyles.css" />
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
 	</head>
 	<body>
 		<h1>Financial Times</h1>
@@ -15,10 +14,13 @@
 
 		<h2>Page headline</h2>
 		<p>Page content.</p>
+		<p>
+			Use toggler to set some message on `messageSlotBottom` or `messageSlotTop`
+			or this page could be empty.
+		</p>
 
-	{{> n-messaging-client/server/templates/slot type='bottom' }}
+		{{> n-messaging-client/server/templates/slot type='bottom' }}
 
-	<script src="public/demo.js"></script>
-
+		<script src="public/demo.js"></script>
 	</body>
 </html>

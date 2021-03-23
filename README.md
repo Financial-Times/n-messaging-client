@@ -4,24 +4,25 @@
 
 ### Table of Contents
 
-* [Monitoring](#monitoring)
-* [Usage](#usage)
-	- [Application specific](#application-specific)
-* [Development](#development)
-	- [Running locally](#running-locally)
-	- [Configuring Messages](#configuring-messages)
-		- [Viewing messages](#viewing-messages)
-		- [Configuration](#configuration)
-		- [Under the hood](#under-the-hood)
-	- [Migration](#migration)
-* [Overview](#overview)
-	- [The Problem](#the-problem)
-	- [The Solution](#the-solution)
-	- [Parts of n-messaging-client](#parts-of)
-	- [Holistic Messaging Flow](#holistic-messaging-flow)
-* [Migration](#migration)
+- [Monitoring](#monitoring)
+- [Usage](#usage)
+  - [Application specific](#application-specific)
+- [Development](#development)
+  - [Running locally](#running-locally)
+  - [Configuring Messages](#configuring-messages)
+    - [Viewing messages](#viewing-messages)
+    - [Configuration](#configuration)
+    - [Under the hood](#under-the-hood)
+  - [Migration](#migration)
+- [Overview](#overview)
+  - [The Problem](#the-problem)
+  - [The Solution](#the-solution)
+  - [Parts of n-messaging-client](#parts-of)
+  - [Holistic Messaging Flow](#holistic-messaging-flow)
+- [Migration](#migration)
 
 ### Explainer
+
 Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3bGka2XNS0OrOMowaqyGxZFmwZY831xtEJA/edit)
 
 ### Monitoring
@@ -30,26 +31,22 @@ Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3
 
 # Usage
 
-Install client side dependencies (css, js templates) via bower:
+Install client and server side (handlebars presenter/helper) dependencies via npm:
 
-```bower install --save n-messaging-client```
-
-Install server side dependencies (handlebars presenter/helper) via npm:
-
-```npm install --save @financial-times/n-messaging-client```
+`npm install --save @financial-times/n-messaging-client`
 
 Add the Handlebars helper to Express config:
 
 ```javascript
-  helpers: {
-    nMessagingPresenter: require('@financial-times/n-messaging-client').presenter
-  }
+helpers: {
+  nMessagingPresenter: require("@financial-times/n-messaging-client").presenter;
+}
 ```
 
 Now you can inject the message "slot" template in the relevant place in your markup (as close to the bottom of the `body` tag as possible):
 
 ```html
- <!-- wrapper.html -->
+<!-- wrapper.html -->
 
 <div>
   <h1>My Example Page</h1>
@@ -65,15 +62,15 @@ If you're using a message type that is server-rendered, import the critical styl
 ```scss
 /* critical.scss */
 
-@import 'n-messaging-client/critical';
+@import "n-messaging-client/critical";
 ```
 
-In all cases, whether your messages will be client or server rendered, also include the n-messaging-client/main.scss *outside* the 'head' section of your main.scss, so it will be lazily loaded.
+In all cases, whether your messages will be client or server rendered, also include the n-messaging-client/main.scss _outside_ the 'head' section of your main.scss, so it will be lazily loaded.
 
 ```scss
 /* main.scss */
 
-@import 'n-messaging-client/main';
+@import "n-messaging-client/main";
 ```
 
 And finally import and initialise the client side component via your main js entry:
@@ -81,19 +78,19 @@ And finally import and initialise the client side component via your main js ent
 ```javascript
 // main.js
 
-import { nMessagingClient } from 'n-messaging-client';
+import { nMessagingClient } from "n-messaging-client";
 nMessagingClient.init();
 ```
 
 Note: optionally you may only want to init if a message flag is on the page
 
 ```javascript
-if ( window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop ) {
+if (window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop) {
   nMessagingClient.init();
 }
 ```
 
-**note:** CSS could be loaded asyncronously so the ```n-ui-hide``` class is used to stop unstyled content flash, ensure your application has ```n-ui-foundations``` to take advantage of this.
+**note:** CSS could be loaded asyncronously so the `n-ui-hide` class is used to stop unstyled content flash, ensure your application has `n-ui-foundations` to take advantage of this.
 
 # Development
 
@@ -102,12 +99,10 @@ if ( window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop ) {
 1. `make install`
 2. `make demo-certs` (to install self-signed SSL cert for HTTPS support, otherwise most service calls such as myFT will not work due to secure cookies)
 3. `make demo-watch` (will build, run and watch the demo)
-4.  [configure a message to show](#viewing-messages)
-5.  visit https://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used)
+4. [configure a message to show](#viewing-messages)
+5. visit https://local.ft.com:5005 (make sure you are on `ft.com` so that toggler cookies are used)
 
-
-Note: before opening a PR, please run `make verify` to check things like linting
-	-  in order to see and fix linting errors, please make sure you have Editor Config and ES Lint plugins installed on your editor of choice
+Note: before opening a PR, please run `make verify` to check things like linting - in order to see and fix linting errors, please make sure you have Editor Config and ES Lint plugins installed on your editor of choice
 
 ## Configuring Messages
 
@@ -138,8 +133,9 @@ Messaging slot ammit "flags" use "Brain™" logic to decide which variant to pic
 Firstly this assumes you have versioned and published this module and have the new version installed and deployed in the relevant applications.
 
 Two things have to be in place for a message to be "live":
-1) the variant must exist on the flag
-2) there must be config in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/HEAD/server/config/messaging.json) for that variant
+
+1. the variant must exist on the flag
+2. there must be config in [`messaging.json`](https://github.com/Financial-Times/next-ammit-api/blob/HEAD/server/config/messaging.json) for that variant
 
 For easy client-side validation of the message, (does it render correctly on the page etc). Don't ship part 2. Just have a variant, and test the message via turning it on in toggler.
 
@@ -153,10 +149,10 @@ There are step by step instructions on [how to add or remove corporate cancellat
 
 To use images in your messages, upload them to [the `messages` bucket in S3](https://s3.console.aws.amazon.com/s3/buckets/ft-next-assets-prod/assets/messages/?region=eu-west-1). The only settings you need to change are the following:
 
-+ Manage public permissions: Grant public read access to this object
-+ Set permissions - Set the following headers:
-	- `Content-Type`: `image/png` / `image/jpeg` (depending on the image being uploaded)
-	- `Cache-Control`: `public, max-age=31536000` (1 year)
+- Manage public permissions: Grant public read access to this object
+- Set permissions - Set the following headers:
+  - `Content-Type`: `image/png` / `image/jpeg` (depending on the image being uploaded)
+  - `Cache-Control`: `public, max-age=31536000` (1 year)
 
 The image should now be available at https://www.ft.com/__assets/creatives/messages/YOUR_IMAGE.png
 
