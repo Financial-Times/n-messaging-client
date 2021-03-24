@@ -1,5 +1,5 @@
-const oCookieMessage = require("@financial-times/o-cookie-message");
+const oCookieMessage = require('@financial-times/o-cookie-message');
 
-module.exports = function customSetup() {
+module.exports = function customSetup () {
 	oCookieMessage.init();
 };
