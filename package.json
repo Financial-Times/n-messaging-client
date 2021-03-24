@@ -53,8 +53,8 @@
     "@financial-times/x-follow-button": "1.0.4",
     "js-cookie": "2.2.0",
     "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
-    "next-myft-client": "git+ssh://git@github.com/Financial-Times/next-myft-client.git",
-    "next-session-client": "git+ssh://git@github.com/Financial-Times/next-session-client.git"
+    "next-myft-client": "github:financial-times/next-myft-client.git",
+    "next-session-client": "github:financial-times/next-session-client.git"
   },
   "husky": {
     "hooks": {
