@@ -95,6 +95,23 @@ if ( window.FT.flags.messageSlotBottom || window.FT.flags.messageSlotTop ) {
 
 **note:** CSS could be loaded asyncronously so the ```n-ui-hide``` class is used to stop unstyled content flash, ensure your application has ```n-ui-foundations``` to take advantage of this.
 
+#### `variants` option
+
+If `variants` option is provided to the slot partial only the messages specified as a string of comma separated values will be displayed.
+For example:
+
+```
+{{> n-messaging-client/server/templates/slot type='bottom' variants='messageA,messageB'}}
+```
+would only display ONLY `messageA` or `messageB` if the "Brain™" decides one of those should be displayed. All other messages will be ignored.
+
+Example use case: on the paywall we want to start displaying the cookie consent message using our standard messaging but we don't want any other message there:
+
+```
+{{> n-messaging-client/server/templates/slot type='bottom' variants='cookieConsentC'}}
+```
+would achieve this.
+
 # Development
 
 ## Running locally
