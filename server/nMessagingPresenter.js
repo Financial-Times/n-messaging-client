@@ -29,6 +29,13 @@ const getConfig = (position, root, flags) => {
 	);
 };
 
+const getVariantLimiter = (data) => {
+	if (!data.variants) {
+		return () => true;
+	}
+	return (variant) => data.variants.split(',').includes(variant);
+};
+
 class Presenter {
 
 	constructor (_data) {
@@ -37,7 +44,10 @@ class Presenter {
 		const root = this._data.root || {};
 		this.data = getConfig(this.position, root, parseFlagsObject(root.flags));
 
-		this.hasMessage = !!(this.data.variant && this.data.path);
+		// helper function because the variants is optional
+		const variantLimiter = getVariantLimiter(_data);
+
+		this.hasMessage = !!(this.data.variant && this.data.path && variantLimiter(this.data.variant));
 	}
 
 }
