@@ -103,7 +103,7 @@ For example:
 ```
 {{> n-messaging-client/server/templates/slot type='bottom' variants='messageA,messageB'}}
 ```
-would only display ONLY `messageA` or `messageB` if the "Brain™" decides one of those should be displayed. All other messages will be ignored.
+would display ONLY `messageA` or `messageB` if the "Brain™" decides one of those should be displayed. All other messages will be ignored.
 
 Example use case: on the paywall we want to start displaying the cookie consent message using our standard messaging but we don't want any other message there:
 
