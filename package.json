@@ -36,12 +36,28 @@
   },
   "dependencies": {
     "@financial-times/x-follow-button": "1.0.4",
-    "js-cookie": "2.2.0"
+    "js-cookie": "2.2.0",
+    "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
+    "n-swg": "npm:@financial-times/n-swg@^2.1.1",
+    "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
+    "next-myft-client": "^7.7.0",
+    "next-session-client": "^3.0.1",
+    "o-banner": "npm:@financial-times/o-banner@^3.4.0",
+    "o-cookie-message": "npm:@financial-times/o-cookie-message@^5.1.2",
+    "o-grid": "npm:@financial-times/o-grid@^5.2.6",
+    "o-loading": "npm:@financial-times/o-loading@^4.0.0",
+    "o-message": "npm:@financial-times/o-message@^4.1.0",
+    "o-overlay": "npm:@financial-times/o-overlay@^3.0.0",
+    "o-share": "npm:@financial-times/o-share@^7.0.0",
+    "o-tooltip": "npm:@financial-times/o-tooltip@^4.0.0",
+    "o-tracking": "npm:@financial-times/o-tracking@^2.0.6",
+    "o-typography": "npm:@financial-times/o-typography@^6.0.0",
+    "o-viewport": "npm:@financial-times/o-viewport@^4.0.0"
   },
   "husky": {
     "hooks": {
       "commit-msg": "node_modules/.bin/secret-squirrel-commitmsg",
-      "pre-commit": "node_modules/.bin/secret-squirrel",
+      "pre-commit": "node_modules/.bin/secret-squirrel && node ./scripts/fromBowerToNpm.js",
       "pre-push": "make verify -j3"
     }
   }
