@@ -21,8 +21,7 @@ const resolutionMap = {
 	'o-tracking': standardNpmPackage,
 	'o-typography': standardNpmPackage,
 	'o-viewport': standardNpmPackage,
-	// TODO: investigate why new version are not available on npm but only 20.
-	'n-myft-ui': (_, name) => `npm:@financial-times/${name}@^20.0.0-beta.1`,
+	'n-myft-ui': standardNpmPackage,
 };
 
 for (const dependency in bowerPackage.dependencies) {

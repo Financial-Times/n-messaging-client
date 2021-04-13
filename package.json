@@ -37,7 +37,7 @@
   "dependencies": {
     "@financial-times/x-follow-button": "1.0.4",
     "js-cookie": "2.2.0",
-    "n-myft-ui": "npm:@financial-times/n-myft-ui@^20.0.0-beta.1",
+    "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
     "n-swg": "npm:@financial-times/n-swg@^2.1.1",
     "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
     "next-myft-client": "^7.7.0",
