@@ -22,11 +22,19 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 				padding: oSpacingByName('s4');
 			}
 
+			@include oGridRespondTo($from: L) {
+				min-width: 780px;
+				width: auto;
+			}
+
 			.o-message__content-main {
+				margin-left: 0;
+
 				@include oTypographySans($scale: 0);
 
 				.o-message__content-highlight {
 					text-transform: uppercase;
+					color: $wheatLikeColor;
 					@include oTypographySans($scale: 2);
 
 					@include oGridRespondTo($from: M) {
@@ -35,32 +43,46 @@ $wheatLikeColor: #FCD8B5; // no analogy in Origami
 				}
 
 				@include oGridRespondTo($from: M) {
+					margin-bottom: 0;
 					@include oTypographySans($scale: 3);
 				}
 
 				.o-message__content-detail {
-					color: $wheatLikeColor;
 					display: block;
+
+					@include oTypographySans($scale: 0);
+
+					@include oGridRespondTo($from: S) {
+						@include oTypographySans($scale: 1);
+					}
+
+					@include oGridRespondTo($from: M) {
+						@include oTypographySans($scale: 2);
+					}
 				}
 			}
 		}
 	}
 	.o-message__actions {
-		padding-bottom: oSpacingByName('s4');
+		padding-bottom: 0;
+		margin-left: 0;
+		margin-bottom: oSpacingByName('s1');
 
 		@include oGridRespondTo($from: M) {
 			padding: 0;
+			margin-bottom: 0;
+			margin-left: oSpacingByName('s4');;
 		}
 	}
 
 	.o-message__actions__primary {
 		padding: oSpacingByName('s2') oSpacingByName('s6');
-		background-color: oColorsByName('white');
+		background-color: $wheatLikeColor;
 		color: oColorsByName('slate');
 		border-color: transparent;
 
 		&:hover {
-			background-color: $wheatLikeColor;
+			background-color: oColorsByName('white');
 		}
 
 		@include oGridRespondTo($from: M) {
