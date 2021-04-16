@@ -31,7 +31,7 @@ module.exports = {
 		// goes in a slot. Ignore all these assumptions and only use "custom
 		// setup" for the cookie message component.
 		if (config.path === 'bottom/cookie-consent') {
-			return customSetup();
+			return customSetup(config);
 		}
 		const render = this.renderHandler(config.slot);
 		const formatData = (res) => ({ config, guruResult: res, customSetup });

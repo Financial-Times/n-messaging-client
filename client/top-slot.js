@@ -29,7 +29,7 @@ function getServerRenderedBanner (config, guruResult) {
 
 module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	const variant = (guruResult && guruResult.renderData && guruResult.renderData.dynamicTrackingData) || config.name;
-	const trackEventAction = config.name && generateMessageEvent({
+	const trackEventAction = generateMessageEvent({
 		flag: TOP_SLOT_FLAG,
 		messageId: config.name,
 		position: config.slot,
