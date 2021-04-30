@@ -3,7 +3,7 @@ const cookies = require('js-cookie');
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 const POPUP_PROMPT_COOKIE_NAME = 'popupPromptShown';
 
-export default function (banner, done) {
+module.exports = (banner, done) => {
 	const timeSet = cookies.get(POPUP_PROMPT_COOKIE_NAME);
 
 	if (timeSet === undefined) {
@@ -17,4 +17,4 @@ export default function (banner, done) {
 	});
 
 	return done({ skip: true });
-}
+};
