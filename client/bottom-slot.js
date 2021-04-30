@@ -44,7 +44,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 	if (!customSetup) {
 		banner.open();
 	} else {
-		customSetup = customSetup || customSetup.default; // ESM modules
+		customSetup = customSetup.default || customSetup; // ESM modules
 		function customSetupCallback ({ skip = false } = {}) {
 			if (skip) {
 				trackEventAction('skip');
