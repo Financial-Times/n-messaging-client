@@ -25,7 +25,7 @@ module.exports = function customSetup (config) {
 
 	oCookieMessage.init();
 
-	const actionElements = document.querySelectorAll('[data-n-messaging-manage-cookies],[data-n-messaging-accept-cookies]');
+	const actionElements = document.querySelectorAll('[data-n-messaging-policy],[data-n-messaging-manage-cookies],[data-n-messaging-accept-cookies]');
 	actionElements.forEach(actionElement => {
 		listen(actionElement, 'click', () => trackEventAction('act', actionElement.textContent.trim()));
 	});
