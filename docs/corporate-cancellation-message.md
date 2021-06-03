@@ -102,7 +102,6 @@ PUT request to https://next-flags.ft.com/api/v1/messageSlotBottom with post body
             "newsletterPromo",
             "usNewsletterPromo",
             "myFtFeedpageOverview",
-            "fastFt",
             "marketsData",
             "marketingPopupPrompt",
             "oneClickDailyDigest",
