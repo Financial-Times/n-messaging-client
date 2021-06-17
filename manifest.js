@@ -64,6 +64,15 @@ module.exports = {
 		path: 'bottom/remaining-articles',
 		lazy: true
 	},
+	onboardingNotStarted: {
+		path: 'bottom/onboarding-not-started'
+	},
+	onboardingNotComplete: {
+		path: 'bottom/onboarding-not-complete'
+	},
+	onboardingSkipped: {
+		path: 'bottom/onboarding-skipped'
+	},
 	aberdeenStandardLifeCancellation: {
 		path: 'bottom/asi-cancellation'
 	},
