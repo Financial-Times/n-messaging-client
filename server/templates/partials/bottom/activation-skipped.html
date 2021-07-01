@@ -1,7 +1,10 @@
 <div class="n-messaging-client-messaging-banner n-messaging-client-messaging-banner--activation-skipped">
-	<div class="o-banner o-banner--small o-banner--product" data-o-component="o-banner">
-		<div class="o-banner__outer">
-			<div class="o-banner__inner" data-o-banner-inner>
+	{{#> n-messaging-client/server/templates/components/o-banner
+		renderOpen=true
+		small=true
+		themeProduct=true
+	}}
+		<div class="o-banner__inner" data-o-banner-inner>
 			<div class="o-banner__content">
 				<header class="o-banner__heading">
 				<h1>Finish customising your FT</h1>
@@ -13,7 +16,6 @@
 				<a href="https://www.ft.com/activate/bundles" class="o-banner__button">Pick my content</a>
 				</div>
 			</div>
-			</div>
 		</div>
-	</div>
+	{{/n-messaging-client/server/templates/components/o-banner}}
 </div>
