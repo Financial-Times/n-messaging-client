@@ -64,6 +64,15 @@ module.exports = {
 		path: 'bottom/remaining-articles',
 		lazy: true
 	},
+	activationNotStarted: {
+		path: 'bottom/activation-not-started'
+	},
+	activationNotComplete: {
+		path: 'bottom/activation-not-complete'
+	},
+	activationSkipped: {
+		path: 'bottom/activation-skipped'
+	},
 	aberdeenStandardLifeCancellation: {
 		path: 'bottom/asi-cancellation'
 	},
