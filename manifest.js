@@ -85,6 +85,10 @@ module.exports = {
 		path: 'top/lazy',
 		lazy: true,
 	},
+	digitalIntroSubscriptionPromo: {
+		path: 'top/lazy',
+		lazy: true,
+	},
 	climateCapitalFeedback: {
 		path: 'top/lazy',
 		lazy: true,
