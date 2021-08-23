@@ -30,6 +30,9 @@ module.exports = {
 	paymentFailure: {
 		path: 'top/payment-failure'
 	},
+	singleTermRenew: {
+		path: 'top/renew-single-term-banner'
+	},
 	anonSubscribeNow: {
 		path: 'top/anon-subscribe-now',
 		trackingContext: {
