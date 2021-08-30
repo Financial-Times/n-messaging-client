@@ -109,5 +109,19 @@ module.exports = {
 	climateCapitalFeedback: {
 		path: 'top/lazy',
 		lazy: true,
+	},
+	digitalMarketingSeptApac: {
+		path: 'top/digital-marketing-sept-apac',
+		trackingContext: {
+			opportunity_type: 'marketingPromptSeptAPAC',
+			opportunity_subtype: 'discount_33%off'
+		}
+	},
+	digitalMarketingSeptRow: {
+		path: 'top/digital-marketing-sept-row',
+		trackingContext: {
+			opportunity_type: 'marketingPromptSeptROW',
+			opportunity_subtype: 'discount_50%off'
+		}
 	}
 };
