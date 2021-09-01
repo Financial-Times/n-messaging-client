@@ -27,6 +27,20 @@ module.exports = {
 			opportunity_subtype: 'discount_33%off'
 		}
 	},
+	marketingPopupPromptSeptApac: {
+		path: 'bottom/marketing-popup-prompt-sept-apac',
+		trackingContext: {
+			opportunity_type: 'marketingPromptSeptAPAC',
+			opportunity_subtype: 'discount_33%off'
+		}
+	},
+	marketingPopupPromptSeptRow: {
+		path: 'bottom/marketing-popup-prompt-sept-row',
+		trackingContext: {
+			opportunity_type: 'marketingPromptSeptROW',
+			opportunity_subtype: 'discount_50%off'
+		}
+	},
 	paymentFailure: {
 		path: 'top/payment-failure'
 	},
