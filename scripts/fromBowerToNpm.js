@@ -7,7 +7,6 @@ function standardNpmPackage (version, name) {
 }
 
 const resolutionMap = {
-	'n-swg': standardNpmPackage,
 	'n-ui-foundations': () => 'github:financial-times/n-ui-foundations#nobower',
 	'next-myft-client': (version) => `${version}`,
 	'o-banner': standardNpmPackage,
