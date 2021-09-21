@@ -15,9 +15,6 @@ module.exports = {
 	cookieConsentC: {
 		path: 'bottom/cookie-consent'
 	},
-	swgEntitlementsPrompt: {
-		path: 'bottom/swg-entitlements-prompt'
-	},
 	marketingPopupPrompt: {
 		path: 'bottom/marketing-popup-prompt',
 		lazy: true,
