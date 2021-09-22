@@ -79,13 +79,13 @@ module.exports = {
 		lazy: true
 	},
 	activationNotStarted: {
-		path: 'bottom/activation-not-started'
+		path: 'bottom/customer-care'
 	},
 	activationNotComplete: {
-		path: 'bottom/activation-not-complete'
+		path: 'bottom/customer-care'
 	},
 	activationSkipped: {
-		path: 'bottom/activation-skipped'
+		path: 'bottom/customer-care'
 	},
 	aberdeenStandardLifeCancellation: {
 		path: 'bottom/asi-cancellation'
