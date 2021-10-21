@@ -93,10 +93,10 @@ module.exports = {
 			opportunity_type: 'digitalMarketingNewWorld',
 		}
 	},
-	COPOpenDayAnon: {
-		path: 'top/cop-open-day-anon',
+	COPOpenDayClimateCapitalAnon: {
+		path: 'top/cop-open-day-climate-capital-anon',
 	},
-	COPOpenDayReg: {
-		path: 'top/cop-open-day-reg',
+	COPOpenDayAnonOrReg: {
+		path: 'top/cop-open-day-anon-or-reg',
 	},
 };
