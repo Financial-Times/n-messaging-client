@@ -1,0 +1,5 @@
+.o-message--cop-anon-or-reg {
+	border-bottom: 1px solid oColorsByName("paper");
+	background-color: oColorsByName("slate");
+	@import "../cop-digital-acquisition/main";
+}
