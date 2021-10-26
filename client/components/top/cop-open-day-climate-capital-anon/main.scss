@@ -1,1 +1,17 @@
-@import "../cop-digital-acquisition/main.scss";
+.o-message--cop-climate-capital-anon {
+	border-bottom: 1px solid oColorsByName("paper");
+	background-color: oColorsByName("teal-70");
+	@import "../cop-digital-acquisition/main";
+	.o-message__container {
+		.o-message__content {
+			.o-message__content-main {
+				.o-message__content-highlight {
+					color: oColorsByName("lemon");
+				}
+			}
+		}
+	}
+	.o-message__actions__primary {
+		background-color: oColorsByName("lemon");
+	}
+}
