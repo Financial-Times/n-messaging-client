@@ -5,6 +5,7 @@
 ### Table of Contents
 
 * [Monitoring](#monitoring)
+* [Lazy and Static Messages](#lazy-and-static-messages)
 * [Usage](#usage)
 	- [Application specific](#application-specific)
 * [Development](#development)
@@ -27,6 +28,9 @@ Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3
 ### Monitoring
 
 - [Monitoring for `next-messaging-guru`](https://github.com/Financial-Times/next-messaging-guru#monitoring)
+
+### Lazy and static messages
+- [Lazy and static messages](./docs/lazy-and-static-messages.md)
 
 # Usage
 
