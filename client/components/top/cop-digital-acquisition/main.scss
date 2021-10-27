@@ -1,0 +1,89 @@
+.o-message__container {
+	display: flex;
+	padding: oSpacingByName("s4");
+
+	.o-message__content {
+		color: oColorsByName("white");
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		padding: 0;
+
+		@include oGridRespondTo($from: M) {
+			width: 780px;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: oSpacingByName("s4");
+		}
+
+		@include oGridRespondTo($from: L) {
+			min-width: 960px;
+			width: auto;
+		}
+
+		.o-message__content-main {
+			margin-left: 0;
+			@include oGridRespondTo($from: L) {
+				max-width: 600px;
+			}
+
+			@include oTypographySans($scale: 0);
+
+			.o-message__content-highlight {
+				color: oColorsByName("brand-ft-pink");
+				@include oTypographySans($scale: 2);
+
+				@include oGridRespondTo($from: M) {
+					@include oTypographySans($scale: 3);
+				}
+			}
+
+			@include oGridRespondTo($from: M) {
+				margin-bottom: 0;
+				@include oTypographySans($scale: 3);
+			}
+
+			.o-message__content-detail {
+				display: block;
+
+				@include oTypographySans($scale: 0);
+
+				@include oGridRespondTo($from: S) {
+					@include oTypographySans($scale: 1);
+				}
+
+				@include oGridRespondTo($from: M) {
+					@include oTypographySans($scale: 2);
+				}
+			}
+		}
+	}
+}
+
+.o-message__actions {
+	padding-bottom: 0;
+	margin-left: 0;
+	margin-bottom: oSpacingByName("s1");
+
+	@include oGridRespondTo($from: M) {
+		padding: 0;
+		margin-bottom: 0;
+		margin-left: oSpacingByName("s4");
+	}
+}
+
+.o-message__actions__primary {
+	padding: oSpacingByName("s2") oSpacingByName("s6");
+	background-color: oColorsByName("brand-ft-pink");
+	color: oColorsByName("slate");
+	border-color: transparent;
+
+	&:hover {
+		background-color: oColorsByName("white");
+	}
+
+	@include oGridRespondTo($from: M) {
+		@include oTypographySans($scale: 0);
+	}
+}

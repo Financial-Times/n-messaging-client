@@ -92,5 +92,14 @@ module.exports = {
 		trackingContext: {
 			opportunity_type: 'digitalMarketingNewWorld',
 		}
-	}
+	},
+	openDayPremiumUpsell: {
+		path: 'top/open-day-premium-upsell',
+	},
+	COPOpenDayClimateCapitalAnon: {
+		path: 'top/cop-open-day-climate-capital-anon',
+	},
+	COPOpenDayAnonOrReg: {
+		path: 'top/cop-open-day-anon-or-reg',
+	},
 };
