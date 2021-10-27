@@ -88,6 +88,31 @@ For example:
 
 When using lazy messages, the template is automatically filled with the data coming from `next-messaging-guru` and there is no need to create an html file.
 
+In most of the cases, `next-messaging-guru` uses external data sources to retrieve some data. The `dataSources` modules can be associated with the message, and each `dataSource` has its own expected parameters.
+
+Available data sources => https://github.com/Financial-Times/next-messaging-guru/blob/main/server/lib/async-data-sources/index.js => `/server/lib/async-data-sources/`
+
+Continuing with previous example => `manifest.json` describes that `tryFullAccess` top message uses `offer` data source.
+``` JSON
+{
+    "messageId": "tryFullAccess",
+    "component": "try-full-access",
+    "slot": "top",
+    "dataSources": [
+      "offer"
+    ]
+}
+```
+
+What parameter it expects? => https://github.com/Financial-Times/next-messaging-guru/blob/main/server/lib/async-data-sources/offer.js#L25
+```Javascript
+...
+OFFER.byId(baseInputs['query_offerId'], baseInputs['req_countryCode'] || 'GBR')
+...
+```
+
+Finally, this is how `guru` builds the `baseInputs` => https://github.com/Financial-Times/next-messaging-guru/blob/main/server/middleware/input-data-sources.js#L8-L21
+
 ### Holistic Messaging Flow
 
 ![next-messaging - flow overview](./images/holistic-messaging-flow.png)
