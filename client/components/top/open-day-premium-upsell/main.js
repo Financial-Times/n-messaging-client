@@ -1,5 +1,5 @@
 module.exports = function customSetup (banner, done) {
-	let openDayBanner = document.getElementById('openDayBanner');
+	let openDayBanner = document.getElementById('openDayPremiumUpsellBanner');
 
 	let target = document.querySelector('#site-content[data-access-level="premium"]');
 	if (target) {
