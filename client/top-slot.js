@@ -103,7 +103,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 				trackEventAction('skip');
 			} else {
 				//this is to be removed after open day. It's here so that we don't send tracking events when the banner has display set to none
-				if(alertBanner.messageElement.style.cssText!=="display: none;") {
+				if(alertBanner.messageElement.style.cssText!=='display: none;') {
 					alertBanner.open();
 				}
 			}
@@ -111,7 +111,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 		customSetup(alertBanner, customSetupCallback, guruResult);
 	} else {
 		//this is to be removed after open day. It's here so that we don't send tracking events when the banner has display set to none
-		if(alertBanner.messageElement.style.cssText!=="display: none;") {
+		if(alertBanner.messageElement.style.cssText!=='display: none;') {
 			alertBanner.open();
 		}
 	}
