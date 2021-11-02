@@ -6,6 +6,7 @@ module.exports = {
 	strings: {
 		deny: [],
 		denyOverrides: [
+			'da448d11-851d-545c-dc0e-e9a2aef62e54', // open-day-premium-upsell.html:13
 			'4312a4ca\\x2daeac\\x2d11e8\\x2d99ca\\x2d68cf89602132', // demos/templates/layouts/custom-vanilla.html:14
 			'97212eb0\\x2dabb9\\x2d11e8\\x2d8253\\x2d48106866cd8a', // demos/templates/layouts/custom-vanilla.html:29
 			'info@companyx\\.com', // docs/corporate-cancellation-message.md:31|36

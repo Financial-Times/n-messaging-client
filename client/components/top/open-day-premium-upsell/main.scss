@@ -1,0 +1,48 @@
+// Outputs CSS for a custom message state called "pikachu"
+// Outputs a modifier class `o-message--pikachu`
+@include oMessageAddState(
+	$name: 'pikachu', // the custom state is named "pikachu"
+	$opts: (
+	'background-color': 'black', // slate message
+	'foreground-color': 'white', // white text
+	'button-type': 'primary', // a primary o-buttons button`o-message__content-highlight` highlight copy
+), $types: ('notice')); // this state should work with notice and alert message types
+
+#upgrade-button {
+	background-color: white;
+}
+
+.header-message {
+	font-family: 'MetricWeb';
+	font-size: 16px;
+}
+
+.o-message__content-highlight {
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 24px;
+	margin-top: -14px;
+}
+
+.lower-message {
+	margin-top: -24px !important;
+}
+
+.main-content {
+	display: inline-block;
+	margin-bottom: 20p;
+	vertical-align: middle;
+	padding-right: 100px;
+}
+
+.upgrade-to-premium-btn {
+	margin-bottom: 10px !important;
+	padding: 12px !important;
+	width: 180px;
+	font-size: 16px !important;
+}
+
+.o-message__container {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
