@@ -93,9 +93,6 @@ module.exports = {
 			opportunity_type: 'digitalMarketingNewWorld',
 		}
 	},
-	openDayPremiumUpsell: {
-		path: 'top/open-day-premium-upsell',
-	},
 	COPOpenDayClimateCapitalAnon: {
 		path: 'top/cop-open-day-climate-capital-anon',
 	},
