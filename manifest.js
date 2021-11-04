@@ -96,7 +96,4 @@ module.exports = {
 	COPOpenDayClimateCapitalAnon: {
 		path: 'top/cop-open-day-climate-capital-anon',
 	},
-	COPOpenDayAnonOrReg: {
-		path: 'top/cop-open-day-anon-or-reg',
-	},
 };
