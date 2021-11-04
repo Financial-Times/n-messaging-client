@@ -102,7 +102,7 @@ module.exports = function ({ config={}, guruResult, customSetup }={}) {
 			if (skip) {
 				trackEventAction('skip');
 			} else {
-				alertBanner.open();	
+				alertBanner.open();
 			}
 		}
 		customSetup(alertBanner, customSetupCallback, guruResult);
