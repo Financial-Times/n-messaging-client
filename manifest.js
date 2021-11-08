@@ -64,9 +64,6 @@ module.exports = {
 		path: 'bottom/remaining-articles',
 		lazy: true
 	},
-	customerCareCall: {
-		path: 'bottom/customer-care-call'
-	},
 	aberdeenStandardLifeCancellation: {
 		path: 'bottom/asi-cancellation'
 	},
