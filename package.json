@@ -47,7 +47,7 @@
     "o-cookie-message": "npm:@financial-times/o-cookie-message@^5.1.2",
     "o-grid": "npm:@financial-times/o-grid@^5.2.6",
     "o-loading": "npm:@financial-times/o-loading@^4.0.0",
-    "o-message": "npm:@financial-times/o-message@^5.0.0",
+    "o-message": "npm:@financial-times/o-message@^4.1.0",
     "o-overlay": "npm:@financial-times/o-overlay@^3.0.0",
     "o-share": "npm:@financial-times/o-share@^7.0.0",
     "o-tooltip": "npm:@financial-times/o-tooltip@^4.0.0",
