@@ -50,9 +50,9 @@ export default function Obanner ({
 						contentLong &&
 						(
 							// Content to display on larger screens
-							(<div className="o-banner__content o-banner__content--long">
+							<div className="o-banner__content o-banner__content--long">
 								{contentLong}
-							</div>)
+							</div>
 						)
 					}
 
@@ -62,9 +62,9 @@ export default function Obanner ({
 						contentShort &&
 						(
 							// Content to display on smaller screens
-							(<div className="o-banner__content o-banner__content--short">
+							<div className="o-banner__content o-banner__content--short">
 								{contentShort}
-							</div>)
+							</div>
 						)
 					}
 
@@ -72,17 +72,21 @@ export default function Obanner ({
 					<div className="o-banner__actions">
 						{
 							buttonUrl &&
-							(<div className="o-banner__action">
-								<a href={buttonUrl} className="o-banner__button" data-n-messaging-banner-action="" data-trackable="onsite-message-button">{buttonLabel}</a>
-							</div>)
+							(
+								<div className="o-banner__action">
+									<a href={buttonUrl} className="o-banner__button" data-n-messaging-banner-action="" data-trackable="onsite-message-button">{buttonLabel}</a>
+								</div>
+							)
 						}
 
 
 						{
 							linkUrl &&
-							(<div className="o-banner__action o-banner__action--secondary">
-								<a href={linkUrl} className="o-banner__link" data-n-messaging-banner-action="" data-trackable="onsite-message-link">{linkLabel}</a>
-							</div>)
+							(
+								<div className="o-banner__action o-banner__action--secondary">
+									<a href={linkUrl} className="o-banner__link" data-n-messaging-banner-action="" data-trackable="onsite-message-link">{linkLabel}</a>
+								</div>
+							)
 						}
 					</div>
 
