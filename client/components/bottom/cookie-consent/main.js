@@ -1,4 +1,5 @@
-const oCookieMessage = require('o-cookie-message').default;
+let oCookieMessage = require('o-cookie-message');
+oCookieMessage = oCookieMessage.default || oCookieMessage;
 
 const { generateMessageEvent, listen } = require('../../../utils');
 
