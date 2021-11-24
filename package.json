@@ -37,7 +37,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "@financial-times/x-follow-button": "1.0.4",
+    "@financial-times/x-follow-button": "1.7.0",
     "js-cookie": "2.2.0",
     "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
     "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
