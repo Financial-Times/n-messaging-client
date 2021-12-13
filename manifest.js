@@ -93,4 +93,7 @@ module.exports = {
 	COPOpenDayClimateCapitalAnon: {
 		path: 'top/cop-open-day-climate-capital-anon',
 	},
+	flicSeasonalAppeal2021: {
+		path: 'top/flic-seasonal-appeal-2021',
+	},
 };
