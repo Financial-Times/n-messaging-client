@@ -5,8 +5,7 @@
   "description": "Lightweight first party messaging for use with \"The Brain\"",
   "main": "main-server.js",
   "scripts": {
-    "prepare": "npx snyk protect || npx snyk protect -d || true",
-    "preinstall": "[ \"$INIT_CWD\" != \"$PWD\" ] || npm_config_yes=true npx check-engine"
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
   },
   "license": "MIT",
   "x-dash": {
@@ -19,13 +18,12 @@
     "@financial-times/n-gage": "^8.3.2",
     "bower": "^1.8.8",
     "chai": "^4.1.2",
-    "check-engines": "^1.5.0",
     "cookie-parser": "^1.4.4",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.3",
     "express": "^4.17.1",
     "mocha": "^5.2.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "4.13.1",
     "nodemon": "^1.17.5",
     "postcss": "^7.0.26",
     "preact": "^8.5.3",
@@ -42,7 +40,7 @@
     "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
     "next-myft-client": "^7.7.0",
     "next-session-client": "^3.0.1",
-    "n-ui-foundations": "^7.0.1",
+    "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
     "o-banner": "npm:@financial-times/o-banner@^3.4.0",
     "o-cookie-message": "npm:@financial-times/o-cookie-message@^5.1.2",
     "o-grid": "npm:@financial-times/o-grid@^5.2.6",
@@ -61,13 +59,5 @@
       "pre-commit": "node_modules/.bin/secret-squirrel && node ./scripts/fromBowerToNpm.js",
       "pre-push": "make verify -j3"
     }
-  },
-  "volta": {
-    "node": "12.22.6",
-    "npm": "7.20.2"
-  },
-  "engines": {
-    "node": "12.x",
-    "npm": "7.x || 8.x"
   }
 }
