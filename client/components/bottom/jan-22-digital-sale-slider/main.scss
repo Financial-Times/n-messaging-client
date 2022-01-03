@@ -1,0 +1,39 @@
+.n-messaging-client-messaging-banner--jan-22-digital-sale-slider {
+	.o-banner__outer {
+		.o-banner__inner {
+			background-color: oColorsByName('slate');
+			color: oColorsByName('white');
+
+			.o-banner__content {
+				font-size: 18px;
+
+				ul li {
+					font-size: 18px;
+				}
+			}
+
+			.n-messaging-banner__heading h1 {
+				font-family: FinancierDisplayWeb, serif;
+				font-size: oSpacingByName('s8');
+				font-weight: initial;
+			}
+
+			.n-messaging-banner__heading:after {
+				padding-top: oSpacingByName('s2');
+				border-color: oColorsByName('wasabi');
+			}
+
+			.o-banner__action {
+				.o-banner__button {
+					margin-top: oSpacingByName('s4');
+					background-color: oColorsByName('white');
+					color: oColorsByName('black');
+				}
+			}
+
+			.o-banner__close {
+				background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+			}
+		}
+	}
+}
