@@ -96,4 +96,16 @@ module.exports = {
 	flicSeasonalAppeal2021: {
 		path: 'top/flic-seasonal-appeal-2021',
 	},
+	jan22DigitalSaleBanner: {
+		path: 'top/jan-22-digital-sale-banner',
+		trackingContext: {
+			opportunity_type: 'jan22DigitalSaleBanner',
+		}
+	},
+	jan22DigitalSaleSlider: {
+		path: 'bottom/jan-22-digital-sale-slider',
+		trackingContext: {
+			opportunity_type: 'jan22DigitalSaleSlider',
+		}
+	},
 };
