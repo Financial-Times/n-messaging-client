@@ -93,9 +93,6 @@ module.exports = {
 	COPOpenDayClimateCapitalAnon: {
 		path: 'top/cop-open-day-climate-capital-anon',
 	},
-	flicSeasonalAppeal2021: {
-		path: 'top/flic-seasonal-appeal-2021',
-	},
 	jan22DigitalSaleBanner: {
 		path: 'top/jan-22-digital-sale-banner',
 		trackingContext: {
