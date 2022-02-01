@@ -27,7 +27,7 @@
     "mocha": "^5.2.0",
     "node-sass": "^6.0.1",
     "nodemon": "^1.17.5",
-    "postcss": "^7.0.26",
+    "postcss": "^8.2.13",
     "preact": "^8.5.3",
     "request": "^2.87.0",
     "sinon": "^6.0.0",
