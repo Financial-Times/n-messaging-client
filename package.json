@@ -17,6 +17,18 @@
   "devDependencies": {
     "@financial-times/dotcom-server-handlebars": "2.2.0",
     "@financial-times/n-gage": "^8.3.2",
+    "@financial-times/n-myft-ui": "^25.0.0",
+    "@financial-times/o-banner": "^4.4.2",
+    "@financial-times/o-cookie-message": "^6.3.1",
+    "@financial-times/o-grid": "^6.1.5",
+    "@financial-times/o-loading": "^5.2.1",
+    "@financial-times/o-message": "^5.2.1",
+    "@financial-times/o-overlay": "^4.2.3",
+    "@financial-times/o-share": "^8.2.1",
+    "@financial-times/o-tooltip": "^5.2.1",
+    "@financial-times/o-tracking": "^4.2.1",
+    "@financial-times/o-typography": "^7.2.2",
+    "@financial-times/o-viewport": "^5.1.1",
     "bower": "^1.8.8",
     "chai": "^4.1.2",
     "check-engines": "^1.5.0",
@@ -39,21 +51,8 @@
   "dependencies": {
     "@financial-times/x-follow-button": "1.0.4",
     "js-cookie": "2.2.0",
-    "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
     "next-myft-client": "^7.11.0",
-    "next-session-client": "^3.0.1",
-    "n-ui-foundations": "^7.0.1",
-    "o-banner": "npm:@financial-times/o-banner@^3.4.0",
-    "o-cookie-message": "npm:@financial-times/o-cookie-message@^5.1.2",
-    "o-grid": "npm:@financial-times/o-grid@^5.2.6",
-    "o-loading": "npm:@financial-times/o-loading@^4.0.0",
-    "o-message": "npm:@financial-times/o-message@^4.1.0",
-    "o-overlay": "npm:@financial-times/o-overlay@^3.0.0",
-    "o-share": "npm:@financial-times/o-share@^7.0.0",
-    "o-tooltip": "npm:@financial-times/o-tooltip@^4.0.0",
-    "o-tracking": "npm:@financial-times/o-tracking@^3.1.4",
-    "o-typography": "npm:@financial-times/o-typography@^6.0.0",
-    "o-viewport": "npm:@financial-times/o-viewport@^4.0.0"
+    "next-session-client": "^3.0.1"
   },
   "husky": {
     "hooks": {
@@ -69,5 +68,20 @@
   "engines": {
     "node": "12.x",
     "npm": "7.x || 8.x"
+  },
+  "peerDependencies": {
+    "@financial-times/n-myft-ui": "^25.0.0",
+    "@financial-times/o-banner": "^4.4.2",
+    "@financial-times/o-cookie-message": "^6.3.1",
+    "@financial-times/o-grid": "^6.1.5",
+    "@financial-times/o-loading": "^5.2.1",
+    "@financial-times/o-message": "^5.2.1",
+    "@financial-times/o-overlay": "^4.2.3",
+    "@financial-times/o-share": "^8.2.1",
+    "@financial-times/o-tooltip": "^5.2.1",
+    "@financial-times/o-tracking": "^4.2.1",
+    "@financial-times/o-typography": "^7.2.2",
+    "@financial-times/o-viewport": "^5.1.1",
+    "n-ui-foundations": "^8.0.0"
   }
 }

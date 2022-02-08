@@ -1,4 +1,4 @@
-@import "o-banner/main";
+@import "@financial-times/o-banner/main";
 
 @include oBannerAddTheme('myft', (
 	background-color: oColorsByName('claret-60'),
