@@ -1,4 +1,4 @@
-let message = require('o-message');
+let message = require('@financial-times/o-message');
 message = message.default || message;
 const { generateMessageEvent, listen, messageEventLimitsBreached } = require('./utils');
 

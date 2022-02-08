@@ -1,4 +1,4 @@
-let oCookieMessage = require('o-cookie-message');
+let oCookieMessage = require('@financial-times/o-cookie-message');
 oCookieMessage = oCookieMessage.default || oCookieMessage;
 
 const { generateMessageEvent, listen } = require('../../../utils');

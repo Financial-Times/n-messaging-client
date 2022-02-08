@@ -1,17 +1,17 @@
 $o-tooltip-is-silent : false;
 
-@import "o-buttons/main";
-@import "o-colors/main";
-@import "o-grid/main";
-@import "o-icons/main";
-@import "o-typography/main";
-@import "o-spacing/main";
+@import "@financial-times/o-buttons/main";
+@import "@financial-times/o-colors/main";
+@import "@financial-times/o-grid/main";
+@import "@financial-times/o-icons/main";
+@import "@financial-times/o-typography/main";
+@import "@financial-times/o-spacing/main";
 
-@import 'o-message/main';
-@import 'o-banner/main';
-@import "o-tooltip/main";
-@import "o-overlay/main";
-@import "o-cookie-message/main";
+@import "@financial-times/o-message/main";
+@import "@financial-times/o-banner/main";
+@import "@financial-times/o-tooltip/main";
+@import "@financial-times/o-overlay/main";
+@import "@financial-times/o-cookie-message/main";
 @import './client/components/top/nav-messaging-tooltip';
 
 @include oFonts($opts: (
