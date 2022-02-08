@@ -34,11 +34,7 @@ Presentation: [FOMO - a guide](https://docs.google.com/presentation/d/1QpEVjZYQ3
 
 # Usage
 
-Install client side dependencies (css, js templates) via bower:
-
-```bower install --save n-messaging-client```
-
-Install server side dependencies (handlebars presenter/helper) via npm:
+Install via npm:
 
 ```npm install --save @financial-times/n-messaging-client```
 

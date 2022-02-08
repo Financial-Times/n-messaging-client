@@ -13,6 +13,5 @@ public/
 /.haikro-cache/
 /.idea/
 /.sass-cache/
-/bower_components/
 /demos/self-signed-ssl-certificate.pem
 /demos/self-signed-ssl-key.pem

@@ -1,6 +1,5 @@
 /.idea/
 /.sass-cache/
-/bower_components/
 /node_modules/
 /demos/
 /test/
@@ -15,7 +14,6 @@
 .scss-lint.yml
 .pa11yci.js
 .stylelintrc
-bower.json
 package-lock.json
 circle.yml
 ft.yml

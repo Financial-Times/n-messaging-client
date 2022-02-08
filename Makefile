@@ -13,7 +13,7 @@ demo-js:
 	@$(DONE)
 
 demo-css:
-	node-sass --include-path=bower_components --include-path=node_modules --output demos/public demos/src/demo.scss
+	node-sass --include-path=node_modules --output demos/public demos/src/demo.scss
 	@$(DONE)
 
 demo-build: demo-js demo-css
@@ -21,7 +21,7 @@ demo-build: demo-js demo-css
 
 demo-watch: demo-css # demo-css because node-sass doesn't build one at start of watch
 	webpack --watch --config demos/webpack.config.js &
-	node-sass --watch --include-path=bower_components --include-path=node_modules --output demos/public demos/src/demo.scss &
+	node-sass --watch --include-path=node_modules --output demos/public demos/src/demo.scss &
 	nodemon --ext js,css,html --watch demos/ --watch server/ demos/start.js
 
 demo-run:
