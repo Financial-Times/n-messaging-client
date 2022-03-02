@@ -13,18 +13,18 @@ demo-js:
 	@$(DONE)
 
 demo-css:
-	node-sass --include-path=node_modules --output demos/public demos/src/demo.scss
+	sass --load-path=node_modules demos/src/demo.scss:demos/public/demo.css
 	@$(DONE)
 
 demo-build: demo-js demo-css
 	@$(DONE)
 
-demo-watch: demo-css # demo-css because node-sass doesn't build one at start of watch
+demo-watch: demo-certs demo-css # demo-css because node-sass doesn't build one at start of watch
 	webpack --watch --config demos/webpack.config.js &
-	node-sass --watch --include-path=node_modules --output demos/public demos/src/demo.scss &
+	sass --watch --load-path=node_modules demos/src/demo.scss:demos/public/demo.css &
 	nodemon --ext js,css,html --watch demos/ --watch server/ demos/start.js
 
-demo-run:
+demo-run: demo-certs
 	node demos/start
 
 # note that you could also use the proxy controller
