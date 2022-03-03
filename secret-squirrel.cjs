@@ -16,6 +16,7 @@ module.exports = {
 			'19dc305c\\x2dd9dd\\x2d22c6\\x2d6c05\\x2d6dbd76417fd7', // server/templates/partials/bottom/jan-22-digital-sale-slider.html:28
 			'5f60b8b4\\x2dcbf0\\x2d18d7\\x2ddf41\\x2d9caa1171e8c1', // server/templates/partials/top/anon-subscribe-now.html:5|18
 			'0b1f847b\\x2d03f4\\x2d87d5\\x2d1f1d\\x2def958102d37c', // server/templates/partials/top/cop-open-day-climate-capital-anon.html:5
+			'61895f85\\x2db88c\\x2dba04\\x2d7a0a\\x2db3ca54c20651', // server/templates/partials/top/disrupted-world.html:5
 			'54c9ee8b\\x2d08b5\\x2d3a4f\\x2d0dbd\\x2db0d60b121d2e', // server/templates/partials/top/jan-22-digital-sale-banner.html:5
 			'a44c9005\\x2d2a9c\\x2dfe2a\\x2d9140\\x2d1311ff87f25f' // server/templates/partials/top/print-banner-usa.html:4
 		]
