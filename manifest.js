@@ -105,4 +105,14 @@ module.exports = {
 			opportunity_type: 'jan22DigitalSaleSlider',
 		}
 	},
+	disruptedWorld: {
+		path: 'top/disrupted-world',
+		trackingContext: {
+			opportunity_type: 'disruptedWorld',
+		}
+	},
+	EmbeddedOnboarding: {
+		path: 'bottom/embedded-onboarding',
+		lazy: true
+	}
 };
