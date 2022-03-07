@@ -111,4 +111,8 @@ module.exports = {
 			opportunity_type: 'disruptedWorld',
 		}
 	},
+	EmbeddedOnboarding: {
+		path: 'bottom/embedded-onboarding',
+		lazy: true
+	}
 };

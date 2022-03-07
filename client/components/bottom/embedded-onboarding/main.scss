@@ -1,0 +1,48 @@
+@import '@financial-times/o-visual-effects/main';
+@include oTooltip();
+
+.n-messaging-client-messaging-banner-embedded-onboarding {
+	.o-banner__inner {
+		max-width: initial;
+		padding: 0;
+		.o-banner__content {
+			padding: 0;
+		}
+	}
+
+	&--hidden {
+		display: none;
+	}
+
+	&-content {
+		height: 100%;
+		background-color: oColorsByName('paper');
+		transition: transform 0.5s $o-visual-effects-timing-slide 0.5s, height 0.2s $o-visual-effects-timing-slide;
+	}
+}
+
+.embedded-onboarding-veil {
+	background-color: rgba(0, 0, 0, 0.2);
+	height: 150%;
+	width: 100%;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	position: fixed;
+	opacity: 1;
+	transition: opacity 0.5s $o-visual-effects-timing-fade 0.5s;
+
+	&--hidden {
+		opacity: 0;
+	}
+}
+
+.o-header-top-link-myft + .o-tooltip {
+	.o-tooltip-content {
+		text-align: center;
+	}
+
+	.o-tooltip-close {
+		display: none;
+	}
+}
