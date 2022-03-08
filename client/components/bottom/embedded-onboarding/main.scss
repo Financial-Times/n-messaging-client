@@ -22,18 +22,18 @@
 }
 
 .embedded-onboarding-veil {
-	background-color: rgba(0, 0, 0, 0.2);
-	height: 150%;
-	width: 100%;
-	z-index: 10;
-	top: 0;
-	left: 0;
-	position: fixed;
-	opacity: 1;
-	transition: opacity 0.5s $o-visual-effects-timing-fade 0.5s;
+	opacity: 0;
 
-	&--hidden {
-		opacity: 0;
+	&--active {
+		background-color: rgba(0, 0, 0, 0.2);
+		height: 150%;
+		width: 100%;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		position: fixed;
+		opacity: 1;
+		transition: opacity 0.5s $o-visual-effects-timing-fade 0.5s;
 	}
 }
 
