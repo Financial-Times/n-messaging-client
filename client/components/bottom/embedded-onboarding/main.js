@@ -28,7 +28,7 @@ function removeVeil () {
 }
 
 function addVeil () {
-	document.querySelector('.embedded-onboarding-veil').classList.remove('embedded-onboarding-veil--hidden');
+	document.querySelector('.embedded-onboarding-veil').classList.add('embedded-onboarding-veil--active');
 }
 
 function showMessage () {
