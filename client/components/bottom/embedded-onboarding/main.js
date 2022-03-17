@@ -1,5 +1,6 @@
 const oTooltip = require('@financial-times/o-tooltip').default;
 const oTracking = require('@financial-times/o-tracking').default;
+const pageKitFlags = require('@financial-times/dotcom-ui-flags');
 
 function onClose () {
 	oTracking.event({
@@ -60,10 +61,10 @@ function showTooltip () {
 	new oTooltip(tooltipTemplate, opts);
 };
 
-module.exports = (banner, done, guruResult) => {
-	const { renderData } = guruResult || {};
+module.exports = (banner, done) => {
+	const flags = pageKitFlags.init();
 
-	if (!renderData || !renderData.embeddedOnboarding || !renderData.embeddedOnboarding.homepageOnboarding) {
+	if (flags.get('homepageOnboarding') !== 'variant') {
 		return done();
 	}
 
