@@ -3,8 +3,8 @@
 
 references:
 
-  container_config_node12:
-    &container_config_node12
+  container_config_node:
+    &container_config_node
     working_directory: ~/project/build
     docker:
       - image: cimg/node:<< parameters.node-version >>-browsers
@@ -69,7 +69,7 @@ orbs:
 jobs:
 
   build:
-    <<: *container_config_node12
+    <<: *container_config_node
     steps:
       - checkout
       - run:
@@ -97,7 +97,7 @@ jobs:
             - build
 
   test:
-    <<: *container_config_node12
+    <<: *container_config_node
     steps:
       - *attach_workspace
       - run:
@@ -113,7 +113,7 @@ jobs:
           destination: test-results
 
   publish:
-    <<: *container_config_node12
+    <<: *container_config_node
     steps:
       - *attach_workspace
       - run:
