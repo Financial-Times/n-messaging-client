@@ -79,16 +79,10 @@
 		background-color: oColorsByName('white');
 		color: oColorsByName('teal');
 		border-color: transparent;
-		width: 170px;
+		@include oTypographySans($scale: 0);
 
 		&:hover {
 			background-color: oColorsByName('white');
-		}
-
-		@include oGridRespondTo($from: M) {
-			width: 180px;
-
-			@include oTypographySans($scale: 0);
 		}
 	}
 }
