@@ -113,6 +113,5 @@ module.exports = {
 	},
 	embeddedOnboarding: {
 		path: 'bottom/embedded-onboarding',
-		lazy: true
 	}
 };
