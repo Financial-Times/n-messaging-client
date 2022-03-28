@@ -5,9 +5,8 @@
 			color: oColorsByName('white');
 
 			.n-messaging-banner__heading h1 {
-				font-family: FinancierDisplayWeb, serif;
 				font-size: 32px;
-				font-weight: initial;
+				font-weight: oFontsWeight(semibold);
 			}
 
 			.n-messaging-banner__heading:after {
