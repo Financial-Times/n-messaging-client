@@ -40,9 +40,13 @@ app.get('/', (req, res) => {
 	}
 	const flags = req.headers['ft-flags'] || req.cookies['next-flags'];
 	if (flags) {
-		app.locals.flags = parseFlags(flags);
+		const flagsObj = parseFlags(flags);
+		app.locals.flags = flagsObj;
+		// Prints the flags object on the page-kit-flags-embed to mimic FT pages
+		return res.render('index',{ layout: 'custom-vanilla', title: 'Demo', flagsObj: JSON.stringify((flagsObj)) });
 	}
-	res.render('index',{ layout: 'custom-vanilla', title: 'Demo' });
+
+	return res.render('index',{ layout: 'custom-vanilla', title: 'Demo' });
 });
 
 module.exports = app;

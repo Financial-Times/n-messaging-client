@@ -23,7 +23,6 @@ module.exports = function ({ guruEndpoint='/__message', name, guruQueryString }=
 			if (json.skip) return json;
 			return responseContract(json) && json;
 		})
-
 		// I'm so, so sorry. I don't want message guru to
 		// block the release of this project, as it'll throw
 		// the whole cascade off. I know this is gross, we
