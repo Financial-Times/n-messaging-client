@@ -199,6 +199,10 @@ with:
 {{> n-messaging-client/server/templates/slot type='...'}}
 ```
 
+#### v9 to v10
+
+v10 drops support for Bower, meaning all Origami components are instead installed as npm peer dependencies. We appreciate there will be an interim period where not all teams will be able to migrate to npm yet but still need to add and change features in the client. If that is the case, we kindly ask you to base your changes and create PRs off of the current version on `main`. Once those changes have been approved and merged you can then – if needed – backport them to the `v9` branch which still has Bower support. This ensures that there won't be a bifurcation of features between `v9` and `main`, and that instead `v9` will support the subset of features from `main` that are needed.
+
 ## Overview
 
 ### The Problem
