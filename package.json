@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@financial-times/dotcom-server-handlebars": "2.2.0",
+    "@financial-times/dotcom-ui-flags": "^4.1.0",
     "@financial-times/n-gage": "^8.3.2",
     "@financial-times/n-myft-ui": "^25.0.1",
     "@financial-times/o-banner": "^4.4.2",

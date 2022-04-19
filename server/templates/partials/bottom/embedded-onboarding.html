@@ -1,2 +1,14 @@
 <div class="embedded-onboarding-veil embedded-onboarding-veil--hidden"></div>
-<div data-n-messaging-component="" class="n-messaging-client-messaging-banner-embedded-onboarding n-messaging-client-messaging-banner-embedded-onboarding--hidden"></div>
+<div data-n-messaging-component="" class="n-messaging-client-messaging-banner-embedded-onboarding n-messaging-client-messaging-banner-embedded-onboarding--hidden">
+	{{#> n-messaging-client/server/templates/components/o-banner
+		renderOpen=true
+	}}
+		<div class="o-banner__inner" data-o-banner-inner>
+			<div class="o-banner__content">
+				<div class="n-messaging-client-messaging-banner-embedded-onboarding-content">
+					<iframe src="https://ft.com/activate/embedded/bundles" frameborder="0" width="100%" height="100%" id="onboarding-iframe" tabindex="0" aria-label="Get started with the F T"></iframe>
+				</div>
+			</div>
+		</div>
+	{{/n-messaging-client/server/templates/components/o-banner}}
+</div>
