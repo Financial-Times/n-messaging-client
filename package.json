@@ -41,7 +41,7 @@
     "js-cookie": "2.2.0",
     "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
     "n-ui-foundations": "^6.0.4",
-    "next-myft-client": "^7.11.0",
+    "next-myft-client": "^7.13.0",
     "next-session-client": "^3.0.1",
     "o-banner": "npm:@financial-times/o-banner@^3.4.0",
     "o-cookie-message": "npm:@financial-times/o-cookie-message@^5.1.2",
