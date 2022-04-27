@@ -40,7 +40,7 @@
     "@financial-times/x-follow-button": "1.0.4",
     "js-cookie": "2.2.0",
     "n-myft-ui": "npm:@financial-times/n-myft-ui@^23.0.0",
-    "n-ui-foundations": "^6.0.4",
+    "n-ui-foundations": "github:financial-times/n-ui-foundations#nobower",
     "next-myft-client": "^7.11.0",
     "next-session-client": "^3.0.1",
     "o-banner": "npm:@financial-times/o-banner@^3.4.0",
