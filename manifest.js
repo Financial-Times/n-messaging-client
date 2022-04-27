@@ -50,9 +50,6 @@ module.exports = {
 		path: 'top/myft-disengaged-tooltip',
 		tooltip: true
 	},
-	tbybPostTrialSubscribe: {
-		path: 'bottom/tbyb-post-trial-subscribe'
-	},
 	remainingArticlesTest: {
 		path: 'bottom/remaining-articles',
 		lazy: true
