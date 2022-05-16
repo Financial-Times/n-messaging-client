@@ -51,8 +51,8 @@
   "dependencies": {
     "@financial-times/x-follow-button": "1.0.4",
     "js-cookie": "2.2.0",
-    "next-myft-client": "^7.13.0",
-    "next-session-client": "^3.0.1"
+    "next-myft-client": "^9.0.0",
+    "next-session-client": "^4.0.0"
   },
   "husky": {
     "hooks": {
@@ -83,6 +83,6 @@
     "@financial-times/o-typography": "^7.2.2",
     "@financial-times/o-viewport": "^5.1.1",
     "@financial-times/o-visual-effects": "^4.2.0",
-    "n-ui-foundations": "^8.0.0"
+    "n-ui-foundations": "^9.0.0"
   }
 }
