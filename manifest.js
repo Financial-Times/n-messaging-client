@@ -103,5 +103,9 @@ module.exports = {
 	},
 	embeddedOnboarding: {
 		path: 'bottom/embedded-onboarding',
-	}
+	},
+	academiaCTA: {
+		path: 'bottom/academia-cta',
+		lazy: true,
+	},
 };
