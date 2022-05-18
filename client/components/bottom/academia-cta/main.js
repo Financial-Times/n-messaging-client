@@ -12,7 +12,7 @@ const handleActionClickEvent = event => {
 
 	const target = event.target;
 	const urlSelectorElement = target.closest('.academia-cta-url-selector');
-	const anchorElement = urlSelectorElement.querySelector('.academia-cta-url-selector__url')
+	const anchorElement = urlSelectorElement.querySelector('.academia-cta-url-selector__url');
 
 	// as there are two content elements (one for small screens, one for large)
 	// we need to identify which element the click originated from
@@ -37,7 +37,7 @@ const handleActionClickEvent = event => {
 					},
 					parentElement: `${bannerContentSelector} .academia-cta-message-container`,
 				});
-	
+
 				msg.messageElement.addEventListener('o.messageClosed', () => {
 					urlSelectorElement.style.display = 'flex';
 				});
