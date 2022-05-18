@@ -1,12 +1,5 @@
-@import '@financial-times/o-forms/main';
 @import '@financial-times/o-colors/main';
 @import '@financial-times/o-grid/main';
-@import '@financial-times/o-icons/main';
-
-@include oForms($opts: (
-	'elements': ('text'),
-	'features': ('suffix'),
-));
 
 [data-n-messaging-name="academiaCTA"] .o-banner__outer {
 	background-color: oColorsByName('white-80');
