@@ -4,7 +4,7 @@
 // - who haven't seen the tooltip more than 3 times
 
 import Tooltip from '@financial-times/o-tooltip';
-import myftClient from 'next-myft-client/myft-npm';
+import myftClient from 'next-myft-client/myft-client';
 import {broadcast} from 'n-ui-foundations';
 import Cookies from 'js-cookie';
 
