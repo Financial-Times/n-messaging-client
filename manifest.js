@@ -46,9 +46,6 @@ module.exports = {
 	contentMessage: {
 		path: 'bottom/content-message'
 	},
-	contentMessageDanskeBank: {
-		path: 'bottom/content-message-danske-bank'
-	},
 	myftDisengagedTooltip: {
 		path: 'top/myft-disengaged-tooltip',
 		tooltip: true
