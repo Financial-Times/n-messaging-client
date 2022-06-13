@@ -12,7 +12,7 @@ const handleActionClickEvent = event => {
 
 	const target = event.target;
 	const urlSelectorElement = target.closest('.academia-cta-url-selector');
-	const anchorElement = urlSelectorElement.querySelector('.academia-cta-url-selector__url');
+	const anchorElement = urlSelectorElement.querySelector('.academia-cta-url-selector__url a');
 
 	// as there are two content elements (one for small screens, one for large)
 	// we need to identify which element the click originated from
@@ -22,7 +22,7 @@ const handleActionClickEvent = event => {
 		return `${prev}.${curr}`;
 	}, '');
 
-	navigator.clipboard.writeText(anchorElement.innerText)
+	navigator.clipboard.writeText(anchorElement.getAttribute('href'))
 		.then(() => {
 			urlSelectorElement.style.display = 'none';
 
