@@ -60,14 +60,13 @@ module.exports = (banner, done) => {
 		return done({ skip: true });
 	}
 
-	document.addEventListener( "click", handleClick, false );
+	document.addEventListener("click", handleClick, false);
 
-	function handleClick( event ) {
-
+	function handleClick(event) {
 		if (bannerElement.contains(event.target) === false) {
-			banner.close()
+			banner.close();
 		}
-	}	
+	}
 
 	if (navigator.clipboard && navigator.clipboard.writeText) {
 		bannerElement
