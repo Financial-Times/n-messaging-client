@@ -5,6 +5,11 @@
 	background-color: oColorsByName('white-80');
 }
 
+[data-n-messaging-name="academiaCTA"] .o-banner__content {
+	width: 100%;
+	box-sizing: border-box;
+}
+
 .academia-cta {
 	&-hero-image {
 		text-align: center;
@@ -51,6 +56,7 @@
 		&__text {
 			flex: 1;
 			padding-right: 86px;
+			min-width: 0;
 		}
 	}
 
