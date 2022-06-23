@@ -10,6 +10,13 @@
 	box-sizing: border-box;
 }
 
+[data-n-messaging-name="academiaCTA"] .o-banner__close {
+	position: absolute;
+	right: 24px;
+	top: 24px;
+
+}
+
 .academia-cta {
 	&-hero-image {
 		text-align: center;
@@ -21,18 +28,18 @@
 	}
 
 	&-heading h1 {
-		font-size: 24px;
+		font-size: 20px;
 		line-height: 1;
 		margin-bottom: 16px;
 		color: oColorsByName('slate');
 
 		@include oGridRespondTo(L) {
-			font-size: 28px;
+			font-size: 24px;
 		}
 	}
 
 	&-body-text {
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 1.78;
 		color: oColorsByName('black-70');
 
@@ -41,11 +48,11 @@
 		}
 
 		@include oGridRespondTo(L) {
-			font-size: 28px;
+			font-size: 20px;
 			line-height: 1.14;
 
 			p {
-				margin-bottom: 32px;
+				margin-bottom: 10px;
 			}
 		}
 	}
@@ -55,14 +62,16 @@
 
 		&__text {
 			flex: 1;
-			padding-right: 86px;
+			padding-right: 60px;
 			min-width: 0;
+			max-width: 600px;
 		}
 	}
 
 	&-url-selector {
 		display: flex;
 		flex-wrap: wrap;
+		padding-top: 36px;
 
 		&__url {
 			display: flex;
@@ -91,6 +100,7 @@
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			overflow: hidden;
+			font-size: 18px;
 		}
 	}
 }
