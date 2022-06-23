@@ -48,7 +48,6 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "@financial-times/x-follow-button": "1.0.4",
     "js-cookie": "2.2.0",
     "next-myft-client": "^10.2.0",
     "next-session-client": "^4.0.0"
