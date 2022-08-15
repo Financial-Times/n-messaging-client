@@ -80,9 +80,6 @@ module.exports = {
 			opportunity_type: 'digitalMarketingNewWorld',
 		}
 	},
-	COPOpenDayClimateCapitalAnon: {
-		path: 'top/cop-open-day-climate-capital-anon',
-	},
 	jan22DigitalSaleBanner: {
 		path: 'top/jan-22-digital-sale-banner',
 		trackingContext: {
