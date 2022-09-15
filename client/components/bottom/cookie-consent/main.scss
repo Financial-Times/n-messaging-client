@@ -1,0 +1,72 @@
+.o-cookie-message--variant {
+    width: auto;
+    left: 0;
+    right: 0;
+    margin: 0;
+
+    .o-cookie-message__outer {
+        background: #333;
+    }
+
+    .o-cookie-message__inner {
+        background: #333;
+        box-shadow: none;
+        padding: 20px;
+        max-width: 860px;
+
+        @include oGridRespondTo('M') {
+            max-width: 780px;
+            padding: 28px 40px 40px;
+        }
+
+        @include oGridRespondTo('M') {
+            max-width: 780px;
+            padding: 28px 40px 40px;
+        }
+
+        @include oGridRespondTo('L') {
+            max-width: 860px;
+        }
+
+        @include oGridRespondTo('XL') {
+            max-width: 1020px;
+        }
+
+    }
+
+    .o-cookie-message__content {
+        color: #fff;
+
+        a {
+            color: oColorsByName('sky');
+        }
+
+        @include oGridRespondTo('L') {
+            max-width: 540px;
+        }
+
+        @include oGridRespondTo('XL') {
+            max-width: 700px;
+        }
+    }
+
+    .o-cookie-message__actions {
+        flex-direction: column-reverse;
+
+        .o-cookie-message__action--secondary a {
+            color: oColorsByName('sky');
+        }
+
+        @include oGridRespondTo('M') {
+            flex-direction: row;
+        }
+
+        @include oGridRespondTo('L') {
+            max-width: 540px;
+        }
+
+        @include oGridRespondTo('XL') {
+            max-width: 700px;
+        }
+    }
+}
