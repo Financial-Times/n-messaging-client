@@ -5,11 +5,11 @@
 	margin: 0;
 
 	.o-cookie-message__outer {
-		background: #333;
+		background: #333333;
 	}
 
 	.o-cookie-message__inner {
-		background: #333;
+		background: #333333;
 		box-shadow: none;
 		padding: 20px;
 		max-width: 860px;
@@ -35,7 +35,7 @@
 	}
 
 	.o-cookie-message__content {
-		color: #fff;
+		color: #ffffff;
 
 		a {
 			color: oColorsByName('sky');
