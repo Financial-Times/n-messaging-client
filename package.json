@@ -35,7 +35,7 @@
     "eslint-plugin-react": "^7.18.3",
     "express": "^4.17.1",
     "mocha": "^5.2.0",
-    "nodemon": "^1.17.5",
+    "nodemon": "^2.0.20",
     "postcss": "^7.0.26",
     "preact": "^8.5.3",
     "request": "^2.87.0",
