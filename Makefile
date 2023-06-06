@@ -9,7 +9,7 @@ demo-certs:
 	@$(DONE)
 
 demo-js:
-	webpack --config demos/webpack.config.js
+	NODE_OPTIONS="--openssl-legacy-provider" webpack --config demos/NODE_OPTIONS="--openssl-legacy-provider" webpack.config.js
 	@$(DONE)
 
 demo-css:
@@ -20,7 +20,7 @@ demo-build: demo-js demo-css
 	@$(DONE)
 
 demo-watch: demo-certs demo-css # demo-css because node-sass doesn't build one at start of watch
-	webpack --watch --config demos/webpack.config.js &
+	NODE_OPTIONS="--openssl-legacy-provider" webpack --watch --config demos/NODE_OPTIONS="--openssl-legacy-provider" webpack.config.js &
 	sass --watch --load-path=node_modules demos/src/demo.scss:demos/public/demo.css &
 	nodemon --ext js,css,html --watch demos/ --watch server/ demos/start.js
 
