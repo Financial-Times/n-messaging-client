@@ -1,5 +1,9 @@
 # n-messaging-client [![CircleCI](https://circleci.com/gh/Financial-Times/n-messaging-client.svg?style=svg&circle-token=309996b6bdbe638678ee73353626606adf61693b)](https://circleci.com/gh/Financial-Times/n-messaging-client)
 
+| ⚠️ `n-messaging-client` is deprecated |
+|:-|
+| On-site messages are displayed via Bloomreach. Talk to the [Martech team](https://financialtimes.slack.com/archives/C017GUUCB3P) if you need a new message. `n-messaging-client` is currently only used to display the cookie banner. |
+
 **Lightweight, consistent, smart, targeted and behaviourally driven first party messaging on FT.com**
 
 ### Table of Contents
