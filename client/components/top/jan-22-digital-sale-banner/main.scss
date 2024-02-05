@@ -32,7 +32,7 @@
 				@include oTypographySans($scale: 0);
 
 				.o-message__content-highlight {
-					color: oColorsByName('brand-ft-pink');
+					color: oColorsByName('ft-pink');
 					@include oTypographySans($scale: 2);
 
 					@include oGridRespondTo($from: M) {
@@ -81,7 +81,7 @@
 
 	.o-message__actions__primary {
 		padding: oSpacingByName('s2') oSpacingByName('s6');
-		background-color: oColorsByName('brand-ft-pink');
+		background-color: oColorsByName('ft-pink');
 		color: oColorsByName('slate');
 		border-color: transparent;
 
