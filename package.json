@@ -4,9 +4,7 @@
   "repository": "Financial-Times/n-messaging-client",
   "description": "Lightweight first party messaging for use with \"The Brain\"",
   "main": "main-server.js",
-  "scripts": {
-    "prepare": "npx snyk protect || npx snyk protect -d || true"
-  },
+  "scripts": {},
   "license": "MIT",
   "x-dash": {
     "engine": {
@@ -40,7 +38,6 @@
     "request": "^2.87.0",
     "sass": "^1.49.9",
     "sinon": "^6.0.0",
-    "snyk": "^1.168.0",
     "sucrase": "^3.12.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
